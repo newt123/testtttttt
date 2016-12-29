@@ -1,0 +1,109 @@
+head     1.800;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.800
+date     2011.03.24.19.15.38;  author p4;  state Exp;
+branches ;
+next     1.795;
+
+1.795
+date     2011.03.24.19.15.38;  author p4;  state Exp;
+branches ;
+next     1.794;
+
+1.794
+date     2011.03.24.19.15.38;  author p4;  state Exp;
+branches ;
+next     1.780;
+
+1.780
+date     2011.03.24.19.15.38;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.800
+log
+@@
+text
+@// ENut.java
+
+package com.walkerbros.common.widget;
+
+public class ENut
+{
+
+// Constants for state of nut
+	public static final short E_NUT_STATE_SCREWED_OFF		= 0;
+	public static final short E_NUT_STATE_SCREWED_ON			= 1;
+	
+	// Configuration for a broken bolt.
+	public static final short E_NUT_STATE_TOTALLY_SCREWED_UP		= -1;
+
+	
+	public short m_currState = E_NUT_STATE_SCREWED_ON;
+	/*
+ 	 * Dummy construtor was introduced after a meeting with the standards committee.
+ 	 * It was decided that it was only good form to maintain these since there might be
+         * cases in the future were objected will be created and not initialized.
+         */
+	public ENut() 
+	{
+	}
+
+	public ENut(int p_state) 
+	{
+		m_currState = p_state;
+
+	}
+}@
+
+
+1.795
+log
+@@
+text
+@d8 2
+a9 2
+
+	public static final short E_NUT_STATE_SCREWED_OFF			= 0;
+d16 1
+a16 1
+	public short m_currState = E_NUT_STATE_SCREWED_OFF;
+d20 1
+a20 1
+         * cases in the future were objectes will be created and not initialized.
+a30 7
+
+	public get_state() 
+	{
+		return m_currState;
+
+	}
+
+@
+
+
+1.794
+log
+@@
+text
+@d31 7
+@
+
+
+1.780
+log
+@@
+text
+@d20 1
+a20 1
+         * cases in the future were objected will be created and not initialized.
+@

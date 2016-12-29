@@ -1,0 +1,976 @@
+head     1.26;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.26
+date     2005.01.27.09.35.41;  author p4;  state Exp;
+branches ;
+next     1.25;
+
+1.25
+date     2005.01.27.09.35.41;  author p4;  state Exp;
+branches ;
+next     1.24;
+
+1.24
+date     2005.01.27.09.35.40;  author p4;  state Exp;
+branches ;
+next     1.23;
+
+1.23
+date     2005.01.27.09.35.40;  author p4;  state Exp;
+branches ;
+next     1.22;
+
+1.22
+date     2005.01.27.09.35.40;  author p4;  state Exp;
+branches ;
+next     1.21;
+
+1.21
+date     2005.01.27.09.35.32;  author p4;  state Exp;
+branches ;
+next     1.20;
+
+1.20
+date     2005.01.27.09.35.25;  author p4;  state Exp;
+branches ;
+next     1.19;
+
+1.19
+date     2005.01.27.09.35.25;  author p4;  state Exp;
+branches ;
+next     1.18;
+
+1.18
+date     2005.01.27.09.35.23;  author p4;  state Exp;
+branches ;
+next     1.17;
+
+1.17
+date     2005.01.27.09.35.22;  author p4;  state Exp;
+branches ;
+next     1.16;
+
+1.16
+date     2005.01.27.09.35.22;  author p4;  state Exp;
+branches ;
+next     1.15;
+
+1.15
+date     2005.01.27.09.35.22;  author p4;  state Exp;
+branches ;
+next     1.14;
+
+1.14
+date     2005.01.27.09.35.22;  author p4;  state Exp;
+branches ;
+next     1.13;
+
+1.13
+date     2005.01.27.09.35.21;  author p4;  state Exp;
+branches ;
+next     1.12;
+
+1.12
+date     2005.01.27.09.35.21;  author p4;  state Exp;
+branches ;
+next     1.11;
+
+1.11
+date     2005.01.27.09.35.19;  author p4;  state Exp;
+branches ;
+next     1.10;
+
+1.10
+date     2005.01.27.09.35.19;  author p4;  state Exp;
+branches ;
+next     1.9;
+
+1.9
+date     2005.01.27.09.35.19;  author p4;  state Exp;
+branches ;
+next     1.8;
+
+1.8
+date     2005.01.27.09.35.18;  author p4;  state Exp;
+branches ;
+next     1.7;
+
+1.7
+date     2005.01.27.09.35.18;  author p4;  state Exp;
+branches ;
+next     1.6;
+
+1.6
+date     2005.01.27.09.35.18;  author p4;  state Exp;
+branches ;
+next     1.5;
+
+1.5
+date     2005.01.27.09.35.18;  author p4;  state Exp;
+branches ;
+next     1.4;
+
+1.4
+date     2005.01.27.09.35.15;  author p4;  state Exp;
+branches ;
+next     1.3;
+
+1.3
+date     2005.01.27.09.35.15;  author p4;  state Exp;
+branches ;
+next     1.2;
+
+1.2
+date     2005.01.27.09.35.15;  author p4;  state Exp;
+branches ;
+next     1.1;
+
+1.1
+date     2005.01.27.09.35.12;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.26
+log
+@@
+text
+@Jam/MR (formerly "jam - make(1) redux") 
+
+    /+\
+    +\	Copyright 1993, 1997 Christopher Seiwald.
+    \+/
+
+    This is Release 2.2 of Jam/MR, a make-like program.
+
+    License is hereby granted to use this software and distribute it
+    freely, as long as this copyright notice is retained and modifications 
+    are clearly marked.
+
+    ALL WARRANTIES ARE HEREBY DISCLAIMED.
+
+FEATURES
+
+   ->	Jam/MR is a make(1) replacement that makes building simple things
+	simple and building complicated things manageable.
+
+   ->	Jam/MR's language is expressive, making Jamfiles (c.f. Makefiles) 
+	compact.  Here's a sample:
+
+	    Main smail : main.c map.c resolve.c deliver.c
+			 misc.c parser.y alias.c pw.c headers.c
+			 scanner.l getpath.c str.c ;
+
+	This builds "smail" from a dozen source files.  Jam/MR handles 
+	header file dependencies automatically and on-the-fly.
+
+   ->	Jam/MR is very portable: it runs on UNIX, VMS, and NT.  Most
+	Jamfiles themselves are portable, like the sample above.
+
+   ->   Jam/MR is unintrusive: it is small, it has negligible CPU 
+	overhead, and it doesn't create any of its own funny files
+	(c.f. Odin, nmake, SunOS make).
+
+   ->	Jam/MR can build large projects spread across many directories
+	in one pass, without recursing, tracking the relationships
+	among all files. Jam/MR can do this with multiple, concurrent 
+	processes.
+
+   ->   Jam/MR isn't under the blinkin GNU copyright, so you can 
+	incorporate it into commercial products.
+
+
+INFORMATION GUIDE
+
+    Jam.html		jam command usage
+
+    Jambase.html	Reference for the Jambase boilerplate file.
+
+    Jamfile.html	Easy reading on creating a Jamfile and using jam.
+
+    Jamlang.html	The JamMR language description.
+
+    RELNOTES		Release 2.2 release notes.
+
+    Porting		Notes on porting jam to wildcat platforms.
+
+    README		This file.  Includes installation instructions.
+
+    jam.c		Contains the jam command's main() as well as an 
+			introduction to the code, for serious hackers.
+
+
+INSTALLING
+
+    The Makefile (UNIX, NT), build.com (VMS), Build.mpw (Mac MPW) are 
+    for bootstrapping.  Once jam is built, it can rebuild itself.
+
+    UNIX
+
+	Build jam with make(1) on:
+
+	    Platform		$(OS) 
+	    -------------------------
+	    AIX			AIX		*	
+	    BSD/386 1.0		BSDI
+	    COHERENT/386	COHERENT
+	    DGUX 5.4		DGUX
+	    FreeBSD		FREEBSD
+	    HPUX 9.0		HPUX
+	    IRIX 5.0		IRIX
+	    Linux		LINUX
+	    NEXTSTEP 3.2	NEXT
+	    OSF/1		OSF
+	    PTX V2.1.0		PTX
+	    Solaris 2		SOLARIS		*
+	    SunOS4.1		SUNOS
+	    Ultrix 4.2		ULTRIX
+	    BeOS		BEOS		*
+
+	    * requires editing Makefile
+
+    Windows
+
+	Build jam with nmake on:
+
+	    Platform		$(OS)
+	    -------------------------
+	    NT			NT		*
+	    OS/2		OS2		*
+
+	The NT MAXLINE (command line length) is still set in jam.h to
+	996, which was apparently the NT 3.5 limit. On 4.0, the limit 
+	is somewhere around 10K. For now, you can increase MAXLINE in 
+	jam.h so that a jam running on 4.0 will use the full command
+	line length, but that jam.exe will fail miserably on the older OS.
+
+	On NT, a variable must be set before invoking jam to tell
+	it where the C compiler lives.  The name of this variable
+	depends on which compiler you are using:
+
+	    BCCROOT:	The Borland C compiler
+	    MSVCNT:	The Microsoft Compiler 5.0 (for NT)
+	    MSVC:	The Microsoft Compiler 1.5 (for Windows)
+
+	Only MSVCNT has really been tested and is known to work.
+
+    Macintosh
+
+	Build jam with Build.mpw on:
+
+	    Platform		$(OS)
+	    -------------------------
+	    Macintosh		MAC		
+
+	You'll need to edit Build.mpw to set CWGUSI and CWMAC.  Jam
+	requires GUSI and Mac specific stuff to build (sorry).
+
+    VMS
+
+    	Build jam with @@build.com on:
+
+	    Platform		$(OS)
+	    -------------------------
+	    VMS 5.4		VMS
+	    OPENVMS		OPENVMS
+
+Comments to the author!
+
+November, 1993 - release 1.0
+March, 1995 - release 2.0 
+February, 1996 - release 2.1
+November, 1997 - release 2.2
+
+Christopher Seiwald
+
+seiwald@@perforce.com
+@
+
+
+1.25
+log
+@@
+text
+@d68 1
+a68 1
+    The Makefile (UNIX, NT), build.com (VMS), build.mpw (Mac MPW) are 
+d122 1
+a122 1
+	Build jam with build.mpw on:
+d128 3
+@
+
+
+1.24
+log
+@@
+text
+@d48 1
+a48 1
+    jam.1.html		jam command usage
+d50 1
+a50 1
+    jamMR.html		The JamMR language description
+d52 1
+a52 1
+    Jambase.5.html	Reference for the Jambase boilerplate file.
+d54 1
+a54 1
+    Jamfile.5.html	Easy reading on creating a Jamfile and using jam.
+d56 1
+a56 1
+    RELNOTES	Release 2.2 release notes.
+d58 1
+a58 1
+    Porting	Notes on porting jam to wildcat platforms.
+d60 1
+a60 1
+    README	This file.  Includes installation instructions.
+d62 2
+a63 2
+    jam.c	Contains the jam command's main() as well as an introduction 
+		to the code, for serious hackers.
+d68 2
+a69 2
+    The Makefile (UNIX, NT) and build.com (VMS) are for bootstrapping.
+    Once jam is built, it can rebuild itself.
+d71 1
+a71 1
+    Build jam with make(1) on:
+d73 4
+a76 2
+	    Platform		$(OS) setting
+	    --------------------------------------
+d91 1
+a92 2
+	    NT			NT		*
+	
+d95 1
+a95 1
+    Build jam with @@build.com on:
+d97 1
+a97 4
+	    Platform		$(OS) setting
+	    --------------------------------------
+	    VMS 5.4		VMS
+	    OPENVMS		OPENVMS
+d99 4
+a102 1
+    Special instructions for NT:
+d104 5
+a108 6
+	    The NT MAXLINE (command line length) is still set in jam.h to
+	    996, which was apparently the NT 3.5 limit. On 4.0, the limit 
+	    is somewhere around 10K. For now, you can increase MAXLINE in 
+	    jam.h so that a jam running on 4.0 will use the full command
+	    line length, but that jam.exe will fail miserably on the older 
+	    OS.
+d110 3
+a112 3
+	    On NT, a variable must be set before invoking jam to tell
+	    it where the C compiler lives.  The name of this variable
+	    depends on which compiler you are using:
+d114 3
+a116 3
+		BCCROOT:	The Borland C compiler
+		MSVCNT:		The Microsoft Compiler 5.0 (for NT)
+		MSVC:		The Microsoft Compiler 1.5 (for Windows)
+d118 9
+a126 1
+	    Only MSVCNT has really been tested and is known to work.
+d128 9
+d142 1
+a142 1
+October, 1997 - release 2.2
+@
+
+
+1.23
+log
+@@
+text
+@d73 1
+a73 1
+	    Platform		$(OSNAME) setting
+d96 1
+a96 1
+	    Platform		$(OSNAME) setting
+@
+
+
+1.22
+log
+@@
+text
+@d73 1
+a73 1
+	    Platform		$(OS) setting
+d96 1
+a96 1
+	    Platform		$(OS) setting
+@
+
+
+1.21
+log
+@@
+text
+@d1 1
+a1 1
+jam - make(1) redux 
+d4 1
+a4 1
+    +\	Copyright 1993, 1996 Christopher Seiwald.
+d7 1
+a7 2
+    This is Release 2.1 of jam, a make-like program.
+    The next release will be Release 2.2.
+d17 1
+a17 1
+   ->	Jam is a make(1) replacement that makes building simple things
+d20 1
+a20 1
+   ->	Jam's language is expressive, making Jamfiles (c.f. Makefiles) 
+d27 1
+a27 1
+	This builds "smail" from a dozen source files.  Jam handles 
+d30 1
+a30 1
+   ->	Jam is very portable: it runs on UNIX, VMS, and NT.  Most
+d33 1
+a33 1
+   ->   Jam is unintrusive: it is small, it has negligible CPU 
+d37 1
+a37 1
+   ->	Jam can build large projects spread across many directories
+d39 2
+a40 2
+	among all files.  See the accompanying paper.  On UNIX, Jam 
+	can do this with multiple, concurrent processes.
+d42 1
+a42 1
+   ->   Jam isn't under the blinkin GNU copyright, so you can 
+d48 1
+a48 2
+    jam.1	jam command man page - a terse description.
+    jam.ps
+d50 1
+a50 2
+    Jambase.5	Reference for the rule boilerplate file.
+    Jambase.ps
+d52 1
+a52 2
+    Jamfile.5	Easy reading on creating a Jamfile and using jam.
+    Jamfile.ps
+d54 1
+a54 2
+    Paper.ps    The 1994 UNIX Application Development Symposium paper 
+		on jam (reflects Release 1 - see RELNOTES for diffs).
+d56 1
+a56 1
+    RELNOTES	Release 2.1 release notes.
+d101 1
+a101 9
+    Special instructions for NT and VMS:
+
+	    On both VMS and NT, there isn't an standard place where the
+	    Jambase can be installed, and so it is assumed to be in the
+	    current directory.  This isn't practical for normal use 
+	    (because you want the Jambase to be shared for all projects),
+	    so you either need to edit jam.h to tell it where the Jambase
+	    should like or make an alias (NT using MKS shell) or symbol
+	    (on VMS) that is something like:
+d103 6
+a108 1
+		jam = jam -f _path_to_Jambase_
+d115 1
+a115 1
+		MSVCNT:		The Microsoft Compiler 2.0 (for NT)
+d125 1
+d129 1
+a129 1
+seiwald@@p3.com
+@
+
+
+1.20
+log
+@@
+text
+@d91 1
+a91 1
+	    Solaris 2		SOLARIS		*+
+a97 1
+	    + only works with SUNSwpro CC (dirent confusion) 
+@
+
+
+1.19
+log
+@@
+text
+@d78 16
+a93 15
+	    BSDI	    BSD/386 1.0
+	    COHERENT	    COHERENT/386
+	    DEC 3000/500    OSF/1
+	    DG AViiON       DGUX 5.4
+	    HP 9000/700     HPUX 9.0
+	    IBM RS/6000     AIX		*
+	    IBM PC	    FreeBSD
+	    IBM PC	    Linux
+            NeXT            NEXTSTEP 3.2
+	    SGI R4000       IRIX 5.0
+	    Sequent 2000    PTX V2.1.0
+	    Sun 3           SunOS4.0
+	    Sun 4           Solaris 2	*+
+	    Sun 4           SunOS4.1
+	    VAX             Ultrix 4.2
+d95 1
+a95 1
+	    IBM PC	    NT		*
+d102 4
+a105 2
+	    VAX		    VMS 5.4
+	    DEC 3000/500    OPENVMS	
+@
+
+
+1.18
+log
+@@
+text
+@d1 1
+a1 1
+jammin - make(1) redux 
+d4 1
+a4 1
+    +\	Copyright 1993, 1995 Christopher Seiwald.
+d7 1
+a7 1
+    This is Release 2.1 of jammin, a make-like program.
+a15 5
+    N.B.  This package was previously known as "jam - make(1) redux".
+    To avoid infringing on JYACC's trademark of JAM, this package
+    has been renamed to "jammin".  The command name and manual pages
+    remain the same.
+
+d18 1
+a18 1
+   ->	Jammin is a make(1) replacement that makes building simple things
+d21 1
+a21 1
+   ->	Jammin's language is expressive, making Jamfiles (c.f. Makefiles) 
+d28 1
+a28 1
+	This builds "smail" from a dozen source files.  Jammin handles 
+d31 1
+a31 1
+   ->	Jammin is very portable: it runs on UNIX, VMS, and NT.  Most
+d34 1
+a34 1
+   ->   Jammin is unintrusive: it is small, it has negligible CPU 
+d38 1
+a38 1
+   ->	Jammin can build large projects spread across many directories
+d40 1
+a40 1
+	among all files.  See the accompanying paper.  On UNIX, Jammin 
+d43 1
+a43 1
+   ->   Jammin isn't under the blinkin GNU copyright, so you can 
+d55 1
+a55 1
+    Jamfile.5	Easy reading on creating a Jamfile and using jammin.
+d59 1
+a59 1
+		on jammin (reflects Release 1 - see RELNOTES for diffs).
+d61 1
+a61 1
+    RELNOTES	Release 2.0 release notes.
+d63 1
+a63 1
+    Porting	Notes on porting jammin to wildcat platforms.
+d73 2
+a74 1
+    Build jammin with make(1) on:
+d76 2
+d99 1
+a99 1
+    Build jammin with @@build.com on:
+d104 1
+a104 1
+    The Makefile (UNIX, NT) and build.com (VMS) are for bootstrapping.
+d106 17
+a122 1
+    Once jammin is built, read the Jamfile man page and give it a try.
+d124 1
+d130 1
+a130 1
+January, 1996 - release 2.1
+d134 1
+a134 1
+seiwald@@tea.org
+@
+
+
+1.17
+log
+@@
+text
+@d1 1
+a1 1
+jam - make(1) redux 
+d7 2
+a8 2
+    This is Release 2.0 of jam, a make-like program.
+    The next release will be Release 2.1.
+d16 4
+d23 1
+a23 1
+   ->	Jam is a make(1) replacement that makes building simple things
+d26 1
+a26 1
+   ->	Jam's language is expressive, making Jamfiles (c.f. Makefiles) 
+d33 1
+a33 1
+	This builds "smail" from a dozen source files.  Jam handles 
+d36 1
+a36 1
+   ->	Jam is very portable: it runs on UNIX, VMS, and NT.  Most
+d39 1
+a39 1
+   ->   Jam is unintrusive: it is small, it has negligible CPU 
+d43 1
+a43 1
+   ->	Jam can build large projects spread across many directories
+d45 1
+a45 1
+	among all files.  See the accompanying paper.  On UNIX, jam 
+d48 1
+a48 1
+   ->   Jam isn't under the blinkin GNU copyright, so you can 
+d54 1
+a54 1
+    jam.1	Jam man page - a terse description.
+d60 1
+a60 1
+    Jamfile.5	Easy reading on creating a Jamfile and using jam.
+d64 1
+a64 1
+		on jam (reflects Release 1 - see RELNOTES for diffs).
+d68 1
+a68 1
+    Porting	Notes on porting jam to wildcat platforms.
+d72 2
+a73 2
+    jam.c	Contains jam's main() as well as an introduction to the 
+		code, for serious hackers.
+d78 1
+a78 1
+    Build jam with make(1) on:
+d87 1
+d101 1
+a101 1
+    Build jam with @@build.com on:
+d108 1
+a108 1
+    Once jam is built, read the Jamfile man page and give it a try.
+d115 1
+d117 2
+a118 1
+--- Christopher 
+@
+
+
+1.16
+log
+@@
+text
+@d82 1
+@
+
+
+1.15
+log
+@@
+text
+@d98 1
+a98 3
+	    DEC 3000/500    OPENVMS	*
+
+	    * requires editing build.com
+@
+
+
+1.14
+log
+@@
+text
+@d82 1
+@
+
+
+1.13
+log
+@@
+text
+@d111 2
+a112 2
+Christopher Seiwald
+Seiwald@@Tea.Org
+@
+
+
+1.12
+log
+@@
+text
+@d25 1
+a25 1
+	    MAIN smail : main.c map.c resolve.c deliver.c
+@
+
+
+1.11
+log
+@@
+text
+@d53 3
+@
+
+
+1.10
+log
+@@
+text
+@d57 1
+a57 1
+		on jam (reflects Release 1 - see RELNOTES).
+d63 1
+a63 1
+    README	This file: installation instructions.
+@
+
+
+1.9
+log
+@@
+text
+@d7 1
+a7 1
+    This is Release 2.0 BETA of jam, a make-like program.
+d59 1
+a59 1
+    RELNOTES	Release 2.0 BETA release notes.
+d106 1
+a106 1
+March, 1995 - release 2.0 BETA
+@
+
+
+1.8
+log
+@@
+text
+@d7 2
+a8 1
+    This is Release 2 of jam, a make-like program.
+d57 1
+a57 1
+		on jam (reflects Release 1 - see CHANGES).
+d59 1
+a59 1
+    CHANGES	Changes from Release 1 to Release 2.
+d105 2
+a106 2
+November, 1993 - release 1
+January, 1995 - release 2
+@
+
+
+1.7
+log
+@@
+text
+@d18 3
+d28 2
+a29 2
+	This builds "smail" from a dozen source files, handling header 
+	file dependencies automatically.
+d40 2
+a41 1
+	among all files.  See the accompanying paper.
+d50 1
+d53 1
+d98 2
+a99 1
+    Once jam is built, it can rebuild itself.
+@
+
+
+1.6
+log
+@@
+text
+@d49 2
+a50 2
+    Paper.ps    UNIX Application Development Symposium paper on 
+		jam (the syntax has since been extended - see CHANGES).
+a93 12
+SEE ALSO
+
+    Aside from source files, there is:
+
+	Build.com	VMS command script
+	CHANGES		Changes from Release 1 to Release 2
+	Makefile	a bootstrap makefile
+	Porting		notes on porting jam
+	Jamfile.5	Manual for writing a Jamfile
+	Paper.ps	UNIX Application Development Symposium paper
+	jam.1		jam man page
+	yyacc		a yacc pre-preprocessor
+@
+
+
+1.5
+log
+@@
+text
+@d1 1
+a1 1
+Jam - make(1) redux 
+d3 3
+a5 1
+This is Release 2 of Jam, a make-like program.
+d7 5
+a11 2
+Differences from Release 1 are in CHANGES.
+Easy reading instructions for using Jam are in Jamfile.5.
+d13 3
+d29 1
+a29 1
+	Jamfiles themselves are portable (like the sample above).
+d32 2
+a33 1
+	overhead, and it doesn't create any of its own funny files.
+d37 1
+a37 1
+	among all files.  (See the accompanying paper.)
+d39 14
+a52 2
+   ->   Jam isn't under the abhorable GNU copyright - you can do
+        anything you want with it (except copyright it yourself).
+d54 8
+d91 2
+a92 1
+    See the "Porting" file for info on more wildcat ports.
+d103 1
+a103 1
+	Paper.ps	UNIX Application Development Symposion paper
+@
+
+
+1.4
+log
+@@
+text
+@d72 1
+a72 2
+	Jambase.5	Jambase man page
+	Jamfile.5	Easy reading on writing a Jamfile
+@
+
+
+1.3
+log
+@@
+text
+@d1 1
+a1 1
+Jam - make(1) redux
+d3 1
+a3 1
+Jam is a make-like program.
+d5 3
+a63 2
+    See the manual page "Jamfile.5" for using jam.
+
+@
+
+
+1.2
+log
+@@
+text
+@d3 1
+a3 2
+November, 1993 - release 1
+January, 1995 - release 2
+d7 2
+a8 6
+    Jam is a make-like program that supplants make's implicit rules
+    with a real language for defining dependencies and update
+    actions.   Its features include:
+
+    o       Jam finds header file dependencies using regexp(3)
+	    patterns.
+d10 3
+a12 2
+    o       Jam has a real language, including conditionals and
+	    list valued variables.
+d14 2
+a15 2
+    o       A central Jambase defines the rules, which can be
+	    customized for large products.
+d17 2
+a18 2
+    o       Per directory Jamfiles are simple and are normally
+	    system independent.
+d20 2
+a21 1
+    o       Jam can build large systems without recursing.
+d23 3
+a25 1
+    o	    Jam never tries to store state in any funny files.
+d27 2
+a28 1
+    o	    Jam runs on UNIX and VMS, and is portable.
+d30 1
+a30 1
+PORTING
+d46 2
+d61 3
+a63 1
+OTHER FILES
+d73 1
+d79 3
+d83 1
+a83 1
+Seiwald@@Vix.Com
+@
+
+
+1.1
+log
+@@
+text
+@d3 3
+d35 1
+d64 1
+a64 1
+	Examples	sample Jamfiles
+d68 1
+d75 1
+a75 2
+Seiwald@@vix.com
+November, 1993
+@

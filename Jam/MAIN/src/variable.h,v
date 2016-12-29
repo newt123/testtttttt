@@ -1,0 +1,79 @@
+head     1.3;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.3
+date     2005.01.27.09.35.22;  author p4;  state Exp;
+branches ;
+next     1.2;
+
+1.2
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.1;
+
+1.1
+date     2005.01.27.09.35.12;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.3
+log
+@@
+text
+@/*
+ * Copyright 1993, 1995 Christopher Seiwald.
+ *
+ * This file is part of Jam - see jam.c for Copyright information.
+ */
+
+/*
+ * variable.h - handle jam multi-element variables
+ *
+ * 08/23/94 (seiwald) - Support for '+=' (append to variable)
+ */
+
+LIST *var_get();
+void var_defines();
+void var_set();
+LIST *var_swap();
+LIST *var_list();
+int var_string();
+void var_done();
+
+/*
+ * Defines for var_set().
+ */
+
+# define VAR_SET	0	/* override previous value */
+# define VAR_APPEND	1	/* append to previous value */
+# define VAR_DEFAULT	2	/* set only if no previous value */
+
+@
+
+
+1.2
+log
+@@
+text
+@d19 1
+@
+
+
+1.1
+log
+@@
+text
+@d2 3
+a4 1
+ * Copyright 1993 Christopher Seiwald.
+d9 2
+d19 9
+@

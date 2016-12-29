@@ -1,0 +1,21 @@
+Tips for Getting on the Internet and Other Tips
+
+1.  Connecting to the Internet Using AOL or Compuserve:
+
+AOL and Compuserve (both owned by AOL), require you to take 2 steps to connect to the Internet.  First, you must connect to AOL or Compuserve. Then you must minimize AOL or Compuserve to connect to the Internet from If this house could talk.  This 2-step process is different than the other online services which have only a single step.
+
+So the simple rule to remember is to minimize AOL or Compuserve after you log on.
+
+2.  Size of the Screen for If this house could talk:
+
+If this house could talk is best viewed at 640 x 480 resolution.  At this resolution, the program will take up the entire screen, and there will be no black border around the screen. At other resolutions (such as 800 x 600, or 1024 x 768), the program will cover only a portion of the screen.  Note that the program will function perfectly well at any resolution.
+
+To change the resolution of your computer, click the "Start" button and select "Settings", and then choose "Control Panel".  Double click "Display", then select the folder called "Settings" at the top of the screen.  Go down to the "Desktop area", and change the resolution as you wish.   Click OK, and follow the instructions to confirm the new screen setting.
+
+3. Renaming or editing an item, room or name in a list:
+
+In the program, many screens have a list of rooms, items or names that you can choose from (and add to).  You will notice that the selected room, item or name is highlighted and also repeated in the box above the list.  In this box above the list, you can click the mouse pointer and edit or rename the room, item or name using the keyboard.
+
+4.  Online Support at Our Website - www.enticesoftware.com
+
+Please go to www.enticesoftware.com for many more tips on program use, and for more specific Technical support.  Our website allows you to send written questions or requests that we will answer promptly via e-mail.  In addition, we will post questions that others have asked (along with our answers) for the benefit of all users of If this house could talk.  This will be in an area called Frequently Asked Questions (FAQ).

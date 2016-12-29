@@ -1,0 +1,7034 @@
+head     1.134;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.134
+date     2005.01.27.09.35.42;  author p4;  state Exp;
+branches ;
+next     1.133;
+
+1.133
+date     2005.01.27.09.35.40;  author p4;  state Exp;
+branches ;
+next     1.132;
+
+1.132
+date     2005.01.27.09.35.40;  author p4;  state Exp;
+branches ;
+next     1.131;
+
+1.131
+date     2005.01.27.09.35.40;  author p4;  state Exp;
+branches ;
+next     1.130;
+
+1.130
+date     2005.01.27.09.35.40;  author p4;  state Exp;
+branches ;
+next     1.129;
+
+1.129
+date     2005.01.27.09.35.39;  author p4;  state Exp;
+branches ;
+next     1.128;
+
+1.128
+date     2005.01.27.09.35.38;  author p4;  state Exp;
+branches ;
+next     1.127;
+
+1.127
+date     2005.01.27.09.35.38;  author p4;  state Exp;
+branches ;
+next     1.126;
+
+1.126
+date     2005.01.27.09.35.38;  author p4;  state Exp;
+branches ;
+next     1.125;
+
+1.125
+date     2005.01.27.09.35.37;  author p4;  state Exp;
+branches ;
+next     1.124;
+
+1.124
+date     2005.01.27.09.35.37;  author p4;  state Exp;
+branches ;
+next     1.123;
+
+1.123
+date     2005.01.27.09.35.37;  author p4;  state Exp;
+branches ;
+next     1.122;
+
+1.122
+date     2005.01.27.09.35.37;  author p4;  state Exp;
+branches ;
+next     1.121;
+
+1.121
+date     2005.01.27.09.35.37;  author p4;  state Exp;
+branches ;
+next     1.120;
+
+1.120
+date     2005.01.27.09.35.36;  author p4;  state Exp;
+branches ;
+next     1.119;
+
+1.119
+date     2005.01.27.09.35.36;  author p4;  state Exp;
+branches ;
+next     1.118;
+
+1.118
+date     2005.01.27.09.35.35;  author p4;  state Exp;
+branches ;
+next     1.117;
+
+1.117
+date     2005.01.27.09.35.35;  author p4;  state Exp;
+branches ;
+next     1.116;
+
+1.116
+date     2005.01.27.09.35.34;  author p4;  state Exp;
+branches ;
+next     1.115;
+
+1.115
+date     2005.01.27.09.35.34;  author p4;  state Exp;
+branches ;
+next     1.114;
+
+1.114
+date     2005.01.27.09.35.34;  author p4;  state Exp;
+branches ;
+next     1.113;
+
+1.113
+date     2005.01.27.09.35.34;  author p4;  state Exp;
+branches ;
+next     1.112;
+
+1.112
+date     2005.01.27.09.35.33;  author p4;  state Exp;
+branches ;
+next     1.111;
+
+1.111
+date     2005.01.27.09.35.33;  author p4;  state Exp;
+branches ;
+next     1.110;
+
+1.110
+date     2005.01.27.09.35.33;  author p4;  state Exp;
+branches ;
+next     1.109;
+
+1.109
+date     2005.01.27.09.35.33;  author p4;  state Exp;
+branches ;
+next     1.108;
+
+1.108
+date     2005.01.27.09.35.33;  author p4;  state Exp;
+branches ;
+next     1.107;
+
+1.107
+date     2005.01.27.09.35.33;  author p4;  state Exp;
+branches ;
+next     1.106;
+
+1.106
+date     2005.01.27.09.35.32;  author p4;  state Exp;
+branches ;
+next     1.105;
+
+1.105
+date     2005.01.27.09.35.32;  author p4;  state Exp;
+branches ;
+next     1.104;
+
+1.104
+date     2005.01.27.09.35.32;  author p4;  state Exp;
+branches ;
+next     1.103;
+
+1.103
+date     2005.01.27.09.35.32;  author p4;  state Exp;
+branches ;
+next     1.102;
+
+1.102
+date     2005.01.27.09.35.32;  author p4;  state Exp;
+branches ;
+next     1.101;
+
+1.101
+date     2005.01.27.09.35.32;  author p4;  state Exp;
+branches ;
+next     1.100;
+
+1.100
+date     2005.01.27.09.35.32;  author p4;  state Exp;
+branches ;
+next     1.99;
+
+1.99
+date     2005.01.27.09.35.31;  author p4;  state Exp;
+branches ;
+next     1.98;
+
+1.98
+date     2005.01.27.09.35.31;  author p4;  state Exp;
+branches ;
+next     1.97;
+
+1.97
+date     2005.01.27.09.35.31;  author p4;  state Exp;
+branches ;
+next     1.96;
+
+1.96
+date     2005.01.27.09.35.31;  author p4;  state Exp;
+branches ;
+next     1.95;
+
+1.95
+date     2005.01.27.09.35.31;  author p4;  state Exp;
+branches ;
+next     1.94;
+
+1.94
+date     2005.01.27.09.35.31;  author p4;  state Exp;
+branches ;
+next     1.93;
+
+1.93
+date     2005.01.27.09.35.31;  author p4;  state Exp;
+branches ;
+next     1.92;
+
+1.92
+date     2005.01.27.09.35.31;  author p4;  state Exp;
+branches ;
+next     1.91;
+
+1.91
+date     2005.01.27.09.35.31;  author p4;  state Exp;
+branches ;
+next     1.90;
+
+1.90
+date     2005.01.27.09.35.31;  author p4;  state Exp;
+branches ;
+next     1.89;
+
+1.89
+date     2005.01.27.09.35.30;  author p4;  state Exp;
+branches ;
+next     1.88;
+
+1.88
+date     2005.01.27.09.35.30;  author p4;  state Exp;
+branches ;
+next     1.87;
+
+1.87
+date     2005.01.27.09.35.30;  author p4;  state Exp;
+branches ;
+next     1.86;
+
+1.86
+date     2005.01.27.09.35.30;  author p4;  state Exp;
+branches ;
+next     1.85;
+
+1.85
+date     2005.01.27.09.35.30;  author p4;  state Exp;
+branches ;
+next     1.84;
+
+1.84
+date     2005.01.27.09.35.30;  author p4;  state Exp;
+branches ;
+next     1.83;
+
+1.83
+date     2005.01.27.09.35.30;  author p4;  state Exp;
+branches ;
+next     1.82;
+
+1.82
+date     2005.01.27.09.35.29;  author p4;  state Exp;
+branches ;
+next     1.81;
+
+1.81
+date     2005.01.27.09.35.29;  author p4;  state Exp;
+branches ;
+next     1.80;
+
+1.80
+date     2005.01.27.09.35.28;  author p4;  state Exp;
+branches ;
+next     1.79;
+
+1.79
+date     2005.01.27.09.35.28;  author p4;  state Exp;
+branches ;
+next     1.78;
+
+1.78
+date     2005.01.27.09.35.28;  author p4;  state Exp;
+branches ;
+next     1.77;
+
+1.77
+date     2005.01.27.09.35.28;  author p4;  state Exp;
+branches ;
+next     1.76;
+
+1.76
+date     2005.01.27.09.35.27;  author p4;  state Exp;
+branches ;
+next     1.75;
+
+1.75
+date     2005.01.27.09.35.27;  author p4;  state Exp;
+branches ;
+next     1.74;
+
+1.74
+date     2005.01.27.09.35.26;  author p4;  state Exp;
+branches ;
+next     1.73;
+
+1.73
+date     2005.01.27.09.35.26;  author p4;  state Exp;
+branches ;
+next     1.72;
+
+1.72
+date     2005.01.27.09.35.25;  author p4;  state Exp;
+branches ;
+next     1.71;
+
+1.71
+date     2005.01.27.09.35.25;  author p4;  state Exp;
+branches ;
+next     1.70;
+
+1.70
+date     2005.01.27.09.35.25;  author p4;  state Exp;
+branches ;
+next     1.69;
+
+1.69
+date     2005.01.27.09.35.25;  author p4;  state Exp;
+branches ;
+next     1.68;
+
+1.68
+date     2005.01.27.09.35.25;  author p4;  state Exp;
+branches ;
+next     1.67;
+
+1.67
+date     2005.01.27.09.35.24;  author p4;  state Exp;
+branches ;
+next     1.66;
+
+1.66
+date     2005.01.27.09.35.23;  author p4;  state Exp;
+branches ;
+next     1.65;
+
+1.65
+date     2005.01.27.09.35.23;  author p4;  state Exp;
+branches ;
+next     1.64;
+
+1.64
+date     2005.01.27.09.35.23;  author p4;  state Exp;
+branches ;
+next     1.63;
+
+1.63
+date     2005.01.27.09.35.23;  author p4;  state Exp;
+branches ;
+next     1.62;
+
+1.62
+date     2005.01.27.09.35.23;  author p4;  state Exp;
+branches ;
+next     1.61;
+
+1.61
+date     2005.01.27.09.35.23;  author p4;  state Exp;
+branches ;
+next     1.60;
+
+1.60
+date     2005.01.27.09.35.23;  author p4;  state Exp;
+branches ;
+next     1.59;
+
+1.59
+date     2005.01.27.09.35.23;  author p4;  state Exp;
+branches ;
+next     1.58;
+
+1.58
+date     2005.01.27.09.35.23;  author p4;  state Exp;
+branches ;
+next     1.57;
+
+1.57
+date     2005.01.27.09.35.23;  author p4;  state Exp;
+branches ;
+next     1.56;
+
+1.56
+date     2005.01.27.09.35.23;  author p4;  state Exp;
+branches ;
+next     1.55;
+
+1.55
+date     2005.01.27.09.35.23;  author p4;  state Exp;
+branches ;
+next     1.54;
+
+1.54
+date     2005.01.27.09.35.22;  author p4;  state Exp;
+branches ;
+next     1.53;
+
+1.53
+date     2005.01.27.09.35.22;  author p4;  state Exp;
+branches ;
+next     1.52;
+
+1.52
+date     2005.01.27.09.35.22;  author p4;  state Exp;
+branches ;
+next     1.51;
+
+1.51
+date     2005.01.27.09.35.22;  author p4;  state Exp;
+branches ;
+next     1.50;
+
+1.50
+date     2005.01.27.09.35.22;  author p4;  state Exp;
+branches ;
+next     1.49;
+
+1.49
+date     2005.01.27.09.35.22;  author p4;  state Exp;
+branches ;
+next     1.48;
+
+1.48
+date     2005.01.27.09.35.22;  author p4;  state Exp;
+branches ;
+next     1.47;
+
+1.47
+date     2005.01.27.09.35.21;  author p4;  state Exp;
+branches ;
+next     1.46;
+
+1.46
+date     2005.01.27.09.35.21;  author p4;  state Exp;
+branches ;
+next     1.45;
+
+1.45
+date     2005.01.27.09.35.21;  author p4;  state Exp;
+branches ;
+next     1.44;
+
+1.44
+date     2005.01.27.09.35.20;  author p4;  state Exp;
+branches ;
+next     1.43;
+
+1.43
+date     2005.01.27.09.35.19;  author p4;  state Exp;
+branches ;
+next     1.42;
+
+1.42
+date     2005.01.27.09.35.19;  author p4;  state Exp;
+branches ;
+next     1.41;
+
+1.41
+date     2005.01.27.09.35.19;  author p4;  state Exp;
+branches ;
+next     1.40;
+
+1.40
+date     2005.01.27.09.35.19;  author p4;  state Exp;
+branches ;
+next     1.39;
+
+1.39
+date     2005.01.27.09.35.19;  author p4;  state Exp;
+branches ;
+next     1.38;
+
+1.38
+date     2005.01.27.09.35.19;  author p4;  state Exp;
+branches ;
+next     1.37;
+
+1.37
+date     2005.01.27.09.35.19;  author p4;  state Exp;
+branches ;
+next     1.36;
+
+1.36
+date     2005.01.27.09.35.18;  author p4;  state Exp;
+branches ;
+next     1.35;
+
+1.35
+date     2005.01.27.09.35.18;  author p4;  state Exp;
+branches ;
+next     1.34;
+
+1.34
+date     2005.01.27.09.35.18;  author p4;  state Exp;
+branches ;
+next     1.33;
+
+1.33
+date     2005.01.27.09.35.18;  author p4;  state Exp;
+branches ;
+next     1.32;
+
+1.32
+date     2005.01.27.09.35.18;  author p4;  state Exp;
+branches ;
+next     1.31;
+
+1.31
+date     2005.01.27.09.35.17;  author p4;  state Exp;
+branches ;
+next     1.30;
+
+1.30
+date     2005.01.27.09.35.16;  author p4;  state Exp;
+branches ;
+next     1.29;
+
+1.29
+date     2005.01.27.09.35.16;  author p4;  state Exp;
+branches ;
+next     1.28;
+
+1.28
+date     2005.01.27.09.35.16;  author p4;  state Exp;
+branches ;
+next     1.27;
+
+1.27
+date     2005.01.27.09.35.15;  author p4;  state Exp;
+branches ;
+next     1.26;
+
+1.26
+date     2005.01.27.09.35.15;  author p4;  state Exp;
+branches ;
+next     1.25;
+
+1.25
+date     2005.01.27.09.35.15;  author p4;  state Exp;
+branches ;
+next     1.24;
+
+1.24
+date     2005.01.27.09.35.15;  author p4;  state Exp;
+branches ;
+next     1.23;
+
+1.23
+date     2005.01.27.09.35.15;  author p4;  state Exp;
+branches ;
+next     1.22;
+
+1.22
+date     2005.01.27.09.35.15;  author p4;  state Exp;
+branches ;
+next     1.21;
+
+1.21
+date     2005.01.27.09.35.15;  author p4;  state Exp;
+branches ;
+next     1.20;
+
+1.20
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.19;
+
+1.19
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.18;
+
+1.18
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.17;
+
+1.17
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.16;
+
+1.16
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.15;
+
+1.15
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.14;
+
+1.14
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.13;
+
+1.13
+date     2005.01.27.09.35.13;  author p4;  state Exp;
+branches ;
+next     1.12;
+
+1.12
+date     2005.01.27.09.35.13;  author p4;  state Exp;
+branches ;
+next     1.11;
+
+1.11
+date     2005.01.27.09.35.13;  author p4;  state Exp;
+branches ;
+next     1.10;
+
+1.10
+date     2005.01.27.09.35.13;  author p4;  state Exp;
+branches ;
+next     1.9;
+
+1.9
+date     2005.01.27.09.35.13;  author p4;  state Exp;
+branches ;
+next     1.8;
+
+1.8
+date     2005.01.27.09.35.13;  author p4;  state Exp;
+branches ;
+next     1.7;
+
+1.7
+date     2005.01.27.09.35.13;  author p4;  state Exp;
+branches ;
+next     1.6;
+
+1.6
+date     2005.01.27.09.35.13;  author p4;  state Exp;
+branches ;
+next     1.5;
+
+1.5
+date     2005.01.27.09.35.13;  author p4;  state Exp;
+branches ;
+next     1.4;
+
+1.4
+date     2005.01.27.09.35.13;  author p4;  state Exp;
+branches ;
+next     1.3;
+
+1.3
+date     2005.01.27.09.35.13;  author p4;  state Exp;
+branches ;
+next     1.2;
+
+1.2
+date     2005.01.27.09.35.12;  author p4;  state Exp;
+branches ;
+next     1.1;
+
+1.1
+date     2005.01.27.09.35.12;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.134
+log
+@@
+text
+@#
+# /+\
+# +\	Copyright 1993, 1995 Christopher Seiwald.
+# \+/
+#
+# This file is part of Jam - see jam.c for Copyright information.
+#
+
+#
+# JAMBASE - jam 2.1 ruleset providing make(1)-like functionality
+#
+# Supports UNIX, NT, and VMS.
+#
+# 12/27/93 (seiwald) - purturb library sources with SOURCE_GRIST
+# 04/18/94 (seiwald) - use 'default =' when setting OS specific vars
+# 04/21/94 (seiwald) - do RmTemps together
+# 05/05/94 (seiwald) - all supported C compilers support -o: relegate
+#		       RELOCATE as an option; set Ranlib to "" to disable it
+# 06/01/94 (seiwald) - new 'actions existing' to do existing sources
+# 08/25/94 (seiwald) - new ObjectCcFlags rule to append to per-target CCFLAGS
+# 08/29/94 (seiwald) - new ObjectHdrs rule to append to per-target HDRS
+# 09/19/94 (seiwald) - LinkLibraries and Undefs now append
+#		     - Rule names downshifted.
+# 10/06/94 (seiwald) - Dumb yyacc stuff moved into Jamfile.
+# 10/14/94 (seiwald) - (Crude) support for .s, .C, .cc, .cpp, and .f files.
+# 01/08/95 (seiwald) - Shell now handled with awk, not sed
+# 01/09/95 (seiwald) - Install* now take dest directory as target
+# 01/10/95 (seiwald) - All entries sorted.
+# 01/10/95 (seiwald) - NT support moved in, with LauraW's help.  
+# 01/10/95 (seiwald) - VMS support moved in.
+# 02/06/95 (seiwald) - ObjectC++Flags and SubDirC++Flags added.
+# 02/07/95 (seiwald) - Iron out when HDRSEARCH uses "" or SEARCH_SOURCE.
+# 02/08/95 (seiwald) - SubDir works on VMS.
+# 02/14/95 (seiwald) - MkDir and entourage.
+# 04/30/95 (seiwald) - Use install -c flag so that it copies, not moves.
+# 07/10/95 (taylor) - Support for Microsoft C++.
+# 11/21/96 (peterk) - Support for BeOS
+
+# Special targets defined in this file:
+#
+# all		- parent of first, shell, files, lib, exe
+# first		- first dependent of 'all', for potential initialization
+# shell		- parent of all Shell targets 
+# files		- parent of all File targets
+# lib		- parent of all Library targets
+# exe		- parent of all Main targets
+# dirs		- parent of all MkDir targets
+# clean		- removes all Shell, File, Library, and Main targets
+# uninstall	- removes all Install targets
+#	
+
+# Rules defined by this file:
+#
+# as obj.o : source.s ;			.s -> .o
+# Bulk dir : files ;			populate directory with many files
+# Cc obj.o : source.c ;			.c -> .o
+# C++ obj.o : source.cc ;		.cc -> .o
+# Clean clean : sources ;		remove sources with 'jam clean'
+# File dest : source ;			copy file
+# Fortran obj.o : source.f ;		.f -> .o
+# GenFile source.c : program args ;	make custom file
+# Hardlink target : source ;		make link from source to target
+# HdrRule source : headers ;		handle #includes
+# InstallInto dir : sources ;		install any files
+# InstallBin dir : sources ;		install binaries
+# InstallLib dir : sources ;		install files
+# InstallFile dir : sources ;		install files
+# InstallMan dir : sources ;		install man pages
+# InstallShell dir : sources ;		install shell scripts
+# Lex source.c : source.l ;		.l -> .c
+# Library lib : source ;		archive library from compiled sources
+# LibraryFromObjects lib : objects ;	archive library from objects
+# LinkLibraries images : libraries ;	bag libraries onto Mains
+# Main image : source ;			link executable from compiled sources
+# MainFromObjects image : objects ;	link executable from objects
+# MkDir dir ;				make a directory, if not there
+# Object object : source ;		compile object from source
+# ObjectCcFlags source : flags ;	add compiler flags for object
+# ObjectC++Flags source : flags ;	add compiler flags for object
+# ObjectHdrs source : dirs ;		add include directories for object
+# Objects sources ;			compile sources
+# RmTemps target : sources ;		remove temp sources after target made
+# Setuid images ;			mark executables Setuid
+# SubDir TOP d1 d2 ... ;		start a subdirectory Jamfile
+# SubDirCcFlags flags ;			add compiler flags until next SubDir
+# SubDirC++Flags flags ;		add compiler flags until next SubDir
+# SubDirHdrs dirs ;			add include dirs until next SubDir
+# SubInclude TOP d1 d2 ... ;		include a subdirectory Jamfile
+# Shell exe : source ;			make a shell executable
+# Undefines images : symbols ;		save undef's for linking
+# UserObject object : source ;		handle unknown suffixes for Object
+# Yacc source.c : source.y ;		.y -> .c
+#
+# Utility rules that have no side effects:
+#
+# makeSubDir var : d1 d2 ... ;		$(var) = path to root
+# addDirName var : d1 d2 ... ;		$(var) += path from root to dir
+# makeDirName var : d1 d2 ... ;		$(var) = path from root to dir
+# makeGrist var : d1 d2 ... ;		$(var) = grist form of dir
+# makeGristedName var : value ;		$(var) = $(value:G=$(SOURCE_GRIST))
+# makeCommon var1 : var2 ;		strip common initial elements
+# makeRelPath var d1 : d2 ;		$(var) = rel path from d1 to d2
+# makeSuffixed var $(SUF) : f1 f2 ... ; $(var) = $(>) with suffixes
+# makeString var : value ... ;          $(var) = contatenated values
+#
+
+# Brief review of the jam language:
+#
+# Statements:
+#	rule RULE - statements to process a rule
+#	actions RULE - system commands to carry out target update
+#
+# Modifiers on actions:
+#	together - multiple instances of same rule on target get executed
+#		   once with their sources ($(>)) concatenated
+#	updated - refers to updated sources ($(>)) only
+#	ignore - ignore return status of command
+#	quietly - don't trace its execution unless verbose
+#	piecemeal - iterate command each time with a small subset of $(>)
+#	existing - refers to currently existing sources ($(>)) only
+#
+# Special rules:
+#	ALWAYS - always build a target
+#	DEPENDS - builds the dependency graph
+#	ECHO - blurt out targets on stdout
+#	EXIT - blurt out targets and exit
+#	INCLUDES - marks sources as headers for target (a codependency)
+#	NOCARE - don't panic if the target can't be built
+#	NOUPDATE - create the target if needed but never update it 
+#	NOTFILE - ignore the timestamp of the target (it's not a file)
+#	TEMPORARY - target need not be present if sources haven't changed
+#
+# Special variables set by jam:
+#	$(<) - targets of a rule (to the left of the :)
+#	$(>) - sources of a rule (to the right of the :)
+#	$(UNIX) - true on UNIX
+#	$(VMS) - true on VMS
+#	$(NT) - true on NT
+#	$(OS) - name of OS - varies wildly
+#	$(JAMVERSION) - version number (2.1)
+#
+# Special variables used by jam:
+#	SEARCH - where to find something (used during binding and actions)
+#	LOCATE - where to plop something not found with SEARCH
+#	HDRRULE - rule to call to handle include files
+#	HDRSCAN - egrep regex to extract include files
+#
+# Special targets:
+#	all - default if none given on command line
+#
+
+# Initialize variables
+#
+# "default =" - set only if unset
+
+OSFULL = $(OS)$(OSPLAT)$(OSVER) $(OS)$(OSPLAT) $(OS)$(OSVER) $(OS) ;
+
+#
+# OS specific variable settings
+#
+
+switch $(OS)
+{
+case AIX :	LINKLIBS default = -lbsd ;
+case DGUX :	RANLIB default = "" ; RELOCATE = true ;
+case HPUX :	RANLIB default = "" ;
+		INSTALL default = "" ;
+case IRIX :	RANLIB default = "" ;
+		INSTALL default = "" ;
+case MVS :	RANLIB default = "" ; RELOCATE = true ;
+case NEXT :	AR default = libtool -o ;
+		RANLIB default = "" ;
+case NCR :	RANLIB default = "" ;
+		INSTALL default = "" ;
+case PTX :	RANLIB default = "" ;
+case QNX :	INSTALL default = "" ;
+case SCO :	RANLIB default = "" ;
+		INSTALL default = "" ; RELOCATE = true ;
+case SINIX :	RANLIB default = "" ; RELOCATE = true ;
+case SOLARIS :	RANLIB default = "" ;
+		INSTALL default = "install" ;
+		AR default = "/usr/ccs/bin/ar ru" ;
+case UNIXWARE :	RANLIB default = "" ; RELOCATE = true ;
+}
+
+#if $(OS) = SUNOS && $(TZ)
+#{
+#	Echo Warning: you are running the SunOS jam on Solaris. ;
+#}
+
+if $(UNIX)
+{
+	if $(OS) = QNX 
+	{
+	AR		default = wlib ;
+	CC		default = cc ;
+	CCFLAGS		default = -Q ;	# quiet
+	C++		default = $(CC) ;
+	C++FLAGS	default = -Q ;	# quiet
+	LINK		default = $(CC) ;
+	LINKFLAGS	default = -Q ;	# quiet
+	NOARSCAN	default = true ;
+	RANLIB		default = "" ;
+	}
+	else if $(OS) = BEOS 
+	{
+	AR		default = mwld -xml -o ;
+	BINDIR		default = /boot/bin ;
+	CC		default = mwcc ;
+	CCFLAGS		default = -nosyspath ;
+	C++		default = $(CC) ;
+	C++FLAGS	default = -nosyspath ;
+	FORTRAN		default = "" ;
+	LIBDIR		default = /boot/develop/libraries ;
+	LINK		default = mwld ;
+	LINKFLAGS	default = "" ;
+	LEX		default = "" ;
+	MANDIR		default = /boot/documentation/"Shell Tools"/HTML ;
+	NOARSCAN	default = true ;
+	RANLIB		default = "" ;	
+	STDHDRS		default = /boot/develop/headers/posix ;
+	YACC		default = "" ;
+	YACCFLAGS	default = "" ;
+	YACCFILES	default = "" ;
+	}
+
+	AR		default = ar ru ;
+	AS		default = as ;
+	AWK		default = awk ;
+	ASFLAGS		default = ;
+	BINDIR		default = /usr/local/bin ;
+	C++		default = gcc ;
+	C++FLAGS	default = ;
+	CC		default = cc ;
+	CCFLAGS		default = ;
+	CP		default = cp ;
+	CHMOD		default = chmod ;
+	DOT		default	= . ;
+	DOTDOT		default	= .. ;
+	EXEMODE		default = 711 ;
+	FILEMODE	default = 644 ;
+	FORTRAN		default = f77 ;
+	FORTRANFLAGS	default = ;
+	HDRS		default = ;
+	INSTALL		default = install -c ;
+	LEX		default = lex ;
+	LIBDIR		default = /usr/local/lib ;
+	LINK		default = $(CC) ;
+	LINKFLAGS	default = $(CCFLAGS) ;
+	LINKLIBS	default = ;
+	LN		default = ln ;
+	MANDIR		default = /usr/local/man ;
+	MKDIR		default = mkdir ;
+	MV		default = mv -f ;
+	OPTIM		default = -O ;
+	RANLIB		default = ranlib ;
+	RCP		default = rcp ;
+	RSH		default = rsh ;
+	RM		default = rm -f ;
+	SED		default = sed ;
+	SHELLHEADER	default = "#!/bin/sh" ;
+	SHELLMODE	default = 755 ;
+	SLASH		default = / ;
+	STDHDRS		default = /usr/include ;
+	SUFLIB		default = .a ;
+	SUFOBJ		default = .o ;
+	SUFEXE		default = "" ;
+	UNDEFFLAG	default = "-u _" ;
+	YACC		default = yacc ;
+	YACCFLAGS	default = -d ;
+	YACCFILES	default = y.tab ;
+}
+else if $(NT)
+{
+	AWK		default = awk ;
+	CHMOD		default = chmod ;
+    	CP		default = copy ;
+	DOT		default	= . ;
+	DOTDOT		default	= .. ;
+	EXEMODE		default = 711 ;
+	FILEMODE	default = 644 ;
+	MKDIR		default = mkdir ;
+	MV		default = mv -f ;
+	OS			= NT ;		# replace Windows_NT
+	RCP		default = rcp ;
+	RSH		default = rsh ;
+    	RM		default = del /f/q ;
+	SED		default = sed ;
+    	SLASH		default = \\ ;
+    	SUFLIB		default = .lib ;
+    	SUFOBJ		default = .obj ;
+    	SUFEXE		default = .exe ;
+     
+    if $(BCCROOT)
+    {
+	ECHO "Compiler is Borland C++" ;
+
+	AR		default = tlib ;
+	ARFLAGS		default = /C /P64 ;
+	CC		default = bcc32 ;
+	CCFLAGS		default = -v -w- -DNT ;
+	C++		default = bcc32 ;
+	C++FLAGS	default = -v -w- ;
+	LINK		default = $(CC) ;
+	LINKFLAGS	default = $(CCFLAGS) ;
+	STDLIBPATH	default = $(BCCROOT)\\lib ;
+	STDHDRS		default = $(BCCROOT)\\include ;
+	NOARSCAN	default = true ;
+    }
+    else if $(MSVC)
+    {
+	ECHO "Compiler is Microsoft Visual C++ 16 bit" ;
+
+	AR		default = lib /nologo ;
+	CC		default = cl /nologo ;
+	CCFLAGS		default = /D \"WIN\" ;
+	C++		default = $(CC) ;
+	C++FLAGS	default = $(CCFLAGS) ;
+	LINK		default = $(CC) ;
+	LINKFLAGS	default = $(CCFLAGS) ;
+	LINKLIBS	default = 
+				#$(MSVC)\\lib\\advapi32.lib
+				#$(MSVC)\\lib\\libcmt.lib
+				$(MSVC)\\lib\\mlibce.lib
+				#$(MSVC)\\lib\\slibce.lib
+				$(MSVC)\\lib\\oldnames.lib
+				#$(MSVC)\\lib\\kernel32.lib 
+				;
+	LINKLIBS	default = ;
+	NOARSCAN	default = true ;
+	OPTIM		default =  ;
+	STDHDRS		default = $(MSVC)\\include ;
+	UNDEFFLAG	default = "/u _" ;
+    }
+    else if $(MSVCNT)
+    {
+	ECHO "Compiler is Microsoft Visual C++" ;
+
+	AR		default = lib ;
+	AS		default = masm386 ;
+	CC		default = cl /nologo ;
+	CCFLAGS		default = ;
+	C++		default = $(CC) ;
+	C++FLAGS	default = $(CCFLAGS) ;
+	LINK		default = link ;
+	LINKFLAGS	default = ;
+	LINKLIBS	default = $(MSVCNT)\\lib\\advapi32.lib
+				$(MSVCNT)\\lib\\libc.lib
+				$(MSVCNT)\\lib\\oldnames.lib
+				$(MSVCNT)\\lib\\kernel32.lib ;
+	OPTIM		default =  ;
+	STDHDRS		default = $(MSVCNT)\\include ;
+	UNDEFFLAG	default = "/u _" ;
+    }
+    else
+    {
+	EXIT On NT, set BCCROOT, MSVCNT, or MSVC to the root of the
+		Borland or Microsoft directories. ;
+    }
+
+}
+else if $(OS2)
+{
+	WATCOM		default = $(watcom) ;
+	
+    	CP		default = copy ;
+	DOT		default	= . ;
+	DOTDOT		default	= .. ;
+	MKDIR		default = mkdir ;
+    	MV		default = move ;
+    	RM		default = del /f ;
+	SED		default = sed ;
+    	SLASH		default = \\ ;
+    	SUFLIB		default = .lib ;
+    	SUFOBJ		default = .obj ;
+    	SUFEXE		default = .exe ;
+     
+    if ! $(WATCOM)
+    {
+	EXIT On OS2, set WATCOM to the root of the Watcom directory. ;
+    }
+
+	ECHO "OS2 compiler is Watcom." ;
+
+	AR		default = wlib ;
+	CC		default = wcc386 ;
+	CCFLAGS		default = /zq /DOS2 /I$(WATCOM)\\h ; # zq=quiet
+	C++		default = wpp386 ;
+	C++FLAGS	default = $(CCFLAGS) ;
+	LINK		default = wcl386 ;
+	LINKFLAGS	default = /zq ; # zq=quiet
+	LINKLIBS	default = ;
+	NOARSCAN	default = true ;
+	OPTIM		default = ;
+	STDHDRS		default = $(WATCOM)\\h ;
+	UNDEFFLAG	default = "/u _" ;
+}
+else if $(VMS)
+{
+	AS		default = as ;
+	CC		default = cc ;
+	CCFLAGS		default = ;
+	CP		default = copy/replace ;
+	CRELIB		default = true ;
+	DOT		default	= [] ;
+	DOTDOT		default	= [-] ;
+	EXEMODE		default = (w:e) ;
+	FILEMODE	default = (w:r) ;
+	HDRS		default = ;
+	LEX		default = lex ;
+	LINK		default = link ;
+	LINKFLAGS	default = ;
+	LINKLIBS	default = ;
+	MV		default = rename ;
+	OPTIM		default = ;
+	RM		default = delete ;
+	RUNVMS		default = mcr ;
+	SED		default = sed ;
+	SHELLMODE	default = (w:er) ;
+	SLASH		default = . ;
+	STDHDRS		default = decc$library_include ;
+	SUFLIB		default = .olb ;
+	SUFOBJ		default = .obj ;
+	SUFEXE		default = .exe ;
+
+	switch $(OS) 
+	{
+	case OPENVMS : CCFLAGS default = /stand=vaxc ;
+	case VMS     : LINKLIBS default = sys$library:vaxcrtl.olb/lib ;
+	}
+}
+else if $(MAC)
+{
+	CWGUSI		default = "{CWGUSI}" ;
+	CWMAC		default = "{CWMAC}" ;
+
+	CWGUSIHDR	default = $(CWGUSI):include ;
+	CWGUSILIB	default = $(CWGUSI):Lib ;
+	CWMACLIB	default = $(CWMAC):Libraries ;
+	CWMACHDR	default = $(CWMAC):Headers ;
+	
+	CC		default = mwcppc ;
+	CCFLAGS		default = -w off ;
+	CP		default = copy ;
+	DOT		default = ":" ;
+	DOTDOT		default = "::" ;
+	HDRS		default = $(CWGUSIHDR) 
+				  $(CWMACHDR):"ANSI Headers" 
+				  $(CWMACHDR):"Universal Headers" ;
+	LINK		default = mwlinkppc ;
+	LINKFLAGS	default = -mpwtool -warn ;
+	LINKLIBS	default = "$(CWGUSILIB):GUSIMPW.Lib.PPC" 
+				  "$(CWGUSILIB):GUSI.Lib.PPC" 
+				  "$(CWMACLIB):MacOS Common:Interfacelib" 
+				  "$(CWMACLIB):MacOS Common:PLStringFuncs Glue:PLStringFuncsPPC.lib" 
+				  "$(CWMACLIB):Runtime:Runtime PPC:MWMPWCRuntime.lib" 
+				  "$(CWMACLIB):ANSI PPC:MPW ANSI.C.PPC.Lib" 
+				  "$(CWMACLIB):MacOS PPC:PPCToolLibs.o" 
+				  "$(CWMACLIB):MacOS PPC:Mathlib" ;
+	MKDIR		default = newfolder ;
+	MV		default = rename ;
+	NOARSCAN	default = true ;
+	OPTIM		default = ;
+	RM		default = delete ;
+	SLASH		default = ":" ;
+	STDHDRS		default = ; #$(MWCIncludes) ;
+	SUFLIB		default = .lib ;
+	SUFOBJ		default = .o ;
+	SUFEXE		default = "" ;
+	NOARSCAN	default = true ;
+}
+
+# 
+# Define some MS-specific commands for MS-specific actions (which
+# are not yet added to Jambase)
+#
+
+if $(NT) || $(OS2)
+{
+	MSLIB 		default = lib ;
+	MSLINK		default = link ;
+	MSIMPLIB 	default = implib ;
+	MSRC		default = rc ;
+}
+
+JAMFILE		default = Jamfile ;
+JAMRULES	default = Jamrules ;
+
+HDRPATTERN = "^#[	 ]*include[	 ]*[<\"](.*)[\">].*$" ;
+
+#
+# Base dependencies - first for "bootstrap" kinds of rules
+#
+
+DEPENDS all : shell files lib exe obj ;
+DEPENDS all shell files lib exe obj : first ;
+NOTFILE all first shell files lib exe obj dirs clean uninstall ;
+ALWAYS clean uninstall ;
+
+#
+# Rules
+#
+
+rule As
+{
+	DEPENDS $(<) : $(>) ;
+	ASFLAGS on $(<) += $(ASFLAGS) $(SUBDIRASFLAGS) ;
+}
+
+rule Bulk
+{
+	local i ;
+
+	for i in $(>)
+	{
+	    File $(i:D=$(<)) : $(i) ;
+	}
+}
+
+rule Cc
+{
+	local _h ;
+
+	DEPENDS $(<) : $(>) ;
+
+	# Just to clarify here: this sets the per-target CCFLAGS to
+	# be the current value of (global) CCFLAGS and SUBDIRCCFLAGS.
+
+	CCFLAGS on $(<) += $(CCFLAGS) $(SUBDIRCCFLAGS) ;
+
+	# If the compiler's -o flag doesn't work, relocate the .o
+
+	if $(RELOCATE)
+	{
+	    CcMv $(<) : $(>) ;
+	}
+
+	_h = $(SEARCH_SOURCE) $(HDRS) $(SUBDIRHDRS) ;
+
+	if $(VMS) && $(_h)
+	{
+	    SLASHINC on $(<) = "/inc=(" $(_h[1]) ,$(_h[2-]) ")" ;
+	}
+	else if $(MAC) && $(_h)
+	{
+	    local _i _j ;
+	    _j = $(_h[1]) ;
+	    for _i in $(_h[2-])
+	    {
+	    	_j = $(_j),$(_i) ;
+	    }
+	    MACINC on $(<) = \"$(_j)\" ;
+	}
+}
+
+rule C++
+{
+	local _h ;
+
+	DEPENDS $(<) : $(>) ;
+	C++FLAGS on $(<) += $(C++FLAGS) $(SUBDIRC++FLAGS) ;
+
+	if $(RELOCATE)
+	{
+	    CcMv $(<) : $(>) ;
+	}
+
+	_h = $(SEARCH_SOURCE) $(HDRS) $(SUBDIRHDRS) ;
+
+	if $(VMS) && $(_h)
+	{
+	    SLASHINC on $(<) = "/inc=(" $(_h[1]) ,$(_h[2-]) ")" ;
+	}
+	else if $(MAC) && $(_h)
+	{
+	    local _i _j ;
+	    _j = $(_h[1]) ;
+	    for _i in $(_h[2-])
+	    {
+	    	_j = $(_j),$(_i) ;
+	    }
+	    MACINC on $(<) = \"$(_j)\" ;
+	}
+}
+
+rule File
+{
+	DEPENDS files : $(<) ;
+	DEPENDS $(<) : $(>) ;
+	SEARCH on $(>) = $(SEARCH_SOURCE) ;
+	MODE on $(<) = $(FILEMODE) ;
+	Chmod $(<) ;
+}
+
+rule Fortran
+{
+	DEPENDS $(<) : $(>) ;
+}
+
+rule GenFile 
+{
+	local s ;
+	makeGristedName s : $(<) ;
+	Depends $(s) : $(>[1]:S=$(SUFEXE)) $(>[2-]) ;
+	GenFile1 $(s) : $(>[1]:S=$(SUFEXE)) $(>[2-]) ;
+	Clean clean : $(s) ;
+}
+
+rule GenFile1
+{
+	MakeLocate $(<) : $(LOCATE_SOURCE) ;
+	SEARCH on $(>) = $(SEARCH_SOURCE) ;
+}
+
+rule HardLink
+{
+	DEPENDS files : $(<) ;
+	DEPENDS $(<) : $(>) ;
+	SEARCH on $(>) = $(SEARCH_SOURCE) ;
+}
+
+rule HdrRule
+{
+	# HdrRule source : headers ;
+
+	# N.B.	This rule is called during binding, potentially after
+	# the fate of many targets has been determined, and must be
+	# used with caution: don't add dependencies to unrelated
+	# targets, and don't set variables on $(<).
+
+	# Tell Jam that anything depending on $(<) also depends on $(>),
+	# set SEARCH so Jam can find the headers, but then say we don't
+	# care if we can't actually find the headers (they may have been
+	# within ifdefs),
+
+	local s ;
+
+	if $(HDRGRIST) 
+	{ 
+	    s = $(>:G=$(HDRGRIST)) ;
+	} else { 
+	    s = $(>) ; 
+	}
+
+	INCLUDES $(<) : $(s) ;
+	SEARCH on $(s) = $(HDRSEARCH) ;
+	NOCARE $(s) ;
+
+	# Propagate on $(<) to $(>)
+
+	HDRSEARCH on $(s) = $(HDRSEARCH) ;
+	HDRSCAN on $(s) = $(HDRSCAN) ;
+	HDRRULE on $(s) = $(HDRRULE) ;
+	HDRGRIST on $(s) = $(HDRGRIST) ;
+}
+
+rule InstallInto
+{
+	local i t ;
+
+	t = $(>:G=installed) ;
+
+	DEPENDS install : $(t) ;
+	DEPENDS $(t) : $(>) ;
+	SEARCH on $(>) = $(SEARCH_SOURCE) ;
+	MakeLocate $(t) : $(<) ;
+
+	# Arrange for jam uninstall
+
+	Clean uninstall : $(t) ;
+
+	for i in $(>)
+	{
+	    Install $(i:G=installed) : $(i) ;
+	}
+
+	if ! $(INSTALL)
+	{
+	    Chmod $(t) ;
+
+	    if $(OWNER) { Chown $(t) ; OWNER on $(t) = $(OWNER) ; }
+	    if $(GROUP) { Chgrp $(t) ; GROUP on $(t) = $(GROUP) ; }
+	}
+}
+
+rule InstallBin
+{
+	InstallInto $(<) : $(>) ;
+	MODE on $(>:G=installed) = $(EXEMODE) ;
+}
+
+rule InstallFile
+{
+	InstallInto $(<) : $(>) ;
+	MODE on $(>:G=installed) = $(FILEMODE) ;
+}
+
+rule InstallLib
+{
+	InstallInto $(<) : $(>) ;
+	MODE on $(>:G=installed) = $(FILEMODE) ;
+}
+
+rule InstallMan
+{
+	# Really this just strips the . from the suffix
+
+	local i s d ;
+
+	for i in $(>)
+	{
+	    switch $(i:S)
+	    {
+	    case .1 : s = 1 ; case .2 : s = 2 ; case .3 : s = 3 ;
+	    case .4 : s = 4 ; case .5 : s = 5 ; case .6 : s = 6 ;
+	    case .7 : s = 7 ; case .8 : s = 8 ; case .l : s = l ;
+	    case .n : s = n ; case .man : s = 1 ;
+	    }
+
+	    d = man$(s) ;
+
+	    InstallInto $(d:R=$(<)) : $(i) ;
+	}
+
+	MODE on $(>:G=installed) = $(FILEMODE) ;
+}
+
+rule InstallShell
+{
+	InstallInto $(<) : $(>) ;
+	MODE on $(>:G=installed) = $(SHELLMODE) ;
+}
+
+rule Lex
+{
+	DEPENDS $(<) : $(>) ;
+	MakeLocate $(<) : $(LOCATE_SOURCE) ;
+	Clean clean : $(<) ;
+}
+
+rule Library
+{
+	LibraryFromObjects $(<) : $(>:S=$(SUFOBJ)) ;
+	Objects $(>) ;
+}
+
+rule LibraryFromObjects
+{
+	local i l s ;
+
+	# Add grist to file names
+
+	makeGristedName s : $(>) ;
+
+	# library depends on its member objects
+
+	l = $(<:S=$(SUFLIB)) ;
+
+	if $(KEEPOBJS)
+	{
+	    DEPENDS obj : $(s) ;
+	}
+	else
+	{
+	    DEPENDS lib : $(l) ;
+	}
+
+	# Set LOCATE for the library and its contents.  The bound
+	# value shows up as $(NEEDLIBS) on the Link actions.
+	# For compatibility, we only do this if the library doesn't
+	# already have a path.
+
+	if ! $(l:D)
+	{
+	    MakeLocate $(l) $(l)($(s:BS)) : $(LOCATE_TARGET) ;
+	}
+
+	if $(NOARSCAN) 
+	{ 
+	    # If we can't scan the library to timestamp its contents,
+	    # we have to just make the library depend directly on the
+	    # on-disk object files.  
+
+	    DEPENDS $(l) : $(s) ;
+	}
+	else
+	{
+	    # If we can scan the library, we make the library depend
+	    # on its members and each member depend on the on-disk
+	    # object file.
+
+	    DEPENDS $(l) : $(l)($(s:BS)) ;
+
+	    for i in $(s)
+	    {
+		DEPENDS $(l)($(i:BS)) : $(i) ;
+	    }
+	}
+
+	Clean clean : $(l) ;
+
+	if $(CRELIB) { CreLib $(l) : $(s[1]) ; }
+
+	Archive $(l) : $(s) ;
+
+	if $(RANLIB) { Ranlib $(l) ; }
+
+	# If we can't scan the library, we have to leave the .o's around.
+
+	if ! ( $(NOARSCAN) || $(KEEPOBJS) ) { RmTemps $(l) : $(s) ; }
+}
+
+rule Link
+{
+	MODE on $(<) = $(EXEMODE) ;
+	Chmod $(<) ;
+}
+
+rule LinkLibraries
+{
+	local t ;
+
+	# make library dependencies of target
+	# set NEEDLIBS variable used by 'actions Main'
+
+	if $(<:S)
+	{
+	    t = $(<) ;
+	} else {
+	    t = $(<:S=$(SUFEXE)) ;
+	}
+
+	DEPENDS $(t) : $(>:S=$(SUFLIB)) ;
+	NEEDLIBS on $(t) += $(>:S=$(SUFLIB)) ;
+}
+
+rule Main
+{
+	MainFromObjects $(<) : $(>:S=$(SUFOBJ)) ;
+	Objects $(>) ;
+}
+
+rule MainFromObjects
+{
+	local s t ;
+
+	# Add grist to file names
+
+	makeGristedName s : $(>) ;
+
+	makeSuffixed t $(SUFEXE) : $(<) ;
+
+	if $(t) != $(<)
+	{
+	    DEPENDS $(<) : $(t) ;
+	    NOTFILE $(<) ;
+	}
+
+	# make compiled sources a dependency of target
+
+	DEPENDS exe : $(t) ;
+	DEPENDS $(t) : $(s) ;
+	MakeLocate $(t) : $(LOCATE_TARGET) ;
+
+	Clean clean : $(t) ;
+
+	Link $(t) : $(s) ;
+}
+
+rule MakeLocate
+{
+	if $(>)
+	{
+	    LOCATE on $(<) = $(>) ;
+	    Depends $(<) : $(>[1]) ;
+	    MkDir $(>[1]) ;
+	}
+}
+
+rule MkDir
+{
+	if $(<) != $(DOT) && ! $($(<)-mkdir) 
+	{
+	    local s ;
+
+	    # Cheesy gate to prevent multiple invocations on same dir
+	    # MkDir1 has the actions 
+	    # If dir exists, don't update it
+	    # Arrange for jam dirs
+
+	    $(<)-mkdir = true ;
+	    MkDir1 $(<) ;
+	    NOUPDATE $(<) ;
+	    Depends dirs : $(<) ;
+
+	    # Recursively make parent directories.
+	    # $(<:P) = $(<)'s parent, & we recurse until root
+
+	    s = $(<:P) ;
+
+	    if $(NT)
+	    {
+	        switch $(s)
+		{
+		case *:   : s = ;
+		case *:\\ : s = ;
+		}
+	    }
+
+	    if $(s) && $(s) != $(<)
+	    {
+		Depends $(<) : $(s) ;
+		MkDir $(s) ;
+	    }
+	    else if $(s)
+	    {
+	        NOTFILE $(s) ;
+	    }
+
+	}
+}
+
+rule Object
+{
+	local h ;
+
+	# locate object and search for source, if wanted
+
+	Clean clean : $(<) ;
+
+	MakeLocate $(<) : $(LOCATE_TARGET) ;
+	SEARCH on $(>) = $(SEARCH_SOURCE) ;
+
+	# Save HDRS for -I$(HDRS) on compile.
+	# We shouldn't need -I$(SEARCH_SOURCE) as cc can find headers
+	# in the .c file's directory, but generated .c files (from
+	# yacc, lex, etc) are located in $(LOCATE_TARGET), possibly
+	# different from $(SEARCH_SOURCE).
+
+	HDRS on $(<) = $(SEARCH_SOURCE) $(HDRS) $(SUBDIRHDRS) ;
+
+	# handle #includes for source: Jam scans for headers with
+	# the regexp pattern $(HDRSCAN) and then invokes $(HDRRULE)
+	# with the scanned file as the target and the found headers
+	# as the sources.  HDRSEARCH is the value of SEARCH used for
+	# the found header files.  Finally, if jam must deal with 
+	# header files of the same name in different directories,
+	# they can be distinguished with HDRGRIST.
+
+	# $(h) is where cc first looks for #include "foo.h" files.
+	# If the source file is in a distant directory, look there.
+	# Else, look in "" (the current directory).
+
+	if $(SEARCH_SOURCE)
+	{
+	    h = $(SEARCH_SOURCE) ;
+	}
+	else
+	{
+	    h = "" ;
+	}
+
+	HDRRULE on $(>) = HdrRule ;
+	HDRSCAN on $(>) = $(HDRPATTERN) ;
+	HDRSEARCH on $(>) = $(HDRS) $(SUBDIRHDRS) $(h) $(STDHDRS) ;
+	HDRGRIST on $(>) = $(HDRGRIST) ;
+
+	# if source is not .c, generate .c with specific rule
+
+	switch $(>:S)
+	{
+	    case .asm : As $(<) : $(>) ;
+	    case .c :	Cc $(<) : $(>) ;
+	    case .C :	C++ $(<) : $(>) ;
+	    case .cc :	C++ $(<) : $(>) ;
+	    case .cpp : C++ $(<) : $(>) ;
+	    case .f :	Fortran $(<) : $(>) ;
+	    case .l :	Cc $(<) : $(<:S=.c) ;
+			Lex $(<:S=.c) : $(>) ;
+	    case .s :	As $(<) : $(>) ;
+	    case .y :	Cc $(<) : $(<:S=.c) ;
+			Yacc $(<:S=.c) : $(>) ;
+	    case * :	UserObject $(<) : $(>) ;
+	}
+}
+
+rule ObjectCcFlags
+{
+	local s ;
+
+	# Add grist to file names
+
+	makeGristedName s : $(<:S=$(SUFOBJ)) ;
+
+	CCFLAGS on $(s) += $(>) ;
+}
+
+rule ObjectC++Flags
+{
+	local s ;
+
+	# Add grist to file names
+
+	makeGristedName s : $(<:S=$(SUFOBJ)) ;
+
+	C++FLAGS on $(s) += $(>) ;
+}
+
+rule ObjectHdrs
+{
+	local s ;
+
+	# Add grist to file names
+
+	makeGristedName s : $(<:S=$(SUFOBJ)) ;
+
+	HDRS on $(s) += $(>) ;
+}
+
+rule Objects
+{
+	local i s ;
+
+	# Add grist to file names
+
+	makeGristedName s : $(<) ;
+
+	for i in $(s)
+	{
+		Object $(i:S=$(SUFOBJ)) : $(i) ;
+		DEPENDS obj : $(i:S=$(SUFOBJ)) ;
+	}
+}
+
+rule RmTemps
+{
+	TEMPORARY $(>) ;
+}
+
+rule Setuid
+{
+	local t ;
+
+	if $(<:S)
+	{
+	    t = $(<) ;
+	} else {
+	    t = $(<:S=$(SUFEXE)) ;
+	}
+
+	MODE on $(t) = 4711 ;
+}
+
+rule Shell
+{
+	DEPENDS shell : $(<) ;
+	DEPENDS $(<) : $(>) ;
+	SEARCH on $(>) = $(SEARCH_SOURCE) ;
+	MODE on $(<) = $(SHELLMODE) ;
+	Clean clean : $(<) ;
+	Chmod $(<) ;
+}
+
+rule SubDir
+{
+	local r s ;
+
+	#
+	# SubDir TOP d1 [ ... ]
+	#
+	# This introduces a Jamfile that is part of a project tree 
+	# rooted at $(TOP).  It (only once) includes the project-specific
+	# rules file $(TOP)/Jamrules and then sets search & locate stuff.
+	#
+	# If the variable $(TOPRULES) is set (where TOP is the first arg 
+	# to SubDir), that file is included instead of $(TOP)/Jamrules.
+	#
+	# d1 ... are the directory elements that lead to this directory 
+	# from $(TOP).  We construct the system dependent path from these
+	# directory elements in order to set search&locate stuff.
+	# 
+
+	if ! $($(<[1]))
+	{
+	    if ! $(<[1])
+	    {
+		EXIT SubDir syntax error ;
+	    }
+
+	    makeSubDir $(<[1]) : $(<[2-]) ;
+	}
+
+	#
+	# If $(TOP)/Jamrules hasn't been included, do so.
+	#
+
+	if ! $($(<[1])-included)
+	{
+	    # Gated entry.
+
+	    $(<[1])-included = TRUE ;
+
+	    # File is $(TOPRULES) or $(TOP)/Jamrules.
+
+	    r = $($(<[1])RULES) ;
+
+	    if ! $(r)
+	    {
+		r = $(JAMRULES:R=$($(<[1]))) ;
+	    }
+
+	    # Include it.
+
+	    include $(r) ;
+	}
+
+	# Get path to current directory from root using makeSubDir.
+	# Save dir tokens for other potential uses.
+
+	makeDirName s : $(<[2-]) ;
+	SUBDIR = $(s:R=$($(<[1]))) ;
+        SUBDIR_TOKENS = $(<[2-]) ;
+
+	# Now set up SEARCH_SOURCE, LOCATE_TARGET, SOURCE_GRIST
+	# These can be reset if needed.	 For example, if the source
+	# directory should not hold object files, LOCATE_TARGET can
+	# subsequently be redefined.
+
+	SEARCH_SOURCE = $(SUBDIR) ;
+	LOCATE_SOURCE = $(ALL_LOCATE_TARGET) $(SUBDIR) ;
+	LOCATE_TARGET = $(ALL_LOCATE_TARGET) $(SUBDIR) ;
+	makeGrist SOURCE_GRIST : $(<[2-]) ;
+
+	# Reset per-directory ccflags, hdrs
+
+	SUBDIRCCFLAGS = ;
+	SUBDIRC++FLAGS = ;
+	SUBDIRHDRS = ;
+}
+
+rule SubDirCcFlags
+{
+	SUBDIRCCFLAGS += $(<) ;
+}
+
+rule SubDirC++Flags
+{
+	SUBDIRC++FLAGS += $(<) ;
+}
+
+rule SubDirHdrs
+{
+	SUBDIRHDRS += $(<) ;
+}
+
+rule SubInclude
+{
+	local s ;
+
+	# That's
+	#	SubInclude TOP d1 [ d2 [ d3 [ d4 ] ] ]
+	#
+	# to include a subdirectory's Jamfile.
+
+	if ! $($(<[1]))
+	{
+	    EXIT Top level of source tree has not been set with $(<[1]) ;
+	}
+
+	makeDirName s : $(<[2-]) ;
+	
+	include $(JAMFILE:D=$(s):R=$($(<[1]))) ;
+}
+
+rule Undefines
+{
+	local t ;
+
+	if $(<:S)
+	{
+	    t = $(<) ;
+	} else {
+	    t = $(<:S=$(SUFEXE)) ;
+	}
+
+	UNDEFS on $(t) += $(UNDEFFLAG)$(>) ;
+}
+
+rule UserObject
+{
+	EXIT "Unknown suffix on" $(>) "- see UserObject rule in Jamfile(5)." ;
+}
+
+rule Yacc
+{
+	local h ;
+
+	h = $(<:BS=.h) ;
+
+	# Some places don't have a yacc.
+
+	MakeLocate $(<) $(h) : $(LOCATE_SOURCE) ;
+
+	if $(YACC)
+	{
+	    DEPENDS $(<) $(h) : $(>) ;
+	    Yacc1 $(<) $(h) : $(>) ;
+	    Clean clean : $(<) $(h) ;
+	}
+
+	# make sure someone includes $(h) else it will be
+	# a deadly independent target
+
+	INCLUDES $(<) : $(h) ;
+}
+
+#
+# Utility rules; no side effects on these
+#
+
+rule makeString
+{
+	local _t ;
+
+	$(<) = $(>[1]) ;
+	for _t in $(>[2-])
+	{
+		$(<) = $($(<))$(_t) ;
+	}
+}
+
+rule makeSubDir
+{
+	local _i _d ;
+
+	# If $(>) is the path to the current directory, compute the
+	# path (using ../../ etc) back to that root directory.
+	# Sets result in $(<)
+
+	if ! $(>[1]) 
+	{
+	    _d = $(DOT) ;
+	} 
+	else
+	{
+	    _d = $(DOTDOT) ;
+
+	    for _i in $(>[2-])
+	    {
+		_d = $(_d:R=$(DOTDOT)) ;
+	    }
+	}
+
+	$(<) = $(_d) ;
+}
+
+rule addDirName
+{
+	local _s _i ;
+
+	# Turn individual elements in $(>) into a usable path.
+	# Add result to $(<).
+
+	if ! $(>)
+	{
+	    _s = $(DOT) ;
+	}
+	else if $(VMS)
+	{
+	    # This handles the following cases:
+	    # 	a -> [.a]
+	    # 	a b c -> [.a.b.c]
+	    # 	x: -> x:
+	    # 	x: a -> x:[a]
+	    # 	x:[a] b -> x:[a.b]
+
+	    switch $(>[1])
+	    {
+	    case *:* : _s = $(>[1]) ;
+	    case \\[*\\] : _s = $(>[1]) ;
+	    case * : _s = [.$(>[1])] ;
+	    }
+
+	    for _i in [.$(>[2-])]
+	    {
+		_s = $(_i:R=$(_s)) ;
+	    }
+	}
+	else if $(MAC)
+	{
+	    _s = $(DOT) ;
+	    
+	    for _i in $(>)
+	    {
+	    	_s = $(_i:R=$(_s)) ;
+	    }
+	}
+	else
+	{
+	    _s = $(>[1]) ; 
+
+	    for _i in $(>[2-])
+	    {
+		_s = $(_i:R=$(_s)) ;
+	    }
+	}
+
+	$(<) += $(_s) ;
+}
+
+rule makeDirName
+{
+	$(<) = ; addDirName $(<) : $(>) ;
+}
+
+rule makeGrist
+{
+	local _g _i ;
+
+	# Turn individual elements in $(>) into grist.
+	# Return result in $(<)
+
+	_g = $(>[1]) ;
+
+	for _i in $(>[2-])
+	{
+	    _g = $(_g)!$(_i) ;
+	}
+
+	$(<) = $(_g) ;
+}
+
+rule makeGristedName
+{
+	local _i _o ;
+
+	# Produce name with grist in it, if SOURCE_GRIST is set.
+
+	if ! $(SOURCE_GRIST)
+	{
+	    $(<) = $(>) ;
+	}
+	else 
+	{
+	    _o = ;
+	    for _i in $(>)
+	    {
+		switch $(_i)
+		{
+		case *.h :	_o += $(_i) ;
+		case * : 	_o += $(_i:G=$(SOURCE_GRIST)) ;
+		}
+	    }
+	    $(<) = $(_o) ;
+	}
+}
+
+rule makeCommon
+{
+	if $($(<)[1]) && $($(<)[1]) = $($(>)[1])
+	{
+	    $(<) = $($(<)[2-]) ;
+	    $(>) = $($(>)[2-]) ;
+	    makeCommon $(<) : $(>) ;
+	}
+}
+
+rule makeRelPath 
+{
+	local _l _r ;
+
+	# first strip off common parts
+
+	_l = $(<[2-]) ;
+	_r = $(>) ;
+
+	makeCommon _l : _r ;
+
+	# now make path to root and path down
+
+	makeSubDir _l : $(_l) ;
+	makeDirName _r : $(_r) ;
+
+	# Concatenate and save
+
+	# XXX This should be better
+
+	if $(_r) = $(DOT) {
+	    $(<[1]) = $(_l) ;
+	} else {
+	    $(<[1]) = $(_r:R=$(_l)) ;
+	}
+}
+
+rule makeSuffixed
+{
+   # E.g., "makeSuffixed s_exe $(SUFEXE) : yacc lex foo.bat ;"
+   # sets $(s_exe) to (yacc,lex,foo.bat) on Unix and 
+   # (yacc.exe,lex.exe,foo.bat) on NT.
+
+	if $(<[2])
+	{
+	    local _i ;
+
+	    $(<[1]) = ;
+
+	    for _i in $(>)
+	    {
+		if $(_i:S)
+		{
+		    $(<[1]) += $(_i) ;
+		}
+		else
+		{
+		    $(<[1]) += $(_i:S=$(<[2])) ;
+		}
+	    }
+	}
+	else
+	{
+	    $(<[1]) = $(>) ;
+	}
+}
+
+rule unmakeDir
+{
+    if $(>[1]:D) && $(>[1]:D) != $(>[1]) && $(>[1]:D) != \\\\ 
+    {
+        unmakeDir $(<) : $(>[1]:D) $(>[1]:BS) $(>[2-]) ;
+    }
+    else
+    {
+        $(<) = $(>) ;
+    }
+}
+
+#
+# Actions
+#
+
+if $(UNIX)
+{
+    if $(OS) = QNX 
+    {
+	actions together piecemeal Archive
+	{
+	$(AR) $(<) +-$(>) 
+	}
+    }
+    else if $(OS) = BEOS
+    {
+	actions together Archive
+	{
+	$(AR) $(<) $(>)
+	}
+    }
+    else
+    {
+	actions updated together piecemeal Archive
+	{
+	$(AR) $(<) $(>)
+	}
+    }
+
+    actions As
+    {
+	$(AS) $(ASFLAGS) -I$(HDRS) -o $(<) $(>)
+    }
+
+    if $(OS) = SINIX
+    {
+	actions C++
+	{
+	[ $(>:S) != .C ] && $(CP) $(>) $(>:S=.C) && trap "rm -f $(>:S=.C)" 0
+	$(C++) -c $(C++FLAGS) $(OPTIM) -I$(HDRS) $(>:S=.C)
+	}
+    } 
+    else if $(RELOCATE)
+    {
+	actions C++
+	{
+	$(C++) -c $(C++FLAGS) $(OPTIM) -I$(HDRS) $(>)
+	}
+    }
+    else
+    {
+	actions C++
+	{
+	$(C++) -c $(C++FLAGS) $(OPTIM) -I$(HDRS) -o $(<) $(>)
+	}
+    }
+
+    actions Cc
+    {
+	$(CC) -c $(CCFLAGS) $(OPTIM) -I$(HDRS) -o $(<) $(>)
+    }
+
+    if $(RELOCATE)
+    {
+	actions Cc
+	{
+	$(CC) -c $(CCFLAGS) $(OPTIM) -I$(HDRS) $(>)
+	}
+    }
+
+    actions ignore CcMv
+    {
+	[ $(<) != $(>:BS=$(SUFOBJ)) ] && $(MV) $(>:BS=$(SUFOBJ)) $(<)
+    }
+
+    actions Chgrp
+    {
+	chgrp $(GROUP) $(<)
+    }
+
+    actions Chmod
+    {
+	chmod $(MODE) $(<)
+    }
+
+    actions Chown
+    {
+	chown $(OWNER) $(<)
+    }
+
+    actions piecemeal together existing Clean
+    {
+	$(RM) $(>)
+    }
+
+    actions File
+    {
+	$(RM) $(<)
+	$(CP) $(>) $(<)
+    }
+
+    actions GenFile1
+    {
+	$(>[1]) $(<) $(>[2-])
+    }
+
+    actions Fortran
+    {
+	$(FORTRAN) $(FORTRANFLAGS) -o $(<) $(>)
+    }
+
+    actions HardLink
+    {
+	$(RM) $(<) && $(LN) $(>) $(<)
+    }
+
+    if $(INSTALL)
+    {
+	actions Install
+	{
+	$(INSTALL) -m$(MODE) -o$(OWNER) -g$(GROUP) $(>) $(<)
+	}
+    }
+    else
+    {
+	actions Install
+	{
+	$(CP) $(>) $(<) 
+	}
+    }
+
+    actions Lex
+    {
+	$(LEX) $(>) && $(MV) lex.yy.c $(<)
+    }
+
+    actions Link bind NEEDLIBS
+    {
+	$(LINK) $(LINKFLAGS) -o $(<) $(UNDEFS) $(>) $(NEEDLIBS) $(LINKLIBS) 
+    }
+
+    actions MkDir1
+    {
+	$(MKDIR) $(<)
+    }
+
+    actions together Ranlib
+    {
+	$(RANLIB) $(<)
+    }
+
+    actions quietly updated piecemeal together RmTemps
+    {
+	$(RM) $(>)
+    }
+
+    actions Shell
+    {
+	$(AWK) '
+		NR == 1 { print "$(SHELLHEADER)" }
+		NR == 1 && /^[#:]/ { next }
+		/^##/ { next }
+		{ print }
+	' < $(>) > $(<)
+    }
+
+    actions Yacc1
+    {
+	$(YACC) $(YACCFLAGS) $(>) &&
+	{
+	    $(MV) $(YACCFILES).c $(<[1])
+	    $(MV) $(YACCFILES).h $(<[2])
+	}
+    }
+}
+else if $(NT) || $(OS2)
+{
+    if $(BCCROOT)
+    {
+
+	actions C++
+	{
+	$(C++) -c $(C++FLAGS) $(OPTIM) -I$(HDRS) -o$(<) $(>)
+	}
+
+	actions Link bind NEEDLIBS
+	{
+	$(LINK) -e$(<) $(LINKFLAGS) $(UNDEFS) -L$(LINKLIBS) $(NEEDLIBS) $(>)
+	}
+
+	actions updated together piecemeal Archive
+	{
+	$(AR) $(ARFLAGS) $(<) -+$(>)
+	}
+
+	actions Cc
+	{
+	$(CC) -c $(CCFLAGS) $(OPTIM) -I$(HDRS) -o$(<) $(>)
+        }
+    }
+    else if $(MSVC) 
+    {
+	actions updated together piecemeal Archive
+	{
+	$(AR) $(<) -+$(>) ;
+	}
+
+	actions Cc
+	{
+	$(CC) /c $(CCFLAGS) $(OPTIM) /Fo$(<) /I$(HDRS) $(>)
+	}
+
+	actions C++
+	{
+	$(C++) /c $(C++FLAGS) $(OPTIM) /Fo$(<) /I$(HDRS) /Tp$(>)
+	}
+
+	actions Link bind NEEDLIBS
+	{
+	$(LINK) $(LINKFLAGS) /out:$(<) $(UNDEFS) $(>) $(NEEDLIBS) $(LINKLIBS)
+	}
+    }
+    else if $(MSVCNT)
+    {
+	actions updated together piecemeal Archive
+	{
+	if exist $(<) set _$(<:B)_=$(<)
+	$(AR) /out:$(<) %_$(<:B)_% $(>)
+	}
+
+	actions As
+	{
+	$(AS) /Ml /p /v /w2 $(>) $(<) ,nul,nul;
+	}
+
+	actions Cc
+	{
+	$(CC) /c $(CCFLAGS) $(OPTIM) /Fo$(<) /I$(HDRS) /I$(STDHDRS) $(>)
+	}
+
+	actions C++
+	{
+	$(C++) /c $(C++FLAGS) $(OPTIM) /Fo$(<) /I$(HDRS) /I$(STDHDRS) /Tp$(>)
+	}
+
+	actions Link bind NEEDLIBS
+	{
+	$(LINK) $(LINKFLAGS) /out:$(<) $(UNDEFS) $(>) $(NEEDLIBS) $(LINKLIBS)
+	}
+    }
+    else if $(WATCOM)
+    {
+	actions together piecemeal Archive
+	{
+	$(AR) $(<) +-$(>) 
+	}
+
+	actions Cc
+	{
+	$(CC) $(CCFLAGS) $(OPTIM) /Fo=$(<) /I$(HDRS) $(>)
+	}
+
+	actions C++
+	{
+	$(C++) $(C++FLAGS) $(OPTIM) /Fo=$(<) /I$(HDRS) $(>)
+	}
+
+	actions Link bind NEEDLIBS
+	{
+	$(LINK) $(LINKFLAGS) /Fe=$(<) $(UNDEFS) $(>) $(NEEDLIBS) $(LINKLIBS)
+	}
+    }
+
+    actions Chmod
+    {
+    }
+
+    actions piecemeal together existing Clean
+    {
+	$(RM) $(>)
+    }
+
+    actions File
+    {
+	copy $(>) $(<)
+    }
+
+    actions GenFile1
+    {
+	$(>[1]) $(<) $(>[2-])
+    }
+
+    actions Install
+    {
+	copy $(>) $(<)
+    }
+
+    actions MkDir1
+    {
+	$(MKDIR) $(<)
+    }
+
+    actions quietly updated piecemeal together RmTemps
+    {
+	$(RM) $(>)
+    }
+
+    actions Shell
+    {
+	copy $(>) $(<)
+    }
+}
+else if $(VMS)
+{
+
+    actions updated together piecemeal Archive 
+    {
+	lib/replace $(<) $(>[1]) ,$(>[2-])
+    }
+
+    actions Cc
+    { 
+	cc/obj=$(<) $(CCFLAGS) $(OPTIM) $(SLASHINC) $(>) 
+    }
+
+    actions C++
+    { 
+	cxx/obj=$(<) $(C++FLAGS) $(OPTIM) $(SLASHINC) $(>) 
+    }
+
+    actions Chmod
+    {
+	set file/prot=$(MODE) $(<)
+    }
+
+    actions piecemeal together existing Clean
+    {
+	$(RM) $(>[1]);* ,$(>[2-]);*
+    }
+
+    actions together quietly CreLib
+    {
+       if f$search("$(<)") .eqs. "" then lib/create $(<)
+    }
+
+    actions File
+    {
+	copy $(>) $(<)
+    }
+
+    actions GenFile1
+    {
+	mcr $(>[1]) $(<) $(>[2-])
+    }
+
+    actions Install
+    {
+	copy $(>) $(<)
+    }
+
+    actions Lex
+    {
+	$(LEX) $(>) 
+	$(MV) lex.yy.c $(<)
+    }
+
+    actions Link bind NEEDLIBS
+    {
+	$(LINK)/exe=$(<) $(LINKFLAGS) $(>[1]) ,$(>[2-]) ,$(NEEDLIBS)/lib ,$(LINKLIBS)
+    }
+
+    actions MkDir1
+    {
+	create/dir $(<)
+    }
+
+    actions quietly updated piecemeal together RmTemps
+    {
+	$(RM) $(>[1]);* ,$(>[2-]);*
+    }
+
+    actions Shell
+    {
+	copy $(>) $(<)
+    }
+
+    actions Yacc1
+    {
+	$(YACC) $(YACCFLAGS) $(>)
+	$(MV) $(YACCFILES).c $(<[1])
+	$(MV) $(YACCFILES).h $(<[2])
+    }
+}
+else if $(MAC)
+{
+    SP = " " ;
+
+    actions together piecemeal Archive 
+    {
+	$(LINK) -library -o $(<) $(>)
+    }
+
+    actions Cc
+    {
+	set MWCincludes $(MACINC)
+	$(CC) -o $(<) $(CCFLAGS) $(OPTIM) $(>) 
+    }
+
+    actions C++
+    { 
+	set MWCincludes $(MACINC)
+	$(CC) -o $(<) $(C++FLAGS) $(OPTIM) $(>) 
+    }
+
+    rule Chmod
+    {
+	# no chmod on mac - could setfile -l/-L to make rw/ro
+    }
+
+    actions piecemeal together existing Clean
+    {
+	$(RM) $(>)
+    }
+
+    actions File
+    {
+	copy $(>) $(<)
+    }
+
+    actions GenFile1
+    {
+	$(>[1]) $(<) $(>[2-])
+    }
+
+    actions Install
+    {
+	copy $(>) $(<)
+    }
+
+    actions Link bind NEEDLIBS
+    {
+	$(LINK) -o $(<) $(LINKFLAGS) $(>) $(NEEDLIBS) "$(LINKLIBS)"
+    }
+
+    actions MkDir1
+    {
+	$(MKDIR) $(<)
+    }
+
+    actions quietly updated piecemeal together RmTemps
+    {
+	$(RM) $(>)
+    }
+
+    actions Shell
+    {
+	copy $(>) $(<)
+    }
+}
+
+
+#
+# Backwards compatibility with jam 1, where rules were uppercased.
+#
+
+rule BULK { Bulk $(<) : $(>) ; }
+rule FILE { File $(<) : $(>) ; }
+rule HDRRULE { HdrRule $(<) : $(>) ; }
+rule INSTALL { Install $(<) : $(>) ; }
+rule LIBRARY { Library $(<) : $(>) ; }
+rule LIBS { LinkLibraries $(<) : $(>) ; }
+rule LINK { Link $(<) : $(>) ; }
+rule MAIN { Main $(<) : $(>) ; }
+rule SETUID { Setuid $(<) ; }
+rule SHELL { Shell $(<) : $(>) ; }
+rule UNDEFINES { Undefines $(<) : $(>) ; }
+
+# Old INSTALL* didn't take dest directory.
+
+rule INSTALLBIN { InstallBin $(BINDIR) : $(<) ; }
+rule INSTALLLIB { InstallLib $(LIBDIR) : $(<) ; }
+rule INSTALLMAN { InstallMan $(MANDIR) : $(<) ; }
+
+#
+# Now include the user's Jamfile.
+#
+
+{
+    if $(JAMFILE) { include $(JAMFILE) ; }
+}
+@
+
+
+1.133
+log
+@@
+text
+@d215 2
+a216 1
+	LINK		default = $(CC) ;
+@
+
+
+1.132
+log
+@@
+text
+@d433 2
+a434 2
+	CWGUSI		default = "Macintosh HD:Perforce:mac:CWGUSI" ;
+	CWMAC		default = "Macintosh HD:CW10 Gold:Metrowerks CodeWarrior:MacOS Support" ;
+@
+
+
+1.131
+log
+@@
+text
+@d434 2
+a437 1
+	CWMAC		default = "Macintosh HD:CW10 Gold:Metrowerks CodeWarrior:MacOS Support" ;
+d446 3
+a448 1
+	HDRS		default = $(CWGUSIHDR) $(CWMACHDR):"ANSI Headers" $(CWMACHDR):"Universal Headers" ;
+d476 1
+@
+
+
+1.130
+log
+@@
+text
+@d139 1
+a139 3
+#	$(OSNAME) - name of OS - varies wildly
+#	$(OSPLAT) - hardward platform
+#	$(OSVER) - OS subversion`
+d156 1
+a156 7
+OS ?= $(OSNAME) ;
+
+OSFULL = 
+	$(OSNAME)$(OSPLAT)$(OSVER) 
+	$(OSNAME)$(OSPLAT) 
+	$(OSNAME)$(OSVER) 
+	$(OSNAME) ;
+d162 1
+a162 1
+switch $(OSNAME)
+d186 1
+a186 1
+#if $(OSNAME) = SUNOS && $(TZ)
+d193 1
+a193 1
+	if $(OSNAME) = QNX 
+d205 1
+a205 1
+	else if $(OSNAME) = BEOS 
+d425 1
+a425 1
+	switch $(OSNAME) 
+d1438 1
+a1438 1
+    if $(OSNAME) = QNX 
+d1445 1
+a1445 1
+    else if $(OSNAME) = BEOS
+d1465 1
+a1465 1
+    if $(OSNAME) = SINIX
+@
+
+
+1.129
+log
+@@
+text
+@d139 3
+a141 1
+#	$(OS) - name of OS - varies wildly
+d158 7
+a164 1
+OSFULL = $(OS)$(OSPLAT)$(OSVER) $(OS)$(OSPLAT) $(OS)$(OSVER) $(OS) ;
+d170 1
+a170 1
+switch $(OS)
+d194 1
+a194 1
+#if $(OS) = SUNOS && $(TZ)
+d201 1
+a201 1
+	if $(OS) = QNX 
+d213 1
+a213 1
+	else if $(OS) = BEOS 
+d433 1
+a433 1
+	switch $(OS) 
+d1446 1
+a1446 1
+    if $(OS) = QNX 
+d1453 1
+a1453 1
+    else if $(OS) = BEOS
+d1473 1
+a1473 1
+    if $(OS) = SINIX
+@
+
+
+1.128
+log
+@@
+text
+@a349 1
+	STDLIBFLAG	default =  ;
+a525 8
+	if $(NT)
+	{
+	if $(SUBDIRSTDLIBFLAG)
+	{
+		STDLIBFLAG on $(<) = $(SUBDIRSTDLIBFLAG) ;
+	}
+	}
+	
+a557 8
+	if $(NT)
+	{
+	if $(SUBDIRSTDLIBFLAG)
+	{
+		STDLIBFLAG on $(<) = $(SUBDIRSTDLIBFLAG) ;
+	}
+	}
+	
+a1003 14
+if $(NT)
+{
+rule ObjectStdLibFlag
+{
+	local s ;
+
+	# Add grist to file names
+
+	makeGristedName s : $(<:S=$(SUFOBJ)) ;
+	
+	STDLIBFLAG on $(s) = $(>) ;
+}
+}
+
+d1061 1
+a1061 1
+	local r s l ;
+a1133 5
+	
+	if $(NT)
+	{
+	SUBDIRSTDLIBFLAG = ;
+	}
+a1135 8
+if $(NT)
+{
+rule SubDirStdLibFlag
+{
+	SUBDIRSTDLIBFLAG = $(<) ;
+}
+}
+
+d1668 1
+a1668 1
+	$(CC) /c $(OPTIM) $(CCFLAGS) $(STDLIBFLAG) /Fo$(<) /I$(HDRS) /I$(STDHDRS) $(>)
+d1673 1
+a1673 1
+	$(C++) /c $(OPTIM) $(C++FLAGS) $(STDLIBFLAG) /Fo$(<) /I$(HDRS) /I$(STDHDRS) /Tp$(>)
+@
+
+
+1.127
+log
+@@
+text
+@d350 1
+d527 8
+d567 8
+d1021 14
+d1092 1
+a1092 1
+	local r s ;
+d1165 5
+d1172 8
+d1712 1
+a1712 1
+	$(CC) /c $(CCFLAGS) $(OPTIM) /Fo$(<) /I$(HDRS) /I$(STDHDRS) $(>)
+d1717 1
+a1717 1
+	$(C++) /c $(C++FLAGS) $(OPTIM) /Fo$(<) /I$(HDRS) /I$(STDHDRS) /Tp$(>)
+@
+
+
+1.126
+log
+@@
+text
+@d433 1
+a433 1
+	CWGUSI		default = "Macintosh HD:Perforce:src:mac:CWGUSI" ;
+@
+
+
+1.125
+log
+@@
+text
+@d300 1
+a300 1
+	CCFLAGS		default = -v -w-  ;
+@
+
+
+1.124
+log
+@@
+text
+@d171 2
+@
+
+
+1.123
+log
+@@
+text
+@a165 1
+case IRIX :	RANLIB default = "" ;
+d168 2
+@
+
+
+1.122
+log
+@@
+text
+@d536 10
+d566 10
+d1150 1
+a1150 1
+	local i s ;
+d1162 2
+a1163 12
+	s = $(<[2]) ;
+
+	for i in $(<[3-])
+	{
+	    s = $(s)$(SLASH)$(i) ;
+	}
+
+	if $(VMS)
+	{
+	    s = [.$(s)] ;
+	}
+
+d1281 9
+d1832 2
+a1833 1
+	$(CC) -o $(<) -i$(SP)"$(HDRS)" "$(CCFLAGS)" $(OPTIM) $(>) 
+d1838 2
+a1839 1
+	$(CC) -o $(<) -i$(SP)"$(HDRS)" "$(C++FLAGS)" $(OPTIM) $(>) 
+@
+
+
+1.121
+log
+@@
+text
+@d430 7
+d440 3
+a442 3
+	DOT		default = "" ;
+	DOTDOT		default = :: ;
+	HDRS		default = ;
+d444 9
+a452 1
+	LINKFLAGS	default = -mpwtool ;
+d455 1
+d459 1
+a459 1
+	STDHDRS		default = $(MWCIncludes) ;
+d463 1
+d1804 1
+d1812 2
+a1813 2
+    { 
+	$(CC) -o $(<) $(CCFLAGS) $(OPTIM) $(>) 
+d1818 1
+a1818 1
+	$(CC) -o $(<) $(CCFLAGS) $(OPTIM) $(>) 
+d1821 1
+a1821 1
+    actions Chmod
+d1823 1
+a1823 1
+	set file/prot=$(MODE) $(<)
+d1848 1
+a1848 1
+	$(LINK) -o $(<) $(LINKFLAGS) $(>) $(NEEDLIBS) $(LINKLIBS)
+@
+
+
+1.120
+log
+@@
+text
+@d428 20
+d1785 63
+@
+
+
+1.119
+log
+@@
+text
+@a155 2
+if $(NT) { OS = NT ; }
+
+d402 1
+a402 1
+	DOTDOT		default	= - ;
+d850 5
+d1195 1
+a1195 1
+		_d = $(_d)$(SLASH)$(DOTDOT) ;
+a1198 5
+	if $(VMS)
+	{
+	    _d = [$(_d)] ;
+	}
+
+d1209 1
+a1209 1
+	if $(>)
+d1211 10
+a1220 15
+	    if $(VMS)
+	    {
+		# This handles the following cases:
+		# 	a -> [a]
+		# 	a b c -> [a.b.c]
+		# 	x: -> x:
+		# 	x: a -> x:[a]
+		# 	x:[a] b -> x:[a.b]
+
+		switch $(>[1])
+		{
+		case *:* : _s = $(>[1]) ;
+		case \\[*\\] : _s = $(>[1]) ;
+		case * : _s = [$(>[1])] ;
+		}
+d1222 1
+a1222 6
+		for _i in [.$(>[2-])]
+		{
+		    _s = $(_i:R=$(_s)) ;
+		}
+	    }
+	    else
+d1224 4
+a1227 1
+		_s = $(>[1]) ; 
+d1229 3
+a1231 4
+		for _i in $(>[2-])
+		{
+		    _s = $(_s)$(SLASH)$(_i) ;
+		}
+d1236 6
+a1241 1
+	    _s = $(DOT) ;
+@
+
+
+1.118
+log
+@@
+text
+@d401 1
+d403 1
+a403 1
+	DOT		default	= "" ;
+d415 1
+d495 1
+a495 1
+	_h = $(HDRS) $(SUBDIRHDRS) ;
+d515 1
+a515 1
+	_h = $(HDRS) $(SUBDIRHDRS) ;
+d834 1
+a834 3
+	    # On UNIX, $(<:D) = $(<)'s parent, & we recurse until root
+	    # On VMS, $(<:D) = $(<), no recursing, but you don't need to 
+	    # create parent directories explicitly there.
+d836 1
+a836 1
+	    s = $(<:D) ;
+d1111 1
+a1111 1
+	    s = [$(s)] ;
+d1144 2
+a1147 1
+	    MakeLocate $(<) $(h) : $(LOCATE_SOURCE) ;
+d1229 1
+a1229 1
+		for _i in [$(>[2-])]
+@
+
+
+1.117
+log
+@@
+text
+@d156 2
+@
+
+
+1.116
+log
+@@
+text
+@d61 1
+d156 2
+d219 1
+d265 2
+a266 1
+	YACC		default = yacc -d ;
+d533 15
+d706 1
+a706 1
+	if ! $(<:D)
+d708 1
+a708 1
+	    MakeLocate $(<) $(<)($(s:BS)) : $(LOCATE_TARGET) ;
+d1475 5
+d1542 1
+a1542 1
+	$(YACC) $(>) &&
+d1661 5
+d1724 5
+d1762 1
+a1762 1
+	$(YACC) $(>)
+@
+
+
+1.115
+log
+@@
+text
+@d422 12
+d443 3
+a445 3
+DEPENDS all : shell files lib exe ;
+DEPENDS all shell files lib exe : first ;
+NOTFILE all first shell files lib exe dirs clean uninstall ;
+d470 2
+d486 3
+a488 1
+	if $(VMS) && $(HDRS[1])
+d490 1
+a490 1
+	    SLASHINC on $(<) = "/inc=(" $(HDRS[1]) ,$(HDRS[2-]) ")" ;
+d496 2
+d506 3
+a508 1
+	if $(VMS) && $(HDRS[1])
+d510 1
+a510 1
+	    SLASHINC on $(<) = "/inc=(" $(HDRS[1]) ,$(HDRS[2-]) ")" ;
+d672 8
+a679 1
+	DEPENDS lib : $(l) ;
+d764 1
+a764 1
+	# make compiled sources a dependency of target
+d766 1
+a766 1
+	if $(<:S)
+d768 2
+a769 3
+	    t = $(<) ;
+	} else {
+	    t = $(<:S=$(SUFEXE)) ;
+d772 2
+d776 1
+a776 1
+	MakeLocate $(t) $(<) : $(LOCATE_TARGET) ;
+d816 9
+d941 1
+d1190 8
+a1197 1
+	    _s = $(>[1]) ;
+d1199 13
+a1211 1
+	    for _i in $(>[2-])
+d1213 6
+a1218 1
+		_s = $(_s)$(SLASH)$(_i) ;
+a1225 5
+	if $(VMS)
+	{
+	    _s = [$(_s)] ;
+	}
+
+d1313 42
+d1669 5
+@
+
+
+1.114
+log
+@@
+text
+@d1325 1
+a1325 1
+    actions CcMv
+@
+
+
+1.113
+log
+@@
+text
+@d37 1
+d199 19
+d1262 1
+a1262 1
+    if $(OS) = QNX
+d1269 7
+@
+
+
+1.112
+log
+@@
+text
+@d179 4
+a182 4
+if $(OS) = SUNOS && $(TZ)
+{
+	Echo Warning: you are running the SunOS jam on Solaris. ;
+}
+@
+
+
+1.111
+log
+@@
+text
+@d1267 1
+a1267 1
+	$(C++) -c $(C++FLAGS) $(OPTIM) -I$(HDRS) -o $(<) $(>:S=.C)
+d1270 1
+a1270 1
+    else 
+d1274 1
+a1274 1
+	$(C++) -c $(C++FLAGS) $(OPTIM) -I$(HDRS) -o $(<) $(>)
+d1277 1
+a1277 2
+
+    if $(RELOCATE)
+d1281 1
+a1281 1
+	$(C++) -c $(C++FLAGS) $(OPTIM) -I$(HDRS) $(>)
+@
+
+
+1.110
+log
+@@
+text
+@d170 2
+a171 1
+case SCO :	RANLIB default = "" ; RELOCATE = true ;
+@
+
+
+1.109
+log
+@@
+text
+@d170 1
+a170 1
+case SCO :	RANLIB default = "" ;
+d1277 8
+d1290 8
+@
+
+
+1.108
+log
+@@
+text
+@d422 1
+@
+
+
+1.107
+log
+@@
+text
+@d101 2
+d674 1
+a674 1
+	if ! $(NOARSCAN) { RmTemps $(l) : $(s) ; }
+d1080 11
+@
+
+
+1.106
+log
+@@
+text
+@d1480 5
+@
+
+
+1.105
+log
+@@
+text
+@a312 1
+	CRELIB		default = true ;
+d505 12
+a516 3
+	INCLUDES $(<) : $(>) ;
+	SEARCH on $(>) = $(HDRSEARCH) ;
+	NOCARE $(>) ;
+d520 4
+a523 3
+	HDRSEARCH on $(>) = $(HDRSEARCH) ;
+	HDRSCAN on $(>) = $(HDRSCAN) ;
+	HDRRULE on $(>) = $(HDRRULE) ;
+d794 4
+a797 1
+	# as the sources.  HDRSEARCH is just grist for HdrRule.
+d815 1
+d1419 2
+a1420 12
+	$(AR) /out:$(<) $(<) $(>) 
+	}
+
+	# DOS has a pretty poor shell, without the benefit of 'else'
+	# or multiline statements.  Further, the MS lib program requires
+	# different invocations for creating or updating an archive.
+	# Finally, you can't just create an empty archive.  So CreLib
+	# quietly takes care of creating an archive for the first time.
+
+	actions together quietly CreLib
+	{
+	if not exist $(<) $(AR) /out:$(<) $(>[1])
+@
+
+
+1.104
+log
+@@
+text
+@d239 1
+d1350 2
+a1351 2
+	    $(MV) y.tab.c $(<[1])
+	    $(MV) y.tab.h $(<[2])
+d1559 2
+a1560 2
+	$(MV) y.tab.c $(<[1])
+	$(MV) y.tab.h $(<[2])
+@
+
+
+1.103
+log
+@@
+text
+@d163 1
+a1592 1
+
+@
+
+
+1.102
+log
+@@
+text
+@d228 1
+d254 1
+d339 1
+d383 1
+@
+
+
+1.101
+log
+@@
+text
+@d172 1
+d282 1
+a282 1
+	C++FLAGS	default = $(CCLFAGS) ;
+@
+
+
+1.100
+log
+@@
+text
+@d1311 1
+a1311 4
+	if $(LINK) $(LINKFLAGS) -o $(<) $(UNDEFS) $(>) $(NEEDLIBS) $(LINKLIBS) 
+	then :
+	else $(RM) $(<) && exit 1
+	fi
+d1360 1
+a1360 1
+	$(LINK) -e$(<) $(LINKFLAGS) $(UNDEFS) -L$(LINKLIBS) $(NEEDLIBS) $(>) || $(RM) $(<)
+@
+
+
+1.99
+log
+@@
+text
+@d168 1
+d453 5
+d1227 1
+a1227 1
+    actions C++
+d1229 10
+d1240 1
+d1248 1
+a1248 1
+    actions quietly CcMv 
+@
+
+
+1.98
+log
+@@
+text
+@d1231 1
+a1231 1
+    actions CcMv
+@
+
+
+1.97
+log
+@@
+text
+@d1036 1
+a1045 1
+	MakeLocate $(<) $(h) : $(LOCATE_SOURCE) ;
+@
+
+
+1.96
+log
+@@
+text
+@d1191 1
+a1191 1
+	    $(<[1]) = $(_r:R=$(l)) ;
+d1570 3
+a1572 2
+include $(JAMFILE) ;
+
+@
+
+
+1.95
+log
+@@
+text
+@d159 1
+a159 1
+case DGUX :	RANLIB default = "" ;
+d912 1
+a912 1
+	    makeSubDir $(<[1]) : $(<[2-) ;
+@
+
+
+1.94
+log
+@@
+text
+@d506 1
+a506 1
+	local t ;
+d519 4
+a522 1
+	Install $(t) : $(>) ;
+@
+
+
+1.93
+log
+@@
+text
+@d607 2
+d610 4
+a613 1
+	MakeLocate $(<) $(<)($(s:BS)) : $(LOCATE_TARGET) ;
+@
+
+
+1.92
+log
+@@
+text
+@d166 1
+@
+
+
+1.91
+log
+@@
+text
+@d62 1
+a62 1
+# Install target : source ;		install any single file
+d503 1
+a503 1
+rule Install
+d505 1
+a505 3
+	DEPENDS install : $(<) ;
+	DEPENDS $(<) : $(>) ;
+	SEARCH on $(>) = $(SEARCH_SOURCE) ;
+d507 1
+a507 1
+	# depend upon and create the directory
+d509 4
+a512 2
+	DEPENDS $(<) : $(<:D) ;
+	MkDir $(<:D) ;
+d516 3
+a518 1
+	Clean uninstall : $(<) ;
+d522 1
+a522 1
+	    Chmod $(<) ;
+d524 2
+a525 2
+	    if $(OWNER) { Chown $(<) ; OWNER on $(<) = $(OWNER) ; }
+	    if $(GROUP) { Chgrp $(<) ; GROUP on $(<) = $(GROUP) ; }
+d531 2
+a532 7
+	local i ;
+
+	for i in $(>)
+	{
+	    Install $(i:D=$(<)) : $(i) ;
+	    MODE on $(i:D=$(<)) = $(EXEMODE) ;
+	}
+d537 2
+a538 1
+	InstallLib $(<) : $(>) ;
+d543 2
+a544 7
+	local i ;
+
+	for i in $(>)
+	{
+	    Install $(i:D=$(<)) : $(i) ;
+	    MODE on $(i:D=$(<)) = $(FILEMODE) ;
+	}
+d563 1
+a563 1
+	    d = $(i:D=man$(s):S=.$(s)) ;
+d565 1
+a565 2
+	    Install $(d:R=$(<)) : $(i) ;
+	    MODE on $(d:R=$(<)) = $(FILEMODE) ;
+d567 2
+d573 2
+a574 7
+	local i ;
+
+	for i in $(>)
+	{
+	    Install $(i:D=$(<)) : $(i) ;
+	    MODE on $(i:D=$(<)) = $(SHELLMODE) ;
+	}
+@
+
+
+1.90
+log
+@@
+text
+@d416 3
+a418 1
+	for _i in $(>)
+d420 1
+a420 1
+	    File $(_i:D=$(<)) : $(_i) ;
+d529 3
+a531 1
+	for _i in $(>)
+d533 2
+a534 2
+	    Install $(_i:D=$(<)) : $(_i) ;
+	    MODE on $(_i:D=$(<)) = $(EXEMODE) ;
+d545 3
+a547 1
+	for _i in $(>)
+d549 2
+a550 2
+	    Install $(_i:D=$(<)) : $(_i) ;
+	    MODE on $(_i:D=$(<)) = $(FILEMODE) ;
+d558 3
+a560 1
+	for _i in $(>)
+d562 1
+a562 1
+	    switch $(_i:S)
+d564 4
+a567 4
+	    case .1 : _s = 1 ; case .2 : _s = 2 ; case .3 : _s = 3 ;
+	    case .4 : _s = 4 ; case .5 : _s = 5 ; case .6 : _s = 6 ;
+	    case .7 : _s = 7 ; case .8 : _s = 8 ; case .l : _s = l ;
+	    case .n : _s = n ; case .man : _s = 1 ;
+d570 1
+a570 1
+	    _d = $(_i:D=man$(_s):S=.$(_s)) ;
+d572 2
+a573 2
+	    Install $(_d:R=$(<)) : $(_i) ;
+	    MODE on $(_d:R=$(<)) = $(FILEMODE) ;
+d579 3
+a581 1
+	for _i in $(>)
+d583 2
+a584 2
+	    Install $(_i:D=$(<)) : $(_i) ;
+	    MODE on $(_i:D=$(<)) = $(SHELLMODE) ;
+d603 2
+d607 1
+a607 1
+	makeGristedName _s : $(>) ;
+d611 1
+a611 1
+	_l = $(<:S=$(SUFLIB)) ;
+d613 1
+a613 1
+	DEPENDS lib : $(_l) ;
+d618 1
+a618 1
+	MakeLocate $(<) $(<)($(_s:BS)) : $(LOCATE_TARGET) ;
+d626 1
+a626 1
+	    DEPENDS $(_l) : $(_s) ;
+d634 1
+a634 1
+	    DEPENDS $(_l) : $(_l)($(_s:BS)) ;
+d636 1
+a636 1
+	    for _i in $(_s)
+d638 1
+a638 1
+		DEPENDS $(_l)($(_i:BS)) : $(_i) ;
+d642 1
+a642 1
+	Clean clean : $(_l) ;
+d644 1
+a644 1
+	if $(CRELIB) { CreLib $(_l) : $(_s[1]) ; }
+d646 1
+a646 1
+	Archive $(_l) : $(_s) ;
+d648 1
+a648 1
+	if $(RANLIB) { Ranlib $(_l) ; }
+d652 1
+a652 1
+	if ! $(NOARSCAN) { RmTemps $(_l) : $(_s) ; }
+d663 2
+d670 1
+a670 1
+	    _t = $(<) ;
+d672 1
+a672 1
+	    _t = $(<:S=$(SUFEXE)) ;
+d675 2
+a676 2
+	DEPENDS $(_t) : $(>:S=$(SUFLIB)) ;
+	NEEDLIBS on $(_t) += $(>:S=$(SUFLIB)) ;
+d687 2
+d691 1
+a691 1
+	makeGristedName _s : $(>) ;
+d697 1
+a697 1
+	    _t = $(<) ;
+d699 1
+a699 1
+	    _t = $(<:S=$(SUFEXE)) ;
+d702 3
+a704 3
+	DEPENDS exe : $(_t) ;
+	DEPENDS $(_t) : $(_s) ;
+	MakeLocate $(_t) $(<) : $(LOCATE_TARGET) ;
+d706 1
+a706 1
+	Clean clean : $(_t) ;
+d708 1
+a708 1
+	Link $(_t) : $(_s) ;
+d716 2
+a717 2
+	    Depends $(<) : $(>) ;
+	    MkDir $(>) ;
+d725 1
+a725 1
+	    local _s ;
+d742 1
+a742 1
+	    _s = $(<:D) ;
+d744 1
+a744 1
+	    if $(_s) && $(_s) != $(<)
+d746 2
+a747 2
+		Depends $(<) : $(_s) ;
+		MkDir $(_s) ;
+d754 2
+d776 1
+a776 1
+	# $(_h) is where cc first looks for #include "foo.h" files.
+d782 1
+a782 1
+	    _h = $(SEARCH_SOURCE) ;
+d786 1
+a786 1
+	    _h = "" ;
+d791 1
+a791 1
+	HDRSEARCH on $(>) = $(HDRS) $(SUBDIRHDRS) $(_h) $(STDHDRS) ;
+d814 2
+d818 1
+a818 1
+	makeGristedName _s : $(<:S=$(SUFOBJ)) ;
+d820 1
+a820 1
+	CCFLAGS on $(_s) += $(>) ;
+d825 2
+d829 1
+a829 1
+	makeGristedName _s : $(<:S=$(SUFOBJ)) ;
+d831 1
+a831 1
+	C++FLAGS on $(_s) += $(>) ;
+d836 2
+d840 1
+a840 1
+	makeGristedName _s : $(<:S=$(SUFOBJ)) ;
+d842 1
+a842 1
+	HDRS on $(_s) += $(>) ;
+d847 2
+d851 1
+a851 1
+	makeGristedName _s : $(<) ;
+d853 1
+a853 1
+	for _i in $(_s)
+d855 1
+a855 1
+		Object $(_i:S=$(SUFOBJ)) : $(_i) ;
+d866 2
+d870 1
+a870 1
+	    _t = $(<) ;
+d872 1
+a872 1
+	    _t = $(<:S=$(SUFEXE)) ;
+d875 1
+a875 1
+	MODE on $(_t) = 4711 ;
+d890 2
+d929 1
+a929 1
+	    _r = $($(<[1])RULES) ;
+d931 1
+a931 1
+	    if ! $(_r)
+d933 1
+a933 1
+		_r = $(JAMRULES:R=$($(<[1]))) ;
+d938 1
+a938 1
+	    include $(_r) ;
+d944 2
+a945 2
+	makeDirName _s : $(<[2-]) ;
+	SUBDIR = $(_s:R=$($(<[1]))) ;
+d982 2
+d994 1
+a994 1
+	_s = $(<[2]) ;
+d996 1
+a996 1
+	for _i in $(<[3-])
+d998 1
+a998 1
+	    _s = $(_s)$(SLASH)$(_i) ;
+d1003 1
+a1003 1
+	    _s = [$(_s)] ;
+d1006 1
+a1006 1
+	include $(JAMFILE:D=$(_s):R=$($(<[1]))) ;
+d1011 2
+d1015 1
+a1015 1
+	    _t = $(<) ;
+d1017 1
+a1017 1
+	    _t = $(<:S=$(SUFEXE)) ;
+d1020 1
+a1020 1
+	UNDEFS on $(_t) += $(UNDEFFLAG)$(>) ;
+d1030 1
+a1030 1
+	local _h ;
+d1032 1
+a1032 1
+	_h = $(<:BS=.h) ;
+d1038 3
+a1040 3
+	    DEPENDS $(<) $(_h) : $(>) ;
+	    Yacc1 $(<) $(_h) : $(>) ;
+	    Clean clean : $(<) $(_h) ;
+d1043 1
+a1043 1
+	# make sure someone includes $(_h) else it will be
+d1046 2
+a1047 2
+	INCLUDES $(<) : $(_h) ;
+	MakeLocate $(<) $(_h) : $(LOCATE_SOURCE) ;
+@
+
+
+1.89
+log
+@@
+text
+@d581 1
+a581 1
+	LOCATE on $(<) = $(LOCATE_SOURCE) ;
+d606 1
+a606 1
+	LOCATE on $(<) $(<)($(_s:BS)) = $(LOCATE_TARGET) ;
+d688 1
+a688 1
+	LOCATE on $(_t) $(<) = $(LOCATE_TARGET) ;
+d695 10
+d709 2
+a735 7
+rule MkDirFor
+{
+	Depends $(<) : $(<:D) ;
+	NoUpdate $(<:D) ;
+	MkDir $(<:D) ;
+}
+
+d742 1
+a742 7
+	if $(LOCATE_TARGET)
+	{
+	    LOCATE on $(<) = $(LOCATE_TARGET[1]) ;
+	    DEPENDS $(<) : $(LOCATE_TARGET[1]) ;
+	    MkDir $(LOCATE_TARGET[1]) ;
+	}
+
+d996 2
+d1013 1
+a1013 1
+	LOCATE on $(<) $(_h) = $(LOCATE_SOURCE) ;
+d1022 2
+d1052 2
+d1086 2
+d1103 2
+d1138 2
+d1142 2
+a1143 2
+	l = $(<[2-]) ;
+	r = $(>) ;
+d1145 1
+a1145 1
+	makeCommon l : r ;
+d1149 2
+a1150 2
+	makeSubDir l : $(l) ;
+	makeDirName r : $(r) ;
+d1156 2
+a1157 2
+	if $(r) = $(DOT) {
+	    $(<[1]) = $(l) ;
+d1159 1
+a1159 1
+	    $(<[1]) = $(r:R=$(l)) ;
+@
+
+
+1.88
+log
+@@
+text
+@d603 2
+a604 6
+	# We wish we could locate the library and it's contents,
+	# but the reference to $(NEEDLIBS) in Main's actions
+	# get the unbound names.  Only $(<) and $(>) refer to
+	# bound file name in rule actions.  Sigh.
+	#
+	# LOCATE on $(<) $(<)($(_s:BS)) = $(LOCATE_TARGET) ;
+d606 2
+d1249 1
+a1249 1
+    actions Link
+d1301 1
+a1301 1
+	actions Link
+d1333 1
+a1333 1
+	actions Link
+d1371 1
+a1371 1
+	actions Link
+d1393 1
+a1393 1
+	actions Link
+d1472 1
+a1472 1
+    actions Link 
+@
+
+
+1.87
+log
+@@
+text
+@d222 2
+d237 1
+d247 3
+a249 1
+    	RM		default = del/f/q ;
+d300 2
+a301 1
+	AR		default = lib /nologo ;
+d690 1
+a690 1
+	LOCATE on $(_t) = $(LOCATE_TARGET) ;
+d782 1
+d1358 5
+@
+
+
+1.86
+log
+@@
+text
+@d297 1
+a297 1
+	CCFLAGS		default = /I$(MSVCNT)\\include ;
+d1353 1
+a1353 1
+	$(CC) /c $(CCFLAGS) $(OPTIM) /Fo$(<) /I$(HDRS) $(>)
+d1358 1
+a1358 1
+	$(C++) /c $(C++FLAGS) $(OPTIM) /Fo$(<) /I$(HDRS) /Tp$(>)
+@
+
+
+1.85
+log
+@@
+text
+@d297 1
+a297 1
+	CCFLAGS		default = /D \"NT\" ;
+@
+
+
+1.84
+log
+@@
+text
+@d320 2
+d333 1
+a333 1
+    if ! $(watcom)
+d335 1
+a335 1
+	EXIT On OS2, set watcom to the root of the Watcom directory. ;
+d342 2
+a343 2
+	CCFLAGS		default = /zq /DOS2 /I$(watcom)\\h ; # zq=quiet
+	C++		default = $(CC) ;
+d350 1
+a350 1
+	STDHDRS		default = $(watcom)\\h ;
+d1366 1
+a1366 1
+    else if $(watcom)
+d1368 1
+a1368 1
+	actions updated together piecemeal Archive
+d1380 1
+a1380 1
+	$(C++) $(C++FLAGS) $(OPTIM) /Fo=$(<) /I$(HDRS) /Tp$(>)
+d1519 1
+@
+
+
+1.83
+log
+@@
+text
+@d183 1
+d185 1
+d187 1
+@
+
+
+1.82
+log
+@@
+text
+@d1150 1
+a1150 1
+	actions updated together piecemeal Archive
+@
+
+
+1.81
+log
+@@
+text
+@d179 10
+d1148 1
+a1148 2
+
+    actions updated together piecemeal Archive
+d1150 9
+d1160 1
+@
+
+
+1.80
+log
+@@
+text
+@d172 5
+d251 1
+a251 1
+	NOLIBSCAN	default = true ;
+d273 1
+a273 1
+	NOLIBSCAN	default = true ;
+d333 1
+a333 1
+	NOLIBSCAN	default = true ;
+d589 1
+a589 1
+	if $(NOLIBSCAN) 
+d593 1
+a593 4
+	    # on-disk object files.  This is somewhat dangerous, as
+	    # parts of the library can be replaced, making it seem up-
+	    # to-date when files (from other directories) haven't been
+	    # recompiled.
+a615 1
+	RmTemps $(_l) : $(_s) ;
+d618 4
+@
+
+
+1.79
+log
+@@
+text
+@d300 33
+d728 1
+a728 1
+	HDRS on $(<) = $(HDRS) $(SUBDIRHDRS) $(SEARCH_SOURCE) ;
+d1257 1
+a1257 1
+else if $(NT)
+d1337 22
+@
+
+
+1.78
+log
+@@
+text
+@d217 1
+d221 2
+d224 1
+a224 1
+    	MV		default = move ;
+@
+
+
+1.77
+log
+@@
+text
+@d637 1
+a637 1
+	if ! $($(<)-mkdir) 
+d679 3
+a681 3
+	    LOCATE on $(<) = $(LOCATE_TARGET) ;
+	    DEPENDS $(<) : $(LOCATE_TARGET) ;
+	    MkDir $(LOCATE_TARGET) ;
+d692 1
+a692 1
+	HDRS on $(<) = $(SEARCH_SOURCE) $(HDRS) $(SUBDIRHDRS) ;
+@
+
+
+1.76
+log
+@@
+text
+@d677 7
+a683 1
+	LOCATE on $(<) = $(LOCATE_TARGET) ;
+d692 1
+a692 1
+	HDRS on $(<) = $(HDRS) $(SUBDIRHDRS) $(SEARCH_SOURCE) ;
+d1105 1
+a1105 1
+	$(AS) $(ASFLAGS) -o $(<) $(>) ;
+@
+
+
+1.75
+log
+@@
+text
+@d95 1
+d980 1
+a980 1
+rule makeDirName
+d983 1
+a983 1
+	# Return result in $(<)
+d1004 6
+a1009 1
+	$(<) = $(_s) ;
+@
+
+
+1.74
+log
+@@
+text
+@d1025 1
+a1025 1
+	if $(SOURCE_GRIST)
+d1027 1
+a1027 1
+	    $(<) = $(>:G=$(SOURCE_GRIST)) ;
+d1029 1
+a1029 1
+	else
+d1031 10
+a1040 1
+	    $(<) = $(>) ;
+@
+
+
+1.73
+log
+@@
+text
+@d1037 1
+a1037 1
+	if $($(<)[1]) && $($(<[1])) = $($(>[1))
+d1049 1
+a1049 1
+	l = $(<[2-) ;
+@
+
+
+1.72
+log
+@@
+text
+@d98 2
+d663 7
+d1035 35
+@
+
+
+1.71
+log
+@@
+text
+@d516 1
+a516 1
+	LOCATE on $(<) = $(LOCATE_TARGET) ;
+d848 1
+d935 1
+a935 1
+	LOCATE on $(<) $(_h) = $(LOCATE_TARGET) ;
+@
+
+
+1.70
+log
+@@
+text
+@d974 3
+a976 1
+	_s = $(>[1]) ;
+d978 6
+a983 1
+	for _i in $(>[2-])
+d985 1
+a985 1
+	    _s = $(_s)$(SLASH)$(_i) ;
+@
+
+
+1.69
+log
+@@
+text
+@d92 7
+d351 1
+a351 1
+	for i in $(>)
+d353 1
+a353 1
+	    File $(i:D=$(<)) : $(i) ;
+d462 1
+a462 1
+	for i in $(>)
+d464 2
+a465 2
+	    Install $(i:D=$(<)) : $(i) ;
+	    MODE on $(i:D=$(<)) = $(EXEMODE) ;
+d476 1
+a476 1
+	for i in $(>)
+d478 2
+a479 2
+	    Install $(i:D=$(<)) : $(i) ;
+	    MODE on $(i:D=$(<)) = $(FILEMODE) ;
+d487 1
+a487 1
+	for i in $(>)
+d489 1
+a489 1
+	    switch $(i:S)
+d491 4
+a494 4
+	    case .1 : s = 1 ; case .2 : s = 2 ; case .3 : s = 3 ;
+	    case .4 : s = 4 ; case .5 : s = 5 ; case .6 : s = 6 ;
+	    case .7 : s = 7 ; case .8 : s = 8 ; case .l : s = l ;
+	    case .n : s = n ; case .man : s = 1 ;
+d497 1
+a497 1
+	    d = $(i:D=man$(s):S=.$(s)) ;
+d499 2
+a500 2
+	    Install $(d:R=$(<)) : $(i) ;
+	    MODE on $(d:R=$(<)) = $(FILEMODE) ;
+d506 1
+a506 1
+	for i in $(>)
+d508 2
+a509 2
+	    Install $(i:D=$(<)) : $(i) ;
+	    MODE on $(i:D=$(<)) = $(SHELLMODE) ;
+d528 1
+a528 1
+	# library depends on its member objects
+d530 1
+a530 2
+	l = $(<:S=$(SUFLIB)) ;
+	s = $(>) ;
+d532 1
+a532 4
+	if $(SOURCE_GRIST)
+	{
+	    s = $(>:G=$(SOURCE_GRIST)) ;
+	}
+d534 1
+a534 1
+	DEPENDS lib : $(l) ;
+d536 2
+d543 1
+a543 1
+	# LOCATE on $(<) $(<)($(s:BS)) = $(LOCATE_TARGET) ;
+d554 1
+a554 1
+	    DEPENDS $(l) : $(s) ;
+d562 1
+a562 1
+	    DEPENDS $(l) : $(l)($(s:BS)) ;
+d564 1
+a564 1
+	    for i in $(s)
+d566 1
+a566 1
+		DEPENDS $(l)($(i:BS)) : $(i) ;
+d570 1
+a570 1
+	Clean clean : $(l) ;
+d572 1
+a572 1
+	if $(CRELIB) { CreLib $(l) : $(s[1]) ; }
+d574 2
+a575 2
+	Archive $(l) : $(s) ;
+	RmTemps $(l) : $(s) ;
+d577 1
+a577 1
+	if $(RANLIB) { Ranlib $(l) ; }
+d593 1
+a593 1
+	    t = $(<) ;
+d595 1
+a595 1
+	    t = $(<:S=$(SUFEXE)) ;
+d598 2
+a599 2
+	DEPENDS $(t) : $(>:S=$(SUFLIB)) ;
+	NEEDLIBS on $(t) += $(>:S=$(SUFLIB)) ;
+d610 1
+a610 1
+	# make compiled sources a dependency of target
+d612 1
+a612 1
+	s = $(>) ;
+d614 1
+a614 4
+	if $(SOURCE_GRIST)
+	{
+	    s = $(>:G=$(SOURCE_GRIST)) ;
+	}
+d618 1
+a618 1
+	    t = $(<) ;
+d620 1
+a620 1
+	    t = $(<:S=$(SUFEXE)) ;
+d623 3
+a625 3
+	DEPENDS exe : $(t) ;
+	DEPENDS $(t) : $(s) ;
+	LOCATE on $(t) = $(LOCATE_TARGET) ;
+d627 1
+a627 1
+	Clean clean : $(t) ;
+d629 1
+a629 1
+	Link $(t) : $(s) ;
+d651 1
+a651 1
+	    s = $(<:D) ;
+d653 1
+a653 1
+	    if $(s) && $(s) != $(<)
+d655 2
+a656 2
+		Depends $(<) : $(s) ;
+		MkDir $(s) ;
+d683 1
+a683 1
+	# $(h) is where cc first looks for #include "foo.h" files.
+d689 1
+a689 1
+	    h = $(SEARCH_SOURCE) ;
+d693 1
+a693 1
+	    h = "" ;
+d698 1
+a698 1
+	HDRSEARCH on $(>) = $(HDRS) $(SUBDIRHDRS) $(h) $(STDHDRS) ;
+d720 1
+a720 1
+	s = $(<:S=$(SUFOBJ)) ;
+d722 1
+a722 4
+	if $(SOURCE_GRIST)
+	{
+	    s = $(s:G=$(SOURCE_GRIST)) ;
+	}
+d724 1
+a724 1
+	CCFLAGS on $(s) += $(>) ;
+d729 1
+a729 1
+	s = $(<:S=$(SUFOBJ)) ;
+d731 1
+a731 4
+	if $(SOURCE_GRIST)
+	{
+	    s = $(s:G=$(SOURCE_GRIST)) ;
+	}
+d733 1
+a733 1
+	C++FLAGS on $(s) += $(>) ;
+d738 1
+a738 1
+	s = $(<:S=$(SUFOBJ)) ;
+d740 1
+a740 4
+	if $(SOURCE_GRIST)
+	{
+	    s = $(s:G=$(SOURCE_GRIST)) ;
+	}
+d742 1
+a742 1
+	HDRS on $(s) += $(>) ;
+d747 1
+a747 1
+	s = $(<) ;
+d749 1
+a749 4
+	if $(SOURCE_GRIST)
+	{
+	    s = $(<:G=$(SOURCE_GRIST)) ;
+	}
+d751 1
+a751 1
+	for i in $(s)
+d753 1
+a753 1
+		Object $(i:S=$(SUFOBJ)) : $(i) ;
+d766 1
+a766 1
+	    t = $(<) ;
+d768 1
+a768 1
+	    t = $(<:S=$(SUFEXE)) ;
+d771 1
+a771 1
+	MODE on $(t) = 4711 ;
+d808 1
+a808 20
+	    if ! $(<[2]) 
+	    {
+		d = $(DOT) ;
+	    } 
+	    else
+	    {
+		d = $(DOTDOT) ;
+
+		for i in $(<[3-])
+		{
+		    d = $(d)$(SLASH)$(DOTDOT) ;
+		}
+	    }
+
+	    if $(VMS)
+	    {
+		d = [$(d)] ;
+	    }
+
+	    $(<) = $(d) ;
+d823 1
+a823 1
+	    r = $($(<[1])RULES) ;
+d825 1
+a825 1
+	    if ! $(r)
+d827 1
+a827 1
+		r = $(JAMRULES:R=$($(<[1]))) ;
+d832 1
+a832 19
+	    include $(r) ;
+
+	}
+
+	# Get the grist $(g), search $(s), by concatenating the
+	# directory elements using the OS specific path separator.
+
+	g = $(<[2]) ;
+	s = $(<[2]) ;
+
+	for i in $(<[3-])
+	{
+	    g = $(g)!$(i) ;
+	    s = $(s)$(SLASH)$(i) ;
+	}
+
+	if $(VMS)
+	{
+	    s = [$(s)] ;
+d835 1
+a835 1
+	# The result of our calculation: this directory.
+d838 2
+a839 1
+	SUBDIR = $(s:R=$($(<[1]))) ;
+d849 1
+a849 1
+	SOURCE_GRIST = $(g) ;
+d885 1
+a885 1
+	s = $(<[2]) ;
+d887 1
+a887 1
+	for i in $(<[3-])
+d889 1
+a889 1
+	    s = $(s)$(SLASH)$(i) ;
+d894 1
+a894 1
+	    s = [$(s)] ;
+d897 1
+a897 1
+	include $(JAMFILE:D=$(s):R=$($(<[1]))) ;
+d904 1
+a904 1
+	    t = $(<) ;
+d906 1
+a906 1
+	    t = $(<:S=$(SUFEXE)) ;
+d909 1
+a909 1
+	UNDEFS on $(t) += $(UNDEFFLAG)$(>) ;
+d919 1
+a919 1
+	h = $(<:BS=.h) ;
+d925 3
+a927 3
+	    DEPENDS $(<) $(h) : $(>) ;
+	    Yacc1 $(<) $(h) : $(>) ;
+	    Clean clean : $(<) $(h) ;
+d930 1
+a930 1
+	# make sure someone includes $(h) else it will be
+d933 69
+a1001 2
+	INCLUDES $(<) : $(h) ;
+	LOCATE on $(<) $(h) = $(LOCATE_TARGET) ;
+d1004 14
+a1358 1
+
+@
+
+
+1.68
+log
+@@
+text
+@d10 1
+a10 1
+# JAMBASE - jam 2.0 ruleset providing make(1)-like functionality
+d126 1
+a126 1
+#	$(JAM) - version number (2.0)
+@
+
+
+1.67
+log
+@@
+text
+@d268 1
+a268 1
+	C++FLAGS	default = $(CCLFAGS) ;
+a279 20
+    else if $(Mstools)
+    {
+	ECHO "Compiler is Microsoft SDK C++" ;
+
+	AR		default = lib ;
+	CC		default = cl /nologo ;
+	CCFLAGS		default = /D \"NT\" ;
+	C++		default = $(CC) ;
+	C++FLAGS	default = $(CCLFAGS) ;
+	LINK		default = $(CC) ;
+	LINKFLAGS	default = $(CCFLAGS) ;
+	LINKLIBS	default = $(Mstools)\\lib\\advapi32.lib
+				$(Mstools)\\lib\\libcmt.lib
+				$(Mstools)\\lib\\libc.lib
+				$(Mstools)\\lib\\oldnames.lib
+				$(Mstools)\\lib\\kernel32.lib ;
+	OPTIM		default =  ;
+	STDHDRS		default = $(Mstools)\\h ;
+	UNDEFFLAG	default = "/u _" ;
+    }
+d282 1
+a282 1
+	EXIT On NT, set BCCROOT, MSVCNT, MSVC, or Mstools to the root of the
+d1160 1
+a1160 1
+    else if $(MSVCNT) || $(Mstools)
+@
+
+
+1.66
+log
+@@
+text
+@d1195 1
+a1195 1
+	if not exist $(<) $(AR) /out:$(<) $(>)
+@
+
+
+1.65
+log
+@@
+text
+@d270 2
+a271 2
+	LINK		default = $(CC) ;
+	LINKFLAGS	default = $(CCFLAGS) ;
+a272 1
+				#$(MSVCNT)\\lib\\libcmt.lib
+@
+
+
+1.64
+log
+@@
+text
+@d153 2
+d1345 1
+@
+
+
+1.63
+log
+@@
+text
+@d126 1
+@
+
+
+1.62
+log
+@@
+text
+@d155 1
+a155 1
+		INSTALL default = "install" 
+@
+
+
+1.61
+log
+@@
+text
+@d155 2
+@
+
+
+1.60
+log
+@@
+text
+@d1173 1
+a1173 1
+	$(LINK) $(LINKFLAGS) /o$(<) $(UNDEFS) $(>) $(NEEDLIBS) $(LINKLIBS)
+d1206 1
+a1206 1
+	$(LINK) $(LINKFLAGS) /o$(<) $(UNDEFS) $(>) $(NEEDLIBS) $(LINKLIBS)
+@
+
+
+1.59
+log
+@@
+text
+@d1233 5
+@
+
+
+1.58
+log
+@@
+text
+@d153 1
+@
+
+
+1.57
+log
+@@
+text
+@d204 1
+a222 2
+	RW		default = $(BCCROOT)\\lib\\rw ;
+	RWLIBPATH	default = $(RW)\\lib ;
+d229 25
+a263 2
+	RW		default = $(MSVCNT)\\lib\\rw ;
+	RWLIBPATH	default = $(RW)\\lib ;
+a283 2
+	RW		default = $(Mstools)\\lib\\rw ;
+	RWLIBPATH	default = $(RW)\\lib ;
+d297 1
+a297 1
+	EXIT On NT, set BCCROOT, MSVCNT, or Mstools to the root of the
+d1153 22
+d1223 5
+@
+
+
+1.56
+log
+@@
+text
+@d65 1
+d457 5
+@
+
+
+1.55
+log
+@@
+text
+@d233 1
+a233 1
+	AR		default = lib ;
+@
+
+
+1.54
+log
+@@
+text
+@d204 1
+d236 3
+d244 1
+a244 1
+				$(MSVCNT)\\lib\\libcmt.lib
+d259 2
+d556 1
+a556 1
+	if $(CRELIB) { CreLib $(l) ; }
+d1131 12
+a1142 1
+	$(AR) /out:$(<) $(>)
+d1147 6
+a1152 1
+	$(CC) /c $(CCFLAGS) $(OPTIM) /out:$(<) /I$(HDRS) $(>)
+@
+
+
+1.53
+log
+@@
+text
+@d36 1
+d233 1
+a233 1
+	CC		default = cl ;
+d248 26
+d1121 1
+a1121 1
+    else if $(MSVCNT)
+a1122 5
+	actions Link
+	{
+	$(LINK) $(LINKFLAGS) /o$(<) $(UNDEFS) $(>) $(NEEDLIBS) $(LINKLIBS)
+	}
+
+d1130 6
+a1135 1
+	    $(CC) /c $(CCFLAGS) $(OPTIM) /out:$(<) /I$(HDRS) $(>)
+@
+
+
+1.52
+log
+@@
+text
+@d167 2
+d200 2
+d254 2
+d769 25
+a793 1
+	    EXIT Top level of source tree has not been set with $(<[1]) ;
+d818 1
+d850 1
+a850 1
+	LOCATE_TARGET = $(SUBDIR) ;
+@
+
+
+1.51
+log
+@@
+text
+@d197 8
+d213 2
+a214 2
+	MV		default = rename ;
+	RM		default = del ;
+a218 1
+	SLASH		default = \\ ;
+d221 1
+a221 3
+	SUFLIB		default = .lib ;
+	SUFOBJ		default = .obj ;
+	SUFEXE		default = .exe ;
+a229 2
+	MV		default = rename ;
+	RM		default = del ;
+a239 1
+	SLASH		default = \\ ;
+a240 3
+	SUFLIB		default = .lib ;
+	SUFOBJ		default = .obj ;
+	SUFEXE		default = .exe ;
+a481 3
+	DEPENDS $(l) : $(l)($(s:BS)) ;
+
+	Clean clean : $(l) ;
+d490 8
+a497 2
+	# each archive member object depends on real object
+	# each real object gets compiled from sources
+d499 3
+a501 1
+	for i in $(s)
+d503 10
+a512 1
+	    DEPENDS $(l)($(i:BS)) : $(i) ;
+d515 1
+a515 3
+	# must call separate Archive rule so that 'updated' modifier
+	# on 'actions' refers to updated .o's.
+	# delete objects after archive is made
+d807 6
+a817 1
+	SUBDIR = $(s:R=$($(<[1]))) ;
+d1042 6
+d1050 1
+a1050 1
+	$(LINK) -e$(<) $(LINKFLAGS) $(UNDEFS) -L$(LINKLIBS) $(NEEDLIBS) $(>) || del $(<) /f
+d1053 1
+a1053 1
+	actions together piecemeal Archive
+d1057 5
+d1070 1
+a1070 1
+	actions together piecemeal Archive
+a1073 1
+    }
+d1075 4
+a1078 3
+    actions Cc
+    {
+	$(CC) /c $(CCFLAGS) $(OPTIM) /out:$(<) /I$(HDRS) $(>)
+d1087 1
+a1087 1
+	$(RM) $(>) /f /q
+@
+
+
+1.50
+log
+@@
+text
+@d284 2
+a285 1
+DEPENDS all : first shell files lib exe ;
+@
+
+
+1.49
+log
+@@
+text
+@d728 1
+d946 1
+a946 1
+	$(CP) $(>) $(<) &&
+@
+
+
+1.48
+log
+@@
+text
+@d35 1
+d172 1
+a172 1
+	INSTALL		default = install ;
+@
+
+
+1.47
+log
+@@
+text
+@d718 1
+a718 1
+	EXEMODE on $(t) = 4755 ;
+@
+
+
+1.46
+log
+@@
+text
+@d148 1
+@
+
+
+1.45
+log
+@@
+text
+@d328 6
+d432 4
+a435 4
+	    case .1 : S = 1 ; case .2 : S = 2 ; case .3 : S = 3 ;
+	    case .4 : S = 4 ; case .5 : S = 5 ; case .6 : S = 6 ;
+	    case .7 : S = 7 ; case .8 : S = 8 ; case .l : S = l ;
+	    case .n : S = n ; case .man : S = 1 ;
+d438 1
+a438 1
+	    D = $(i:D=man$(S):S=.$(S)) ;
+d440 2
+a441 2
+	    Install $(D:R=$(<)) : $(i) ;
+	    MODE on $(D:R=$(<)) = $(FILEMODE) ;
+d471 2
+a472 2
+	L = $(<:S=$(SUFLIB)) ;
+	S = $(>) ;
+d476 1
+a476 1
+	    S = $(>:G=$(SOURCE_GRIST)) ;
+d479 2
+a480 2
+	DEPENDS lib : $(L) ;
+	DEPENDS $(L) : $(L)($(S:BS)) ;
+d482 1
+a482 1
+	Clean clean : $(L) ;
+d489 1
+a489 1
+	# LOCATE on $(<) $(<)($(S:BS)) = $(LOCATE_TARGET) ;
+d494 1
+a494 1
+	for i in $(S)
+d496 1
+a496 1
+	    DEPENDS $(L)($(i:BS)) : $(i) ;
+d503 1
+a503 1
+	if $(CRELIB) { CreLib $(L) ; }
+d505 2
+a506 2
+	Archive $(L) : $(S) ;
+	RmTemps $(L) : $(S) ;
+d508 1
+a508 1
+	if $(RANLIB) { Ranlib $(L) ; }
+d524 1
+a524 1
+	    T = $(<) ;
+d526 1
+a526 1
+	    T = $(<:S=$(SUFEXE)) ;
+d529 2
+a530 2
+	DEPENDS $(T) : $(>:S=$(SUFLIB)) ;
+	NEEDLIBS on $(T) += $(>:S=$(SUFLIB)) ;
+d543 1
+a543 1
+	S = $(>) ;
+d547 1
+a547 1
+	    S = $(>:G=$(SOURCE_GRIST)) ;
+d552 1
+a552 1
+	    T = $(<) ;
+d554 1
+a554 1
+	    T = $(<:S=$(SUFEXE)) ;
+d557 3
+a559 3
+	DEPENDS exe : $(T) ;
+	DEPENDS $(T) : $(S) ;
+	LOCATE on $(T) = $(LOCATE_TARGET) ;
+d561 1
+a561 1
+	Clean clean : $(T) ;
+d563 1
+a563 1
+	Link $(T) : $(S) ;
+d586 1
+d617 1
+a617 1
+	# HDRLOCAL is where cc first looks for #include "foo.h" files.
+d623 1
+a623 1
+	    HDRLOCAL = $(SEARCH_SOURCE) ;
+d627 1
+a627 1
+	    HDRLOCAL = "" ;
+d632 1
+a632 1
+	HDRSEARCH on $(>) = $(HDRS) $(SUBDIRHDRS) $(HDRLOCAL) $(STDHDRS) ;
+d654 1
+a654 1
+	S = $(<:S=$(SUFOBJ)) ;
+d658 1
+a658 1
+	    S = $(S:G=$(SOURCE_GRIST)) ;
+d661 1
+a661 1
+	CCFLAGS on $(S) += $(>) ;
+d666 1
+a666 1
+	S = $(<:S=$(SUFOBJ)) ;
+d670 1
+a670 1
+	    S = $(S:G=$(SOURCE_GRIST)) ;
+d673 1
+a673 1
+	C++FLAGS on $(S) += $(>) ;
+d678 1
+a678 1
+	S = $(<:S=$(SUFOBJ)) ;
+d682 1
+a682 1
+	    S = $(S:G=$(SOURCE_GRIST)) ;
+d685 1
+a685 1
+	HDRS on $(S) += $(>) ;
+d690 1
+a690 1
+	S = $(<) ;
+d694 1
+a694 1
+	    S = $(<:G=$(SOURCE_GRIST)) ;
+d697 1
+a697 1
+	for i in $(S)
+d712 1
+a712 1
+	    T = $(<) ;
+d714 1
+a714 1
+	    T = $(<:S=$(SUFEXE)) ;
+d717 1
+a717 1
+	EXEMODE on $(T) = 4755 ;
+d855 1
+a855 1
+	    T = $(<) ;
+d857 1
+a857 1
+	    T = $(<:S=$(SUFEXE)) ;
+d860 1
+a860 1
+	UNDEFS on $(T) += $(UNDEFFLAG)$(>) ;
+@
+
+
+1.44
+log
+@@
+text
+@d971 4
+a974 2
+	$(LINK) $(LINKFLAGS) -o $(<) $(UNDEFS) $(>) $(NEEDLIBS) $(LINKLIBS) ||
+	$(RM) $(<) && exit 1
+@
+
+
+1.43
+log
+@@
+text
+@d335 2
+d390 8
+d405 1
+a405 1
+	    INSTALLMODE on $(i:D=$(<)) = $(EXEMODE) ;
+d414 1
+a414 1
+	    INSTALLMODE on $(i:D=$(<)) = $(FILEMODE) ;
+d435 1
+a435 1
+	    INSTALLMODE on $(D:R=$(<)) = $(FILEMODE) ;
+d444 1
+a444 1
+	    INSTALLMODE on $(i:D=$(<)) = $(SHELLMODE) ;
+d505 6
+d718 2
+a736 1
+	#
+d913 15
+a936 1
+	$(CHMOD) $(FILEMODE) $(<)
+d953 1
+a953 1
+	$(INSTALL) -m $(INSTALLMODE) $(>) $(<)
+d960 1
+a960 2
+	$(CP) $(>) $(<) &&
+	$(CHMOD) $(INSTALLMODE) $(<)
+d971 2
+a972 4
+	if $(LINK) $(LINKFLAGS) -o $(<) $(UNDEFS) $(>) $(NEEDLIBS) $(LINKLIBS)
+	then $(CHMOD) $(EXEMODE) $(<)
+	else $(RM) $(<); exit 1
+	fi
+d997 1
+a997 1
+	' < $(>) > $(<) && $(CHMOD) $(SHELLMODE) $(<)
+d1041 4
+d1073 5
+a1090 1
+	set file/prot=$(FILEMODE) $(<)
+a1095 1
+	set file/prot=$(INSTALLMODE) $(<)
+a1106 1
+	set file/prot=$(EXEMODE) $(<)
+a1121 1
+	set file/prot=$(SHELLMODE) $(<)
+@
+
+
+1.42
+log
+@@
+text
+@a545 2
+	# Cheesy gate to prevent multiple invocations on same dir
+
+d548 2
+a549 4
+	    $(<)-mkdir = true ;
+
+	    MkDir1 $(<) ;
+
+a550 3
+
+	    NOUPDATE $(<) ;
+
+d553 3
+d559 3
+a563 1
+
+@
+
+
+1.41
+log
+@@
+text
+@d379 3
+d384 3
+@
+
+
+1.40
+log
+@@
+text
+@d10 1
+a10 1
+# JAMBASE - jam ruleset providing make(1)-like functionality
+@
+
+
+1.39
+log
+@@
+text
+@d12 1
+a12 1
+# Supports UNIX and NT.
+d29 2
+a30 1
+# 01/10/95 (seiwald) - NT support moved in, with LauraW's help.
+@
+
+
+1.38
+log
+@@
+text
+@d33 1
+d42 2
+a43 1
+# exe		- parent of all Main target
+d70 1
+d111 1
+d282 1
+a282 1
+NOTFILE all first shell files lib exe clean uninstall ;
+d378 2
+d537 30
+d886 5
+a923 1
+	[ -d "$(<:D)" ] || $(MKDIR) $(<:D)
+d942 1
+a942 1
+    actions CcMv
+d944 1
+a944 1
+	[ $(<) != $(>:BS=$(SUFOBJ)) ] && $(MV) $(>:BS=$(SUFOBJ)) $(<)
+d1070 5
+@
+
+
+1.37
+log
+@@
+text
+@d487 6
+a492 1
+	T = $(<:S=$(SUFEXE)) ;
+a508 1
+	T = $(<:S=$(SUFEXE)) ;
+d515 7
+d646 8
+a653 1
+	EXEMODE on $(<:S=$(SUFEXE)) = 4755 ;
+d788 8
+a795 1
+	UNDEFS on $(<:S=$(SUFEXE)) += $(UNDEFFLAG)$(>) ;
+@
+
+
+1.36
+log
+@@
+text
+@d65 1
+a65 1
+# LinkLibraries image : libraries ;	bag libraries onto a Main
+d74 1
+a74 1
+# Setuid image ;			mark an executable Setuid
+d81 1
+a81 1
+# Undefines image : symbols ;		save undef's for linking
+@
+
+
+1.35
+log
+@@
+text
+@d32 1
+a545 2
+	HDRLOCAL = "" ;
+
+d550 4
+d696 1
+a696 1
+	s = $(SLASH)$(<[2]) ;
+d704 5
+d714 1
+a714 1
+	SUBDIR = $($(<[1]))$(s) ;
+d753 1
+a753 1
+	s = "" ;
+d755 1
+a755 1
+	for i in $(<[2-])
+d760 6
+a765 1
+	include $($(<[1]))$(s)$(SLASH)$(JAMFILE) ;
+@
+
+
+1.34
+log
+@@
+text
+@d545 2
+a550 4
+	else
+	{
+	    HDRLOCAL = "" ;
+	}
+@
+
+
+1.33
+log
+@@
+text
+@d31 1
+d255 1
+a255 1
+	STDHDRS		default = "" decc$library_include ;
+d541 13
+d556 1
+a556 1
+	HDRSEARCH on $(>) = $(STDHDRS) $(HDRS) $(SUBDIRHDRS) $(SEARCH_SOURCE) ;
+@
+
+
+1.32
+log
+@@
+text
+@d750 1
+a750 1
+	EXIT "Unknown suffix on" $(>) "- see UserObject rule in Jambase(5)." ;
+@
+
+
+1.31
+log
+@@
+text
+@d26 5
+a30 4
+# 01/08/94 (seiwald) - Shell now handled with awk, not sed
+# 01/09/94 (seiwald) - Install* now take dest directory as target
+# 01/10/94 (seiwald) - All entries sorted.
+# 01/10/94 (seiwald) - NT support moved in, with LauraW's help.
+d68 1
+d74 3
+a76 2
+# SubDirObjectCcFlags flags ;		add compiler flags until next SubDir
+# SubDirObjectHdrs dirs ;		add include dirs until next SubDir
+d574 12
+d702 1
+d711 5
+@
+
+
+1.30
+log
+@@
+text
+@d97 1
+d111 1
+d274 1
+@
+
+
+1.29
+log
+@@
+text
+@d543 3
+a545 3
+	    case .C :	c++ $(<) : $(>) ;
+	    case .cc :	c++ $(<) : $(>) ;
+	    case .cpp : c++ $(<) : $(>) ;
+@
+
+
+1.28
+log
+@@
+text
+@d144 1
+d845 1
+a845 1
+	awk '
+@
+
+
+1.27
+log
+@@
+text
+@d99 1
+d631 1
+a631 1
+	    ECHO Top level of source tree has not been set with $(<[1]) ;
+d705 1
+a705 1
+	    ECHO Top level of source tree has not been set with $(<[1]) ;
+d725 1
+a725 1
+	ECHO "Unknown suffix on" $(>) "- see UserObject rule in Jambase(5)." ;
+@
+
+
+1.26
+log
+@@
+text
+@d31 12
+d119 1
+d269 1
+a269 1
+NOTFILE all first shell files lib exe ;
+d364 1
+@
+
+
+1.25
+log
+@@
+text
+@d247 1
+a247 1
+JAMRULES	default = ;
+d357 2
+a358 2
+	    Install $(i:R=$(<)) : $(i) ;
+	    INSTALLMODE on $(i:R=$(<)) = $(EXEMODE) ;
+d366 2
+a367 2
+	    Install $(i:R=$(<)) : $(i) ;
+	    INSTALLMODE on $(i:R=$(<)) = $(FILEMODE) ;
+d396 2
+a397 2
+	    Install $(i:R=$(<)) : $(i) ;
+	    INSTALLMODE on $(i:R=$(<)) = $(SHELLMODE) ;
+a597 2
+	# This introduces a subdirectory Jamfile, setting up all the
+	# search & locate stuff.
+d599 1
+a599 1
+	#	SubDir TOP d1 [ d2 [ d3 [ d4 ] ] ]
+d601 12
+a612 5
+	# TOP is the name of the (environment) variable that names the
+	# TOP level directory of the build tree.  d1...d4 are the
+	# directory elements that lead to this directory.  The call
+	# to SubDir is system independent, in that it contains no OS
+	# path!	 We crudely construct the path below.
+d619 13
+a631 2
+	# Get the grist $(g), search $(s)
+	# This is just hideous variable manipulation
+d633 13
+d983 1
+a983 1
+# Now include the user's Jam rules and Jamfile.
+a985 1
+include $(JAMUSER) ;
+@
+
+
+1.24
+log
+@@
+text
+@d160 1
+a160 1
+	SUBLIB		default = .a ;
+d185 1
+a185 1
+	SUBLIB		default = .lib ;
+d210 1
+a210 1
+	SUBLIB		default = .lib ;
+d235 1
+a235 1
+	SUBLIB		default = .olb ;
+d418 1
+a418 1
+	L = $(<:S=$(SUBLIB)) ;
+@
+
+
+1.23
+log
+@@
+text
+@d160 1
+d185 1
+d210 1
+d235 1
+d418 1
+d426 2
+a427 2
+	DEPENDS lib : $(<) ;
+	DEPENDS $(<) : $(<)($(S:BS)) ;
+d429 1
+a429 1
+	Clean clean : $(<) ;
+d443 1
+a443 1
+	    DEPENDS $(<)($(i:BS)) : $(i) ;
+d450 1
+a450 1
+	if $(CRELIB) { CreLib $(<) ; }
+d452 2
+a453 2
+	Archive $(<) : $(S) ;
+	RmTemps $(<) : $(S) ;
+d455 1
+a455 1
+	if $(RANLIB) { Ranlib $(<) ; }
+d465 2
+a466 2
+	DEPENDS $(T) : $(>) ;
+	NEEDLIBS on $(T) += $(>) ;
+@
+
+
+1.22
+log
+@@
+text
+@d191 1
+a191 1
+	AR		default = lib32 ;
+d853 5
+@
+
+
+1.21
+log
+@@
+text
+@d228 1
+d445 2
+a449 1
+	if $(CRELIB) { CreLib $(<) ; }
+d901 1
+a901 1
+    actions quietly updated piecemeal together Rmtemps
+@
+
+
+1.20
+log
+@@
+text
+@a143 2
+	JAMFILE		default = Jamfile ;
+	JAMRULES	default = ;
+d184 2
+d208 2
+d213 30
+d285 5
+d447 1
+d681 9
+a689 3
+	DEPENDS $(<) $(h) : $(>) ;
+	Yacc1 $(<) $(h) : $(>) ;
+	Clean clean : $(<) $(h) ;
+d692 1
+d810 1
+a810 2
+
+if $(NT)
+d852 65
+@
+
+
+1.19
+log
+@@
+text
+@d160 1
+d183 1
+a185 1
+
+d206 1
+d572 7
+a578 15
+	if $(<[5]) {
+		g = $(<[2])!$(<[3])!$(<[4])!$(<[5]) ;
+		s = /$(<[2])/$(<[3])/$(<[4])/$(<[5]) ;
+	} else if $(<[4]) {
+		g = $(<[2])!$(<[3])!$(<[4]) ;
+		s = /$(<[2])/$(<[3])/$(<[4]) ;
+	} else if $(<[3]) {
+		g = $(<[2])!$(<[3]) ;
+		s = /$(<[2])/$(<[3]) ;
+	} else if $(<[2]) {
+		g = $(<[2]) ;
+		s = /$(<[2]) ;
+	} else {
+		g = ;
+		s = ;
+d619 5
+a623 8
+	if $(<[5]) {
+		include $($(<[1]))/$(<[2])/$(<[3])/$(<[4])/$(<[5])/$(JAMFILE) ;
+	} else if $(<[4]) {
+		include $($(<[1]))/$(<[2])/$(<[3])/$(<[4])/$(JAMFILE) ;
+	} else if $(<[3]) {
+		include $($(<[1]))/$(<[2])/$(<[3])/$(JAMFILE) ;
+	} else if $(<[2]) {
+		include $($(<[1]))/$(<[2])/$(JAMFILE) ;
+d625 2
+@
+
+
+1.18
+log
+@@
+text
+@d12 2
+d16 1
+a16 1
+# 04/21/94 (seiwald) - do RmTemps together 
+d23 1
+a23 1
+# 		     - Rule names downshifted.
+d28 2
+d66 1
+a66 1
+# Yacc source.c : source.y ; 		.y -> .c
+d116 1
+a116 1
+switch $(OS) 
+d126 45
+a170 37
+AR 		default = ar ru ;
+AS		default = as ;
+ASFLAGS		default = ;
+BINDIR		default = /usr/local/bin ;
+C++		default = gcc ;
+C++FLAGS	default = ;
+CC 		default = cc ;
+CCFLAGS 	default = ;
+CP		default = cp ;
+CHMOD 		default = chmod ;
+EXEMODE 	default = 711 ;
+FILEMODE 	default = 644 ;
+FORTRAN		default = f77 ;
+FORTRANFLAGS	default = ;
+HDRS 		default = ;
+INSTALL		default = install ;
+JAMFILE		default = Jamfile ;
+JAMRULES	default = ;
+LEX		default = lex ;
+LIBDIR		default = /usr/local/lib ;
+LINK 		default = $(CC) ;
+LINKFLAGS 	default = $(CCFLAGS) ;
+LINKLIBS 	default = ;
+LN		default = ln ;
+MANDIR		default = /usr/local/man ;
+MKDIR		default = mkdir ;
+MV 		default = mv -f ;
+OPTIM		default = -O ;
+RANLIB 		default = ranlib ;
+RM 		default = rm -f ;
+SHELLHEADER 	default = "#!/bin/sh" ;
+SHELLMODE 	default = 755 ;
+STDHDRS 	default = /usr/include ;
+SUFOBJ		default = .o ;
+SUFEXE		default = "" ;
+UNDEFFLAG	default = "-u _" ;
+YACC 		default = yacc -d ;
+d172 12
+a183 1
+HDRPATTERN = "^#[ 	]*include[ 	]*[<\"](.*)[\">].*$" ;
+d185 27
+d219 1
+a219 1
+# 
+d228 1
+a228 1
+rule Bulk 
+d230 3
+a232 3
+	for i in $(>) 
+	{ 
+	    File $(i:D=$(<)) : $(i) ; 
+d239 1
+a239 10
+	
+	if $(RELOCATE)
+	{
+	    "Cc -mv" $(<) : $(>) ;
+	}
+	else
+	{
+	    "Cc -o" $(<) : $(>) ;
+	}
+	
+d242 1
+a242 1
+	
+d244 7
+d280 4
+a283 4
+	
+	# N.B.  This rule is called during binding, potentially after 
+	# the fate of many targets has been determined, and must be 
+	# used with caution: don't add dependencies to unrelated 
+d285 2
+a286 2
+	
+	# Tell Jam that anything depending on $(<) also depends on $(>), 
+d288 3
+a290 3
+	# care if we can't actually find the headers (they may have been 
+	# within ifdefs), 
+	
+d294 1
+a294 1
+	
+d296 1
+a296 1
+	
+d320 1
+a320 1
+	for i in $(>) 
+d330 1
+a330 1
+	
+d335 3
+a337 3
+	    case .1 : S = 1 ; case .2 : S = 2 ; case .3 : S = 3 ; 
+	    case .4 : S = 4 ; case .5 : S = 5 ; case .6 : S = 6 ; 
+	    case .7 : S = 7 ; case .8 : S = 8 ; case .l : S = l ; 
+d340 1
+a340 1
+	
+d342 1
+a342 1
+	
+d350 1
+a350 1
+	for i in $(>) 
+d373 1
+a373 1
+	
+d375 1
+a375 1
+	
+d380 1
+a380 1
+	
+d383 1
+a383 1
+	
+d385 1
+a385 1
+	
+d390 1
+a390 1
+	# 
+d392 1
+a392 1
+	
+d395 2
+a396 2
+	
+	for i in $(S) 
+d398 1
+a398 1
+	    DEPENDS $(<)($(i:BS)) : $(i) ; 
+d400 1
+a400 1
+	
+d404 1
+a404 1
+	
+d407 1
+a407 1
+	
+d411 1
+a411 1
+rule LinkLibraries 
+d415 1
+a415 1
+	
+d417 1
+a417 1
+	
+d422 1
+a422 1
+rule Main 
+d431 1
+a431 1
+	
+d434 1
+a434 1
+	
+d439 1
+a439 1
+	
+d441 1
+a441 1
+	DEPENDS	$(T) : $(S) ;
+d443 1
+a443 1
+	
+d445 1
+a445 1
+	
+d449 1
+a449 1
+rule Object 
+d452 1
+a452 1
+	
+d454 1
+a454 1
+	
+d457 1
+a457 1
+	
+d459 3
+a461 3
+	# We shouldn't need -I$(SEARCH_SOURCE) as cc can find headers 
+	# in the .c file's directory, but generated .c files (from 
+	# yacc, lex, etc) are located in $(LOCATE_TARGET), possibly 
+d463 1
+a463 1
+	
+d465 1
+a465 1
+	
+d470 1
+a470 1
+	
+d474 1
+a474 1
+	
+d476 1
+a476 1
+	
+d479 1
+a479 1
+	    case .c : 	Cc $(<) : $(>) ;
+d482 1
+a482 1
+	    case .cpp :	c++ $(<) : $(>) ;
+d487 1
+a487 1
+	    case .y : 	Cc $(<) : $(<:S=.c) ; 
+d496 1
+a496 1
+	
+d501 1
+a501 1
+	
+d508 1
+a508 1
+	
+d513 1
+a513 1
+	
+d520 1
+a520 1
+	
+d525 3
+a527 3
+	
+	for i in $(S) 
+	{ 
+d556 1
+a556 1
+	# TOP is the name of the (environment) variable that names the 
+d560 1
+a560 1
+	# path!  We crudely construct the path below.
+d562 1
+a562 1
+	if ! $($(<[1])) 
+d570 1
+a570 1
+	if $(<[5]) { 
+d588 1
+a588 1
+	# These can be reset if needed.  For example, if the source
+d620 1
+a620 1
+	if ! $($(<[1])) 
+d625 1
+a625 1
+	if $(<[5]) { 
+d646 1
+a646 1
+rule Yacc 
+d649 1
+a649 1
+	
+d663 1
+a663 1
+actions updated together piecemeal Archive 
+d665 3
+d669 1
+a669 1
+}
+d671 2
+a672 2
+actions As
+{
+d674 1
+a674 1
+}
+d676 2
+a677 2
+actions C++
+{
+d679 1
+a679 1
+}
+d681 2
+a682 2
+actions "Cc -o"
+{
+d684 1
+a684 7
+}
+
+actions "Cc -mv"
+{
+	$(CC) -c $(CCFLAGS) $(OPTIM) -I$(HDRS) $(>)
+	[ $(<) != $(<:D=) ] && $(MV) $(<:D=) $(<)
+}
+d686 2
+a687 2
+actions piecemeal together existing Clean
+{
+d689 1
+a689 1
+}
+d691 2
+a692 2
+actions File
+{
+d696 1
+a696 1
+}
+d698 2
+a699 2
+actions Fortran
+{
+d701 1
+a701 1
+}
+d703 2
+a704 2
+actions HardLink
+{
+d706 1
+a706 1
+}
+d708 1
+a708 3
+if $(INSTALL)
+{
+    actions Install
+d710 4
+a713 1
+	    $(INSTALL) -m $(INSTALLMODE) $(>) $(<)
+d715 1
+a715 4
+}
+else
+{
+    actions Install
+d717 6
+a722 3
+	    [ -d "$(<:D)" ] || $(MKDIR) $(<:D)
+	    $(CP) $(>) $(<) &&
+	    $(CHMOD) $(INSTALLMODE) $(<) 
+a723 1
+}
+d725 2
+a726 2
+actions Lex
+{
+d728 1
+a728 1
+}
+d730 4
+a733 4
+actions Link 
+{
+	if $(LINK) $(LINKFLAGS) -o $(<) $(UNDEFS) $(>) $(NEEDLIBS) $(LINKLIBS) 
+	then $(CHMOD) $(EXEMODE) $(<) 
+d736 1
+a736 1
+}
+d738 7
+a744 2
+actions together Ranlib
+{
+d746 1
+a746 1
+}
+d748 2
+a749 2
+actions quietly updated piecemeal together RmTemps
+{
+d751 1
+a751 1
+}
+d753 2
+a754 2
+actions Shell
+{
+d760 2
+a761 4
+	' < $(>) > $(<)
+
+	$(CHMOD) $(SHELLMODE) $(<)
+}
+d763 2
+a764 2
+actions Yacc1
+{
+d770 44
+d816 1
+d841 1
+a841 1
+# 
+@
+
+
+1.17
+log
+@@
+text
+@d155 2
+d169 2
+a170 2
+#
+# Compiling and linking rules.
+d173 1
+a173 1
+rule Main 
+d175 1
+a175 2
+	MainFromObjects $(<) : $(>:S=.o) ;
+	Objects $(>) ;
+d178 1
+a178 1
+rule MainFromObjects
+d180 5
+a184 3
+	# make compiled sources a dependency of target
+
+	S = $(>) ;
+d186 5
+a190 1
+	if $(SOURCE_GRIST)
+d192 5
+a196 1
+	    S = $(>:G=$(SOURCE_GRIST)) ;
+d198 6
+d205 4
+a208 3
+	DEPENDS exe : $(<) ;
+	DEPENDS	$(<) : $(S) ;
+	LOCATE on $(<) = $(LOCATE_TARGET) ;
+d210 6
+a215 1
+	Clean clean : $(<) ;
+d217 3
+a219 1
+	Link $(<) : $(S) ;
+d222 1
+a222 1
+actions Link 
+d224 3
+a226 4
+	if $(LINK) $(LINKFLAGS) -o $(<) $(UNDEFS) $(>) $(NEEDLIBS) $(LINKLIBS) 
+	then $(CHMOD) $(EXEMODE) $(<) 
+	else $(RM) $(<); exit 1
+	fi
+d229 1
+a229 1
+rule LinkLibraries 
+d231 22
+a252 2
+	# make library dependencies of target
+	# set NEEDLIBS variable used by 'actions Main'
+d254 3
+d258 1
+a258 1
+	NEEDLIBS on $(<) += $(>) ;
+d261 1
+a261 1
+rule Undefines
+d263 5
+a267 1
+	UNDEFS on $(<) += $(UNDEFFLAG)$(>) ;
+d270 1
+a270 1
+rule Setuid
+d272 42
+a313 1
+	EXEMODE on $(<) = 4755 ;
+d318 1
+a318 1
+	LibraryFromObjects $(<) : $(>:S=.o) ;
+d325 1
+a325 1
+
+d327 1
+a327 1
+
+d332 1
+a332 1
+
+d335 1
+a335 1
+
+d337 1
+a337 1
+
+d344 1
+a344 1
+
+d347 1
+a347 1
+
+d352 1
+a352 1
+
+d356 1
+a356 1
+
+d359 1
+a359 1
+
+d363 1
+a363 11
+actions updated together piecemeal Archive 
+{
+	$(AR) $(<) $(>)
+}
+
+actions together Ranlib
+{
+	$(RANLIB) $(<)
+}
+
+rule RmTemps
+d365 7
+a371 1
+	TEMPORARY $(>) ;
+d374 1
+a374 1
+actions quietly updated piecemeal together RmTemps
+d376 2
+a377 1
+	$(RM) $(>)
+d380 1
+a380 1
+rule Objects
+d382 5
+a386 2
+	S = $(<) ;
+
+d389 1
+a389 6
+	    S = $(<:G=$(SOURCE_GRIST)) ;
+	}
+
+	for i in $(S) 
+	{ 
+		Object $(i:S=.o) : $(i) ;
+d391 8
+d404 1
+a404 1
+
+d406 1
+a406 1
+
+d409 1
+a409 1
+
+d415 1
+a415 1
+
+d417 1
+a417 1
+
+d422 1
+a422 1
+
+d426 1
+a426 1
+
+d428 1
+a428 1
+
+a444 41
+rule UserObject
+{
+	ECHO "Unknown suffix on" $(>) "-"
+		"see UserObject rule in Jambase(5)." ;
+}
+
+rule HdrRule
+{
+	# HdrRule source : headers ;
+
+	# N.B.  This rule is called during binding, potentially after 
+	# the fate of many targets has been determined, and must be 
+	# used with caution: don't add dependencies to unrelated 
+	# targets, and don't set variables on $(<).
+
+	# Tell Jam that anything depending on $(<) also depends on $(>), 
+	# set SEARCH so Jam can find the headers, but then say we don't
+	# care if we can't actually find the headers (they may have been 
+	# within ifdefs), 
+
+	INCLUDES $(<) : $(>) ;
+	SEARCH on $(>) = $(HDRSEARCH) ;
+	NOCARE $(>) ;
+
+	# Propagate on $(<) to $(>)
+
+	HDRSEARCH on $(>) = $(HDRSEARCH) ;
+	HDRSCAN on $(>) = $(HDRSCAN) ;
+	HDRRULE on $(>) = $(HDRRULE) ;
+}
+
+rule As
+{
+	DEPENDS $(<) : $(>) ;
+}
+
+actions As
+{
+	$(AS) $(ASFLAGS) -o $(<) $(>) ;
+}
+
+d447 2
+a448 2
+	S = $(<:S=.o) ;
+
+d453 1
+a453 1
+
+d459 2
+a460 2
+	S = $(<:S=.o) ;
+
+d465 1
+a465 1
+
+d469 1
+a469 76
+rule Cc
+{
+	DEPENDS $(<) : $(>) ;
+
+	if $(RELOCATE)
+	{
+	    "Cc -mv" $(<) : $(>) ;
+	}
+	else
+	{
+	    "Cc -o" $(<) : $(>) ;
+	}
+
+	# Just to clarify here: this sets the per-target CCFLAGS to
+	# be the current value of (global) CCFLAGS and SUBDIRCCFLAGS.
+
+	CCFLAGS on $(<) += $(CCFLAGS) $(SUBDIRCCFLAGS) ;
+}
+
+actions "Cc -o"
+{
+	$(CC) -c $(CCFLAGS) $(OPTIM) -I$(HDRS) -o $(<) $(>)
+}
+
+actions "Cc -mv"
+{
+	$(CC) -c $(CCFLAGS) $(OPTIM) -I$(HDRS) $(>)
+	[ $(<) != $(<:D=) ] && $(MV) $(<:D=) $(<)
+}
+
+rule C++
+{
+	DEPENDS $(<) : $(>) ;
+}
+
+actions C++
+{
+	$(C++) -c $(C++FLAGS) $(OPTIM) -I$(HDRS) -o $(<) $(>)
+}
+
+rule Fortran
+{
+	DEPENDS $(<) : $(>) ;
+}
+
+actions Fortran
+{
+	$(FORTRAN) $(FORTRANFLAGS) -o $(<) $(>)
+}
+
+rule Lex
+{
+	DEPENDS $(<) : $(>) ;
+	LOCATE on $(<) = $(LOCATE_TARGET) ;
+	Clean clean : $(<) ;
+}
+
+actions Lex
+{
+	$(LEX) $(>) && $(MV) lex.yy.c $(<)
+}
+
+rule Yacc 
+{
+	h = $(<:BS=.h) ;
+
+	DEPENDS $(<) $(h) : $(>) ;
+	Yacc1 $(<) $(h) : $(>) ;
+	Clean clean : $(<) $(h) ;
+	# make sure someone includes $(h) else it will be
+	# a deadly independent target
+	INCLUDES $(<) : $(h) ;
+	LOCATE on $(<) $(h) = $(LOCATE_TARGET) ;
+}
+
+actions Yacc1
+d471 3
+a473 1
+	$(YACC) $(>) &&
+d475 1
+a475 2
+	    $(MV) y.tab.c $(<[1])
+	    $(MV) y.tab.h $(<[2])
+d477 2
+a478 9
+}
+
+# 
+# File copying/installing/linking rules.
+#
+
+rule Bulk 
+{
+	for i in $(>) 
+d480 1
+a480 1
+	    File $(i:D=$(<)) : $(i) ; 
+d484 1
+a484 15
+rule File
+{
+	DEPENDS files : $(<) ;
+	DEPENDS $(<) : $(>) ;
+	SEARCH on $(>) = $(SEARCH_SOURCE) ;
+}
+
+actions File
+{
+	$(RM) $(<)
+	$(CP) $(>) $(<) &&
+	$(CHMOD) $(FILEMODE) $(<)
+}
+
+rule HardLink
+d486 1
+a486 3
+	DEPENDS files : $(<) ;
+	DEPENDS $(<) : $(>) ;
+	SEARCH on $(>) = $(SEARCH_SOURCE) ;
+d489 1
+a489 1
+actions HardLink
+d491 1
+a491 1
+	$(RM) $(<) && $(LN) $(>) $(<)
+a500 93
+actions Shell
+{
+	awk '
+		NR == 1 { print "$(SHELLHEADER)" }
+		NR == 1 && /^[#:]/ { next }
+		/^##/ { next }
+		{ print }
+	' < $(>) > $(<)
+
+	$(CHMOD) $(SHELLMODE) $(<)
+}
+
+rule InstallBin
+{
+	for i in $(>)
+	{
+	    Install $(i:R=$(<)) : $(i) ;
+	    INSTALLMODE on $(i:R=$(<)) = $(EXEMODE) ;
+	}
+}
+
+rule InstallLib
+{
+	for i in $(>) 
+	{
+	    Install $(i:R=$(<)) : $(i) ;
+	    INSTALLMODE on $(i:R=$(<)) = $(FILEMODE) ;
+	}
+}
+
+rule InstallMan
+{
+	# Really this just strips the . from the suffix
+
+	for i in $(>)
+	{
+	    switch $(i:S)
+	    {
+	    case .1 : S = 1 ; case .2 : S = 2 ; case .3 : S = 3 ; 
+	    case .4 : S = 4 ; case .5 : S = 5 ; case .6 : S = 6 ; 
+	    case .7 : S = 7 ; case .8 : S = 8 ; case .l : S = l ; 
+	    case .n : S = n ; case .man : S = 1 ;
+	    }
+
+	    D = $(i:D=man$(S):S=.$(S)) ;
+
+	    Install $(D:R=$(<)) : $(i) ;
+	    INSTALLMODE on $(D:R=$(<)) = $(FILEMODE) ;
+	}
+}
+
+rule InstallShell
+{
+	for i in $(>) 
+	{
+	    Install $(i:R=$(<)) : $(i) ;
+	    INSTALLMODE on $(i:R=$(<)) = $(SHELLMODE) ;
+	}
+}
+
+rule Install
+{
+	DEPENDS install : $(<) ;
+	DEPENDS $(<) : $(>) ;
+	SEARCH on $(>) = $(SEARCH_SOURCE) ;
+}
+
+if $(INSTALL)
+{
+    actions Install
+    {
+	    $(INSTALL) -m $(INSTALLMODE) $(>) $(<)
+    }
+}
+else
+{
+    actions Install
+    {
+	    [ -d "$(<:D)" ] || $(MKDIR) $(<:D)
+	    $(CP) $(>) $(<) &&
+	    $(CHMOD) $(INSTALLMODE) $(<) 
+    }
+}
+
+actions piecemeal together existing Clean
+{
+	$(RM) $(>)
+}
+
+#
+# Multidirectory support.
+#
+
+d588 136
+@
+
+
+1.16
+log
+@@
+text
+@d3 1
+a3 1
+# +\	Copyright 1993 Christopher Seiwald.
+d6 2
+@
+
+
+1.15
+log
+@@
+text
+@d16 2
+a17 2
+# 08/25/94 (seiwald) - new CcAddFlags rule to append to per-target CCFLAGS
+# 08/29/94 (seiwald) - new CcAddHdrs rule to append to per-target HDRS
+a30 2
+# CcAddFlags source : flags ;		add compiler flags for object
+# CcAddHdrs source : dirs ;		add include directories for object
+d48 2
+d54 2
+d319 1
+a319 1
+	HDRS on $(<) = $(HDRS) $(SEARCH_SOURCE) ;
+d328 1
+a328 1
+	HDRSEARCH on $(>) = $(HDRS) $(STDHDRS) $(SEARCH_SOURCE) ;
+d350 2
+a351 2
+	ECHO "Unknown source file suffix on" $(>) "-"
+		"try defining your own UserObject rule." ;
+d389 1
+a389 1
+rule CcAddFlags
+d401 1
+a401 1
+rule CcAddHdrs
+d427 1
+a427 1
+	# be the current value of (global) CCFLAGS and CCDIRFLAGS.
+d429 1
+a429 1
+	CCFLAGS on $(<) += $(CCFLAGS) $(CCDIRFLAGS) ;
+d682 15
+a696 1
+	CCDIRFLAGS = ;
+@
+
+
+1.14
+log
+@@
+text
+@d23 1
+d39 4
+a42 4
+# InstallBin sources ;			install binaries
+# InstallLib sources ;			install files
+# InstallMan source ;			install man pages
+# InstallShell source ;			install shell script
+d554 1
+a554 1
+	for i in $(<)
+d556 2
+a557 2
+	    Install $(i:D=$(BINDIR)) : $(i) ;
+	    INSTALLMODE on $(i:D=$(BINDIR)) = $(EXEMODE) ;
+d563 1
+a563 1
+	for i in $(<) 
+d565 2
+a566 2
+	    Install $(i:D=$(LIBDIR)) : $(i) ;
+	    INSTALLMODE on $(i:D=$(LIBDIR)) = $(FILEMODE) ;
+a569 5
+rule InstallLibDir
+{
+	INSTALLLIBDIR = $(<) ;
+}
+
+d574 1
+a574 1
+	for i in $(<)
+d584 1
+a584 1
+	    D = $(i:D=$(MANDIR)/man$(S):S=.$(S)) ;
+d586 2
+a587 2
+	    Install $(D) : $(i) ;
+	    INSTALLMODE on $(D) = $(FILEMODE) ;
+d593 1
+a593 1
+	for i in $(<) 
+d595 2
+a596 2
+	    Install $(i:D=$(BINDIR)) : $(i) ;
+	    INSTALLMODE on $(i:D=$(BINDIR)) = $(SHELLMODE) ;
+a713 3
+rule INSTALLBIN { InstallBin $(<) : $(>) ; }
+rule INSTALLLIB { InstallLib $(<) : $(>) ; }
+rule INSTALLMAN { InstallMan $(<) : $(>) ; }
+d722 6
+@
+
+
+1.13
+log
+@@
+text
+@d52 2
+d125 1
+d142 1
+d195 1
+a195 1
+	then chmod $(EXEMODE) $(<) 
+d516 2
+a517 2
+	cp $(>) $(<) &&
+	chmod $(FILEMODE) $(<)
+d548 1
+a548 1
+	chmod $(SHELLMODE) $(<)
+d622 3
+a624 3
+	    [ -d "$(<:D)" ] || mkdir $(<:D)
+	    cp $(>) $(<) &&
+	    chmod $(INSTALLMODE) $(<) 
+d630 1
+a630 1
+	rm -f $(>)
+d639 3
+a641 1
+	# Just a reminder here:
+d691 2
+d733 1
+a733 1
+include $(JAMRULES) ;
+@
+
+
+1.12
+log
+@@
+text
+@d642 1
+a642 1
+	# path!
+d649 1
+a649 1
+	# Get the grist, search
+d670 3
+d674 3
+a676 2
+	SEARCH_SOURCE = $($(<[1]))$(s) ;
+	LOCATE_TARGET = $($(<[1]))$(s) ;
+@
+
+
+1.11
+log
+@@
+text
+@d22 1
+d52 1
+a52 1
+# Shell exe : source ;			install a shell executable
+d537 7
+a543 4
+	( 
+	echo "$(SHELLHEADER)"
+	sed '1d;/^##/d' $(>)
+	) > $(<)
+d565 5
+@
+
+
+1.10
+log
+@@
+text
+@d77 1
+a77 1
+#	NOTIME - ignore the timestamp of the target (it's not a file)
+d155 1
+a155 1
+NOTIME all first shell files lib exe ;
+@
+
+
+1.9
+log
+@@
+text
+@d21 1
+a21 1
+# 10/14/94 (seiwald) - (Crude) support for .s, .C, and .f files.
+d329 1
+@
+
+
+1.8
+log
+@@
+text
+@d158 1
+a158 1
+# The rules
+d271 10
+d488 4
+a541 10
+rule RmTemps
+{
+	TEMPORARY $(>) ;
+}
+
+actions quietly updated piecemeal together RmTemps
+{
+	$(RM) $(>)
+}
+
+d620 69
+@
+
+
+1.7
+log
+@@
+text
+@d34 1
+d136 1
+d500 12
+@
+
+
+1.6
+log
+@@
+text
+@d39 1
+d127 1
+d563 9
+d579 1
+a579 1
+actions Install
+d581 13
+a593 3
+	[ -d "$(<:D)" ] || mkdir $(<:D)
+	cp $(>) $(<) &&
+	chmod $(INSTALLMODE) $(<) 
+@
+
+
+1.5
+log
+@@
+text
+@d21 1
+d25 1
+d28 1
+d33 1
+d113 2
+d116 2
+d123 2
+d127 1
+a127 1
+JAMRULES	default = 
+a180 1
+
+d313 3
+d318 1
+d328 1
+a328 1
+		"try defining your own UserObject rule."
+d356 10
+d420 20
+@
+
+
+1.4
+log
+@@
+text
+@d122 1
+a122 1
+LINLIBS 	default = ;
+d176 1
+a176 1
+	if $(LINK) $(LINKFLAGS) -o $(<) $(UNDEFS) $(>) $(NEEDLIBS) $(LINLIBS) 
+@
+
+
+1.3
+log
+@@
+text
+@d24 14
+a37 1
+# Main image : source ;		link executable from compiled sources
+d39 10
+a48 18
+# Undefines image : symbols ;	save undef's for linking
+# Setuid image ;		mark an executable Setuid
+# Library lib : source ;	archive library from compiled sources
+# Object objname : source ;	compile object from source
+# HdrRule source : headers ;	handle #includes
+# CcAddFlags source : flags ;	add compiler flags for object
+# CcAddHdrs source : dirs ;	add include directories for object
+# Cc obj.o : source.c ;		.c -> .o
+# Lex source.c : source.l ;	.l -> .c
+# Yacc source.c : source.y ; 	.y -> .c
+# Bulk dir : files ;		populate directory with many files
+# File dest : source ;		copy file
+# Shell exe : source ;		install a shell executable
+# RmTemps target : sources ;	remove temp sources after target made
+# InstallBin sources ;		install binaries
+# InstallLib sources ;		install files
+# InstallMan source ;		install man pages
+# Clean clean : sources ;	remove sources with 'jam clean'
+d116 2
+a132 1
+JAMFILE		default = Jamfile ;
+d312 6
+d345 1
+a345 1
+	S = $(>:S=.o) ;
+d349 1
+a349 1
+	    S = $(>:G=$(SOURCE_GRIST):S=.o) ;
+d357 1
+a357 1
+	S = $(>:S=.o) ;
+d361 1
+a361 1
+	    S = $(>:G=$(SOURCE_GRIST):S=.o) ;
+d557 1
+a557 1
+# Now include the Jamfile.
+d560 1
+@
+
+
+1.2
+log
+@@
+text
+@d20 1
+a35 1
+# YYacc source.y : source.yy ; 	.yy -> .y
+a301 3
+	    case .yy : 	Cc $(<) : $(<:S=.c) ; 
+			Yacc $(<:S=.c) : $(<:S=.y) ;
+			YYacc $(<:S=.y) : $(>) ;
+a418 13
+rule YYacc
+{
+	DEPENDS $(<) $(<:B)tab.h : $(>) ;
+	YYacc1 $(<) $(<:B)tab.h : $(>) ;
+	LOCATE on $(<) $(<:B)tab.h = $(LOCATE_TARGET) ;
+	Clean clean : $(<) $(<:B)tab.h ;
+}
+
+actions YYacc1
+{
+	sh yyacc $(>) $(<)
+}
+
+d472 1
+a472 1
+	    InstallMODE on $(i:D=$(BINDIR)) = $(EXEMODE) ;
+d481 1
+a481 1
+	    InstallMODE on $(i:D=$(LIBDIR)) = $(FILEMODE) ;
+d502 1
+a502 1
+	    InstallMODE on $(D) = $(FILEMODE) ;
+@
+
+
+1.1
+log
+@@
+text
+@d10 10
+d23 21
+a43 18
+# MAIN image : source ;		link executable from compiled sources
+# LIBS image : libraries ;	bag libraries onto a MAIN
+# UNDEFINES image : symbols ;	save undef's for linking
+# SETUID image ;		mark an executable SETUID
+# LIBRARY lib : source ;	archive library from compiled sources
+# OBJECT objname : source ;	compile object from source
+# HDRRULE source : headers ;	handle #includes
+# CC obj.o : source.c ;		.c -> .o
+# LEX source.c : source.l ;	.l -> .c
+# YACC source.c : source.y ; 	.y -> .c
+# YYACC source.y : source.yy ; 	.yy -> .y
+# BULK dir : files ;		populate directory with many files
+# FILE dest : source ;		copy file
+# SHELL exe : source ;		install a shell executable
+# RMTEMPS target : sources ;	remove temp sources after target made
+# INSTALLBIN sources ;		install binaries
+# INSTALLLIB sources ;		install files
+# INSTALLMAN source ;		install man pages
+d59 1
+d89 14
+d115 1
+a115 1
+LINKLIBS 	default = ;
+a130 14
+# OS specific variable settings
+#
+
+switch $(OS) 
+{
+case AIX : LINKLIBS = -lbsd ;
+case DGUX : RANLIB = ;
+case IRIX : RANLIB = ;
+case HPUX : RANLIB = ;
+case PTX : RANLIB = ;
+case SOLARIS : RANLIB = ;
+}
+
+#
+d141 1
+a141 1
+rule MAIN 
+d143 6
+d151 7
+d159 1
+a159 1
+	DEPENDS	$(<) : $(>:S=.o) ;
+d162 1
+a162 1
+	LINK $(<) : $(>:S=.o) ;
+d164 1
+a164 1
+	# each object gets compiled from sources
+a165 4
+	for i in $(>) 
+	{ 
+		OBJECT $(i:S=.o) : $(i) ;
+	}
+d168 1
+a168 1
+actions LINK 
+d170 1
+a170 1
+	if $(LINK) $(LINKFLAGS) -o $(<) $(UNDEFS) $(>) $(NEEDLIBS) $(LINKLIBS) 
+d176 1
+a176 1
+rule LIBS 
+d179 1
+a179 1
+	# set NEEDLIBS variable used by 'actions MAIN'
+d182 1
+a182 1
+	NEEDLIBS on $(<) = $(>) ;
+d185 1
+a185 1
+rule UNDEFINES
+d187 1
+a187 1
+	UNDEFS on $(<) = $(UNDEFFLAG)$(>) ;
+d190 1
+a190 1
+rule SETUID
+d192 1
+a192 1
+	EXEMODE on $(<) = 4711 ;
+d195 1
+a195 1
+rule LIBRARY 
+d197 6
+d205 7
+d213 1
+a213 1
+	DEPENDS $(<) : $(<)($(>:BS=.o)) ;
+d215 2
+d218 1
+a218 1
+	# but the reference to $(NEEDLIBS) in MAIN's actions
+d222 1
+a222 1
+	# LOCATE on $(<) $(<)($(>:BS=.o)) = $(LOCATE_TARGET) ;
+d227 1
+a227 1
+	for i in $(>) 
+d229 1
+a229 2
+	    DEPENDS $(<)($(i:BS=.o)) : $(i:S=.o) ; 
+	    OBJECT $(i:S=.o) : $(i) ;
+d232 1
+a232 1
+	# must call separate ARCHIVE rule so that 'updated' modifier
+d236 2
+a237 2
+	ARCHIVE $(<) : $(>:S=.o) ;
+	RMTEMPS $(<) : $(>:S=.o) ;
+d239 1
+a239 1
+	if $(RANLIB) { RANLIB $(<) ; }
+d242 1
+a242 1
+actions updated together piecemeal ARCHIVE 
+d247 1
+a247 1
+actions together RANLIB
+d252 1
+a252 1
+rule OBJECT 
+d254 15
+d271 2
+d287 1
+a287 1
+	# as the sources.  HDRSEARCH is just grist for HDRRULE.
+d289 1
+a289 1
+	HDRRULE on $(>) = HDRRULE ;
+d297 9
+a305 9
+	    case .c : 	CC $(<) : $(>) ;
+	    case .l :	CC $(<) : $(<:S=.c) ;
+			LEX $(<:S=.c) : $(>) ;
+	    case .y : 	CC $(<) : $(<:S=.c) ; 
+			YACC $(<:S=.c) : $(>) ;
+	    case .yy : 	CC $(<) : $(<:S=.c) ; 
+			YACC $(<:S=.c) : $(<:S=.y) ;
+			YYACC $(<:S=.y) : $(>) ;
+	    case * :	CCUSER $(<) : $(>) ;
+d309 1
+a309 1
+rule HDRRULE
+d311 1
+a311 1
+	# HDRRULE source : headers ;
+d334 1
+a334 1
+rule CC
+d336 24
+d361 14
+a374 1
+	RELOCATE $(<) ;
+d377 1
+a377 1
+actions CC
+d379 1
+a379 1
+	$(CC) -c $(CCFLAGS) $(OPTIM) -I$(HDRS) $(>)
+d382 1
+a382 1
+actions quietly ignore RELOCATE
+d384 1
+d388 1
+a388 1
+rule LEX
+d392 1
+d395 1
+a395 1
+actions LEX
+d400 1
+a400 1
+rule YACC 
+d405 2
+a406 1
+	YACC1 $(<) $(h) : $(>) ;
+d413 1
+a413 1
+actions YACC1
+d422 1
+a422 1
+rule YYACC
+d425 1
+a425 1
+	YYACC1 $(<) $(<:B)tab.h : $(>) ;
+d427 1
+d430 1
+a430 1
+actions YYACC1
+d435 1
+a435 1
+rule BULK 
+d439 1
+a439 1
+	    FILE $(i:D=$(<)) : $(i) ; 
+d443 1
+a443 1
+rule FILE
+d450 1
+a450 1
+actions FILE
+d452 1
+d457 1
+a457 1
+rule SHELL
+d464 1
+a464 1
+actions SHELL
+d468 1
+a468 1
+	sed '/^: /d;/^##/d' $(>)
+d473 1
+a473 1
+rule RMTEMPS
+d478 1
+a478 1
+actions quietly updated piecemeal RMTEMPS
+d483 1
+a483 1
+rule INSTALLBIN
+d487 2
+a488 2
+	    INSTALL $(i:D=$(BINDIR)) : $(i) ;
+	    INSTALLMODE on $(i:D=$(BINDIR)) = $(EXEMODE) ;
+d492 1
+a492 1
+rule INSTALLLIB
+d496 2
+a497 2
+	    INSTALL $(i:D=$(LIBDIR)) : $(i) ;
+	    INSTALLMODE on $(i:D=$(LIBDIR)) = $(FILEMODE) ;
+d501 1
+a501 1
+rule INSTALLMAN
+d517 2
+a518 2
+	    INSTALL $(D) : $(i) ;
+	    INSTALLMODE on $(D) = $(FILEMODE) ;
+d522 1
+a522 1
+rule INSTALL
+d529 1
+a529 1
+actions INSTALL
+d536 7
+d544 17
+d565 1
+@

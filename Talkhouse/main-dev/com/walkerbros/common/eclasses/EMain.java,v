@@ -1,0 +1,45 @@
+head     1.2;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.2
+date     2005.10.11.11.29.27;  author p4;  state Exp;
+branches ;
+next     1.1;
+
+1.1
+date     2005.10.11.11.29.04;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.2
+log
+@@
+text
+@// EMain.java
+//New functionality added
+package com.walkerbros.common.eclasses;
+
+public class EMain
+{
+	public EMain() 
+	{
+	}
+}@
+
+
+1.1
+log
+@@
+text
+@d2 1
+a2 1
+
+@

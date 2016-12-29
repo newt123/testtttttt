@@ -1,0 +1,53 @@
+head     1.834;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.834
+date     2011.03.24.19.15.38;  author p4;  state Exp;
+branches ;
+next     1.805;
+
+1.805
+date     2011.03.24.19.15.38;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.834
+log
+@@
+text
+@// EWidget.java
+
+package com.walkerbros.common.widget;
+
+public class EWidget
+{
+
+
+
+	ENut  m_eNut 	= new ENut(ENut.E_NUT_STATE_TOTALLY_SCREWED_UP);
+	EBolt m_eBolt 	= new EBolt(EBolt.E_BOLT_STATE_TOTALLY_SCREWED_UP);
+
+	/*
+ 	 * Dummy construtor was introduced after a meeting with the standards committee.
+ 	 * It was decided that it was only good form to maintain these since there might be
+         * cases in the future were objected will be created and not initialized.
+         */
+	public EWidget() 
+	{
+	}
+}@
+
+
+1.805
+log
+@@
+text
+@@

@@ -1,0 +1,51 @@
+head     1.1;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.1
+date     2005.10.11.11.29.05;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.1
+log
+@@
+text
+@// EActBtn.java
+
+package com.walkerbros.common.ejava.eaction;
+
+public class EActBtn
+{
+	private short m_nButtonID;
+	private short m_nButtonSubID;
+	
+	public EActBtn() 
+	{
+	}
+	
+	public void setButtonID( short id )
+	{
+		m_nButtonID = id;
+	}
+	public short getButtonID()
+	{
+		return m_nButtonID;
+	}
+	
+	public void setButtonSubID( short subid )
+	{
+		m_nButtonSubID = subid;
+	}
+	public short getButtonSubID()
+	{
+		return m_nButtonSubID;
+	}
+}@

@@ -1,0 +1,816 @@
+head     1.7;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.7
+date     2005.01.27.09.35.36;  author p4;  state Exp;
+branches ;
+next     1.6;
+
+1.6
+date     2005.01.27.09.35.34;  author p4;  state Exp;
+branches ;
+next     1.5;
+
+1.5
+date     2005.01.27.09.35.23;  author p4;  state Exp;
+branches ;
+next     1.4;
+
+1.4
+date     2005.01.27.09.35.23;  author p4;  state Exp;
+branches ;
+next     1.3;
+
+1.3
+date     2005.01.27.09.35.15;  author p4;  state Exp;
+branches ;
+next     1.2;
+
+1.2
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.1;
+
+1.1
+date     2005.01.27.09.35.12;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.7
+log
+@@
+text
+@/* 
+ * Copyright 1993, 1995 Christopher Seiwald.
+ *
+ * This file is part of Jam - see jam.c for Copyright information.
+ */
+
+# ifdef VMS
+
+# include "jam.h"
+# include "execcmd.h"
+# include "lists.h"
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <iodef.h>
+#include <ssdef.h>
+#include <descrip.h>
+#include <dvidef.h>
+#include <clidef.h>
+
+/*
+ * execvms.c - execute a shell script, ala VMS
+ *
+ * The approach is this:
+ *
+ *	If the command is a single line, and shorter than WRTLEN (what we 
+ *	believe to be the maximum line length), we just system() it.
+ *
+ *	If the command is multi-line, or longer than WRTLEN, we write the 
+ *	command block to a temp file, splitting long lines (using "-" at 
+ *	the end of the line to indicate contiuation), and then source that 
+ *	temp file.  We use special logic to make sure we don't continue in
+ *	the middle of a quoted string.
+ *
+ * 05/04/94 (seiwald) - async multiprocess interface; noop on VMS
+ * 12/20/96 (seiwald) - rewritten to handle multi-line commands well
+ * 01/14/96 (seiwald) - don't put -'s between "'s
+ */
+
+#define WRTLEN 240
+
+#define MIN( a, b )	((a) < (b) ? (a) : (b))
+
+/* 1 for the @@ and 4 for the .com */
+
+char tempnambuf[ L_tmpnam + 1 + 4 ] = {0};
+
+void
+execcmd( string, func, closure, shell )
+char *string;
+void (*func)();
+void *closure;
+LIST *shell;
+{
+	char *s, *e, *p;
+	int rstat = EXEC_CMD_OK;
+	int status;
+
+	/* See if string is more than one line */
+	/* discounting leading/trailing white space */
+
+	for( s = string; *s && isspace( *s ); s++ )
+		;
+
+	e = p = strchr( s, '\n' );
+
+	while( p && isspace( *p ) )
+		++p;
+
+	/* If multi line or long, write to com file. */
+	/* Otherwise, exec directly. */
+
+	if( p && *p || e - s > WRTLEN )
+	{
+	    FILE *f;
+
+	    /* Create temp file invocation "@@sys$scratch:tempfile.com" */
+
+	    if( !*tempnambuf )
+	    {
+		tempnambuf[0] = '@@';
+		(void)tmpnam( tempnambuf + 1 );
+		strcat( tempnambuf, ".com" );
+	    }
+	    
+	    /* Open tempfile */
+
+	    if( !( f = fopen( tempnambuf + 1, "w" ) ) )
+	    {
+		printf( "can't open command file\n" );
+		(*func)( closure, EXEC_CMD_FAIL );
+		return;
+	    }
+
+	    /* For each line of the string */
+
+	    while( *string )
+	    {
+		char *s = strchr( string, '\n' );
+		int len = s ? s + 1 - string : strlen( string );
+
+		fputc( '$', f );
+
+		/* For each chunk of a line that needs to be split */
+
+		while( len > 0 )
+		{
+		    char *q = string;
+		    char *qe = string + MIN( len, WRTLEN );
+		    char *qq = q;
+		    int quote = 0;
+
+		    /* Look for matching "'s */
+
+		    for( ; q < qe; q++ )
+			if( *q == '"' && ( quote = !quote ) )
+			    qq = q;
+
+		    /* Back up to opening quote, if in one */
+
+		    if( quote )
+			q = qq;
+
+		    fwrite( string, ( q - string ), 1, f );
+
+		    len -= ( q - string );
+		    string = q;
+
+		    if( len )
+		    {
+			fputc( '-', f );
+			fputc( '\n', f );
+		    }
+		}
+	    }
+
+	    fclose( f );
+
+	    status = system( tempnambuf ) & 0x07;
+
+	    unlink( tempnambuf + 1 );
+	}
+	else
+	{
+	    /* Execute single line command */
+	    /* Strip trailing newline before execing */
+	    if( e ) *e = 0;
+	    status = system( s ) & 0x07;
+	}
+
+	/* Fail for error or fatal error */
+	/* OK on OK, warning, or info exit */
+
+	if( status == 2 || status == 4 )
+	    rstat = EXEC_CMD_FAIL;
+
+	(*func)( closure, rstat );
+}
+
+int 
+execwait()
+{
+	return 0;
+}
+
+# endif /* VMS */
+@
+
+
+1.6
+log
+@@
+text
+@d27 2
+a28 2
+ *	If the command is a single line, and shorter than WRTLEN (what we believe
+ *	to be the maximum line length), we just system() it.
+d30 5
+a34 3
+ *	If the command is multi-line, or longer than WRTLEN, we write the command
+ *	block to a temp file, splitting long lines (using "-" at the end of the line
+ *	to indicate contiuation), and then source that temp file.
+d37 2
+a38 1
+ * 12/20/96 (seiwald)  - rewritten to handle multi-line commands well
+d71 2
+a72 1
+	/* If multi line or long, write to com file.  Otherwise, exec directly. */
+d109 4
+a112 1
+		    int l = MIN( len, WRTLEN );
+d114 1
+a114 1
+		    fwrite( string, l, 1, f );
+d116 13
+a128 2
+		    len -= l;
+		    string += l;
+@
+
+
+1.5
+log
+@@
+text
+@d25 9
+d35 1
+d42 3
+a44 4
+    /* macros to allocate and initialize VMS descriptors
+     */
+#define DESCALLOC( name ) struct dsc$descriptor_s \
+	(name) = { 0, DSC$K_DTYPE_T, DSC$K_CLASS_D, NULL }
+d53 3
+a55 1
+    int rstat = EXEC_CMD_OK;
+d57 2
+a58 2
+    /* Split string at newlines, and don't execute empty lines */
+    /* Bail if any lines fail. */
+d60 2
+a61 5
+    while( *string )
+    {
+	char *s;
+	char *os = string;
+	int something = 0;
+d63 1
+a63 3
+	for( s = string; *s && *s != '\n'; s++ )
+	    if( !isspace( *s ) )
+		something++;
+d65 2
+a66 1
+	string = *s ? s + 1 : s ;
+d68 3
+a70 1
+	if( something )
+d72 1
+a72 2
+	    int status;
+	    int len;
+d74 1
+a74 1
+	    *s = '\0';
+d76 1
+a76 1
+	    if( ( len = strlen( os ) ) < WRTLEN )
+d78 3
+a80 1
+		status = system( os ) & 0x07;
+d82 4
+a85 1
+	    else
+d87 4
+a90 1
+		FILE *f = fopen( "sys$scratch:jam.com", "w" );
+d92 1
+a92 6
+		if( !f )
+		{
+		    printf( "can't open command file\n" );
+		    rstat = EXEC_CMD_FAIL;
+		    break;
+		}
+d94 8
+a101 1
+	        fputc( '$', f );
+d107 1
+a107 6
+		    fwrite( os, l, 1, f );
+
+		    if( l < len )
+			fputc( '-', f );
+
+		    fputc( '\n', f );
+d110 1
+a110 2
+		    os += l;
+		}
+d112 7
+a118 1
+		fclose( f );
+d120 1
+a120 1
+		status = system( "@@sys$scratch:jam.com" ) & 0x07;
+d122 1
+a122 1
+		unlink( "sys$scratch:jam.com" );
+d124 9
+a132 1
+	    }		
+d134 2
+a135 2
+	    /* Fail for error or fatal error */
+	    /* OK on OK, warning, or info exit */
+d137 2
+a138 7
+	    if( status == 2 || status == 4 )
+	    {
+		rstat = EXEC_CMD_FAIL;
+		break;
+	    }
+	}
+    }
+d140 1
+a140 1
+    (*func)( closure, rstat );
+@
+
+
+1.4
+log
+@@
+text
+@a15 1
+#include <signal.h>
+a20 4
+#include <libclidef.h>
+#include <lib$routines.h>
+
+#include <descrip.h>
+d22 2
+a23 1
+/* execvms.c - execute a shell script, ala VMS
+a25 8
+ * 05/07/95 (wingel) - async multiprocess interface; now for real
+ *
+ * Wingel is Christer Weinigel at the Ctrl-C Academic Computer Club
+ * at the University of Linköping, Sweden (wingel@@ctrl-c.liu.se)
+ *
+ * Most of the code in this file is my (wingel's) fault.  This is one
+ * of my first real attempts at using VMS system services, so please
+ * don't yell at me if it's too ugly. 
+d28 1
+a28 14
+static int initialized = 0;
+
+#define EVENT_MAX 32		/* maximum no of jobs */
+#define EVENT_BASE 32		/* base to add to jobs */
+
+/* Jobs waiting */
+static struct
+{
+  void (*func)(void *closure, int rstat);
+  void *closure;
+  unsigned process_id;
+  unsigned status;
+  char fn[256];
+} jobs[EVENT_MAX];
+d30 1
+a30 2
+/* Mask with active jobs */
+unsigned eventMask;
+d32 4
+a35 2
+/* no of jobs running */
+static int activeJobs;
+d37 6
+a42 1
+static void sighandler_cc(void)
+d44 1
+a44 4
+  int i;
+  unsigned status;
+
+  signal(SIGINT, SIG_DFL);
+d46 2
+a47 4
+  printf("Received SIGINT, waiting for children to terminate\n");
+  for (i = 0; i < EVENT_MAX; i++)
+    if (jobs[i].func)
+      kill(jobs[i].process_id, SIGINT);
+d49 5
+a53 2
+  while (execwait())
+    ;
+d55 3
+a57 2
+  exit(0);
+}
+d59 1
+a59 9
+void execcmd(char *string, 
+	     void (*func)(void *closure, int rstat), 
+	     void *closure, 
+	     LIST *shell)
+{
+  unsigned status;
+  FILE *fp;
+  unsigned slot;
+  unsigned event_id;
+d61 4
+a64 7
+  if (!initialized)
+  {
+    int i;
+ 
+    /* Clear function pointers */
+    for (i = 0; i < EVENT_MAX; i++)
+      jobs[i].func = NULL;
+d66 1
+a66 1
+    signal(SIGINT, sighandler_cc);
+d68 7
+a74 1
+    eventMask = 0;
+d76 6
+a81 1
+    activeJobs = 0;
+d83 1
+a83 2
+    initialized = 1;
+  }
+d85 3
+a87 15
+  /* Allocate an event */
+  for (slot = 0; slot < EVENT_MAX; slot++)
+    if (jobs[slot].func == NULL)
+    {
+      event_id = slot + EVENT_BASE;
+      status = lib$reserve_ef(&event_id);
+      if (status & 1)
+	break;
+    }
+  
+  if (slot == EVENT_MAX)
+  {
+    printf("Could not allocate an event for child\n");
+    exit(EXITBAD);
+  }
+d89 1
+a89 3
+  status = sys$clref(event_id);
+  if (!(status & 1))
+    exit(status);
+d91 2
+a92 2
+  jobs[slot].func = func;
+  jobs[slot].closure = closure;
+d94 1
+a94 1
+  sprintf(jobs[slot].fn, "sys$scratch:jam%s.temp", tmpnam(NULL));
+d96 3
+a98 7
+  if ((fp = fopen(jobs[slot].fn, "w")) == NULL)
+  {
+    printf("Could not create command file for child\n");
+    exit(EXITBAD);
+  }
+  fwrite(string, strlen(string), 1, fp);
+  fclose(fp);
+d100 1
+a100 3
+  {
+    struct dsc$descriptor_s input_file = { 0, DSC$K_DTYPE_T, DSC$K_CLASS_S };
+    unsigned flags = CLI$M_NOWAIT;
+d102 1
+a102 2
+    input_file.dsc$w_length = strlen(jobs[slot].fn);
+    input_file.dsc$a_pointer = jobs[slot].fn;
+d104 1
+a104 16
+    status = lib$spawn(NULL,	/* command string, NULL = CLI */
+		       &input_file, /* input file */
+		       NULL,	/* output file */
+		       &flags,	/* flags */
+		       NULL,	/* process name */
+		       &jobs[slot].process_id, /* process id */
+		       &jobs[slot].status, /* completion status address */
+		       &event_id); /* event flag number */
+    if (!(status & 1))
+    {
+      (*func)(closure, EXEC_CMD_FAIL);
+      lib$free_ef(&event_id);
+      jobs[slot].func = NULL;
+      return;
+    }
+  }
+d106 1
+a106 1
+  eventMask |= (1 << slot);
+d108 2
+a109 1
+  activeJobs++;
+d111 7
+a117 6
+  if (globs.debug >= 3)
+    printf("active %d, slot %d, file %s, pid %x\n", 
+	   activeJobs, 
+	   slot,
+	   jobs[slot].fn,
+	   jobs[slot].process_id);
+d119 1
+a119 3
+  while (activeJobs >= MAXJOBS || activeJobs >= globs.jobs)
+    if (!execwait())
+	break;
+d122 2
+a123 1
+int execwait(void)
+d125 1
+a125 80
+  unsigned semaphore_id;
+  unsigned status; 
+  unsigned slot;
+  int rstat;
+  unsigned activeEvents;
+  unsigned event_id;
+  void (*func)(void *closure, int rstat);
+  void *closure;
+
+  if (activeJobs == 0)
+    return 0;
+
+  status = sys$wflor(EVENT_BASE, eventMask);
+  if (!(status & 1))
+    exit(status);
+
+  status = sys$readef(EVENT_BASE, &activeEvents);
+  if (!(status & 1))
+    exit(status);
+  activeEvents &= eventMask;
+
+  for (slot = 0; slot < EVENT_MAX; slot++)
+    if (activeEvents & (1 << slot))
+      break;
+  event_id = slot + EVENT_BASE;
+
+  if (slot == EVENT_MAX)
+  {
+    printf("Program error, event triggered but got lost\n" );
+    printf("(No, you're not supposed to understand this.)\n");
+    exit(EXITBAD);
+  }
+
+  if (jobs[slot].func == NULL)
+  {
+    printf("Program error, got event, but no function\n");
+    exit(EXITBAD);
+  }
+
+  if (globs.debug >= 3)
+    printf("active %d, slot %d, file %s, pid %x, status %x\n", 
+	   activeJobs,
+	   slot,
+	   jobs[slot].fn,
+	   jobs[slot].process_id,
+	   jobs[slot].status);
+
+  /* Prepare to finish off this job */
+  func = jobs[slot].func;
+  closure = jobs[slot].closure;
+  switch (jobs[slot].status & 7)
+  {
+  case 0:			/* warning */
+  case 1:			/* success */
+  case 3:			/* informational */
+    rstat = EXEC_CMD_OK;
+    break;
+
+  case 2:			/* error */
+  case 4:			/* severe or fatal error */
+    rstat = EXEC_CMD_FAIL;
+    break;
+
+  default:
+    printf("Undefined status redurned from child\n");
+    exit(jobs[slot].status);
+  }
+
+  /* Clear everything */
+  jobs[slot].func = NULL;
+  unlink(jobs[slot].fn);
+  lib$free_ef(&event_id);
+  eventMask &= ~(1 << slot);
+
+  activeJobs--;
+
+  /* Clear up */
+  (*func)(closure, rstat);
+
+  return 1;
+a128 1
+
+@
+
+
+1.3
+log
+@@
+text
+@d16 1
+d22 2
+d25 3
+a27 2
+/*
+ * execvms.c - execute a shell script, ala VMS
+d30 8
+d40 1
+a40 3
+#define WRTLEN 240
+
+#define MIN( a, b )	((a) < (b) ? (a) : (b))
+d42 2
+a43 4
+    /* macros to allocate and initialize VMS descriptors
+     */
+#define DESCALLOC( name ) struct dsc$descriptor_s \
+	(name) = { 0, DSC$K_DTYPE_T, DSC$K_CLASS_D, NULL }
+d45 2
+a46 6
+void
+execcmd( string, func, closure, shell )
+char *string;
+void (*func)();
+void *closure;
+LIST *shell;
+d48 6
+a53 1
+    int rstat = EXEC_CMD_OK;
+d55 2
+a56 2
+    /* Split string at newlines, and don't execute empty lines */
+    /* Bail if any lines fail. */
+d58 2
+a59 5
+    while( *string )
+    {
+	char *s;
+	char *os = string;
+	int something = 0;
+d61 4
+a64 3
+	for( s = string; *s && *s != '\n'; s++ )
+	    if( !isspace( *s ) )
+		something++;
+d66 1
+a66 1
+	string = *s ? s + 1 : s ;
+d68 4
+a71 4
+	if( something )
+	{
+	    int status;
+	    int len;
+d73 2
+a74 1
+	    *s = '\0';
+d76 2
+a77 7
+	    if( ( len = strlen( os ) ) < WRTLEN )
+	    {
+		status = system( os ) & 0x07;
+	    }
+	    else
+	    {
+		FILE *f = fopen( "sys$scratch:jam.com", "w" );
+d79 9
+a87 6
+		if( !f )
+		{
+		    printf( "can't open command file\n" );
+		    rstat = EXEC_CMD_FAIL;
+		    break;
+		}
+d89 7
+a95 1
+	        fputc( '$', f );
+d97 1
+a97 3
+		while( len > 0 )
+		{
+		    int l = MIN( len, WRTLEN );
+d99 1
+a99 1
+		    fwrite( os, l, 1, f );
+d101 1
+a101 2
+		    if( l < len )
+			fputc( '-', f );
+d103 2
+a104 1
+		    fputc( '\n', f );
+d106 15
+a120 3
+		    len -= l;
+		    os += l;
+		}
+d122 3
+a124 1
+		fclose( f );
+d126 2
+a127 1
+		status = system( "@@sys$scratch:jam.com" ) & 0x07;
+d129 1
+a129 1
+		unlink( "sys$scratch:jam.com" );
+d131 7
+a137 1
+	    }		
+d139 3
+a141 2
+	    /* Fail for error or fatal error */
+	    /* OK on OK, warning, or info exit */
+d143 17
+a159 6
+	    if( status == 2 || status == 4 )
+	    {
+		rstat = EXEC_CMD_FAIL;
+		break;
+	    }
+	}
+d161 1
+d163 14
+a176 1
+    (*func)( closure, rstat );
+d179 1
+a179 2
+int 
+execwait()
+d181 80
+a260 1
+	return 0;
+d264 1
+@
+
+
+1.2
+log
+@@
+text
+@d11 1
+d38 1
+a38 1
+execcmd( string, func, closure  )
+d42 1
+@
+
+
+1.1
+log
+@@
+text
+@d2 3
+a4 1
+ * Copyright 1993 Christopher Seiwald.
+d23 2
+d36 2
+a37 3
+
+int
+execcmd( string )
+d39 2
+d42 2
+d77 2
+a78 1
+		    return EXEC_CMD_FAIL;
+d110 4
+a113 1
+		return EXEC_CMD_FAIL;
+d117 7
+a123 1
+    return EXEC_CMD_OK;
+@

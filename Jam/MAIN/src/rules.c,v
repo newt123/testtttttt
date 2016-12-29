@@ -1,0 +1,422 @@
+head     1.5;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.5
+date     2005.01.27.09.35.30;  author p4;  state Exp;
+branches ;
+next     1.4;
+
+1.4
+date     2005.01.27.09.35.30;  author p4;  state Exp;
+branches ;
+next     1.3;
+
+1.3
+date     2005.01.27.09.35.27;  author p4;  state Exp;
+branches ;
+next     1.2;
+
+1.2
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.1;
+
+1.1
+date     2005.01.27.09.35.12;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.5
+log
+@@
+text
+@/*
+ * Copyright 1993, 1995 Christopher Seiwald.
+ *
+ * This file is part of Jam - see jam.c for Copyright information.
+ */
+
+# include "jam.h"
+# include "lists.h"
+# include "parse.h"
+# include "variable.h"
+# include "rules.h"
+# include "newstr.h"
+# include "hash.h"
+
+/*
+ * rules.c - access to RULEs, TARGETs, and ACTIONs
+ *
+ * External routines:
+ *
+ *    bindrule() - return pointer to RULE, creating it if necessary
+ *    bindtarget() - return pointer to TARGET, creating it if necessary
+ *    touchtarget() - mark a target to simulate being new
+ *    targetlist() - turn list of target names into a TARGET chain
+ *    targetentry() - add a TARGET to a chain of TARGETS
+ *    actionlist() - append to an ACTION chain
+ *    addsettings() - add a deferred "set" command to a target
+ *    usesettings() - set all target specific variables
+ *    pushsettings() - set all target specific variables
+ *    popsettings() - reset target specific variables to their pre-push values
+ *    freesettings() - delete a settings list
+ *    donerules() - free RULE and TARGET tables
+ *
+ * 04/12/94 (seiwald) - actionlist() now just appends a single action.
+ * 08/23/94 (seiwald) - Support for '+=' (append to variable)
+ */
+
+static struct hash *rulehash = 0;
+static struct hash *targethash = 0;
+
+
+/*
+ * bindrule() - return pointer to RULE, creating it if necessary
+ */
+
+RULE *
+bindrule( rulename ) 
+char 	*rulename;
+{
+	RULE rule, *r = &rule;
+
+	if( !rulehash )
+	    rulehash = hashinit( sizeof( RULE ), "rules" );
+
+	r->name = rulename;
+
+	if( hashenter( rulehash, (HASHDATA **)&r ) )
+	{
+	    r->name = newstr( rulename );	/* never freed */
+	    r->procedure = (PARSE *)0;
+	    r->actions = (char *)0;
+	    r->bindlist = L0;
+	    r->flags = 0;
+	}
+
+	return r;
+}
+
+/*
+ * bindtarget() - return pointer to TARGET, creating it if necessary
+ */
+
+TARGET *
+bindtarget( targetname )
+char	*targetname;
+{
+	TARGET target, *t = &target;
+
+	if( !targethash )
+	    targethash = hashinit( sizeof( TARGET ), "targets" );
+
+	t->name = targetname;
+
+	if( hashenter( targethash, (HASHDATA **)&t ) )
+	{
+	    memset( (char *)t, '\0', sizeof( *t ) );
+	    t->name = newstr( targetname );	/* never freed */
+	    t->boundname = t->name;		/* default for T_FLAG_NOTFILE */
+	}
+
+	return t;
+}
+
+/*
+ * touchtarget() - mark a target to simulate being new
+ */
+
+void
+touchtarget( t )
+char *t;
+{
+	bindtarget( t )->flags |= T_FLAG_TOUCHED;
+}
+
+/*
+ * targetlist() - turn list of target names into a TARGET chain
+ *
+ * Inputs:
+ *	chain	existing TARGETS to append to
+ *	targets	list of target names
+ */
+
+TARGETS *
+targetlist( chain, targets )
+TARGETS	*chain;
+LIST 	*targets;
+{
+	for( ; targets; targets = list_next( targets ) )
+	    chain = targetentry( chain, bindtarget( targets->string ) );
+
+	return chain;
+}
+
+/*
+ * targetentry() - add a TARGET to a chain of TARGETS
+ *
+ * Inputs:
+ *	chain	exisitng TARGETS to append to
+ *	target	new target to append
+ */
+
+TARGETS *
+targetentry( chain, target )
+TARGETS	*chain;
+TARGET	*target;
+{
+	TARGETS *c;
+
+	c = (TARGETS *)malloc( sizeof( TARGETS ) );
+	c->target = target;
+
+	if( !chain ) chain = c;
+	else chain->tail->next = c;
+	chain->tail = c;
+	c->next = 0;
+
+	return chain;
+}
+
+/*
+ * actionlist() - append to an ACTION chain
+ */
+
+ACTIONS *
+actionlist( chain, action )
+ACTIONS	*chain;
+ACTION	*action;
+{
+	ACTIONS *actions = (ACTIONS *)malloc( sizeof( ACTIONS ) );
+
+	actions->action = action;
+
+	if( !chain ) chain = actions;
+	else chain->tail->next = actions;
+	chain->tail = actions;
+	actions->next = 0;
+
+	return chain;
+}
+
+/*
+ * addsettings() - add a deferred "set" command to a target
+ *
+ * Adds a variable setting (varname=list) onto a chain of settings
+ * for a particular target.  Replaces the previous previous value,
+ * if any, unless 'append' says to append the new list onto the old.
+ * Returns the head of the chain of settings.
+ */
+
+SETTINGS *
+addsettings( head, append, symbol, value )
+SETTINGS *head;
+int	append;
+char	*symbol;
+LIST	*value;
+{
+	SETTINGS *v;
+	
+	/* Look for previous setting */
+
+	for( v = head; v; v = v->next )
+	    if( !strcmp( v->symbol, symbol ) )
+		break;
+
+	/* If not previously set, alloc a new. */
+	/* If appending, do so. */
+	/* Else free old and set new. */
+
+	if( !v )
+	{
+	    v = (SETTINGS *)malloc( sizeof( *v ) );
+	    v->symbol = newstr( symbol );
+	    v->value = value;
+	    v->next = head;
+	    head = v;
+	}
+	else if( append )
+	{
+	    v->value = list_append( v->value, value );
+	}
+	else
+	{
+	    list_free( v->value );
+	    v->value = value;
+	} 
+
+	/* Return (new) head of list. */
+
+	return head;
+}
+
+/*
+ * pushsettings() - set all target specific variables
+ */
+
+void
+pushsettings( v )
+SETTINGS *v;
+{
+	for( ; v; v = v->next )
+	    v->value = var_swap( v->symbol, v->value );
+}
+
+/*
+ * popsettings() - reset target specific variables to their pre-push values
+ */
+
+void
+popsettings( v )
+SETTINGS *v;
+{
+	pushsettings( v );	/* just swap again */
+}
+
+/*
+ *    freesettings() - delete a settings list
+ */
+
+void
+freesettings( v )
+SETTINGS *v;
+{
+	while( v )
+	{
+	    SETTINGS *n = v->next;
+
+	    freestr( v->symbol );
+	    list_free( v->value );
+	    free( (char *)v );
+
+	    v = n;
+	}
+}
+
+/*
+ * donerules() - free RULE and TARGET tables
+ */
+
+void
+donerules()
+{
+	hashdone( rulehash );
+	hashdone( targethash );
+}
+@
+
+
+1.4
+log
+@@
+text
+@d87 1
+@
+
+
+1.3
+log
+@@
+text
+@d61 1
+@
+
+
+1.2
+log
+@@
+text
+@d30 1
+d243 20
+@
+
+
+1.1
+log
+@@
+text
+@d2 3
+a4 1
+ * Copyright 1993 Christopher Seiwald.
+d24 2
+a25 1
+ *    actionlist - for each target, append an ACTION to its action chain
+d31 3
+d114 2
+a115 3
+	while( targets )
+	{
+	    TARGETS *c;
+d117 2
+a118 2
+	    c = (TARGETS *)malloc( sizeof( TARGETS ) );
+	    c->target = bindtarget( targets->string );
+d120 7
+a126 4
+	    if( !chain ) chain = c;
+	    else chain->tail->next = c;
+	    chain->tail = c;
+	    c->next = 0;
+d128 9
+a136 2
+	    targets = list_next( targets );
+	}
+d138 5
+d147 1
+a147 1
+ * actionlist - for each target, append an ACTION to its action chain
+d150 3
+a152 3
+void
+actionlist( targets, action )
+TARGETS	*targets;
+d155 1
+a155 1
+	/* Append this action to the actions of each target */
+d157 1
+a157 4
+	for( ; targets; targets = targets->next )
+	{
+	    ACTIONS *actions = (ACTIONS *)malloc( sizeof( ACTIONS ) );
+	    TARGET  *target = targets->target;
+d159 4
+a162 1
+	    actions->action = action;
+d164 1
+a164 5
+	    if( !target->actions ) target->actions = actions;
+	    else target->actions->tail->next = actions;
+	    target->actions->tail = actions;
+	    actions->next = 0;
+	}
+d169 5
+d177 1
+a177 1
+addsettings( head, symbol, value )
+d179 1
+d191 3
+a193 1
+	/* If previous set, reset.  If not, alloc a new. */
+d195 1
+a195 7
+	if( v )
+	{
+	    list_free( v->value );
+	    v->value = value;
+	    v = head;
+	} 
+	else 
+d201 1
+d203 9
+d213 3
+a215 1
+	return v;
+@

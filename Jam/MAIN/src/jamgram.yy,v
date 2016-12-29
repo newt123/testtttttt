@@ -1,0 +1,644 @@
+head     1.16;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.16
+date     2005.01.27.09.35.41;  author p4;  state Exp;
+branches ;
+next     1.15;
+
+1.15
+date     2005.01.27.09.35.40;  author p4;  state Exp;
+branches ;
+next     1.14;
+
+1.14
+date     2005.01.27.09.35.40;  author p4;  state Exp;
+branches ;
+next     1.13;
+
+1.13
+date     2005.01.27.09.35.39;  author p4;  state Exp;
+branches ;
+next     1.12;
+
+1.12
+date     2005.01.27.09.35.38;  author p4;  state Exp;
+branches ;
+next     1.11;
+
+1.11
+date     2005.01.27.09.35.38;  author p4;  state Exp;
+branches ;
+next     1.10;
+
+1.10
+date     2005.01.27.09.35.32;  author p4;  state Exp;
+branches ;
+next     1.9;
+
+1.9
+date     2005.01.27.09.35.30;  author p4;  state Exp;
+branches ;
+next     1.8;
+
+1.8
+date     2005.01.27.09.35.30;  author p4;  state Exp;
+branches ;
+next     1.7;
+
+1.7
+date     2005.01.27.09.35.28;  author p4;  state Exp;
+branches ;
+next     1.6;
+
+1.6
+date     2005.01.27.09.35.27;  author p4;  state Exp;
+branches ;
+next     1.5;
+
+1.5
+date     2005.01.27.09.35.27;  author p4;  state Exp;
+branches ;
+next     1.4;
+
+1.4
+date     2005.01.27.09.35.22;  author p4;  state Exp;
+branches ;
+next     1.3;
+
+1.3
+date     2005.01.27.09.35.18;  author p4;  state Exp;
+branches ;
+next     1.2;
+
+1.2
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.1;
+
+1.1
+date     2005.01.27.09.35.12;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.16
+log
+@@
+text
+@/*
+ * Copyright 1993, 1995 Christopher Seiwald.
+ *
+ * This file is part of Jam - see jam.c for Copyright information.
+ */
+
+/*
+ * jamgram.yy - jam grammar
+ *
+ * 04/13/94 (seiwald) - added shorthand L0 for null list pointer
+ * 06/01/94 (seiwald) - new 'actions existing' does existing sources
+ * 08/23/94 (seiwald) - Support for '+=' (append to variable)
+ * 08/31/94 (seiwald) - Allow ?= as alias for "default =".
+ * 09/15/94 (seiwald) - if conditionals take only single arguments, so
+ *			that 'if foo == bar' gives syntax error (use =).
+ * 02/11/95 (seiwald) - when scanning arguments to rules, only treat
+ *			punctuation keywords as keywords.  All arg lists
+ *			are terminated with punctuation keywords.
+ */
+
+%token ARG STRING
+
+%left `||`
+%left `&&`
+%left `!`
+
+%{
+#include "jam.h"
+
+#include "lists.h"
+#include "parse.h"
+#include "scan.h"
+#include "compile.h"
+#include "newstr.h"
+
+# define F0 (void (*)())0
+# define P0 (PARSE *)0
+# define S0 (char *)0
+
+# define pset( l,r,a ) 	  parse_make( compile_set,P0,P0,S0,S0,l,r,a )
+# define pset1( l,p,a )	  parse_make( compile_settings,p,P0,S0,S0,l,L0,a )
+# define pstng( p,l,r,a ) pset1( p, parse_make( F0,P0,P0,S0,S0,l,r,0 ), a )
+# define prule( s,p )     parse_make( compile_rule,p,P0,s,S0,L0,L0,0 )
+# define prules( l,r )	  parse_make( compile_rules,l,r,S0,S0,L0,L0,0 )
+# define pfor( s,p,l )    parse_make( compile_foreach,p,P0,s,S0,l,L0,0 )
+# define psetc( s,p )     parse_make( compile_setcomp,p,P0,s,S0,L0,L0,0 )
+# define psete( s,l,s1,f ) parse_make( compile_setexec,P0,P0,s,s1,l,L0,f )
+# define pincl( l )       parse_make( compile_include,P0,P0,S0,S0,l,L0,0 )
+# define pswitch( l,p )   parse_make( compile_switch,p,P0,S0,S0,l,L0,0 )
+# define plocal( l,r,p )  parse_make( compile_local,p,P0,S0,S0,l,r,0 )
+# define pnull()	  parse_make( compile_null,P0,P0,S0,S0,L0,L0,0 )
+# define pcases( l,r )    parse_make( F0,l,r,S0,S0,L0,L0,0 )
+# define pcase( s,p )     parse_make( F0,p,P0,s,S0,L0,L0,0 )
+# define pif( l,r )	  parse_make( compile_if,l,r,S0,S0,L0,L0,0 )
+# define pthen( l,r )	  parse_make( F0,l,r,S0,S0,L0,L0,0 )
+# define pcond( c,l,r )	  parse_make( F0,l,r,S0,S0,L0,L0,c )
+# define pcomp( c,l,r )	  parse_make( F0,P0,P0,S0,S0,l,r,c )
+# define plol( p,l )	  parse_make( F0,p,P0,S0,S0,l,L0,0 )
+
+
+%}
+
+%%
+
+run	: block
+		{ 
+		    if( $1.parse->func == compile_null )
+		    {
+			parse_free( $1.parse );
+		    }
+		    else
+		    {
+			parse_save( $1.parse ); 
+		    }
+		}
+	;
+
+/*
+ * block - one or more rules
+ * rule - any one of jam's rules
+ */
+
+block	: /* empty */
+		{ $$.parse = pnull(); }
+	| rule block
+		{ $$.parse = prules( $1.parse, $2.parse ); }
+	| `local` args `;` block
+		{ $$.parse = plocal( $2.list, L0, $4.parse ); }
+	| `local` args `=` args `;` block
+		{ $$.parse = plocal( $2.list, $4.list, $6.parse ); }
+	;
+
+rule	: `{` block `}`
+		{ $$.parse = $2.parse; }
+	| `include` args `;`
+		{ $$.parse = pincl( $2.list ); }
+	| ARG lol `;`
+		{ $$.parse = prule( $1.string, $2.parse ); }
+	| arg1 assign args `;`
+		{ $$.parse = pset( $1.list, $3.list, $2.number ); }
+	| arg1 `on` args assign args `;`
+		{ $$.parse = pstng( $3.list, $1.list, $5.list, $4.number ); }
+	| arg1 `default` `=` args `;`
+		{ $$.parse = pset( $1.list, $4.list, ASSIGN_DEFAULT ); }
+	| `for` ARG `in` args `{` block `}`
+		{ $$.parse = pfor( $2.string, $6.parse, $4.list ); }
+	| `switch` args `{` cases `}`
+		{ $$.parse = pswitch( $2.list, $4.parse ); }
+	| `if` cond `{` block `}` 
+		{ $$.parse = pif( $2.parse, pthen( $4.parse, pnull() ) ); }
+	| `if` cond `{` block `}` `else` rule
+		{ $$.parse = pif( $2.parse, pthen( $4.parse, $7.parse ) ); }
+	| `rule` ARG rule
+		{ $$.parse = psetc( $2.string, $3.parse ); }
+	| `actions` eflags ARG bindlist `{`
+		{ yymode( SCAN_STRING ); }
+	  STRING 
+		{ yymode( SCAN_NORMAL ); }
+	  `}`
+		{ $$.parse = psete( $3.string,$4.list,$7.string,$2.number ); }
+	;
+
+/*
+ * assign - = or +=
+ */
+
+assign	: `=`
+		{ $$.number = ASSIGN_SET; }
+	| `+=`
+		{ $$.number = ASSIGN_APPEND; }
+	| `?=`
+		{ $$.number = ASSIGN_DEFAULT; }
+	;
+
+/*
+ * cond - a conditional for 'if'
+ */
+
+cond	: arg1 
+		{ $$.parse = pcomp( COND_EXISTS, $1.list, L0 ); }
+	| arg1 `=` arg1 
+		{ $$.parse = pcomp( COND_EQUALS, $1.list, $3.list ); }
+	| arg1 `!=` arg1
+		{ $$.parse = pcomp( COND_NOTEQ, $1.list, $3.list ); }
+	| arg1 `<` arg1
+		{ $$.parse = pcomp( COND_LESS, $1.list, $3.list ); }
+	| arg1 `<=` arg1 
+		{ $$.parse = pcomp( COND_LESSEQ, $1.list, $3.list ); }
+	| arg1 `>` arg1 
+		{ $$.parse = pcomp( COND_MORE, $1.list, $3.list ); }
+	| arg1 `>=` arg1 
+		{ $$.parse = pcomp( COND_MOREEQ, $1.list, $3.list ); }
+	| arg1 `in` args
+		{ $$.parse = pcomp( COND_IN, $1.list, $3.list ); }
+	| `!` cond
+		{ $$.parse = pcond( COND_NOT, $2.parse, P0 ); }
+	| cond `&&` cond 
+		{ $$.parse = pcond( COND_AND, $1.parse, $3.parse ); }
+	| cond `||` cond
+		{ $$.parse = pcond( COND_OR, $1.parse, $3.parse ); }
+	| `(` cond `)`
+		{ $$.parse = $2.parse; }
+	;
+
+/*
+ * cases - action elements inside a 'switch'
+ * case - a single action element inside a 'switch'
+ *
+ * Unfortunately, a right-recursive rule.
+ */
+
+cases	: /* empty */
+		{ $$.parse = P0; }
+	| case cases
+		{ $$.parse = pcases( $1.parse, $2.parse ); }
+	;
+
+case	: `case` ARG `:` block
+		{ $$.parse = pcase( $2.string, $4.parse ); }
+	;
+
+/*
+ * lol - list of lists
+ */
+
+lol	: args
+		{ $$.parse = plol( P0, $1.list ); }
+	| args `:` lol
+		{ $$.parse = plol( $3.parse, $1.list ); }
+	;
+
+/*
+ * args - zero or more ARGs in a LIST
+ * arg1 - exactly one ARG in a LIST 
+ */
+
+args	: argsany
+		{ yymode( SCAN_NORMAL ); }
+	;
+
+argsany	: /* empty */
+		{ $$.list = L0; yymode( SCAN_PUNCT ); }
+	| argsany ARG
+		{ $$.list = list_new( $1.list, copystr( $2.string ) ); }
+	;
+
+arg1	: ARG 
+		{ $$.list = list_new( L0, copystr( $1.string ) ); }
+	;
+
+/*
+ * eflags - zero or more modifiers to 'executes'
+ * eflag - a single modifier to 'executes'
+ */
+
+eflags	: /* empty */
+		{ $$.number = 0; }
+	| eflags eflag
+		{ $$.number = $1.number | $2.number; }
+	;
+
+eflag	: `updated`
+		{ $$.number = EXEC_UPDATED; }
+	| `together`
+		{ $$.number = EXEC_TOGETHER; }
+	| `ignore`
+		{ $$.number = EXEC_IGNORE; }
+	| `quietly`
+		{ $$.number = EXEC_QUIETLY; }
+	| `piecemeal`
+		{ $$.number = EXEC_PIECEMEAL; }
+	| `existing`
+		{ $$.number = EXEC_EXISTING; }
+	;
+
+
+/*
+ * bindlist - list of variable to bind for an action
+ */
+
+bindlist : /* empty */
+		{ $$.list = L0; }
+	| `bind` args
+		{ $$.list = $2.list; }
+	;
+
+
+@
+
+
+1.15
+log
+@@
+text
+@d67 1
+a67 1
+		    if( $1.parse.func == compile_null )
+a69 1
+			parse_save( P0 );
+@
+
+
+1.14
+log
+@@
+text
+@d50 2
+a51 1
+# define plocal( l,r,p )  parse_make( compile_local,p,P0,S0,S0,l,r,0 );
+d66 11
+a76 1
+		{ parse_save( $1.parse ); }
+d85 1
+a85 1
+		{ $$.parse = 0; }
+d111 1
+a111 1
+		{ $$.parse = pif( $2.parse, pthen( $4.parse, P0 ) ); }
+@
+
+
+1.13
+log
+@@
+text
+@d50 1
+a50 1
+# define plocal( l,p )	  parse_make( compile_local,p,P0,S0,S0,l,L0,0 );
+d78 3
+a80 1
+		{ $$.parse = plocal( $2.list, $4.parse ); }
+@
+
+
+1.12
+log
+@@
+text
+@d69 1
+a69 2
+ * block - zero or more locals, then zero or more rules
+ * rules - one or more rules
+d75 2
+a76 2
+	| rules
+		{ $$.parse = $1.parse; }
+a80 6
+rules	: rule
+		{ $$.parse = $1.parse; }
+	| rules rule
+		{ $$.parse = prules( $1.parse, $2.parse ); }
+	;
+
+@
+
+
+1.11
+log
+@@
+text
+@d64 1
+a64 1
+run	: rules
+d69 2
+a70 1
+ * rules - a strings of rule's together
+d74 3
+a76 1
+rules	: rule0
+d78 1
+a78 1
+	| `local` args `;` rule0
+d82 3
+a84 3
+rule0	: /* empty */
+		{ $$.parse = prules( P0, P0 ); }
+	| rule0 rule
+d88 1
+a88 1
+rule	: `{` rules `}`
+d100 1
+a100 1
+	| `for` ARG `in` args `{` rules `}`
+d104 1
+a104 1
+	| `if` cond `{` rules `}` 
+d106 1
+a106 1
+	| `if` cond `{` rules `}` `else` rule
+d173 1
+a173 1
+case	: `case` ARG `:` rules
+@
+
+
+1.10
+log
+@@
+text
+@d59 1
+d64 2
+a65 18
+/*
+ * stmts - the contents of a JAMFILE
+ */
+
+stmts	: 
+		{
+			compile_builtins();
+		}
+	| stmts rule
+		{ 
+			/* no target, sources in global scope */
+			/* invoke statement and then free its parse */
+
+			LOL l;
+			lol_init( &l );
+			(*($2.parse->func))( $2.parse, &l );
+			parse_free( $2.parse );
+		}
+d239 1
+@
+
+
+1.9
+log
+@@
+text
+@d160 1
+a160 1
+	| arg1 `in` arg1
+@
+
+
+1.8
+log
+@@
+text
+@d47 1
+a47 1
+# define psete( s,s1,f )  parse_make( compile_setexec,P0,P0,s,s1,L0,L0,f )
+d122 1
+a122 1
+	| `actions` eflags ARG `{`
+d127 1
+a127 1
+		{ $$.parse = psete( $3.string, $6.string, $2.number ); }
+d243 11
+@
+
+
+1.7
+log
+@@
+text
+@d100 3
+a102 1
+rule	: `include` args `;`
+d122 1
+a122 1
+	| `actions` eflags ARG 
+d125 3
+a127 4
+		{ $$.parse = psete( $3.string, $5.string, $2.number );
+		  yymode( SCAN_NORMAL ); }
+	| `{` rules `}`
+		{ $$.parse = $2.parse; }
+@
+
+
+1.6
+log
+@@
+text
+@d43 1
+a43 1
+# define prule( s,l,r )   parse_make( compile_rule,P0,P0,s,S0,l,r,0 )
+d57 1
+d73 6
+a78 1
+			(*($2.parse->func))( $2.parse, L0, L0 );
+d102 2
+a103 4
+	| ARG args `;`
+		{ $$.parse = prule( $1.string, $2.list, L0 ); }
+	| ARG args `:` args `;`
+		{ $$.parse = prule( $1.string, $2.list, $4.list ); }
+d189 10
+@
+
+
+1.5
+log
+@@
+text
+@d50 1
+d82 7
+a88 1
+rules	: /* empty */
+d90 1
+a90 1
+	| rules rule
+@
+
+
+1.4
+log
+@@
+text
+@d148 2
+@
+
+
+1.3
+log
+@@
+text
+@d28 2
+@
+
+
+1.2
+log
+@@
+text
+@d16 3
+d108 1
+a108 1
+		{ scan_asstring = 1; }
+d111 1
+a111 1
+		  scan_asstring = 0; }
+d178 7
+a184 3
+args	: /* empty */
+		{ $$.list = L0; }
+	| args ARG
+@
+
+
+1.1
+log
+@@
+text
+@d2 3
+a4 1
+ * Copyright 1993 Christopher Seiwald.
+d9 7
+a32 1
+# define L0 (LIST *)0
+d35 3
+a37 4
+# define pset( l,r ) 	  parse_make( compile_set,P0,P0,S0,S0,l,r,0 )
+# define psettings( l,p ) parse_make( compile_settings,p,P0,S0,S0,l,L0,0 )
+# define pseton( l,r ) 	  parse_make( F0,P0,P0,S0,S0,l,r,0 )
+# define psetdef( l,r )   parse_make( compile_setdefault,P0,P0,S0,S0,l,r,0 )
+d88 4
+a91 2
+	| arg1 `=` args `;`
+		{ $$.parse = pset( $1.list, $3.list ); }
+d93 1
+a93 3
+		{ $$.parse = psetdef( $1.list, $4.list ); }
+	| arg1 `on` args `=` args `;`
+		{ $$.parse = psettings( $3.list, pseton( $1.list, $5.list ) ); }
+d114 12
+d129 1
+a129 1
+cond	: args 
+d131 1
+a131 1
+	| args `=` args 
+d133 1
+a133 1
+	| args `!=` args
+d135 1
+a135 1
+	| args `<` args
+d137 1
+a137 1
+	| args `<=` args 
+d139 1
+a139 1
+	| args `>` args 
+d141 1
+a141 1
+	| args `>=` args 
+d206 2
+@

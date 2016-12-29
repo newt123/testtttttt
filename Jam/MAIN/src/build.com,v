@@ -1,0 +1,165 @@
+head     1.12106;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.12106
+date     2016.12.28.19.27.39;  author p4;  state Exp;
+branches ;
+next     1.7;
+
+1.7
+date     2005.01.27.09.35.41;  author p4;  state Exp;
+branches ;
+next     1.6;
+
+1.6
+date     2005.01.27.09.35.34;  author p4;  state Exp;
+branches ;
+next     1.5;
+
+1.5
+date     2005.01.27.09.35.22;  author p4;  state Exp;
+branches ;
+next     1.4;
+
+1.4
+date     2005.01.27.09.35.19;  author p4;  state Exp;
+branches ;
+next     1.3;
+
+1.3
+date     2005.01.27.09.35.18;  author p4;  state Exp;
+branches ;
+next     1.2;
+
+1.2
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.1;
+
+1.1
+date     2005.01.27.09.35.12;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.12106
+log
+@@
+text
+@! Bootstrap build script for Jam
+$ cc command.c
+$ cc compile.c
+$ cc expand.c
+$ cc execvms.c
+$ cc filevms.c
+$ cc glob.c
+$ cc hash.c
+$ cc headers.c
+$ cc jambase.c
+$ cc lists.c
+$ cc make.c
+$ cc make1.c
+$ cc newstr.c
+$ cc option.c
+$ cc parse.c
+$ cc pathvms.c
+$ cc regexp.c
+$ cc rules.c
+$ cc scan.c
+$ cc search.c
+$ cc timestamp.c
+$ cc variable.c
+$ cc jam.c
+$ cc jamgram.c
+$ link/exe=jam.exe command.obj, compile.obj, execvms.obj, expand.obj, -
+    filevms.obj, glob.obj, hash.obj, headers.obj, lists.obj, make.obj, -
+    make1.obj, newstr.obj, option.obj, parse.obj, pathvms.obj, regexp.obj, -
+    rules.obj, scan.obj, search.obj, timestamp.obj, variable.obj, jam.obj, -
+    jamgram.obj, jambase.obj
+@
+
+
+1.7
+log
+@@
+text
+@@
+
+
+1.6
+log
+@@
+text
+@d29 2
+a30 7
+rules.obj, scan.obj, search.obj, timestamp.obj, variable.obj, jam.obj, -
+jamgram.obj, jambase.obj
+$ write sys$output "If that was successful, define a symbol for jam:"
+$ write sys$output ""
+$ write sys$output "    jam :== $xxxx:jam.exe -f xxxx:jambase"
+$ write sys$output ""
+$ write sys$output "and then run jam here."
+@
+
+
+1.5
+log
+@@
+text
+@d10 1
+d17 1
+d28 3
+a30 2
+    make1.obj, newstr.obj, option.obj, parse.obj, regexp.obj, rules.obj, -
+    scan.obj, search.obj, timestamp.obj, variable.obj, jam.obj, jamgram.obj
+@
+
+
+1.4
+log
+@@
+text
+@a1 2
+! On OPENVMS you need the next line
+! $ cc := cc/stand=vaxc
+@
+
+
+1.3
+log
+@@
+text
+@a29 1
+!
+@
+
+
+1.2
+log
+@@
+text
+@d30 6
+@
+
+
+1.1
+log
+@@
+text
+@d4 1
+d9 1
+d14 1
+d26 4
+a29 4
+$ link/exe=jam.exe compile.obj, execvms.obj, expand.obj, filevms.obj, -
+    hash.obj, headers.obj, lists.obj, make.obj, newstr.obj, option.obj, -
+    parse.obj, regexp.obj, rules.obj, scan.obj, search.obj, timestamp.obj, -
+    variable.obj, jam.obj, jamgram.obj
+@

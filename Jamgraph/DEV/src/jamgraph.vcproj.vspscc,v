@@ -1,0 +1,31 @@
+head     1.1;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.1
+date     2005.01.27.09.35.50;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.1
+log
+@@
+text
+@﻿""
+{
+"FILE_VERSION" = "9237"
+"ENLISTMENT_CHOICE" = "NEVER"
+"PROJECT_FILE_RELATIVE_PATH" = ""
+"NUMBER_OF_EXCLUDED_FILES" = "0"
+"ORIGINAL_PROJECT_FILE_PATH" = ""
+"NUMBER_OF_NESTED_PROJECTS" = "0"
+"SOURCE_CONTROL_SETTINGS_PROVIDER" = "PROJECT"
+}
+@

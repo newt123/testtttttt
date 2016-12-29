@@ -1,0 +1,54 @@
+head     1.2;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.2
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.1;
+
+1.1
+date     2005.01.27.09.35.12;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.2
+log
+@@
+text
+@/*
+ * Copyright 1993, 1995 Christopher Seiwald.
+ *
+ * This file is part of Jam - see jam.c for Copyright information.
+ */
+
+/*
+ * hash.h - simple in-memory hashing routines 
+ */
+
+typedef struct hashdata HASHDATA;
+
+struct hash *	hashinit();
+int		hashitem();
+void		hashdone();
+
+# define	hashenter( hp, data ) !hashitem( hp, data, !0 )
+# define	hashcheck( hp, data ) hashitem( hp, data, 0 )
+@
+
+
+1.1
+log
+@@
+text
+@d2 3
+a4 1
+ * Copyright 1993 Christopher Seiwald.
+@

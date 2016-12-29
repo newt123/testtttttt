@@ -1,0 +1,37 @@
+head     1.1;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.1
+date     2006.02.23.16.18.48;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.1
+log
+@@
+text
+@                        TALKHOUSE
+
+     /\
+    /+\
+  / + +\	
+  \+++/    Copyright 2001 John Wakeman.
+   \++/
+    \+/
+     \/
+  
+    License is hereby granted to use this software and 
+    distribute it  freely, as long as this copyright notice 
+    is retained and modifications are clearly marked.
+
+    ALL WARRANTIES ARE HEREBY DISCLAIMED.
+
+@

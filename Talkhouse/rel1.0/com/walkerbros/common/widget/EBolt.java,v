@@ -1,0 +1,191 @@
+head     1.793;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.793
+date     2011.03.24.19.15.38;  author p4;  state Exp;
+branches ;
+next     1.792;
+
+1.792
+date     2011.03.24.19.15.38;  author p4;  state Exp;
+branches ;
+next     1.791;
+
+1.791
+date     2011.03.24.19.15.38;  author p4;  state Exp;
+branches ;
+next     1.790;
+
+1.790
+date     2011.03.24.19.15.38;  author p4;  state Exp;
+branches ;
+next     1.789;
+
+1.789
+date     2011.03.24.19.15.38;  author p4;  state Exp;
+branches ;
+next     1.788;
+
+1.788
+date     2011.03.24.19.15.38;  author p4;  state Exp;
+branches ;
+next     1.787;
+
+1.787
+date     2011.03.24.19.15.38;  author p4;  state Exp;
+branches ;
+next     1.786;
+
+1.786
+date     2011.03.24.19.15.38;  author p4;  state Exp;
+branches ;
+next     1.785;
+
+1.785
+date     2011.03.24.19.15.38;  author p4;  state Exp;
+branches ;
+next     1.780;
+
+1.780
+date     2011.03.24.19.15.38;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.793
+log
+@@
+text
+@
+package com.walkerbros.common.widget;
+
+public class EBolt
+{
+
+	public static final short E_BOLT_STATE_SCREWED_TIGHT			= 1;
+	public static final short E_BOLT_STATE_SCREWED_LOOSE			= 0;
+	public static final short E_BOLT_STATE_SCREWED_OFF			= 0;
+	public static final short E_BOLT_STATE_SCREWED_ON			= 1;
+	
+	
+	public static final short E_BOLT_STATE_TOTALLY_SCREWED_UP		= -1;
+
+	public short m_currState = E_BOLT_STATE_SCREWED_OFF;
+
+	/*
+ 	 * Dummy construtor was introduced after a meeting with the standards committee.
+ 	 * It was decided that it was only good form to maintain these since there might be
+         * cases in the future were objectes will be created and not initialized.
+         */
+	public EBolt() 
+	{
+	}
+
+	public EBolt(int p_state) 
+	{
+		m_currState = p_state;
+
+	}
+
+}@
+
+
+1.792
+log
+@@
+text
+@d9 2
+a10 2
+	public static final short E_BOLT_STATE_SCREWED_OFF			= 1;
+	public static final short E_BOLT_STATE_SCREWED_ON			= 0;
+@
+
+
+1.791
+log
+@@
+text
+@a31 5
+	public int Get_State() 
+	{
+		return m_cState;
+	}
+
+@
+
+
+1.790
+log
+@@
+text
+@d9 2
+a10 2
+	public static final short E_BOLT_STATE_SCREWED_OFF			= 0;
+	public static final short E_BOLT_STATE_SCREWED_ON			= 1;
+@
+
+
+1.789
+log
+@@
+text
+@d34 1
+a34 1
+		return m_currState;
+@
+
+
+1.788
+log
+@@
+text
+@d31 6
+@
+
+
+1.787
+log
+@@
+text
+@d12 1
+a12 1
+	// Configured for a broken bolt.
+@
+
+
+1.786
+log
+@@
+text
+@d20 1
+a20 1
+         * cases in the future were objected will be created and not initialized.
+@
+
+
+1.785
+log
+@@
+text
+@d7 2
+a8 2
+	public static final short E_BOLT_STATE_SCREWED_TIGHT			= 0;
+	public static final short E_BOLT_STATE_SCREWED_LOOSE			= 1;
+@
+
+
+1.780
+log
+@@
+text
+@d7 2
+a8 1
+
+@

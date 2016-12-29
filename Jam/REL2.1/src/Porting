@@ -1,0 +1,62 @@
+Notes on porting Jam - revised 1/11/95
+
+1) Working out system dependencies in the Jam code.
+
+    Jam's OS footprint is fairly small.  For OS independent work Jam
+    liberally uses standard libc functions like stdio, malloc, and
+    string.  The OS dependent interfaces are:
+
+	From filesys.h:
+
+	    file_parse() - split a file name into dir/base/suffix/member
+	    file_build() - build a filename given dir/base/suffix/member
+	    file_dirscan() - scan a directory for files
+	    file_archscan() - scan an archive for files
+	    file_time() - get the timestamp of a file, if not already 
+			  done by file_dirscan().
+
+	From execcmd.h:
+
+	    execcmd() - execute a shell script
+	    execwait() - wait for any outstanding execcmd()'s.
+
+    Porting to another UNIX platform rarely involves more than fixing 
+    file_dirscan() or, more likely, file_archscan() to work on the rogue
+    directory or archive structure.  Porting to another OS, such as Mac,
+    DOS, etc, probably require a completely new implementation of 
+    fileunix.c and execunix.c.
+
+2) Defining OTHERSYMS in jam.h
+
+    So that the Jambase and Jamfile know their host, Jam defines $(OS)
+    to be something useful for each platform.  Make sure that there is
+    code in jam.h to generate a useful value for $(OS), and key it off 
+    the platform specific C-preprocessor symbol.   If the C-preprocessor 
+    doesn't itself defines such a symbol, add a define to the Makefile.
+
+3) Working out system dependencies in the Jambase
+
+    With the value of $(OS) available, the Jambase can be extended to
+    support special variables or rules for new platforms.   See the
+    current support for VMS and NT.
+
+4) Yacc troubles
+
+    The generated files jamgram.h and jamgram.c are distributed for the 
+    poor souls without yacc.
+
+5) Known problematic systems:
+
+    - Solaris 2.0 sucks (still).  Jam only works with the SUNWspro cc,
+      because the ucb one has bogus headers for dirent.
+
+    - Pyramid has no malloc.h, memory.h
+
+    - Encore has no stdlib.h
+
+    - Bull DPX has sys/file.h problems
+
+6) Send the results back.
+
+    If you do porting work, the result can be integrated into future
+    releases if you send it back to the author's adress in the README.

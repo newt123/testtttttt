@@ -1,0 +1,778 @@
+head     1.18;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.18
+date     2005.01.27.09.35.38;  author p4;  state Exp;
+branches ;
+next     1.17;
+
+1.17
+date     2005.01.27.09.35.36;  author p4;  state Exp;
+branches ;
+next     1.16;
+
+1.16
+date     2005.01.27.09.35.35;  author p4;  state Exp;
+branches ;
+next     1.15;
+
+1.15
+date     2005.01.27.09.35.34;  author p4;  state Exp;
+branches ;
+next     1.14;
+
+1.14
+date     2005.01.27.09.35.33;  author p4;  state Exp;
+branches ;
+next     1.13;
+
+1.13
+date     2005.01.27.09.35.32;  author p4;  state Exp;
+branches ;
+next     1.12;
+
+1.12
+date     2005.01.27.09.35.32;  author p4;  state Exp;
+branches ;
+next     1.11;
+
+1.11
+date     2005.01.27.09.35.29;  author p4;  state Exp;
+branches ;
+next     1.10;
+
+1.10
+date     2005.01.27.09.35.29;  author p4;  state Exp;
+branches ;
+next     1.9;
+
+1.9
+date     2005.01.27.09.35.28;  author p4;  state Exp;
+branches ;
+next     1.8;
+
+1.8
+date     2005.01.27.09.35.27;  author p4;  state Exp;
+branches ;
+next     1.7;
+
+1.7
+date     2005.01.27.09.35.23;  author p4;  state Exp;
+branches ;
+next     1.6;
+
+1.6
+date     2005.01.27.09.35.22;  author p4;  state Exp;
+branches ;
+next     1.5;
+
+1.5
+date     2005.01.27.09.35.19;  author p4;  state Exp;
+branches ;
+next     1.4;
+
+1.4
+date     2005.01.27.09.35.19;  author p4;  state Exp;
+branches ;
+next     1.3;
+
+1.3
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.2;
+
+1.2
+date     2005.01.27.09.35.13;  author p4;  state Exp;
+branches ;
+next     1.1;
+
+1.1
+date     2005.01.27.09.35.12;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.18
+log
+@@
+text
+@/*
+ * Copyright 1993, 1995 Christopher Seiwald.
+ *
+ * This file is part of Jam - see jam.c for Copyright information.
+ */
+
+# include "jam.h"
+# include "filesys.h"
+
+# ifdef unix
+
+# if defined(_SEQUENT_) || defined(__DGUX__) || \
+     defined(M_XENIX) || defined(__ISC) 
+# define PORTAR 1
+# endif
+
+#ifdef NeXT
+# include <sys/dir.h>
+#else
+# include <dirent.h>
+#endif
+
+# if defined (COHERENT) && defined (_I386)
+# include <arcoff.h>
+# else
+# if defined( MVS )
+
+#define	ARMAG	"!<arch>\n"
+#define	SARMAG	8
+#define	ARFMAG	"`\n"
+
+struct ar_hdr		/* archive file member header - printable ascii */
+{
+	char	ar_name[16];	/* file member name - `/' terminated */
+	char	ar_date[12];	/* file member date - decimal */
+	char	ar_uid[6];	/* file member user id - decimal */
+	char	ar_gid[6];	/* file member group id - decimal */
+	char	ar_mode[8];	/* file member mode - octal */
+	char	ar_size[10];	/* file member size - decimal */
+	char	ar_fmag[2];	/* ARFMAG - string to end header */
+};
+
+# else
+# if !defined( __QNX__ ) && !defined( __BEOS__ )
+# include <ar.h>
+# endif /* QNX */
+# endif /* MVS */
+# endif	/* COHERENT */
+  
+
+/*
+ * fileunix.c - manipulate file names and scan directories on UNIX
+ *
+ * External routines:
+ *
+ *	file_dirscan() - scan a directory for files
+ *	file_time() - get timestamp of file, if not done by file_dirscan()
+ *	file_archscan() - scan an archive for files
+ *
+ * File_dirscan() and file_archscan() call back a caller provided function
+ * for each file found.  A flag to this callback function lets file_dirscan()
+ * and file_archscan() indicate that a timestamp is being provided with the
+ * file.   If file_dirscan() or file_archscan() do not provide the file's
+ * timestamp, interested parties may later call file_time().
+ *
+ * 04/08/94 (seiwald) - Coherent/386 support added.
+ * 12/19/94 (mikem) - solaris string table insanity support
+ * 02/14/95 (seiwald) - parse and build /xxx properly
+ * 05/03/96 (seiwald) - split into pathunix.c
+ * 11/21/96 (peterk) - BEOS does not have Unix-style archives
+ */
+
+/*
+ * file_dirscan() - scan a directory for files
+ */
+
+void
+file_dirscan( dir, func )
+char	*dir;
+void	(*func)();
+{
+	FILENAME f;
+	DIR *d;
+#ifdef NeXT
+	struct direct *dirent;
+#else
+	struct dirent *dirent;
+#endif
+	char filename[ MAXJPATH ];
+
+	/* First enter directory itself */
+
+	memset( (char *)&f, '\0', sizeof( f ) );
+
+	f.f_dir.ptr = dir;
+	f.f_dir.len = strlen(dir);
+
+	dir = *dir ? dir : ".";
+
+	/* Special case / : enter it */
+
+	if( f.f_dir.len == 1 && f.f_dir.ptr[0] == '/' )
+	    (*func)( dir, 0 /* not stat()'ed */, (time_t)0 );
+
+	/* Now enter contents of directory */
+
+	if( !( d = opendir( dir ) ) )
+	    return;
+
+	if( DEBUG_BINDSCAN )
+	    printf( "scan directory %s\n", dir );
+
+	while( dirent = readdir( d ) )
+	{
+# ifdef old_sinix
+	    /* Broken structure definition on sinix. */
+	    f.f_base.ptr = dirent->d_name - 2;
+# else
+	    f.f_base.ptr = dirent->d_name;
+# endif
+	    f.f_base.len = strlen( f.f_base.ptr );
+
+	    file_build( &f, filename, 0 );
+
+	    (*func)( filename, 0 /* not stat()'ed */, (time_t)0 );
+	}
+
+	closedir( d );
+}
+
+/*
+ * file_time() - get timestamp of file, if not done by file_dirscan()
+ */
+
+int
+file_time( filename, time )
+char	*filename;
+time_t	*time;
+{
+	struct stat statbuf;
+
+	if( stat( filename, &statbuf ) < 0 )
+	    return -1;
+
+	*time = statbuf.st_mtime;
+	return 0;
+}
+
+/*
+ * file_archscan() - scan an archive for files
+ */
+
+# ifndef AIAMAG	/* God-fearing UNIX */
+
+# define SARFMAG 2
+# define SARHDR sizeof( struct ar_hdr )
+
+void
+file_archscan( archive, func )
+char *archive;
+void (*func)();
+{
+# if !defined( __QNX__ ) && !defined( __BEOS__ )
+	struct ar_hdr ar_hdr;
+	char buf[ MAXJPATH ];
+	long offset;
+	char    *string_table = 0;
+	int fd;
+
+	if( ( fd = open( archive, O_RDONLY, 0 ) ) < 0 )
+	    return;
+
+	if( read( fd, buf, SARMAG ) != SARMAG ||
+	    strncmp( ARMAG, buf, SARMAG ) )
+	{
+	    close( fd );
+	    return;
+	}
+
+	offset = SARMAG;
+
+	if( DEBUG_BINDSCAN )
+	    printf( "scan archive %s\n", archive );
+
+	while( read( fd, &ar_hdr, SARHDR ) == SARHDR &&
+	       !memcmp( ar_hdr.ar_fmag, ARFMAG, SARFMAG ) )
+	{
+	    char    lar_name[256];
+	    long    lar_date;
+	    long    lar_size;
+	    long    lar_offset;
+	    char *c;
+	    char    *src, *dest;
+
+	    strncpy( lar_name, ar_hdr.ar_name, sizeof(ar_hdr.ar_name) );
+
+	    sscanf( ar_hdr.ar_date, "%ld", &lar_date );
+	    sscanf( ar_hdr.ar_size, "%ld", &lar_size );
+
+	    if (ar_hdr.ar_name[0] == '/')
+	    {
+		if (ar_hdr.ar_name[1] == '/')
+		{
+		    /* this is the "string table" entry of the symbol table,
+		    ** which holds strings of filenames that are longer than
+		    ** 15 characters (ie. don't fit into a ar_name
+		    */
+
+		    string_table = malloc(lar_size);
+		    lseek(fd, offset + SARHDR, 0);
+		    if (read(fd, string_table, lar_size) != lar_size)
+			printf("error reading string table\n");
+		}
+		else if (ar_hdr.ar_name[1] != ' ')
+		{
+		    /* Long filenames are recognized by "/nnnn" where nnnn is
+		    ** the offset of the string in the string table represented
+		    ** in ASCII decimals.
+		    */
+		    dest = lar_name;
+		    lar_offset = atoi(lar_name + 1);
+		    src = &string_table[lar_offset];
+		    while (*src != '/')
+			*dest++ = *src++;
+		    *dest = '/';
+		}
+	    }
+
+	    c = lar_name - 1;
+	    while( *++c != ' ' && *c != '/' )
+		;
+	    *c = '\0';
+
+	    if ( DEBUG_BINDSCAN )
+		printf( "archive name %s found\n", lar_name );
+
+	    sprintf( buf, "%s(%s)", archive, lar_name );
+
+	    (*func)( buf, 1 /* time valid */, (time_t)lar_date );
+
+	    offset += SARHDR + ( ( lar_size + 1 ) & ~1 );
+	    lseek( fd, offset, 0 );
+	}
+
+	if (string_table)
+	    free(string_table);
+
+	close( fd );
+
+# endif /* QNX */
+
+}
+
+# else /* AIAMAG - RS6000 AIX */
+
+void
+file_archscan( archive, func )
+char *archive;
+void (*func)();
+{
+	struct fl_hdr fl_hdr;
+
+	struct {
+		struct ar_hdr hdr;
+		char pad[ 256 ];
+	} ar_hdr ;
+
+	char buf[ MAXJPATH ];
+	long offset;
+	int fd;
+
+	if( ( fd = open( archive, O_RDONLY, 0 ) ) < 0 )
+	    return;
+
+	if( read( fd, (char *)&fl_hdr, FL_HSZ ) != FL_HSZ ||
+	    strncmp( AIAMAG, fl_hdr.fl_magic, SAIAMAG ) )
+	{
+	    close( fd );
+	    return;
+	}
+
+	sscanf( fl_hdr.fl_fstmoff, "%ld", &offset );
+
+	if( DEBUG_BINDSCAN )
+	    printf( "scan archive %s\n", archive );
+
+	while( offset > 0 &&
+	       lseek( fd, offset, 0 ) >= 0 &&
+	       read( fd, &ar_hdr, sizeof( ar_hdr ) ) >= sizeof( ar_hdr.hdr ) )
+	{
+	    long    lar_date;
+	    int	    lar_namlen;
+
+	    sscanf( ar_hdr.hdr.ar_namlen, "%d", &lar_namlen );
+	    sscanf( ar_hdr.hdr.ar_date, "%ld", &lar_date );
+	    sscanf( ar_hdr.hdr.ar_nxtmem, "%ld", &offset );
+
+	    if( !lar_namlen )
+		continue;
+
+	    ar_hdr.hdr._ar_name.ar_name[ lar_namlen ] = '\0';
+
+	    sprintf( buf, "%s(%s)", archive, ar_hdr.hdr._ar_name.ar_name );
+
+	    (*func)( buf, 1 /* time valid */, (time_t)lar_date );
+	}
+
+	close( fd );
+}
+
+# endif /* AIAMAG - RS6000 AIX */
+
+# endif /* unix */
+
+@
+
+
+1.17
+log
+@@
+text
+@a89 1
+	struct stat statbuf;
+@
+
+
+1.16
+log
+@@
+text
+@d116 1
+a116 1
+# ifdef sinix
+@
+
+
+1.15
+log
+@@
+text
+@d124 1
+a124 1
+	    file_build( &f, filename );
+@
+
+
+1.14
+log
+@@
+text
+@d44 1
+a44 1
+# ifndef __QNX__
+d70 1
+d164 1
+a164 1
+# ifndef __QNX__
+@
+
+
+1.13
+log
+@@
+text
+@d88 1
+a88 1
+	char filename[ MAXPATH ];
+d165 1
+a165 1
+	char buf[ MAXPATH ];
+d268 1
+a268 1
+	char buf[ MAXPATH ];
+@
+
+
+1.12
+log
+@@
+text
+@d13 1
+a13 1
+     defined(M_XENIX) || defined(__ISC)
+d26 18
+d47 1
+@
+
+
+1.11
+log
+@@
+text
+@d12 2
+a13 1
+# if defined(_SEQUENT_) || defined(__DGUX__) || defined(M_XENIX)
+@
+
+
+1.10
+log
+@@
+text
+@d25 1
+d27 1
+d143 1
+d229 3
+@
+
+
+1.9
+log
+@@
+text
+@a33 2
+ *	file_parse() - split a file name into dir/base/suffix/member
+ *	file_build() - build a filename given dir/base/suffix/member
+a37 3
+ * File_parse() and file_build() just manipuate a string and a structure;
+ * they do not make system calls.
+ *
+a43 1
+ * 12/26/93 (seiwald) - handle dir/.suffix properly in file_build()
+d47 1
+a47 63
+ */
+
+/*
+ * file_parse() - split a file name into dir/base/suffix/member
+ */
+
+void
+file_parse( file, f )
+char		*file;
+FILENAME	*f;
+{
+	char *p; 
+	char *end;
+	
+	memset( (char *)f, 0, sizeof( *f ) );
+
+	/* Look for <grist> */
+
+	if( file[0] == '<' && ( p = strchr( file, '>' ) ) )
+	{
+	    f->f_grist.ptr = file + 1;
+	    f->f_grist.len = p - file - 1;
+	    file = p + 1;
+	}
+
+	/* Look for dir/ */
+	/* Special case for / - dirname is /, not "" */
+
+	if( p = strrchr( file, '/' ) )
+	{
+	    f->f_dir.ptr = file;
+	    f->f_dir.len = p == file ? 1 : p - file;
+	    file = p + 1;
+	}
+
+	end = file + strlen( file );
+
+	/* Look for (member) */
+
+	if( ( p = strchr( file, '(' ) ) && end[-1] == ')' )
+	{
+	    f->f_member.ptr = p + 1;
+	    f->f_member.len = end - p - 2;
+	    end = p;
+	} 
+
+	/* Look for .suffix */
+
+	if( ( p = strrchr( file, '.' ) ) && p < end )
+	{
+	    f->f_suffix.ptr = p;
+	    f->f_suffix.len = end - p;
+	    end = p;
+	}
+
+	/* Leaves base */
+
+	f->f_base.ptr = file;
+	f->f_base.len = end - file;
+}
+
+/*
+ * file_build() - build a filename given dir/base/suffix/member
+a49 62
+void
+file_build( f, file )
+FILENAME	*f;
+char		*file;
+{
+	if( f->f_grist.len )
+	{
+	    *file++ = '<';
+	    memcpy( file, f->f_grist.ptr, f->f_grist.len );
+	    file += f->f_grist.len;
+	    *file++ = '>';
+	}
+
+	/* Don't prepend root if it's . or directory is rooted */
+
+	if( f->f_root.len 
+	    && !( f->f_root.len == 1 && f->f_root.ptr[0] == '.' )
+	    && !( f->f_dir.len && f->f_dir.ptr[0] == '/' ) )
+	{
+	    memcpy( file, f->f_root.ptr, f->f_root.len );
+	    file += f->f_root.len;
+	    *file++ = '/';
+	}
+	    
+	if( f->f_dir.len )
+	{
+	    memcpy( file, f->f_dir.ptr, f->f_dir.len );
+	    file += f->f_dir.len;
+	}
+
+	/* Put / between dir and file */
+
+	if( f->f_dir.len && ( f->f_base.len || f->f_suffix.len ) )
+	{
+	    /* Special case for dir / : don't add another / */
+
+	    if( !( f->f_dir.len == 1 && f->f_dir.ptr[0] == '/' ) )
+		*file++ = '/';
+	}
+
+	if( f->f_base.len )
+	{
+	    memcpy( file, f->f_base.ptr, f->f_base.len );
+	    file += f->f_base.len;
+	}
+
+	if( f->f_suffix.len )
+	{
+	    memcpy( file, f->f_suffix.ptr, f->f_suffix.len );
+	    file += f->f_suffix.len;
+	}
+
+	if( f->f_member.len )
+	{
+	    *file++ = '(';
+	    memcpy( file, f->f_member.ptr, f->f_member.len );
+	    file += f->f_member.len;
+	    *file++ = ')';
+	}
+	*file = 0;
+}
+
+@
+
+
+1.8
+log
+@@
+text
+@d223 4
+d228 2
+a229 1
+	    f.f_base.len = strlen( dirent->d_name );
+@
+
+
+1.7
+log
+@@
+text
+@d101 1
+a101 1
+	if( ( p = strchr( file, '.' ) ) && p < end )
+@
+
+
+1.6
+log
+@@
+text
+@d12 1
+a12 1
+# if defined(_SEQUENT_) || defined(__DGUX__)
+@
+
+
+1.5
+log
+@@
+text
+@d16 3
+d20 1
+d191 3
+d195 1
+@
+
+
+1.4
+log
+@@
+text
+@d144 1
+a144 1
+	/* Special case for dir / : don't add another / */
+d146 5
+a150 2
+	if( !( f->f_dir.len == 1 && f->f_dir.ptr[0] == '/' ) )
+	    if( f->f_dir.len && ( f->f_base.len || f->f_suffix.len ) )
+d152 1
+@
+
+
+1.3
+log
+@@
+text
+@a4 2
+ *
+ * 12/19/94 (mikem) - solaris string table insanity support
+d47 2
+d75 1
+d80 1
+a80 1
+	    f->f_dir.len = p - file;
+d144 1
+a144 2
+	if( f->f_dir.len && ( f->f_base.len || f->f_suffix.len ) )
+	    *file++ = '/';
+d146 4
+d196 5
+@
+
+
+1.2
+log
+@@
+text
+@d2 3
+a4 1
+ * Copyright 1993 Christopher Seiwald.
+@
+
+
+1.1
+log
+@@
+text
+@d3 2
+a6 2
+# ifndef VMS
+
+d10 2
+d17 4
+d22 2
+d44 3
+d141 1
+a141 1
+	if( f->f_dir.len && f->f_base.len )
+d246 1
+d267 1
+a267 1
+	    char    lar_name[16];
+d270 1
+d272 1
+a274 4
+	    c = lar_name + sizeof( lar_name );
+	    while( *--c == ' ' || *c == '/' )
+		    ;
+	    *++c = '\0';
+d279 37
+d324 3
+d389 2
+a390 1
+# endif /* UNIX */
+@

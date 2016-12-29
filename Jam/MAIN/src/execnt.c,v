@@ -1,0 +1,468 @@
+head     1.9;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.9
+date     2005.01.27.09.35.33;  author p4;  state Exp;
+branches ;
+next     1.8;
+
+1.8
+date     2005.01.27.09.35.32;  author p4;  state Exp;
+branches ;
+next     1.7;
+
+1.7
+date     2005.01.27.09.35.32;  author p4;  state Exp;
+branches ;
+next     1.6;
+
+1.6
+date     2005.01.27.09.35.32;  author p4;  state Exp;
+branches ;
+next     1.5;
+
+1.5
+date     2005.01.27.09.35.28;  author p4;  state Exp;
+branches ;
+next     1.4;
+
+1.4
+date     2005.01.27.09.35.28;  author p4;  state Exp;
+branches ;
+next     1.3;
+
+1.3
+date     2005.01.27.09.35.15;  author p4;  state Exp;
+branches ;
+next     1.2;
+
+1.2
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.1;
+
+1.1
+date     2005.01.27.09.35.12;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.9
+log
+@@
+text
+@/*
+ * Copyright 1993, 1995 Christopher Seiwald.
+ *
+ * This file is part of Jam - see jam.c for Copyright information.
+ */
+
+# if defined( NT ) || defined( __OS2__ )
+
+/*
+ * execnt.c - execute a shell script on NT
+ *
+ * Because I can't find a wait() call on NT, this implementation uses
+ * cwait() to wait for each process.  That means parallelism is crippled:
+ * all concurrent jobs must complete before the next can be issued.
+ *
+ * External routines:
+ *	execcmd() - launch an async command execution
+ * 	execwait() - wait and drive at most one execution completion
+ *
+ * Internal routines:
+ *	onintr() - bump intr to note command interruption
+ *
+ * 05/31/96 (seiwald) - async multiprocess interface for NT
+ */
+
+# include "jam.h"
+# include "execcmd.h"
+# include "lists.h"
+# include <errno.h>
+# include <process.h>
+
+static int intr = 0;
+
+static int cmdsrunning = 0;
+
+# ifdef _MSC_VER
+static void (*istat)( int disp );
+# else
+static void (*istat)();
+# endif
+
+/* OS2 Watcom */
+
+# ifndef _WAIT_CHILD
+# define _WAIT_CHILD  WAIT_CHILD
+# endif
+static struct
+{
+	int	pid;
+	void	(*func)();
+	void 	*closure;
+	char	*tempfile;
+} cmdtab[ MAXJOBS ] = {0};
+
+/*
+ * onintr() - bump intr to note command interruption
+ */
+
+# ifdef _MSC_VER
+void
+onintr( int disp )
+# else
+void
+onintr( disp )
+int disp;
+# endif
+{
+	intr++;
+	printf( "...interrupted\n" );
+}
+
+/*
+ * execcmd() - launch an async command execution
+ */
+
+void
+execcmd( string, func, closure, shell )
+char *string;
+void (*func)();
+void *closure;
+LIST *shell;
+{
+	int pid;
+	int slot;
+	char *argv[ MAXARGC + 1 ];	/* +1 for NULL */
+	static char *comspec;
+	char *p;
+
+	if( !comspec && !( comspec = getenv( "COMSPEC" ) ) )
+	    comspec = "CMD.EXE";
+
+	/* Find a slot in the running commands table for this one. */
+
+	for( slot = 0; slot < MAXJOBS; slot++ )
+	    if( !cmdtab[ slot ].pid )
+		break;
+
+	if( slot == MAXJOBS )
+	{
+	    printf( "no slots for child!\n" );
+	    exit( EXITBAD );
+	}
+
+	/* Create temp bat file name. */
+
+	if( !cmdtab[ slot ].tempfile )
+	{
+	    char *tempdir;
+
+	    if( !( tempdir = getenv( "TEMP" ) ) &&
+		!( tempdir = getenv( "TMP" ) ) &&
+		!( tempdir = getenv( "temp" ) ) &&
+		!( tempdir = getenv( "tmp" ) ) )
+		    tempdir = "\\temp";
+
+	    cmdtab[ slot ].tempfile = malloc( strlen( tempdir ) + 14 );
+
+	    sprintf( cmdtab[ slot ].tempfile, "%s\\jamtmp%02d.bat", 
+				tempdir, slot );
+	}
+
+	/* Trim leading, ending white space */
+
+	while( isspace( *string ) )
+		++string;
+
+	p = strchr( string, '\n' );
+
+	while( p && isspace( *p ) )
+		++p;
+
+	/* If multi line, write to bat file.  Otherwise, exec directly. */
+
+	if( p && *p )
+	{
+	    FILE *f;
+
+	    /* Write command to bat file. */
+
+	    f = fopen( cmdtab[ slot ].tempfile, "w" );
+	    fputs( string, f );
+	    fclose( f );
+
+	    /* Make up argv. */
+
+	    argv[0] = comspec;
+	    argv[1] = "/Q/C";
+	    argv[2] = cmdtab[ slot ].tempfile;
+	    argv[3] = 0;
+	}
+	else
+	{
+	    /* Make up argv. */
+
+	    argv[0] = comspec;
+	    argv[1] = "/Q/C";
+	    argv[2] = string;
+	    argv[3] = 0;
+	}
+
+	/* Catch interrupts whenever commands are running. */
+
+	if( !cmdsrunning++ )
+	    istat = signal( SIGINT, onintr );
+
+	/* Start the command */
+
+	if( ( pid = spawnv( P_NOWAIT, comspec, argv ) ) < 0 )
+	{
+	    perror( "spawn" );
+	    exit( EXITBAD );
+	}
+
+	/* Save the operation for execwait() to find. */
+
+	cmdtab[ slot ].pid = pid;
+	cmdtab[ slot ].func = func;
+	cmdtab[ slot ].closure = closure;
+
+	/* Wait until we're under the limit of concurrent commands. */
+	/* Don't trust globs.jobs alone. */
+
+	while( cmdsrunning >= MAXJOBS || cmdsrunning >= globs.jobs )
+	    if( !execwait() )
+		break;
+}
+
+/*
+ * execwait() - wait and drive at most one execution completion
+ */
+
+int
+execwait()
+{
+	int i;
+	int status, w;
+	int rstat;
+
+	/* Handle naive make1() which doesn't know if cmds are running. */
+
+	if( !cmdsrunning )
+	    return 0;
+
+	for( i = 0; i < MAXJOBS && cmdsrunning; i++ )
+	    if( w = cmdtab[ i ].pid )
+	{
+	    /* Pick up process pid and status */
+    
+	    w = cwait( &status, w, _WAIT_CHILD );
+
+	    if( w == -1 )
+	    {
+		printf( "child process(es) lost!\n" );
+		perror("wait");
+		exit( EXITBAD );
+	    }
+
+	    unlink( cmdtab[ i ].tempfile );
+
+	    /* Drive the completion */
+
+	    if( !--cmdsrunning )
+		signal( SIGINT, istat );
+
+	    if( intr )
+		rstat = EXEC_CMD_INTR;
+	    else if( w == -1 || status != 0 )
+		rstat = EXEC_CMD_FAIL;
+	    else
+		rstat = EXEC_CMD_OK;
+
+	    cmdtab[ i ].pid = 0;
+
+	    (*cmdtab[ i ].func)( cmdtab[ i ].closure, rstat );
+	}
+
+	return 1;
+}
+
+# endif /* NT */
+@
+
+
+1.8
+log
+@@
+text
+@d42 5
+@
+
+
+1.7
+log
+@@
+text
+@d47 1
+d82 1
+d98 48
+d148 2
+d151 1
+a151 1
+	    argv[1] = "/C";
+d213 2
+@
+
+
+1.6
+log
+@@
+text
+@d36 3
+d40 1
+d53 1
+d55 3
+d60 1
+@
+
+
+1.5
+log
+@@
+text
+@d9 17
+d29 2
+d32 13
+d46 1
+a46 3
+ * execunix.c - execute a shell script on UNIX
+ *
+ * 05/04/94 (seiwald) - async multiprocess interface; noop on NT
+a48 2
+static int intr = 0;
+
+d56 5
+a60 1
+	
+d68 4
+a71 2
+	int status, pid, w, rstat;
+	void (*istat)();
+d73 2
+a74 1
+	/* Execute each line separately for dame-brammaged DOS shell. */
+d76 7
+a82 1
+	do
+d84 10
+a93 1
+	    /* Copy next line to buf. */
+d95 1
+a95 2
+	    char buf[ MAXCMD ];
+	    char *b = buf;
+d97 2
+a98 3
+	    while( *string )
+	    	if( ( *b++ = *string++ ) == '\n' )
+		    break;
+d100 19
+a118 1
+	    if( b == buf )
+d120 1
+d122 3
+a124 1
+	    *b++ = '\0';
+d126 6
+a131 1
+	    /* Execute line */
+d133 1
+a133 3
+	    istat = signal( SIGINT, onintr );
+	    status = system( buf );
+	    signal( SIGINT, istat );
+d135 16
+a150 1
+	    /* Divine status. */
+d152 5
+d164 1
+a164 3
+	} while( rstat == EXEC_CMD_OK );
+
+	/* Signal completion. */
+d166 2
+a167 2
+	(*func)( closure, rstat );
+}
+d169 1
+a169 4
+int 
+execwait()
+{
+	return 0;
+@
+
+
+1.4
+log
+@@
+text
+@d7 1
+a7 1
+# ifdef NT
+@
+
+
+1.3
+log
+@@
+text
+@d22 2
+a23 1
+onintr()
+d39 1
+a39 3
+	istat = signal( SIGINT, onintr );
+	status = system( string );
+	signal( SIGINT, istat );
+d41 34
+a74 6
+	if( intr )
+	    rstat = EXEC_CMD_INTR;
+	else if( w == -1 || status != 0 )
+	    rstat = EXEC_CMD_FAIL;
+	else
+	    rstat = EXEC_CMD_OK;
+@
+
+
+1.2
+log
+@@
+text
+@d11 1
+d29 1
+a29 1
+execcmd( string, func, closure  )
+d33 1
+@
+
+
+1.1
+log
+@@
+text
+@d2 3
+a4 1
+ * Copyright 1993 Christopher Seiwald.
+@

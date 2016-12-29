@@ -1,0 +1,547 @@
+.TH JAM 1 "10 March 1995"
+.SH NAME
+\fBjam\fR
+\- 
+\fBmake\fR(1)
+redux
+
+.SH SYNOPSIS
+\fBjam\fR 
+[ \fB-a\fR ] 
+[ \fB-n\fR ] 
+[ \fB-v\fR ] 
+[ \fB-d \fIdebug\fR ] 
+[ \fB-f \fIJambase\fR ... ] 
+[ \fB-j \fIjobs\fR ] 
+[ \fB-s \fIvar\fB=\fIvalue\fR ... ] 
+[ \fB-t \fItarget\fR ... ]
+[ \fItarget\fR ... ]
+
+.SH DESCRIPTION
+.PP
+\fBJam\fR recursively builds target files from their source files,
+using two files to define the dependency graph and the updating actions
+for all targets.  The file \fBJambase\fR (usually located in
+/usr/local/lib) defines rules, and the file \fBJamfile\fR (located in
+the current directory) lists the targets and sources in terms of those
+rules.  \fBJam\fR does not need to rely on suffix-driven implicit rules
+or directory contents.  A \fBJambase\fR is provided with \fBjam\fR; the
+user supplies the \fBJamfile\fR.
+.PP
+See \fBJamfile\fR(5) for information on writing Jamfiles.  This manual
+page describes the program that interprets \fBJambase\fR and
+\fBJamfile\fR.
+
+.SH OPTIONS
+.PP
+If \fItarget\fR is provided on the command line, \fBjam\fR attempts to
+build that target; otherwise \fBjam\fR attempts to build the target
+\fIall\fR.
+.PP
+\fBJam\fR supports the following options:
+.IP "-a"
+Build all targets, even if they are up-to-date.
+.IP "-d\fI<n>\fR"
+Enable debugging levels from 1 to \fI<n>\fR.  Interesting values are:
+.PP
+.RS
+1 Emit update action tracing (on by default)
+.br
+2 Emit update commands
+.br
+3 Produce dependency information
+.br
+4 Show modification times of bound files
+.br
+5 Show rule invocation
+.br
+6-9 debugging
+.RE
+.IP "-d+\fI<n>\fR"
+Enable debugging level \fI<n>\fR.
+.IP "-d0"
+Turn off all debugging levels.  Only errors are not suppressed.
+.IP "-f\fI<file>\fR"
+Read \fI<file>\fR instead of \fBJambase\fR.
+.IP "-j\fI<jobs>\fR"
+Run up to \fI<jobs>\fR shell commands concurrently (UNIX only).
+The default is 1.
+.IP "-n"
+Don't actually execute the updating actions, but do everything else.
+This implies \fB-d\fI2\fR.
+.IP "-s\fI<var>\fB=\fI<value>\fR"
+Set the variable \fI<var>\fR to \fI<value\fR>, overriding both
+internal variables and variables imported from the environment.
+.IP "-t\fI<target>\fR"
+Rebuild \fI<target>\fR, even if it is up-to-date.
+.IP "-v"
+Print the version of \fBjam\fR and exit.
+
+.SH "THE JAM LANGUAGE"
+.PP
+The \fBjam\fR language supports defining rules, invoking rules, and
+setting variables.  It also has a few flow-of-control statements.
+\fBJambase\fR and \fBJamfile\fR share this language.
+.SS "Lexical Features"
+\fBJam\fR treats its input files as whitespace-separated tokens, with
+two exceptions: double quotes (") can enclose whitespace to embed it
+into a token, and everything between the matching curly braces ({}) in
+the definition of a rule action is treated as a single string.  A
+backslash (\\) can escape a double quote.  
+.PP
+\fBJam\fR requires whitespace (blanks, tabs, or newlines) to surround
+all tokens, including the colon (:) and semicolon (;) tokens.  This is
+because \fBjam\fR runs on many platforms and no characters, save
+whitespace, are uncommon in the file names on all of those platforms.
+.SS Targets
+Targets are files to be updated and sources are the files used in
+updating those targets.  Collectively, they are just referred to as
+"targets".  A target is simply a file name, either rooted or relative
+to the directory of \fBjam\fR's invocation.  The special syntax,
+\fIfile(member)\fR, refers to an \fBar\fR(1) library member.  The
+special syntax, \fI<grist>file\fR, perturbs a file name to distinguish
+it from other files with the same name.  The \fI<grist>\fR is stripped
+from the name during binding (q.v., below).
+.SS Rules
+\fBJam\fR's basic entity is called a rule, which is used to relate
+targets to their sources.  A rule is defined in two parts: the
+\fBjam\fR statements to execute when the rule is invoked (essentially a
+procedure call), and the actions (shell commands) to execute in order
+to update the targets of the rule.  A rule may have a procedure
+definition, actions, or both.
+.PP
+The \fBjam\fR statements for defining and invoking rules are as
+follows.  \fI<targets>\fR and \fI<sources>\fR are lists of file names;
+\fI<statements>\fR are \fBjam\fR statements; and \fI<string>\fR is a
+shell script:
+.IP 
+rule \fI<rulename>\fR { \fI<statements>\fR }
+.IP
+actions [ \fImodifiers\fR ] \fI<rulename>\fR { \fI<string>\fR }
+.IP
+\fI<rulename>\fR \fI<targets>\fR [ : \fI<sources>\fR ] ;
+.PP
+The first form defines a rule's procedure; the second defines the rule's
+updating actions; the third invokes the rule.  Redefining a rule's
+procedure or actions replaces the previous definition.
+.PP
+Invoking a rule executes the procedure for the rule (if any) and
+associates any update actions for the targets.  More than one update
+action may be associated with a target: the actions are executed in the
+order in which they are added.
+.PP
+In both the rule's procedure definition and the rule's actions, the
+special variables $(<) and $(>) refer to the \fI<targets>\fR and
+\fI<sources>\fR given at rule invocation.  However, in the rule's
+actions, $(<) and $(>) refer to the \fI<targets>\fR and \fI<sources>\fR
+after they have been bound by the binding phase (q.v., below).
+\fBJam\fR issues a warning if $(<) or $(>) have elements not in the
+dependency graph.
+.PP
+The following action \fImodifiers\fR are understood:
+.RS
+.IP "\fBactions existing\fR"
+$(>) includes only sources currently existing.
+.IP "\fBactions ignore\fR"
+The return status of the shell commands is ignored.
+.IP "\fBactions piecemeal\fR"
+The shell commands are repeatedly invoked with a subset of $(>)
+small enough to fit in a command buffer.
+.IP "\fBactions quietly\fR"
+The action is not echoed to the standard output.
+.IP "\fBactions together\fR"
+The $(>) from multiple instances of the same action on the same
+target are glommed together.
+.IP "\fBactions updated\fR"
+$(>) includes only targets marked for updating.
+.RE
+.SS "Built-in Rules"
+.PP
+\fBJam\fR has ten built-in rules, none of which have updating actions:
+.PP
+.RS
+.IP "ALWAYS \fI<targets>\fR ;"
+.br
+Rebuilds \fI<targets>\fR, even if they are up-to-date.
+.IP "DEPENDS \fI<targets>\fR : \fI<sources>\fR ;"
+.br
+Makes \fI<sources>\fR dependencies of \fI<targets>\fR.
+.IP "ECHO \fI<args>\fR ;"
+.br
+Blurts out the message \fI<args>\fR to stdout.
+.IP "EXIT \fI<args>\fR ;"
+.br
+Blurts out the message \fI<args>\fR to stdout and then
+exits with a failure status.
+.IP "INCLUDES \fI<targets>\fR : \fI<sources>\fR ;"
+.br
+Makes \fI<sources>\fR dependencies of anything of which \fI<targets>\fR 
+are dependencies.
+.IP "LEAVES \fI<targets>\fR ;"
+.br
+Makes each of \fI<targets>\fR depend only on its leaf sources, and not
+on any intermediate targets.  Its leaf sources are those dependencies
+without any dependencies themselves.
+.IP "NOCARE \fI<targets>\fR ;"
+.br
+Marks \fI<targets>\fR as possibly being bogus.
+.IP "NOTFILE \fI<targets>\fR ;"
+.br
+Marks \fI<targets>\fR as not being files.
+.IP "NOUPDATE \fI<targets>\fR ;"
+.br
+Causes the timestamps of \fI<targets>\fR to be ignored: either the
+target exists or it doesn't.  If it exists, it is considered eternally
+old.
+.IP "TEMPORARY \fI<targets>\fR ;"
+.br
+Marks \fI<targets>\fR as temporary.
+.RE
+.PP
+The \fIALWAYS\fR, \fILEAVES\fR, \fINOCARE\fR, \fINOTFILE\fR,
+\fINOUPDATE\fR, and \fITEMPORARY\fR affect only the binding phase
+(q.v.).
+.SS "Flow-of-Control"
+.PP
+\fBJam\fR has several simple flow-of-control statements:
+.IP
+include \fI<a>\fR ;
+.IP
+for \fI<a>\fR in \fI<args>\fR { \fI<statements>\fR }
+.IP
+switch \fI<a>\fR { case \fI<v1>\fR : \fI<statements>\fR ; case \fI<v2>\fR : \fI<statements>\fR ; ... }
+.IP
+if \fI<cond>\fR { \fI<statements>\fR } [ else { \fI<statements>\fR } ]
+.PP
+The \fBinclude\fR statement includes the named file.  The file is bound
+like regular targets (see \fBBinding\fR, below), but unlike regular
+targets the include file cannot be built.
+.PP
+The \fBfor\fR loop executes \fI<statements>\fR for each value in
+\fI<args>\fR, setting the variable \fI<a>\fR to the value.
+.PP
+The \fBswitch\fR statement executes zero or one of the enclosed
+\fI<statements>\fR, depending on which value \fI<a>\fR matches.  The
+\fI<v>\fR values are not variable-expanded.  The \fI<v>\fR values may
+include the following wildcards:
+.PP
+.RS
+?		match any single character
+.br
+*		match zero or more characters
+.br
+[\fI<chars>\fR]	match any single character in \fI<chars>\fR
+.RE
+.PP
+The \fBif\fR statement does the obvious; the \fBelse\fR clause is
+optional.  \fI<cond>\fR is built of:
+.PP
+.RS
+\fI<a>\fR		true if \fI<a>\fR is a non-zero-length string
+.br
+\fI<a>\fR = \fI<b>\fR	strings equal
+.br
+\fI<a>\fR != \fI<b>\fR	strings not equal
+.br
+\fI<a>\fR < \fI<b>\fR	string less than
+.br
+\fI<a>\fR <= \fI<b>\fR	string less than or equal to
+.br
+\fI<a>\fR > \fI<b>\fR	string greater than
+.br
+\fI<a>\fR >= \fI<b>\fR	string greater than or equal to
+.PP
+! \fI<cond>\fR		condition not true
+.br
+\fI<cond>\fR && \fI<cond>\fR	conjunction
+.br
+\fI<cond>\fR || \fI<cond>\fR	disjunction
+.br
+( \fI<cond>\fR )		grouping
+.RE
+.PP
+In comparisons, the arguments may (through variable expansion) be more
+than one token, but only the first token takes part in the comparison.
+If, through variable expansion, the argument is zero tokens, a single
+token of a zero-length string is used instead.
+.SS Variables
+.PP
+\fBJam\fR variables are lists of strings, with zero or more elements.
+An undefined variable is indistinguishable from a variable whose value
+is an empty list.  Variables are either global or target-specific.  All
+variables are referenced as $(VARIABLE).
+.PP
+A variable is defined with:
+.IP
+\fI<variable>\fR = \fI<values>\fR ;
+.IP
+\fI<variable>\fR += \fI<values>\fR ;
+.IP
+\fI<variable>\fR on \fI<targets>\fR = \fI<values>\fR ;
+.IP
+\fI<variable>\fR on \fI<targets>\fR += \fI<values>\fR ;
+.IP
+\fI<variable>\fR default = \fI<values>\fR ;
+.PP
+The first two forms set \fI<variable>\fR globally.  The third and forth
+forms set a target-specific variable, where \fI<variable>\fR takes on a
+value only during the binding and updating \fI<targets>\fR.  The
+\fB=\fR operator replaces any previous value of \fI<variable>\fR with
+\fI<values>\fR; the \fB+=\fR operation appends \fI<values>\fR to any
+previous value.  The final form sets \fI<variable>\fR globally, but
+only if it was previously unset.
+.PP
+On program start-up, \fBjam\fR imports the environment variable
+settings into \fBjam\fR variables.  Environment variables are split at
+blanks with each word becomming an element in the variable's list
+value.  Environment variables whose names end in \fBPATH\fR are split
+at colons ("\fB:\fR").  Environment variable values can be overridden 
+on the command line with the \fB-s\fR flag.  \fBJam\fR variables are 
+not re-exported to the shell that executes the updating actions, but 
+the updating actions can reference \fBjam\fR variables with $(VARIABLE).
+.SS "Variable Expansion"
+.PP
+Before executing a statement, \fBjam\fR performs variable expansion on
+each token that is not a keyword or rule name. Such tokens with
+embedded variable references are replaced with zero or more tokens.
+Variable references are of the form $(\fIv\fR) or $(\fIvm\fR), where
+\fIv\fR is the variable name, and \fIm\fR are optional modifiers.
+.PP
+Variable expansion in a rule's actions is similar to variable expansion
+in statements, except that the action string is tokenized at whitespace
+regardless of quoting.
+.PP
+The result of a token after variable expansion is the product of the
+components of the token, where each component is a literal substring or
+a list substituting a variable reference.  For example:
+.PP
+.RS
+$(X)		-> a b c
+.br
+t$(X)		-> ta tb tc
+.br
+$(X)z		-> az bz cz
+.br
+$(X)-$(X)	-> a-a a-b a-c b-a b-b b-c c-a c-b c-c
+.RE
+.PP
+The variable name and modifiers can themselves contain a variable
+reference, and this partakes of the product as well: 
+.PP
+.RS
+$(X)		-> a b c
+.br
+$(Y)		-> 1 2
+.br
+$(Z)		-> X Y
+.br
+$($(Z))		-> a b c 1 2
+.RE
+.PP
+Because of this product expansion, if any variable reference in a token
+is undefined, the result of the expansion is an empty list.
+.PP
+Modifiers to a variable are of two varieties: sub-element selection and
+file name editing.  They are:
+.PP
+.IP "[\fI<n>\fR]"
+Select only element number \fI<n>\fR (starting at 1).  If the variable contains
+fewer than \fI<n>\fR elements, the result is a zero-element list.
+.IP "[\fI<n>\fR-\fI<m>\fR]"
+Select only elements number \fI<n>\fR through \fI<m>\fR.
+.IP "[\fI<n>\fR-]"
+Select only elements number \fI<n>\fR through the last.
+.IP ":G=\fI<grist>\fR"
+Replace the grist of the file name with \fI<grist>\fR.
+.IP ":D=\fI<path>\fR"
+Replace directory component of file name with \fI<path>\fR.
+.IP ":B=\fI<base>\fR"
+Replace the base part of file name with \fI<base>\fR.
+.IP ":S=\fI<suf>\fR"
+Replace the suffix of file name with \fI<suf>\fR.
+.IP ":M=\fI<mem>\fR"
+Replace the archive member name with \fI<mem>\fR.
+.IP ":R=\fI<root>\fR"
+Prepend \fI<root>\fR to the whole file name, if not already rooted.
+.IP ":\fI<components>\fR"
+Remove components not listed; components is one or more of
+\fBGDBSM\fR.
+
+.SH OPERATION
+\fBJam\fR has three phases of operation: parsing, binding, and
+updating.
+.SS Parsing
+.PP
+\fBJam\fR parses the \fBJambase\fR file, which includes \fBJamfile\fR.
+The results of parsing are: the dependency graph of targets; update
+actions associated with the targets; and variables set to specific
+values.
+.PP
+.SS Binding
+After parsing, \fBjam\fR recursively descends the dependency graph,
+attempting to locate each target file and determine if it is in need of
+updating.  If \fBjam\fR detects a cycle in the graph, it issues a
+warning.
+.PP
+By default, a target is located at the actual path of the target,
+relative to the directory of \fBjam\fR's invocation.  If the special
+variable $(LOCATE) is set to a directory name, \fBjam\fR prepends that
+directory name to the target; else if the special variable $(SEARCH) is
+set to a directory list, \fBjam\fR searches along the directory list
+for the target file, and if the file is found prepends the directory
+name to the target.  If the target name has a rooted directory
+component then $(SEARCH) and $(LOCATE) do not apply: the target is
+located at the actual path of the target.  If a target is marked as not
+being a file (using the built-in rule NOTFILE), it is left unbound to a
+file name.
+.PP
+After binding each target, \fBjam\fR determines whether the target
+needs updating, and marks the target if necessary for the updating
+phase.  A target is marked for updating for any of these three reasons:
+.IP 
+It is missing.
+.IP
+Its filesystem modification time is older than any of its sources.
+.IP
+Any of its sources are marked for updating.  
+.PP
+This basic behavior can be modified applying (usually one of) the 
+following six built-in rules to the target:
+.RS
+.IP ALWAYS
+The target is always updated.
+.IP LEAVES
+The target is only updated if it is missing or if its leaf sources
+are newer.  Leaf sources are those dependencies of the target that have
+no dependencies themselves.
+.IP NOCARE
+The target is ignored if it is missing and has no updating actions.  
+Normally, \fBjam\fR issues a warning and skips other targets that
+depend on missing targets without updating actions.
+.IP TEMPORARY
+If the target is missing, then its parent's modification time is used
+when comparing against sources.
+.IP NOTFILE
+The target is only updated if any of its sources are marked for updating.
+.IP NOUPDATE
+The target is only updated if it is missing.  Also, if it exists, it
+will appear eternally old; that is, older than anything that depends on
+it.
+.RE
+.PP
+If a target is a source file that includes other files, \fBjam\fR scans
+the source file for header file include lines.  It scans the file by
+matching each line against a \fBregexp\fR(3) pattern that has ()'s
+surrounding the included file name.  The pattern is provided by the
+user through the special variable $(HDRSCAN) (see \fBHDRPATTERN\fR in
+\fBJambase\fR for an example).  The result of the scan is formed into a
+rule invocation, with the scanned file as the target and the found
+included file names as the sources.  The rule invoked is named by the
+special variable $(HDRRULE).  \fBJam\fR only scans files if $(HDRSCAN)
+is set, and $(HDRSCAN) is normally set target-specific.
+.PP
+Between binding and updating, \fBjam\fR announces the number of targets
+to be updated.
+.SS Updating
+After binding, \fBjam\fR again recursively descends the dependency
+graph, this time executing the update actions for each target marked
+for update during the binding phase.  If a target's updating actions
+fail, then all targets which depend on it are skipped.
+.PP
+(UNIX only).  The \fB-j\fR flag instructs \fBjam\fR to build more than
+one target at a time.  If there are multiple actions on a single
+target, they are run sequentially.
+.PP
+(UNIX only).  The special variable $(JAMSHELL) gives \fBjam\fR a
+command execution shell to be used instead of /bin/sh.  This variable's
+value must be a multi-element list, corresponding to the argument
+vector for the command shell.  An element "\fB%\fR" is replaced with the
+command string to execute.  An element "\fB!\fR" is replaced with the
+multiprocess slot number, which is (inclusively) between 1 and the
+maximum number of concurrent jobs specified with the \fB-j\fR flag
+(default 1).  If no element of the list is "\fB%\fR", the command
+string is tacked on as the last argument.  The default value is:
+"/bin/sh -c %".
+
+.SH DIAGNOSTICS
+.PP
+In addition to generic error messages, 
+\fBjam\fR
+may emit one of the following:
+.PP
+warning: unknown rule X
+.IP
+A rule was invoked that has not been defined with
+an "actions" or "rule" statement.
+.PP
+using N temp target(s)
+.IP
+Targets marked as being temporary (but nonetheless present)
+have been found.
+.PP
+updating N target(s)
+.IP
+Targets are out-of-date and will be updated.
+.PP
+can't find N target(s)
+.IP
+Source files can't be found and there are no actions to create them.
+.PP
+can't make N target(s)
+.IP
+Due to sources not being found, other targets cannot be made.
+.PP
+warning: X depends on itself
+.IP
+A target depends on itself either directly or through its sources.
+.PP
+don't know how to make X
+.IP
+A target is not present and no actions have been defined to create it.
+.PP
+X skipped for lack of Y
+.IP
+A source failed to build, and thus a target cannot be built.
+.PP
+warning: using independent target X
+.IP
+A target that does is not a dependency of any other target is
+being referenced with $(<) or $(>).  
+.PP
+X removed
+.IP
+\fBJam\fR
+removed a partially built target after being interrupted.
+
+.SH FILES
+/usr/local/lib/Jambase
+.br
+Jamfile
+
+.SH BUGS, LIMITATIONS
+.PP
+Because the \fBinclude\fR statement works by pushing a new file in the
+input stream of the scanner rather than recursively invoking the parser
+on the new file, multiple include statements in a rule's procedure
+causes the files to be included in reverse order.
+.PP
+If the \fBinclude\fR statement appears inside an \fBif\fR block, the
+parser's attempt to find the \fBelse\fR will cause the text of the
+included file to appear after the first token following the statement
+block.  This is rarely what is intended.
+.PP
+In a rule's actions, only $(<) and $(>) refer to the bound file names:
+all other variable references get the unbound names.
+.PP
+With the \fB-j\fR flag, errors from failed commands can get
+staggeringly mixed up.  Also, because targets tend to get built in a
+quickest-first ordering, dependency information must be quite exact.
+Finally, beware of parallelizing commands that drop fixed-named files
+into the current directory, like \fByacc\fR(1) does.
+.PP
+A poorly set $(JAMSHELL) is likely to result in silent failure.
+
+.SH SEE ALSO
+\fBJambase\fR(5), \fBJamfile\fR(5)
+.SH AUTHOR
+Christopher Seiwald (seiwald@p3.com)

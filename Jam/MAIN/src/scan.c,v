@@ -1,0 +1,1103 @@
+head     1.18;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.18
+date     2005.01.27.09.35.40;  author p4;  state Exp;
+branches ;
+next     1.17;
+
+1.17
+date     2005.01.27.09.35.38;  author p4;  state Exp;
+branches ;
+next     1.16;
+
+1.16
+date     2005.01.27.09.35.38;  author p4;  state Exp;
+branches ;
+next     1.15;
+
+1.15
+date     2005.01.27.09.35.33;  author p4;  state Exp;
+branches ;
+next     1.14;
+
+1.14
+date     2005.01.27.09.35.33;  author p4;  state Exp;
+branches ;
+next     1.13;
+
+1.13
+date     2005.01.27.09.35.32;  author p4;  state Exp;
+branches ;
+next     1.12;
+
+1.12
+date     2005.01.27.09.35.30;  author p4;  state Exp;
+branches ;
+next     1.11;
+
+1.11
+date     2005.01.27.09.35.28;  author p4;  state Exp;
+branches ;
+next     1.10;
+
+1.10
+date     2005.01.27.09.35.28;  author p4;  state Exp;
+branches ;
+next     1.9;
+
+1.9
+date     2005.01.27.09.35.27;  author p4;  state Exp;
+branches ;
+next     1.8;
+
+1.8
+date     2005.01.27.09.35.26;  author p4;  state Exp;
+branches ;
+next     1.7;
+
+1.7
+date     2005.01.27.09.35.26;  author p4;  state Exp;
+branches ;
+next     1.6;
+
+1.6
+date     2005.01.27.09.35.24;  author p4;  state Exp;
+branches ;
+next     1.5;
+
+1.5
+date     2005.01.27.09.35.23;  author p4;  state Exp;
+branches ;
+next     1.4;
+
+1.4
+date     2005.01.27.09.35.22;  author p4;  state Exp;
+branches ;
+next     1.3;
+
+1.3
+date     2005.01.27.09.35.18;  author p4;  state Exp;
+branches ;
+next     1.2;
+
+1.2
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.1;
+
+1.1
+date     2005.01.27.09.35.12;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.18
+log
+@@
+text
+@/*
+ * Copyright 1993, 1995 Christopher Seiwald.
+ *
+ * This file is part of Jam - see jam.c for Copyright information.
+ */
+
+# include "jam.h"
+# include "lists.h"
+# include "parse.h"
+# include "scan.h"
+# include "jamgram.h"
+# include "jambase.h"
+# include "newstr.h"
+
+/*
+ * scan.c - the jam yacc scanner
+ *
+ * 12/26/93 (seiwald) - bump buf in yylex to 10240 - yuk.
+ * 09/16/94 (seiwald) - check for overflows, unmatched {}'s, etc.
+ *			Also handle tokens abutting EOF by remembering
+ *			to return EOF now matter how many times yylex()
+ *			reinvokes yyline().
+ * 02/11/95 (seiwald) - honor only punctuation keywords if SCAN_PUNCT.
+ * 07/27/95 (seiwald) - Include jamgram.h after scan.h, so that YYSTYPE is
+ *			defined before Linux's yacc tries to redefine it.
+ */
+
+struct keyword {
+	char *word;
+	int type;
+} keywords[] = {
+#ifdef FATFS
+# include "jamgramt.h"
+#else
+# include "jamgramtab.h"
+#endif
+	{ 0, 0 }
+} ;
+
+struct include {
+	struct include *next;	/* next serial include file */
+	char 	*string;	/* pointer into current line */
+	char	**strings;	/* for yyfparse() -- text to parse */
+	FILE 	*file;		/* for yyfparse() -- file being read */
+	char 	*fname;		/* for yyfparse() -- file name */
+	int 	line;		/* line counter for error messages */
+	char 	buf[ 512 ];	/* for yyfparse() -- line buffer */
+} ;
+
+static struct include *incp = 0; /* current file; head of chain */
+
+static int scanmode = SCAN_NORMAL;
+static int anyerrors = 0;
+static char *symdump();
+
+# define BIGGEST_TOKEN 10240	/* no single token can be larger */
+
+/* 
+ * Set parser mode: normal, string, or keyword
+ */
+
+void
+yymode( n )
+int n;
+{
+	scanmode = n;
+}
+
+void
+yyerror( s )
+char *s;
+{
+	if( incp )
+	    printf( "%s: line %d: ", incp->fname, incp->line );
+
+	printf( "%s at %s\n", s, symdump( &yylval ) );
+
+	++anyerrors;
+}
+
+int
+yyanyerrors()
+{
+	return anyerrors != 0;
+}
+
+void
+yyfparse( s )
+char *s;
+{
+	struct include *i = (struct include *)malloc( sizeof( *i ) );
+
+	/* Push this onto the incp chain. */
+
+	i->string = "";
+	i->strings = 0;
+	i->file = 0;
+	i->fname = copystr( s );
+	i->line = 0;
+	i->next = incp;
+	incp = i;
+
+	/* If the filename is "+", it means use the internal jambase. */
+
+	if( !strcmp( s, "+" ) )
+	    i->strings = jambase;
+}
+
+/*
+ * yyline() - read new line and return first character
+ *
+ * Fabricates a continuous stream of characters across include files,
+ * returning EOF at the bitter end.
+ */
+
+int
+yyline()
+{
+	struct include *i = incp;
+
+	if( !incp )
+	    return EOF;
+
+	/* Once we start reading from the input stream, we reset the */
+	/* include insertion point so that the next include file becomes */
+	/* the head of the list. */
+
+	/* If there is more data in this line, return it. */
+
+	if( *i->string )
+	    return *i->string++;
+
+	/* If we're reading from an internal string list, go to the */
+	/* next string. */
+
+	if( i->strings )
+	{
+	    if( !*i->strings )
+		goto next;
+
+	    i->line++;
+	    i->string = *(i->strings++);
+	    return *i->string++;
+	}
+
+	/* If necessary, open the file */
+
+	if( !i->file )
+	{
+	    FILE *f = stdin;
+
+	    if( strcmp( i->fname, "-" ) && !( f = fopen( i->fname, "r" ) ) )
+		perror( i->fname );
+
+	    i->file = f;
+	}
+
+	/* If there's another line in this file, start it. */
+
+	if( i->file && fgets( i->buf, sizeof( i->buf ), i->file ) )
+	{
+	    i->line++;
+	    i->string = i->buf;
+	    return *i->string++;
+	}
+
+    next:
+	/* This include is done.  */
+	/* Free it up and return EOF so yyparse() returns to parse_file(). */
+
+	incp = i->next;
+
+	/* Close file, free name */
+
+	if( i->file && i->file != stdin )
+	    fclose( i->file );
+	freestr( i->fname );
+	free( (char *)i );
+
+	return EOF;
+}
+
+/*
+ * yylex() - set yylval to current token; return its type
+ *
+ * Macros to move things along:
+ *
+ *	yychar() - return and advance character; invalid after EOF
+ *	yyprev() - back up one character; invalid before yychar()
+ *
+ * yychar() returns a continuous stream of characters, until it hits
+ * the EOF of the current include file.
+ */
+
+# define yychar() ( *incp->string ? *incp->string++ : yyline() )
+# define yyprev() ( incp->string-- )
+
+int
+yylex()
+{
+	int c;
+	char buf[BIGGEST_TOKEN];
+	char *b = buf;
+
+	if( !incp )
+	    goto eof;
+
+	/* Get first character (whitespace or of token) */
+
+	c = yychar();
+
+	if( scanmode == SCAN_STRING )
+	{
+	    /* If scanning for a string (action's {}'s), look for the */
+	    /* closing brace.  We handle matching braces, if they match! */
+
+	    int nest = 1;
+
+	    while( c != EOF && b < buf + sizeof( buf ) )
+	    {
+		    if( c == '{' )
+			nest++;
+
+		    if( c == '}' && !--nest )
+			break;
+
+		    *b++ = c;
+
+		    c = yychar();
+	    }
+
+	    /* We ate the ending brace -- regurgitate it. */
+
+	    if( c != EOF )
+		yyprev();
+
+	    /* Check obvious errors. */
+
+	    if( b == buf + sizeof( buf ) )
+	    {
+		yyerror( "action block too big" );
+		goto eof;
+	    }
+
+	    if( nest )
+	    {
+		yyerror( "unmatched {} in action block" );
+		goto eof;
+	    }
+
+	    *b = 0;
+	    yylval.type = STRING;
+	    yylval.string = newstr( buf );
+
+	}
+	else
+	{
+	    char *b = buf;
+	    int inquote = 0;
+	    int literal = 0;
+	    int hasquote = 0;
+	    struct keyword *k;
+		
+	    /* Eat white space */
+
+	    for( ;; )
+	    {
+		/* Skip past white space */
+
+		while( c != EOF && isspace( c ) )
+			c = yychar();
+
+		/* Not a comment?  Swallow up comment line. */
+
+		if( c != '#' )
+			break;
+		while( ( c = yychar() ) != EOF && c != '\n' )
+			;
+	    }
+
+	    /* c now points to the first character of a token. */
+
+	    if( c == EOF )
+		goto eof;
+
+	    /* look for white space to delimit word */
+	    /* "'s get stripped but preserve white space */
+
+	    while( b < buf + sizeof( buf ) )
+	    {
+		if( literal )
+		    *b++ = c, literal = 0;
+		else if( c == '\\' )
+		    literal++;
+		else if( c == '"' )
+		    inquote = !inquote, hasquote++;
+		else
+		    *b++ = c;
+
+		if( ( c = yychar() ) == EOF || !inquote && isspace( c ) )
+		    break;
+	    }
+
+	    /* Check obvious errors. */
+
+	    if( b == buf + sizeof( buf ) )
+	    {
+		yyerror( "string too big" );
+		goto eof;
+	    }
+
+	    if( inquote )
+	    {
+		yyerror( "unmatched \" in string" );
+		goto eof;
+	    }
+
+	    /* We looked ahead a character - back up. */
+
+	    if( c != EOF )
+		yyprev();
+
+	    /* scan token table */
+	    /* don't scan if it's "anything", $anything, */
+	    /* or an alphabetic when were looking for punctuation */
+
+	    *b = 0;
+	    yylval.type = ARG;
+
+	    if( !hasquote && 
+		*buf != '$' && 
+		!( isalpha( *buf ) && scanmode == SCAN_PUNCT ) )
+	    {
+		for( k = keywords; k->word; k++ )
+		    if( *buf == *k->word && !strcmp( k->word, buf ) )
+		{
+		    yylval.type = k->type;
+		    yylval.string = k->word;	/* used by symdump */
+		    break;
+		}
+	    }
+
+	    if( yylval.type == ARG )
+		yylval.string = newstr( buf );
+	}
+
+	if( DEBUG_SCAN )
+		printf( "scan %s\n", symdump( &yylval ) );
+
+	return yylval.type;
+
+eof:
+	yylval.type = EOF;
+	return yylval.type;
+}
+
+static char *
+symdump( s )
+YYSTYPE *s;
+{
+	static char buf[ BIGGEST_TOKEN + 20 ];
+
+	switch( s->type )
+	{
+	case EOF:
+		sprintf( buf, "EOF" );
+		break;
+	case 0:
+		sprintf( buf, "unknown symbol %s", s->string );
+		break;
+	case ARG:
+		sprintf( buf, "argument %s", s->string );
+		break;
+	case STRING:
+		sprintf( buf, "string \"%s\"", s->string );
+		break;
+	default:
+		sprintf( buf, "keyword %s", s->string );
+		break;
+	}
+	return buf;
+}
+@
+
+
+1.17
+log
+@@
+text
+@d234 2
+a235 1
+	    yyprev();
+d320 2
+a321 1
+	    yyprev();
+@
+
+
+1.16
+log
+@@
+text
+@d43 1
+a43 1
+	char	**strings;	/* for yyiparse() -- text to parse */
+a50 1
+static struct include *inci = 0; /* where next include file gets inserted */
+d59 1
+d93 2
+d100 2
+a101 23
+
+	/* Incp is the head of the include chain, and we need to keep */
+	/* the chain in order.  Thus when one file includes another, we */
+	/* insert it at the head of the chain and point incp at the new */
+	/* head.  If one statement includes many files, we use inci */
+	/* to insert these files one after another on the chain. */
+
+	/* Inci is reset to 0 by yyline() to mean that the next include */
+	/* should go at the head.  Once is it non-zero, it points to the */
+	/* last file included, after which the next include file will go. */
+
+	if( !inci )
+	{
+	    i->next = incp;
+	    inci = i;
+	    incp = i;
+	}
+	else
+	{
+	    i->next = inci->next;
+	    inci->next = i;
+	    inci = i;
+	}
+d106 1
+a106 1
+	    inci->strings = jambase;
+d119 4
+a122 1
+	struct include *i;
+d128 1
+a128 5
+	inci = 0;
+
+	while( i = incp )
+	{
+	    /* If there is more data in this line, return it. */
+d130 2
+a131 2
+	    if( *i->string )
+		return *i->string++;
+d133 2
+a134 2
+	    /* If we're reading from an internal string list, go to the */
+	    /* next string. */
+d136 4
+a139 4
+	    if( i->strings )
+	    {
+		if( !*i->strings )
+		    goto next;
+d141 4
+a144 4
+		i->line++;
+		i->string = *(i->strings++);
+		return *i->string++;
+	    }
+d146 1
+a146 1
+	    /* If necessary, open the file */
+d148 3
+a150 3
+	    if( !i->file )
+	    {
+		FILE *f = stdin;
+d152 2
+a153 2
+		if( strcmp( i->fname, "-" ) && !( f = fopen( i->fname, "r" ) ) )
+		    perror( i->fname );
+d155 2
+a156 2
+		i->file = f;
+	    }
+d158 1
+a158 1
+	    /* If there's another line in this file, start it. */
+d160 6
+a165 6
+	    if( i->file && fgets( i->buf, sizeof( i->buf ), i->file ) )
+	    {
+		i->line++;
+		i->string = i->buf;
+		return *i->string++;
+	    }
+d167 3
+a169 2
+	next:
+	    /* Got to next sequential include. */
+d171 1
+a171 1
+	    incp = i->next;
+d173 1
+a173 1
+	    /* Close file, free name */
+d175 4
+a178 5
+	    if( i->file && i->file != stdin )
+		fclose( i->file );
+	    freestr( i->fname );
+	    free( (char *)i );
+	}
+d191 2
+a192 2
+ * yychar() returns a continuous stream of characters, regardless of
+ * include file boundaries.  At the end of the last file it returns EOF.
+@
+
+
+1.15
+log
+@@
+text
+@d37 1
+a37 1
+	0, 0
+d135 1
+d218 1
+@
+
+
+1.14
+log
+@@
+text
+@d11 1
+a11 1
+# include <jamgram.h>
+@
+
+
+1.13
+log
+@@
+text
+@d11 1
+a11 1
+# include "jamgram.h"
+@
+
+
+1.12
+log
+@@
+text
+@d57 2
+d220 1
+a220 1
+	char buf[10240];
+d377 1
+a377 1
+	static char buf[ 512 ];
+@
+
+
+1.11
+log
+@@
+text
+@d219 1
+d228 1
+a228 3
+	/* Eat white space */
+
+	for( ;; )
+d230 2
+a231 1
+		/* Skip past white space */
+d233 1
+a233 2
+		while( c != EOF && isspace( c ) )
+			c = yychar();
+d235 4
+a238 1
+		/* Not a comment?  Swallow up comment line. */
+d240 1
+a240 1
+		if( c != '#' )
+a241 3
+		while( ( c = yychar() ) != EOF && c != '\n' )
+			;
+	}
+d243 1
+a243 1
+	/* c now points to the first character of a token. */
+d245 2
+a246 7
+	if( c == EOF )
+	{
+	    goto eof;
+	} 
+	else if( c == '{' && scanmode == SCAN_STRING )
+	{
+		/* look for closing { */
+d248 1
+a248 2
+		char *b = buf;
+		int nest = 1;
+d250 1
+a250 10
+		while( ( c = yychar() ) != EOF && b < buf + sizeof( buf ) )
+		{
+			if( c == '{' )
+				nest++;
+			else if( c == '}' )
+				nest--;
+			if( !nest )
+			    break;
+			*b++ = c;
+		}
+d252 1
+a252 1
+		/* Check obvious errors. */
+d254 5
+a258 5
+		if( b == buf + sizeof( buf ) )
+		{
+		    yyerror( "action block too big" );
+		    goto eof;
+		}
+d260 5
+a264 5
+		if( nest )
+		{
+		    yyerror( "unmatched {} in action block" );
+		    goto eof;
+		}
+d266 4
+a269 3
+		*b = 0;
+		yylval.type = STRING;
+		yylval.string = newstr( buf );
+d271 1
+a271 1
+	else 
+d273 7
+a279 2
+		/* look for white space to delimit word */
+		/* "'s get stripped but preserve white space */
+d281 3
+a283 5
+		char *b = buf;
+		int inquote = 0;
+		int literal = 0;
+		int hasquote = 0;
+		struct keyword *k;
+d285 2
+a286 10
+		while( b < buf + sizeof( buf ) )
+		{
+		    if( literal )
+			*b++ = c, literal = 0;
+		    else if( c == '\\' )
+			literal++;
+		    else if( c == '"' )
+			inquote = !inquote, hasquote++;
+		    else
+			*b++ = c;
+d288 3
+a290 1
+		    if( ( c = yychar() ) == EOF || !inquote && isspace( c ) )
+d292 3
+a294 1
+		}
+d296 1
+a296 1
+		/* Check obvious errors. */
+d298 2
+a299 5
+		if( b == buf + sizeof( buf ) )
+		{
+		    yyerror( "string too big" );
+		    goto eof;
+		}
+d301 2
+a302 5
+		if( inquote )
+		{
+		    yyerror( "unmatched \" in string" );
+		    goto eof;
+		}
+d304 10
+a313 1
+		/* We looked ahead a character - back up. */
+d315 3
+a317 1
+		yyprev();
+d319 1
+a319 3
+		/* scan token table */
+		/* don't scan if it's "anything", $anything, */
+		/* or an alphabetic when were looking for punctuation */
+d321 5
+a325 2
+		*b = 0;
+		yylval.type = ARG;
+d327 23
+a349 3
+		if( !hasquote && 
+		    *buf != '$' && 
+		    !( isalpha( *buf ) && scanmode == SCAN_PUNCT ) )
+d351 3
+a353 7
+		    for( k = keywords; k->word; k++ )
+			if( *buf == *k->word && !strcmp( k->word, buf ) )
+		    {
+			yylval.type = k->type;
+			yylval.string = k->word;	/* used by symdump */
+			break;
+		    }
+d355 1
+d357 2
+a358 2
+		if( yylval.type == ARG )
+		    yylval.string = newstr( buf );
+@
+
+
+1.10
+log
+@@
+text
+@d67 1
+@
+
+
+1.9
+log
+@@
+text
+@d54 1
+d74 8
+@
+
+
+1.8
+log
+@@
+text
+@d12 1
+a75 9
+yyiparse( name, s )
+char *name;
+char **s;
+{
+	yyfparse( name );
+	inci->strings = s;
+}
+
+void
+d109 5
+@
+
+
+1.7
+log
+@@
+text
+@d41 6
+a46 5
+	char 	*string;
+	FILE 	*file;
+	char 	*fname;
+	int 	line;
+	char 	buf[ 512 ];
+d75 9
+d90 1
+d143 13
+d177 1
+@
+
+
+1.6
+log
+@@
+text
+@d39 8
+a46 9
+# define MAX_INCLUDES 10
+
+static struct {
+	char *string;
+	FILE *file;
+	char *fname;
+	int line;
+	char buf[ 512 ];
+} includes[ MAX_INCLUDES ] = {0}, *incp = includes;
+d48 2
+a49 1
+static int incdepth = 0;
+a51 1
+
+d67 1
+a67 1
+	if( incdepth )
+d77 1
+a77 1
+	FILE *f = stdin;
+d79 4
+a82 5
+	if( incdepth == MAX_INCLUDES )
+	{
+	    printf( "%s: too many levels of nested includes\n", s );
+	    return;
+	}
+d84 5
+a88 2
+	if( strcmp( s, "-" ) && !( f = fopen( s, "r" ) ) )
+	    perror( s );
+d90 16
+a105 5
+	incp = &includes[ incdepth++ ];
+	incp->string = "";
+	incp->file = f;
+	incp->fname = s;
+	incp->line = 0;
+d109 4
+a112 1
+ * get character routine
+d117 9
+a125 2
+top:
+	if( incp->file )
+d127 8
+a134 1
+	    if( fgets( incp->buf, sizeof( incp->buf ), incp->file ) )
+d136 1
+a136 4
+		incp->line++;
+		incp->string = incp->buf;
+		return *incp->string++;
+	    }
+d138 2
+a139 3
+	    if( incp->file != stdin )
+		    fclose( incp->file );
+	} 
+d141 2
+a142 1
+	/* Last include file? */
+d144 1
+a144 3
+	if( incdepth <= 1  )
+	{
+	    /* Make sure subsequent calls get EOF, too */
+d146 6
+a151 2
+	    incdepth = 0;
+	    incp->string = "";
+d153 1
+a153 2
+	    return EOF;
+	}
+d155 1
+a155 1
+	/* Pop to previous include */
+d157 1
+a157 1
+	incp = &includes[ --incdepth - 1 ];
+d159 5
+a163 2
+	if( !*incp->string )
+	    goto top;
+d165 1
+a165 1
+	return *incp->string++;
+d170 8
+d181 1
+d185 1
+a185 1
+	int c = *incp->string;
+d188 2
+a189 3
+	for( ;; )
+	{
+		/* Skip past the "" that yyfparse() points incp->string at. */
+d191 5
+a195 2
+		if( !c )
+		    c = yychar();
+d197 2
+d296 1
+a296 1
+		incp->string--;
+@
+
+
+1.5
+log
+@@
+text
+@d74 1
+@
+
+
+1.4
+log
+@@
+text
+@a7 1
+# include "jamgram.h"
+d11 1
+d23 2
+@
+
+
+1.3
+log
+@@
+text
+@d29 3
+d33 1
+@
+
+
+1.2
+log
+@@
+text
+@d22 1
+d45 1
+a45 1
+int scan_asstring = 0;
+d52 7
+d168 1
+a168 1
+	else if( c == '{' && scan_asstring )
+d248 3
+a250 1
+		/* scan token table, except for $anything and quoted anything */
+d255 4
+a258 1
+		if( *buf != '$' && !hasquote )
+d261 5
+a265 4
+		{
+		    yylval.type = k->type;
+		    yylval.string = k->word;	/* used by symdump */
+		    break;
+@
+
+
+1.1
+log
+@@
+text
+@d2 3
+a4 1
+ * Copyright 1993 Christopher Seiwald.
+d16 6
+d74 1
+a74 2
+	incdepth++;
+	incp = &includes[ incdepth - 1 ];
+d101 9
+a109 1
+	if( !--incdepth )
+d111 1
+d113 3
+a115 1
+	incp = &includes[ incdepth - 1 ];
+a130 1
+	char buf[512];
+d132 1
+d136 8
+a143 1
+		while( !c || isspace( c ) && c != EOF )
+d145 3
+d154 2
+d158 1
+a158 2
+		yylval.type = EOF;
+		return EOF;
+d167 1
+a167 1
+		while( ( c = yychar() ) != EOF )
+d177 15
+d207 2
+a208 1
+		do {
+d217 3
+d221 17
+a237 1
+		while( ( c=yychar() ) != EOF && ( inquote || !isspace( c ) ) );
+a238 1
+		*b = 0;
+d242 1
+d262 4
+@

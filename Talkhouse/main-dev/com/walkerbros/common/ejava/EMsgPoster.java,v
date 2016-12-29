@@ -1,0 +1,28 @@
+head     1.1;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.1
+date     2005.10.11.11.29.05;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.1
+log
+@@
+text
+@// EMsgPoster.java
+
+package com.walkerbros.common.ejava;
+
+public interface EMsgPoster
+{
+	public void postMsg( int msg );
+}@

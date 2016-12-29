@@ -1,0 +1,145 @@
+#
+# Jamfile to build Jam (a make(1)-like program)
+#
+
+#
+# We have some different files for UNIX, VMS, and NT.
+#
+
+if $(NT) 	{ code = execnt.c filent.c ; } 
+else if $(VMS) 	{ code = execvms.c filevms.c ; } 
+else 		{ code = execunix.c fileunix.c ; }
+
+#
+# The guts of the Jamfile: how to build Jam
+#
+
+Main 		jam : jam.c ;
+LinkLibraries 	jam : libjam.a ;
+
+Library         libjam.a : 
+		    command.c compile.c $(code) expand.c
+		    glob.c hash.c headers.c jamgram.y
+		    lists.c make.c make1.c newstr.c option.c parse.c
+		    regexp.c rules.c scan.c search.c timestamp.c
+		    variable.c ;
+
+#
+# On UNIX, we install this stuff for easy use.
+# On VMS, one must define a symbol:  jam :== $jam.exe -f jambase
+# On NT, you're on your own.
+#
+
+if $(UNIX)
+{
+	InstallBin $(BINDIR) : jam ;
+	InstallLib $(LIBDIR) : Jambase ;
+	InstallMan $(MANDIR) : jam.1 Jambase.5 Jamfile.5 ;
+}
+
+#### --- cut
+
+rule YYacc
+{
+	DEPENDS $(<) : $(>) ;
+	LOCATE on $(<) = $(LOCATE_TARGET) ;
+	Clean clean : $(<) ;
+}
+
+actions YYacc
+{
+	sh yyacc $(>) $(<)
+}
+
+YYacc jamgram.y jamgramtab.h : jamgram.yy ;
+
+rule TempCopy
+{
+	DEPENDS $(<) : $(>) ;
+}
+
+actions TempCopy
+{
+	cp $(>) $(<)
+}
+
+rule Groff
+{
+	DEPENDS $(<) : $(>) ;
+}
+
+actions Groff
+{
+	groff -Tps -man $(>) > $(<)
+}
+
+ALLSOURCE = 
+	    README RELNOTES Build.com Jam.paper.ps Jambase Jamfile
+	    Jambase.5 Jambase.ps Jamfile.5 Jamfile.ps Makefile
+	    Porting command.c command.h compile.c compile.h execcmd.h
+	    execnt.c execunix.c execvms.c expand.c expand.h filent.c
+	    filesys.h fileunix.c filevms.c glob.c hash.c hash.h
+	    headers.c headers.h jam.1 jam.c jam.h jam.ps jamgram.c
+	    jamgram.h jamgram.y jamgramtab.h lists.c lists.h make.c
+	    make.h make1.c newstr.c newstr.h option.c option.h
+	    parse.c parse.h patchlevel.h regexp.c regexp.h rules.c
+	    rules.h scan.c scan.h search.c search.h timestamp.c
+	    timestamp.h variable.c variable.h ;
+
+TempCopy Jam.paper.ps : ../doc/jam.paper.ps ;
+Groff jam.ps : jam.1 ;
+Groff Jamfile.ps : Jamfile.5 ;
+Groff Jambase.ps : Jambase.5 ;
+
+rule Ball
+{
+	DEPENDS $(<) : $(>) ;
+
+	PreBall $(<) ;
+
+	switch $(<) 
+	{
+	case *.tar : Tar $(<) : $(>) ;
+	case *.shar : Shar $(<) : $(>) ;
+	case *.zip : Zip $(<) : $(>) ;
+	}
+
+	PostBall $(<) ;
+
+	RmTemps $(<) : Jam.paper.ps ;
+}
+
+actions PreBall 
+{
+	mv Jamfile Jamfile.sav
+	sed '/--- cut/,$d' Jamfile.sav > Jamfile
+}
+
+actions PostBall 
+{
+	mv Jamfile.sav Jamfile
+}
+
+VERSION = jam-2.1.0 ;
+
+actions Tar
+{
+	ln -s . $(VERSION)
+	tar cvhf $(<) $(VERSION)/$(>)
+	rm $(VERSION)
+}
+
+actions Shar
+{
+	shar -l97 -o $(<) $(>) 
+}
+
+actions Zip
+{
+	zip $(<) $(>) 
+}
+
+Ball SHAR : $(ALLSOURCE) ;
+Ball $(VERSION).tar : $(ALLSOURCE) ;
+Ball ZIP : $(ALLSOURCE) ;
+

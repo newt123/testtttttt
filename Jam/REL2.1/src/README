@@ -1,0 +1,134 @@
+jam - make(1) redux 
+
+    /+\
+    +\	Copyright 1993, 1996 Christopher Seiwald.
+    \+/
+
+    This is Release 2.1 of jam, a make-like program.
+    The next release will be Release 2.2.
+
+    License is hereby granted to use this software and distribute it
+    freely, as long as this copyright notice is retained and modifications 
+    are clearly marked.
+
+    ALL WARRANTIES ARE HEREBY DISCLAIMED.
+
+FEATURES
+
+   ->	Jam is a make(1) replacement that makes building simple things
+	simple and building complicated things manageable.
+
+   ->	Jam's language is expressive, making Jamfiles (c.f. Makefiles) 
+	compact.  Here's a sample:
+
+	    Main smail : main.c map.c resolve.c deliver.c
+			 misc.c parser.y alias.c pw.c headers.c
+			 scanner.l getpath.c str.c ;
+
+	This builds "smail" from a dozen source files.  Jam handles 
+	header file dependencies automatically and on-the-fly.
+
+   ->	Jam is very portable: it runs on UNIX, VMS, and NT.  Most
+	Jamfiles themselves are portable, like the sample above.
+
+   ->   Jam is unintrusive: it is small, it has negligible CPU 
+	overhead, and it doesn't create any of its own funny files
+	(c.f. Odin, nmake, SunOS make).
+
+   ->	Jam can build large projects spread across many directories
+	in one pass, without recursing, tracking the relationships
+	among all files.  See the accompanying paper.  On UNIX, Jam 
+	can do this with multiple, concurrent processes.
+
+   ->   Jam isn't under the blinkin GNU copyright, so you can 
+	incorporate it into commercial products.
+
+
+INFORMATION GUIDE
+
+    jam.1	jam command man page - a terse description.
+    jam.ps
+
+    Jambase.5	Reference for the rule boilerplate file.
+    Jambase.ps
+
+    Jamfile.5	Easy reading on creating a Jamfile and using jam.
+    Jamfile.ps
+
+    Paper.ps    The 1994 UNIX Application Development Symposium paper 
+		on jam (reflects Release 1 - see RELNOTES for diffs).
+
+    RELNOTES	Release 2.1 release notes.
+
+    Porting	Notes on porting jam to wildcat platforms.
+
+    README	This file.  Includes installation instructions.
+
+    jam.c	Contains the jam command's main() as well as an introduction 
+		to the code, for serious hackers.
+
+
+INSTALLING
+
+    The Makefile (UNIX, NT) and build.com (VMS) are for bootstrapping.
+    Once jam is built, it can rebuild itself.
+
+    Build jam with make(1) on:
+
+	    BSDI	    BSD/386 1.0
+	    COHERENT	    COHERENT/386
+	    DEC 3000/500    OSF/1
+	    DG AViiON       DGUX 5.4
+	    HP 9000/700     HPUX 9.0
+	    IBM RS/6000     AIX		*
+	    IBM PC	    FreeBSD
+	    IBM PC	    Linux
+            NeXT            NEXTSTEP 3.2
+	    SGI R4000       IRIX 5.0
+	    Sequent 2000    PTX V2.1.0
+	    Sun 3           SunOS4.0
+	    Sun 4           Solaris 2	*+
+	    Sun 4           SunOS4.1
+	    VAX             Ultrix 4.2
+
+	    IBM PC	    NT		*
+	
+	    * requires editing Makefile
+	    + only works with SUNSwpro CC (dirent confusion) 
+
+    Build jam with @build.com on:
+
+	    VAX		    VMS 5.4
+	    DEC 3000/500    OPENVMS	
+
+    Special instructions for NT and VMS:
+
+	    On both VMS and NT, there isn't an standard place where the
+	    Jambase can be installed, and so it is assumed to be in the
+	    current directory.  This isn't practical for normal use 
+	    (because you want the Jambase to be shared for all projects),
+	    so you either need to edit jam.h to tell it where the Jambase
+	    should like or make an alias (NT using MKS shell) or symbol
+	    (on VMS) that is something like:
+
+		jam = jam -f _path_to_Jambase_
+
+	    On NT, a variable must be set before invoking jam to tell
+	    it where the C compiler lives.  The name of this variable
+	    depends on which compiler you are using:
+
+		BCCROOT:	The Borland C compiler
+		MSVCNT:		The Microsoft Compiler 2.0 (for NT)
+		MSVC:		The Microsoft Compiler 1.5 (for Windows)
+
+	    Only MSVCNT has really been tested and is known to work.
+
+Comments to the author!
+
+November, 1993 - release 1.0
+March, 1995 - release 2.0 
+February, 1996 - release 2.1
+
+Christopher Seiwald
+
+seiwald@p3.com

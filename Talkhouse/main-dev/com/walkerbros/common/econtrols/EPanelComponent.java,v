@@ -1,0 +1,52 @@
+head     1.1;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.1
+date     2005.10.11.11.29.05;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.1
+log
+@@
+text
+@// EPanelComponent.java
+
+package com.walkerbros.common.econtrols;
+
+import java.awt.*;
+
+public class EPanelComponent extends Panel
+{
+	private Component m_comp = null;
+
+	public EPanelComponent() 
+	{
+		super();
+	}
+
+	public void setComponent( Component comp )
+	{
+		m_comp = comp;
+	}
+
+	public void update( Graphics g )
+	{
+		paint( g );
+	}
+	public void paint( Graphics g )
+	{
+		if( null != m_comp )
+		{
+			m_comp.paint( g );
+		}
+	}
+}@

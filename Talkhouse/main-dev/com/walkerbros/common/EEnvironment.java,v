@@ -1,0 +1,85 @@
+head     1.844;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.844
+date     2007.10.24.08.44.50;  author p4;  state deleted;
+branches ;
+next     1.3;
+
+1.3
+date     2005.10.11.11.29.43;  author p4;  state Exp;
+branches ;
+next     1.2;
+
+1.2
+date     2005.10.11.11.29.10;  author p4;  state Exp;
+branches ;
+next     1.1;
+
+1.1
+date     2005.10.11.11.29.05;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.844
+log
+@@
+text
+@// EEnvironment.java
+
+package com.walkerbros.common;
+
+/*
+ * EEnvironment.java - constants that define access to environment elements.
+
+ */
+public interface EEnvironment
+{
+	// Launch path
+	//------------------------------------------------------------------------
+	public static final String	E_LAUNCH_PATH = "c:\\WalkerBros\\com\\walkerbros\\projects\\Talkhouse";
+	// Configuration path
+	//------------------------------------------------------------------------
+	public static final String	E_INI_PATH = "c:\\WalkerBros\\com\\walkerbros\\projects\\Talkhouse\\CFG";
+}@
+
+
+1.3
+log
+@@
+text
+@d16 1
+a16 1
+	public static final String	E_INI_PATH = "c:\\WalkerBros\\com\\walkerbros\\projects\\Talkhouse\CFG";
+@
+
+
+1.2
+log
+@@
+text
+@d7 1
+a7 3
+ *
+ * 10/31/03 (jwalker) - defined file for the Talkhouse application.
+ * 11/14/03 (jwalker) - added ini configuration support for the windows environment.
+@
+
+
+1.1
+log
+@@
+text
+@d5 6
+d15 4
+a18 1
+	public static final String	E_LAUNCH_PATH = "c:\\WalkerBros\\com\\walkerbros\\projects\\WalkerBros";
+@

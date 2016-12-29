@@ -1,0 +1,39 @@
+head     1.1;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.1
+date     2005.01.27.09.35.42;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.1
+log
+@@
+text
+@
+class GVector
+{
+public:
+	GVector( double x, double y );
+	~GVector(void);
+
+	double x;
+	double y;
+
+	GVector operator+( GVector ) const;
+	GVector operator-( GVector ) const;
+	GVector operator/( double ) const;
+	GVector operator*( double ) const;
+
+	double operator*( GVector ) const; //dot product
+	double operator~() const; // magnitude
+};
+@

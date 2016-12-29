@@ -1,0 +1,1472 @@
+head     1.57;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.57
+date     2005.01.27.09.35.41;  author p4;  state Exp;
+branches ;
+next     1.56;
+
+1.56
+date     2005.01.27.09.35.41;  author p4;  state Exp;
+branches ;
+next     1.55;
+
+1.55
+date     2005.01.27.09.35.41;  author p4;  state Exp;
+branches ;
+next     1.54;
+
+1.54
+date     2005.01.27.09.35.40;  author p4;  state Exp;
+branches ;
+next     1.53;
+
+1.53
+date     2005.01.27.09.35.40;  author p4;  state Exp;
+branches ;
+next     1.52;
+
+1.52
+date     2005.01.27.09.35.40;  author p4;  state Exp;
+branches ;
+next     1.51;
+
+1.51
+date     2005.01.27.09.35.39;  author p4;  state Exp;
+branches ;
+next     1.50;
+
+1.50
+date     2005.01.27.09.35.39;  author p4;  state Exp;
+branches ;
+next     1.49;
+
+1.49
+date     2005.01.27.09.35.38;  author p4;  state Exp;
+branches ;
+next     1.48;
+
+1.48
+date     2005.01.27.09.35.38;  author p4;  state Exp;
+branches ;
+next     1.47;
+
+1.47
+date     2005.01.27.09.35.38;  author p4;  state Exp;
+branches ;
+next     1.46;
+
+1.46
+date     2005.01.27.09.35.38;  author p4;  state Exp;
+branches ;
+next     1.45;
+
+1.45
+date     2005.01.27.09.35.37;  author p4;  state Exp;
+branches ;
+next     1.44;
+
+1.44
+date     2005.01.27.09.35.36;  author p4;  state Exp;
+branches ;
+next     1.43;
+
+1.43
+date     2005.01.27.09.35.35;  author p4;  state Exp;
+branches ;
+next     1.42;
+
+1.42
+date     2005.01.27.09.35.35;  author p4;  state Exp;
+branches ;
+next     1.41;
+
+1.41
+date     2005.01.27.09.35.34;  author p4;  state Exp;
+branches ;
+next     1.40;
+
+1.40
+date     2005.01.27.09.35.33;  author p4;  state Exp;
+branches ;
+next     1.39;
+
+1.39
+date     2005.01.27.09.35.32;  author p4;  state Exp;
+branches ;
+next     1.38;
+
+1.38
+date     2005.01.27.09.35.31;  author p4;  state Exp;
+branches ;
+next     1.37;
+
+1.37
+date     2005.01.27.09.35.31;  author p4;  state Exp;
+branches ;
+next     1.36;
+
+1.36
+date     2005.01.27.09.35.31;  author p4;  state Exp;
+branches ;
+next     1.35;
+
+1.35
+date     2005.01.27.09.35.31;  author p4;  state Exp;
+branches ;
+next     1.34;
+
+1.34
+date     2005.01.27.09.35.31;  author p4;  state Exp;
+branches ;
+next     1.33;
+
+1.33
+date     2005.01.27.09.35.31;  author p4;  state Exp;
+branches ;
+next     1.32;
+
+1.32
+date     2005.01.27.09.35.30;  author p4;  state Exp;
+branches ;
+next     1.31;
+
+1.31
+date     2005.01.27.09.35.30;  author p4;  state Exp;
+branches ;
+next     1.30;
+
+1.30
+date     2005.01.27.09.35.30;  author p4;  state Exp;
+branches ;
+next     1.29;
+
+1.29
+date     2005.01.27.09.35.29;  author p4;  state Exp;
+branches ;
+next     1.28;
+
+1.28
+date     2005.01.27.09.35.29;  author p4;  state Exp;
+branches ;
+next     1.27;
+
+1.27
+date     2005.01.27.09.35.28;  author p4;  state Exp;
+branches ;
+next     1.26;
+
+1.26
+date     2005.01.27.09.35.28;  author p4;  state Exp;
+branches ;
+next     1.25;
+
+1.25
+date     2005.01.27.09.35.28;  author p4;  state Exp;
+branches ;
+next     1.24;
+
+1.24
+date     2005.01.27.09.35.27;  author p4;  state Exp;
+branches ;
+next     1.23;
+
+1.23
+date     2005.01.27.09.35.26;  author p4;  state Exp;
+branches ;
+next     1.22;
+
+1.22
+date     2005.01.27.09.35.26;  author p4;  state Exp;
+branches ;
+next     1.21;
+
+1.21
+date     2005.01.27.09.35.25;  author p4;  state Exp;
+branches ;
+next     1.20;
+
+1.20
+date     2005.01.27.09.35.25;  author p4;  state Exp;
+branches ;
+next     1.19;
+
+1.19
+date     2005.01.27.09.35.24;  author p4;  state Exp;
+branches ;
+next     1.18;
+
+1.18
+date     2005.01.27.09.35.22;  author p4;  state Exp;
+branches ;
+next     1.17;
+
+1.17
+date     2005.01.27.09.35.22;  author p4;  state Exp;
+branches ;
+next     1.16;
+
+1.16
+date     2005.01.27.09.35.22;  author p4;  state Exp;
+branches ;
+next     1.15;
+
+1.15
+date     2005.01.27.09.35.22;  author p4;  state Exp;
+branches ;
+next     1.14;
+
+1.14
+date     2005.01.27.09.35.21;  author p4;  state Exp;
+branches ;
+next     1.13;
+
+1.13
+date     2005.01.27.09.35.20;  author p4;  state Exp;
+branches ;
+next     1.12;
+
+1.12
+date     2005.01.27.09.35.19;  author p4;  state Exp;
+branches ;
+next     1.11;
+
+1.11
+date     2005.01.27.09.35.18;  author p4;  state Exp;
+branches ;
+next     1.10;
+
+1.10
+date     2005.01.27.09.35.18;  author p4;  state Exp;
+branches ;
+next     1.9;
+
+1.9
+date     2005.01.27.09.35.18;  author p4;  state Exp;
+branches ;
+next     1.8;
+
+1.8
+date     2005.01.27.09.35.16;  author p4;  state Exp;
+branches ;
+next     1.7;
+
+1.7
+date     2005.01.27.09.35.15;  author p4;  state Exp;
+branches ;
+next     1.6;
+
+1.6
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.5;
+
+1.5
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.4;
+
+1.4
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.3;
+
+1.3
+date     2005.01.27.09.35.13;  author p4;  state Exp;
+branches ;
+next     1.2;
+
+1.2
+date     2005.01.27.09.35.12;  author p4;  state Exp;
+branches ;
+next     1.1;
+
+1.1
+date     2005.01.27.09.35.12;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.57
+log
+@@
+text
+@#
+# Jamfile to build Jam (a make(1)-like program)
+#
+# There are no user-serviceable parts in this file.
+#
+# Put executables in platform-specific  subdirectory.
+# If $(OSVER) isn't set, second value is used.
+
+if $(VMS) {	LOCATE_TARGET ?= [.binvms] ; }
+else if $(MAC) { LOCATE_TARGET ?= :bin.mac ; }
+else { 		LOCATE_TARGET ?= bin.$(OSFULL[1]:L) ; }
+
+# Leave generated source in current directory; it would be nice to use
+# these lines below to build the source into the platform-specific
+# directory, but getting scan.c to include the right jambase.h is
+# hard: with ""'s, it always gets the bootstrap version; with <>'s,
+# it won't find the bootstrap version.
+
+# SEARCH_SOURCE ?= $(LOCATE_TARGET) $(DOT) ;
+# LOCATE_SOURCE ?= $(LOCATE_TARGET) ;
+
+#
+# We have some different files for UNIX, VMS, and NT.
+#
+
+if $(NT) 	{ code = execunix.c filent.c pathunix.c ; } 
+else if $(OS2)	{ code = execunix.c fileos2.c pathunix.c ; } 
+else if $(VMS) 	{ code = execvms.c filevms.c pathvms.c ; } 
+else if $(MAC)	{ code = execmac.c filemac.c pathmac.c ; }
+else 		{ code = execunix.c fileunix.c pathunix.c ; }
+
+if $(UNIX) 	{ code += jamgram.y ; }
+else            { code += jamgram.c ; }
+
+
+if $(OS) = NT { CCFLAGS += /DNT ; }
+if $(OS) = MVS { CCFLAGS += -DMVS ; }
+if $(OS)$(OSVER) = AIX41 { CCFLAGS += -D_AIX41 ; }
+
+#
+# How to build the compiled in jambase.
+#
+
+Main		mkjambase : mkjambase.c ;
+
+#
+# The guts of the Jamfile: how to build Jam
+#
+
+Main 		jam : jam.c jambase.c ;
+LinkLibraries 	jam : libjam.a ;
+GenFile 	jambase.c : mkjambase Jambase ;
+
+Library         libjam.a : 
+		    command.c compile.c $(code) expand.c glob.c
+		    hash.c headers.c lists.c make.c make1.c newstr.c
+		    option.c parse.c regexp.c rules.c scan.c search.c
+		    timestamp.c variable.c ;
+
+#
+# On UNIX, we install this stuff for easy use.
+#
+
+if $(UNIX)
+{
+	InstallBin $(BINDIR) : jam ;
+}
+
+#### --- cut
+
+if $(UNIX) 
+{
+	GenFile jamgram.y jamgramtab.h : yyacc jamgram.yy ;
+}
+
+rule TempCopy
+{
+	DEPENDS $(<) : $(>) ;
+}
+
+actions TempCopy
+{
+	cp $(>) $(<)
+}
+
+ALLSOURCE =
+	Build.com Build.mpw Jam.html Jambase Jambase.html Jamfile
+	Jamfile.html Jamlang.html Makefile Porting README RELNOTES
+	command.c command.h compile.c compile.h execcmd.h execmac.c
+	execunix.c execvms.c expand.c expand.h filemac.c filent.c
+	fileos2.c filesys.h fileunix.c filevms.c glob.c hash.c
+	hash.h headers.c headers.h jam.c jam.h jambase.c jambase.h
+	jamgram.c jamgram.h jamgram.y jamgramtab.h lists.c lists.h
+	make.c make.h make1.c mkjambase.c newstr.c newstr.h option.c
+	option.h parse.c parse.h patchlevel.h pathmac.c pathunix.c
+	pathvms.c regexp.c regexp.h rules.c rules.h scan.c scan.h
+	search.c search.h timestamp.c timestamp.h variable.c
+	variable.h ;
+
+rule Ball
+{
+	NotFile balls ;
+	Depends balls : $(<) ;
+
+	DEPENDS $(<) : $(>) ;
+
+	PreBall $(<) ;
+
+	switch $(<) 
+	{
+	case *.tar : Tar $(<) : $(>) ;
+	case *.shar : Shar $(<) : $(>) ;
+	case *.zip : Zip $(<) : $(>) ;
+	}
+
+	PostBall $(<) ;
+}
+
+actions PreBall 
+{
+	mv Jamfile Jamfile.sav
+	sed '/--- cut/,$d' Jamfile.sav > Jamfile
+}
+
+actions PostBall 
+{
+	mv Jamfile.sav Jamfile
+}
+
+VERSION = jam-2.2 ;
+
+actions Tar
+{
+	ln -s . $(VERSION)
+	tar cvhf $(<) $(VERSION)/$(>)
+	rm $(VERSION)
+}
+
+actions Shar
+{
+	shar $(>) > $(<)
+}
+
+actions Zip
+{
+	zip $(<) $(>) 
+}
+
+Ball $(VERSION).shar : $(ALLSOURCE) ;
+Ball $(VERSION).tar : $(ALLSOURCE) ;
+Ball $(VERSION).zip : $(ALLSOURCE) ;
+
+
+@
+
+
+1.56
+log
+@@
+text
+@a5 8
+# Some sections have been hidden because their targets are in
+# managed files, and overwriting them unecessarily causes
+# problems. To reveal them:
+#
+#	- set DO_GRAMMAR if you want make new jamgram.* files
+#
+#	- set DO_JAMBASE if you want jam to make new jambase.c
+#
+d32 2
+a33 2
+if $(DO_GRAMMAR) { code += jamgram.y ; }
+else             { code += jamgram.c ; }
+d52 1
+a52 5
+
+if $(DO_JAMBASE)
+{
+    GenFile 	jambase.c : mkjambase Jambase ;
+}
+d71 1
+a71 1
+if $(UNIX) && $(DO_GRAMMAR)
+d102 3
+d141 1
+a141 1
+	shar -l97 -o $(<) $(>) 
+d149 1
+a149 1
+Ball SHAR : $(ALLSOURCE) ;
+d151 1
+a151 2
+Depends TAR : $(VERSION).tar ;
+Ball ZIP : $(ALLSOURCE) ;
+@
+
+
+1.55
+log
+@@
+text
+@a97 10
+rule Groff
+{
+	DEPENDS $(<) : $(>) ;
+}
+
+actions Groff
+{
+	groff -Tps -man $(>) > $(<)
+}
+
+d99 12
+a110 12
+	    README RELNOTES Build.com Jambase Jamfile
+	    jamMR.html jam.1.html Jamfile.5.html Jambase.5.html Makefile
+	    Porting command.c command.h compile.c compile.h execcmd.h
+	    execunix.c execvms.c expand.c expand.h filent.c
+	    fileos2.c filesys.h fileunix.c filevms.c glob.c hash.c
+	    hash.h headers.c headers.h jam.c jam.h
+	    jambase.c jambase.h jamgram.c jamgram.h jamgram.y
+	    jamgramtab.h lists.c lists.h make.c make.h make1.c
+	    mkjambase.c newstr.c newstr.h option.c option.h parse.c
+	    parse.h patchlevel.h pathunix.c pathvms.c regexp.c
+	    regexp.h rules.c rules.h scan.c scan.h search.c search.h
+	    timestamp.c timestamp.h variable.c variable.h ;
+@
+
+
+1.54
+log
+@@
+text
+@a13 3
+# 	- set DO_INSTALL if you want to install jam in $(BINDIR)
+#	  and the man pages in $(MANDIR)
+
+d67 4
+a70 5
+		    command.c compile.c $(code) expand.c
+		    glob.c hash.c headers.c 
+		    lists.c make.c make1.c newstr.c option.c parse.c
+		    regexp.c rules.c scan.c search.c timestamp.c
+		    variable.c ;
+a73 2
+# On VMS, one must define a symbol:  jam :== $jam.exe -f jambase
+# On NT, you're on your own.
+d76 1
+a76 1
+if $(UNIX) && $(DO_INSTALL)
+@
+
+
+1.53
+log
+@@
+text
+@a84 1
+	InstallMan $(MANDIR) : jam.1 Jambase.5 Jamfile.5 ;
+@
+
+
+1.52
+log
+@@
+text
+@d47 3
+a49 3
+if $(OSNAME) = NT { CCFLAGS += /DNT /O2 ; }
+if $(OSNAME) = MVS { CCFLAGS += -DMVS ; }
+if $(OSNAME)$(OSVER) = AIX41 { CCFLAGS += -D_AIX41 ; }
+@
+
+
+1.51
+log
+@@
+text
+@d47 3
+a49 3
+if $(OS) = NT { CCFLAGS += /DNT ; }
+if $(OS) = MVS { CCFLAGS += -DMVS ; }
+if $(OS)$(OSVER) = AIX41 { CCFLAGS += -D_AIX41 ; }
+@
+
+
+1.50
+log
+@@
+text
+@d156 1
+a156 1
+VERSION = jam-2.1.plus ;
+d177 1
+@
+
+
+1.49
+log
+@@
+text
+@d116 2
+a117 2
+	    README RELNOTES Build.com Jam.paper.ps Jambase Jamfile
+	    Jambase.5 Jambase.ps Jamfile.5 Jamfile.ps Makefile
+d121 1
+a121 1
+	    hash.h headers.c headers.h jam.1 jam.c jam.h jam.ps
+a128 5
+TempCopy Jam.paper.ps : ../doc/jam.paper.ps ;
+Groff jam.ps : jam.1 ;
+Groff Jamfile.ps : Jamfile.5 ;
+Groff Jambase.ps : Jambase.5 ;
+
+a142 2
+
+	RmTemps $(<) : Jam.paper.ps ;
+@
+
+
+1.48
+log
+@@
+text
+@d6 10
+d43 4
+d63 5
+a67 1
+GenFile 	jambase.c : mkjambase Jambase ;
+d71 1
+a71 1
+		    glob.c hash.c headers.c jamgram.y
+d82 1
+a82 1
+if $(UNIX)
+d90 1
+a90 1
+if $(UNIX)
+@
+
+
+1.47
+log
+@@
+text
+@d35 1
+@
+
+
+1.46
+log
+@@
+text
+@d100 1
+a100 1
+	    execnt.c execunix.c execvms.c expand.c expand.h filent.c
+@
+
+
+1.45
+log
+@@
+text
+@d27 2
+a28 2
+if $(NT) 	{ code = execnt.c filent.c pathunix.c ; } 
+else if $(OS2)	{ code = execnt.c fileos2.c pathunix.c ; } 
+@
+
+
+1.44
+log
+@@
+text
+@d11 1
+d30 1
+@
+
+
+1.43
+log
+@@
+text
+@a31 1
+if $(OS) = SOLARIS { CCFLAGS += -Dsolaris ; }
+@
+
+
+1.42
+log
+@@
+text
+@d11 1
+a11 1
+else { 		LOCATE_TARGET ?= bin.$(OS:L)$(OSVER:L) bin.$(OS:L) ; }
+d19 1
+a20 1
+# SEARCH_SOURCE = $(LOCATE_TARGET) $(DOT) ;
+a40 13
+rule GenFile 
+{
+	MakeLocate $(<) : $(LOCATE_SOURCE) ;
+	Depends $(<) : $(>[1]:S=$(SUFEXE)) $(>[2]) ;
+	GenFile1 $(<) : $(>[1]:S=$(SUFEXE)) $(>[2]) ;
+	Clean clean : $(<) ;
+}
+
+actions GenFile1
+{
+	$(>[1]) $(<) $(>[2-])
+}
+
+a69 12
+rule YYacc
+{
+	DEPENDS $(<) : $(>) yyacc ;
+	MakeLocate $(<) : $(LOCATE_SOURCE) ;
+	Clean clean : $(<) ;
+}
+
+actions YYacc
+{
+	sh yyacc $(>) $(<)
+}
+
+d72 1
+a72 1
+	YYacc jamgram.y jamgramtab.h : jamgram.yy ;
+@
+
+
+1.41
+log
+@@
+text
+@d10 2
+a11 2
+if $(VMS) {	LOCATE_TARGET ?= [.BINVMS] ; }
+else { 		LOCATE_TARGET ?= BIN.$(OS)$(OSVER) BIN.$(OS) ; }
+@
+
+
+1.40
+log
+@@
+text
+@d10 2
+a11 1
+LOCATE_TARGET ?= BIN.$(OS)$(OSVER) BIN.$(OS) ;
+@
+
+
+1.39
+log
+@@
+text
+@d4 2
+d11 9
+a19 2
+LOCATE_SOURCE ?= $(LOCATE_TARGET) ;
+SEARCH_SOURCE = $(LOCATE_TARGET) $(DOT) ;
+@
+
+
+1.38
+log
+@@
+text
+@d23 1
+@
+
+
+1.37
+log
+@@
+text
+@d25 1
+a25 1
+# The guts of the Jamfile: how to build Jam
+a27 10
+Main 		jam : jam.c ;
+LinkLibraries 	jam : libjam.a ;
+
+Library         libjam.a : 
+		    command.c compile.c $(code) expand.c
+		    glob.c hash.c headers.c jambase.c jamgram.y
+		    lists.c make.c make1.c newstr.c option.c parse.c
+		    regexp.c rules.c scan.c search.c timestamp.c
+		    variable.c ;
+
+a29 4
+#
+# How to build the compiled in jambase.
+#
+
+d40 1
+a40 1
+	$(>) $(<)
+d43 3
+a45 1
+GenFile jambase.c : mkjambase Jambase ;
+d47 11
+d75 1
+a75 1
+	LOCATE on $(<) = $(LOCATE_SOURCE) ;
+@
+
+
+1.36
+log
+@@
+text
+@d49 1
+@
+
+
+1.35
+log
+@@
+text
+@d46 1
+@
+
+
+1.34
+log
+@@
+text
+@d10 1
+a10 1
+SEARCH_SOURCE = $(DOT) ;
+d73 1
+a73 1
+	DEPENDS $(<) : $(>) ;
+@
+
+
+1.33
+log
+@@
+text
+@d41 17
+a82 13
+rule GenFile 
+{
+	Depends $(<) : $(>[1]:S=$(SUFEXE)) $(>[2]) ;
+	GenFile1 $(<) : $(>[1]:S=$(SUFEXE)) $(>[2]) ;
+}
+
+actions GenFile1
+{
+	$(>) $(<)
+}
+
+GenFile jambase.c : mkjambase Jambase ;
+
+d110 11
+a120 10
+	    Jambase.5 Jambase.ps Jamfile.5 Jamfile.ps Makefile Porting
+	    command.c command.h compile.c compile.h execcmd.h execnt.c
+	    execunix.c execvms.c expand.c expand.h filent.c filesys.h
+	    fileunix.c filevms.c glob.c hash.c hash.h headers.c headers.h
+	    jam.1 jam.c jam.h jam.ps jambase.c jambase.h jamgram.c
+	    jamgram.h jamgram.y jamgramtab.h lists.c lists.h make.c
+	    make.h make1.c newstr.c newstr.h option.c option.h parse.c
+	    parse.h patchlevel.h regexp.c regexp.h rules.c rules.h scan.c
+	    scan.h search.c search.h timestamp.c timestamp.h variable.c
+	    variable.h ;
+@
+
+
+1.32
+log
+@@
+text
+@d9 2
+@
+
+
+1.31
+log
+@@
+text
+@d5 5
+a18 1
+if $(OS) = SOLARIS { CCFLAGS += -Dsolaris ; }
+d20 1
+@
+
+
+1.30
+log
+@@
+text
+@d10 1
+a10 1
+if $(OS2)	{ code = execnt.c fileos2.c pathunix.c ; } 
+d15 1
+@
+
+
+1.29
+log
+@@
+text
+@d60 2
+a61 1
+	Depends $(<) : $(>) ;
+d64 1
+a64 1
+actions GenFile 
+d66 1
+a66 1
+	$(>[1]) $(>[2]) $(<)
+d69 2
+a73 1
+	GenFile jambase.c : mkjambase Jambase ;
+d166 1
+@
+
+
+1.28
+log
+@@
+text
+@d9 4
+a12 3
+if $(NT) || $(OS2)	{ code = execnt.c filent.c ; } 
+else if $(VMS) 		{ code = execvms.c filevms.c ; } 
+else 			{ code = execunix.c fileunix.c ; }
+@
+
+
+1.27
+log
+@@
+text
+@d28 3
+d57 2
+a58 1
+rule GenFile {
+d62 3
+a64 15
+actions GenFile {
+	(
+	    echo '/* Generated from Jambase */' 
+	    echo 'char *jambase[] = {'
+
+	    sed '
+		/^[ 	]*#/d
+		/^$/d
+		s/\\/\\\\/g
+		s/"/\\"/g
+		s/^.*$/"&\\n",/
+		s/       /\\t/g' $(>)
+
+	    echo '0};'
+	) > $(<)
+d70 1
+a70 1
+	GenFile jambase.c : Jambase ;
+@
+
+
+1.26
+log
+@@
+text
+@d9 3
+a11 3
+if $(NT) 	{ code = execnt.c filent.c ; } 
+else if $(VMS) 	{ code = execvms.c filevms.c ; } 
+else 		{ code = execunix.c fileunix.c ; }
+@
+
+
+1.25
+log
+@@
+text
+@d13 2
+@
+
+
+1.24
+log
+@@
+text
+@a25 24
+
+rule GenFile {
+	Depends $(<) : $(>) ;
+}
+
+actions GenFile {
+	(
+	    echo '/* Generated from Jambase */' 
+	    echo 'char *jambase[] = {'
+
+	    sed '
+		/^[ 	]*#/d
+		/^$/d
+		s/\\/\\\\/g
+		s/"/\\"/g
+		s/^.*$/"&\\n",/
+		s/       /\\t/g' $(>)
+
+	    echo '0};'
+	) > $(<)
+}
+
+GenFile jambase.c : Jambase ;
+
+d52 21
+d76 1
+d146 1
+a146 1
+VERSION = jam-2.1.1 ;
+@
+
+
+1.23
+log
+@@
+text
+@d76 4
+a79 1
+YYacc jamgram.y jamgramtab.h : jamgram.yy ;
+@
+
+
+1.22
+log
+@@
+text
+@d22 1
+a22 1
+		    glob.c hash.c headers.c jamgram.y
+d27 23
+a58 1
+	InstallLib $(LIBDIR) : Jambase ;
+d98 1
+a98 1
+ALLSOURCE = 
+d100 5
+a104 5
+	    Jambase.5 Jambase.ps Jamfile.5 Jamfile.ps Makefile
+	    Porting command.c command.h compile.c compile.h execcmd.h
+	    execnt.c execunix.c execvms.c expand.c expand.h filent.c
+	    filesys.h fileunix.c filevms.c glob.c hash.c hash.h
+	    headers.c headers.h jam.1 jam.c jam.h jam.ps jamgram.c
+d106 4
+a109 4
+	    make.h make1.c newstr.c newstr.h option.c option.h
+	    parse.c parse.h patchlevel.h regexp.c regexp.h rules.c
+	    rules.h scan.c scan.h search.c search.h timestamp.c
+	    timestamp.h variable.c variable.h ;
+@
+
+
+1.21
+log
+@@
+text
+@d123 1
+a123 1
+VERSION = jam-2.1.0 ;
+@
+
+
+1.20
+log
+@@
+text
+@d45 1
+a45 1
+	LOCATE on $(<) = $(LOCATE_TARGET) ;
+@
+
+
+1.19
+log
+@@
+text
+@d77 10
+a86 9
+	    README RELNOTES Build.com Jambase Jamfile Jambase.5 Jambase.ps
+	    Jamfile.5 Jamfile.ps Makefile Paper.ps Porting command.c command.h
+	    compile.c compile.h execcmd.h execnt.c execunix.c execvms.c
+	    expand.c expand.h filent.c filesys.h fileunix.c filevms.c
+	    glob.c hash.c hash.h headers.c headers.h jam.1 jam.c jam.h
+	    jam.ps jamgram.c jamgram.h jamgram.y jamgramtab.h lists.c
+	    lists.h make.c make.h make1.c newstr.c newstr.h option.c
+	    option.h parse.c parse.h patchlevel.h regexp.c regexp.h
+	    rules.c rules.h scan.c scan.h search.c search.h timestamp.c
+d89 1
+a89 1
+TempCopy Paper.ps : ../doc/jam.ps ;
+d102 3
+a104 3
+	case TAR : Tar $(<) : $(>) ;
+	case SHAR : Shar $(<) : $(>) ;
+	case ZIP : Zip $(<) : $(>) ;
+d109 1
+a109 1
+	RmTemps $(<) : Paper.ps ;
+d123 2
+a124 1
+	
+d127 3
+a129 1
+	tar cvf $(<) $(>)
+d143 1
+a143 1
+Ball TAR : $(ALLSOURCE) ;
+@
+
+
+1.18
+log
+@@
+text
+@d9 3
+a11 3
+if $(NT) 	{ code = nt ; } 
+else if $(VMS) 	{ code = vms ; } 
+else 		{ code = unix ; }
+d21 2
+a22 2
+		    command.c compile.c exec$(code).c expand.c
+		    file$(code).c glob.c hash.c headers.c jamgram.y
+@
+
+
+1.17
+log
+@@
+text
+@d9 3
+a11 8
+switch $(OS)
+{
+case VMS :	code = vms ;
+case OPENVMS :	code = vms ;
+case NT :	code = nt ;
+case * :	code = unix ;
+}
+
+@
+
+
+1.16
+log
+@@
+text
+@a55 1
+	exit 1
+@
+
+
+1.15
+log
+@@
+text
+@d56 1
+@
+
+
+1.14
+log
+@@
+text
+@d81 18
+a98 1
+rule Shar
+d101 13
+d116 1
+a116 1
+rule Tar
+d118 7
+a124 1
+	DEPENDS $(<) : $(>) ;
+d127 1
+a129 2
+	mv Jamfile Jamfile.sav
+	sed '/--- cut/,$d' Jamfile.sav > Jamfile
+a130 1
+	mv Jamfile.sav Jamfile
+a134 2
+	mv Jamfile Jamfile.sav
+	sed '/--- cut/,$d' Jamfile.sav > Jamfile
+a135 1
+	mv Jamfile.sav Jamfile
+d138 4
+a141 16
+ALLSOURCE = 
+	    README RELNOTES Build.com Jambase Jamfile Jambase.5 Jambase.ps
+	    Jamfile.5 Jamfile.ps Makefile Paper.ps Porting command.c command.h
+	    compile.c compile.h execcmd.h execnt.c execunix.c execvms.c
+	    expand.c expand.h filent.c filesys.h fileunix.c filevms.c
+	    glob.c hash.c hash.h headers.c headers.h jam.1 jam.c jam.h
+	    jam.ps jamgram.c jamgram.h jamgram.y jamgramtab.h lists.c
+	    lists.h make.c make.h make1.c newstr.c newstr.h option.c
+	    option.h parse.c parse.h patchlevel.h regexp.c regexp.h
+	    rules.c rules.h scan.c scan.h search.c search.h timestamp.c
+	    timestamp.h variable.c variable.h ;
+
+TempCopy Paper.ps : ../doc/jam.ps ;
+Groff jam.ps : jam.1 ;
+Groff Jamfile.ps : Jamfile.5 ;
+Groff Jambase.ps : Jambase.5 ;
+d143 3
+a145 2
+Shar SHAR : $(ALLSOURCE) ;
+Tar TAR : $(ALLSOURCE) ;
+a146 2
+RmTemps SHAR : Paper.ps ;
+RmTemps TAR : Paper.ps ;
+@
+
+
+1.13
+log
+@@
+text
+@d42 1
+a42 1
+	InstallMan $(MANDIR) : jam.1 Jamfile.5 ;
+d108 2
+a109 2
+	    README RELNOTES Build.com Jambase Jamfile Jamfile.5
+	    Jamfile.ps Makefile Paper.ps Porting command.c command.h
+d122 1
+@
+
+
+1.12
+log
+@@
+text
+@d108 1
+a108 1
+	    README Build.com CHANGES Jambase Jamfile Jamfile.5
+@
+
+
+1.11
+log
+@@
+text
+@d41 1
+a41 1
+	InstallLib $(LIBDIR)/jam : Jambase ;
+@
+
+
+1.10
+log
+@@
+text
+@d71 10
+a83 2
+	TempCopy Paper.ps : ../doc/jam.ps ;
+	RmTemps $(<) : Paper.ps ;
+d86 13
+d107 21
+a127 11
+Shar SHAR :
+	    README Build.com CHANGES Jambase Jamfile Jamfile.5 Makefile
+	    Paper.ps Porting command.c command.h compile.c compile.h
+	    execcmd.h execnt.c execunix.c execvms.c expand.c expand.h
+	    filent.c filesys.h fileunix.c filevms.c glob.c hash.c
+	    hash.h headers.c headers.h jam.1 jam.c jam.h jamgram.c
+	    jamgram.h jamgram.y jamgramtab.h lists.c lists.h make.c
+	    make.h make1.c newstr.c newstr.h option.c option.h parse.c
+	    parse.h patchlevel.h regexp.c regexp.h rules.c rules.h
+	    scan.c scan.h search.c search.h timestamp.c timestamp.h
+	    variable.c variable.h ;
+@
+
+
+1.9
+log
+@@
+text
+@a16 4
+#
+# Ugly support for the .yy file: yyacc is a preprocessor to yacc.
+# From gram.yy it makes gram.y and gramtab.h.
+#
+a17 25
+rule UserObject
+{
+    if $(>:S) = .yy 
+    {
+	if $(UNIX)
+	{
+	    DEPENDS $(<:S=.y) $(<:B)tab.h : $(>) ;
+	    YYacc $(<:S=.y) $(<:B)tab.h : $(>) ;
+	    LOCATE on $(<:S=.y) $(<:B)tab.h = $(LOCATE_TARGET) ;
+	    Clean clean : $(<:S=.y) $(<:B)tab.h ;
+	}
+	Yacc $(<:S=.c) : $(<:S=.y) ;
+	Cc $(<) : $(<:S=.c) ; 
+    }
+    else
+    {
+	EXIT $(>) unknown suffix ;
+    }
+}
+
+actions YYacc
+{
+	sh yyacc $(>) $(<)
+}
+
+d27 1
+a27 1
+		    file$(code).c glob.c hash.c headers.c jamgram.yy
+d40 17
+a56 3
+	InstallBin /usr/local/bin : jam ;
+	InstallLib /usr/local/lib/jam : Jambase ;
+	InstallMan /usr/local/man : jam.1 Jamfile.5 ;
+d58 39
+@
+
+
+1.8
+log
+@@
+text
+@d71 1
+a71 1
+	InstallMan /usr/local/man : jam.1 Jambase.5 Jamfile.5 ;
+@
+
+
+1.7
+log
+@@
+text
+@d36 4
+@
+
+
+1.6
+log
+@@
+text
+@d2 1
+a2 1
+# Jamfile for Jam
+d5 3
+a7 13
+if $(VMS)	
+{ 
+	JAMLIB = libjam.olb ; 
+	OSFILES = execvms.c filevms.c ; 
+}
+else if $(UNIX)	
+{ 
+	JAMLIB = libjam.a ; 
+	OSFILES = execunix.c fileunix.c ;
+
+	InstallBin /usr/local/bin : jam ;
+	InstallLib /usr/local/lib/jam : Jambase ;
+	InstallMan /usr/local/man : jam.1 Jambase.5 Jamfile.5 ;
+d9 6
+a14 5
+}
+else if $(NT)	
+{ 
+	JAMLIB = libjam.lib ; 
+	OSFILES = execnt.c filent.c ; 
+d18 2
+a19 2
+# Ugly support for the .yy file: yyacc is a preprocessor to yacc,
+# turning a .yy file into a .y file and a tab.h file.
+d43 4
+d48 1
+a48 1
+LinkLibraries 	jam : $(JAMLIB) ;
+d50 19
+a68 5
+Library         $(JAMLIB) : 
+		command.c compile.c expand.c hash.c glob.c lists.c 
+		make.c make1.c newstr.c option.c parse.c rules.c scan.c 
+		search.c timestamp.c variable.c jamgram.yy headers.c 
+		regexp.c $(OSFILES) ;
+@
+
+
+1.5
+log
+@@
+text
+@d17 1
+a17 1
+	InstallMan /usr/local/man : jam.1 Jambase.5 ;
+@
+
+
+1.4
+log
+@@
+text
+@d10 1
+a10 2
+
+if $(UNIX)	
+d15 3
+a17 6
+	LIBDIR = /usr/local/lib/jam ;
+
+	INSTALLMAN jam.1 Jambase.5 ;
+	INSTALLBIN jam ;
+
+	INSTALLLIB Jambase ;
+d20 1
+a20 2
+
+if $(NT)	
+d55 5
+a59 4
+Library         $(JAMLIB) : command.c compile.c expand.c hash.c glob.c lists.c 
+		    make.c make1.c newstr.c option.c parse.c rules.c scan.c 
+		    search.c timestamp.c variable.c jamgram.yy headers.c 
+		    regexp.c $(OSFILES) ;
+@
+
+
+1.3
+log
+@@
+text
+@d42 4
+a45 4
+	    DEPENDS $(<) $(<:B)tab.h : $(>) ;
+	    YYacc $(<) $(<:B)tab.h : $(>) ;
+	    LOCATE on $(<) $(<:B)tab.h = $(LOCATE_TARGET) ;
+	    Clean clean : $(<) $(<:B)tab.h ;
+a46 1
+	Cc $(<) : $(<:S=.c) ; 
+d48 1
+@
+
+
+1.2
+log
+@@
+text
+@d31 26
+@
+
+
+1.1
+log
+@@
+text
+@d25 5
+a29 2
+MAIN 		jam : jam.c ;
+LIBS 		jam : $(JAMLIB) ;
+d31 2
+a32 4
+LIBRARY         $(JAMLIB) : compile.c expand.c hash.c lists.c make.c 
+		    newstr.c option.c parse.c rules.c scan.c search.c 
+		    timestamp.c variable.c jamgram.yy headers.c regexp.c 
+		    $(OSFILES) ;
+d34 4
+@

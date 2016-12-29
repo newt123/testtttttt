@@ -1,0 +1,63 @@
+head     1.841;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.841
+date     2011.03.24.19.15.39;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.841
+log
+@@
+text
+@<project name="TalkHouse" default="dist" basedir=".">
+    <description>
+        Nightly build scripts for the TalkHouse application.
+    </description>
+  <!-- set global properties for this build -->
+  <property name="src" location="C:\P4DemoRoot.61\Workspaces\jc_dev\Talkhouse\main-dev"/>
+  <property name="build" location="C:\P4DemoRoot.61\build"/>
+  <property name="dist"  location="C:\P4DemoRoot.61\dist"/>
+
+  <target name="init">
+    <!-- Create the time stamp -->
+    <tstamp/>
+    <p4sync label="talkhouse-main-build" force="yes"/>
+	<p4sync view="//depot/talkhouse/main-dev/..."/>
+    
+    <mkdir dir="${build}-${DSTAMP}${TSTAMP}"/>
+
+  </target>
+
+  <target name="compile" depends="init"
+        description="compile the source " >
+    <!-- Compile the java code from ${src} into ${build} -->
+    <javac srcdir="${src}" destdir="${build}-${DSTAMP}${TSTAMP}"/>
+  </target>
+
+  <target name="dist" depends="compile"
+        description="generate the distribution" >
+    <!-- Create the distribution directory -->
+    <mkdir dir="${dist}-${DSTAMP}${TSTAMP}/lib"/>
+
+    <!-- Put everything in ${build}-${DSTAMP} into the MyProject-${DSTAMP}.jar file -->
+    <jar jarfile="${dist}-${DSTAMP}${TSTAMP}/lib/TalkHouse-${DSTAMP}.jar" basedir="${build}-${DSTAMP}${TSTAMP}"/>
+
+  </target>
+
+  <target name="clean"
+        description="clean up" >
+    <!-- Delete the ${build} and ${dist} directory trees -->
+    <delete dir="${dist}-${DSTAMP}${TSTAMP}"/>
+  </target>
+
+</project>
+@

@@ -1,0 +1,1478 @@
+head     1.49;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.49
+date     2005.01.27.09.35.42;  author p4;  state Exp;
+branches ;
+next     1.48;
+
+1.48
+date     2005.01.27.09.35.42;  author p4;  state Exp;
+branches ;
+next     1.47;
+
+1.47
+date     2005.01.27.09.35.41;  author p4;  state Exp;
+branches ;
+next     1.46;
+
+1.46
+date     2005.01.27.09.35.41;  author p4;  state Exp;
+branches ;
+next     1.45;
+
+1.45
+date     2005.01.27.09.35.40;  author p4;  state Exp;
+branches ;
+next     1.44;
+
+1.44
+date     2005.01.27.09.35.40;  author p4;  state Exp;
+branches ;
+next     1.43;
+
+1.43
+date     2005.01.27.09.35.40;  author p4;  state Exp;
+branches ;
+next     1.42;
+
+1.42
+date     2005.01.27.09.35.38;  author p4;  state Exp;
+branches ;
+next     1.41;
+
+1.41
+date     2005.01.27.09.35.38;  author p4;  state Exp;
+branches ;
+next     1.40;
+
+1.40
+date     2005.01.27.09.35.37;  author p4;  state Exp;
+branches ;
+next     1.39;
+
+1.39
+date     2005.01.27.09.35.36;  author p4;  state Exp;
+branches ;
+next     1.38;
+
+1.38
+date     2005.01.27.09.35.36;  author p4;  state Exp;
+branches ;
+next     1.37;
+
+1.37
+date     2005.01.27.09.35.36;  author p4;  state Exp;
+branches ;
+next     1.36;
+
+1.36
+date     2005.01.27.09.35.35;  author p4;  state Exp;
+branches ;
+next     1.35;
+
+1.35
+date     2005.01.27.09.35.35;  author p4;  state Exp;
+branches ;
+next     1.34;
+
+1.34
+date     2005.01.27.09.35.34;  author p4;  state Exp;
+branches ;
+next     1.33;
+
+1.33
+date     2005.01.27.09.35.34;  author p4;  state Exp;
+branches ;
+next     1.32;
+
+1.32
+date     2005.01.27.09.35.33;  author p4;  state Exp;
+branches ;
+next     1.31;
+
+1.31
+date     2005.01.27.09.35.33;  author p4;  state Exp;
+branches ;
+next     1.30;
+
+1.30
+date     2005.01.27.09.35.33;  author p4;  state Exp;
+branches ;
+next     1.29;
+
+1.29
+date     2005.01.27.09.35.33;  author p4;  state Exp;
+branches ;
+next     1.28;
+
+1.28
+date     2005.01.27.09.35.32;  author p4;  state Exp;
+branches ;
+next     1.27;
+
+1.27
+date     2005.01.27.09.35.32;  author p4;  state Exp;
+branches ;
+next     1.26;
+
+1.26
+date     2005.01.27.09.35.32;  author p4;  state Exp;
+branches ;
+next     1.25;
+
+1.25
+date     2005.01.27.09.35.31;  author p4;  state Exp;
+branches ;
+next     1.24;
+
+1.24
+date     2005.01.27.09.35.29;  author p4;  state Exp;
+branches ;
+next     1.23;
+
+1.23
+date     2005.01.27.09.35.28;  author p4;  state Exp;
+branches ;
+next     1.22;
+
+1.22
+date     2005.01.27.09.35.28;  author p4;  state Exp;
+branches ;
+next     1.21;
+
+1.21
+date     2005.01.27.09.35.26;  author p4;  state Exp;
+branches ;
+next     1.20;
+
+1.20
+date     2005.01.27.09.35.26;  author p4;  state Exp;
+branches ;
+next     1.19;
+
+1.19
+date     2005.01.27.09.35.25;  author p4;  state Exp;
+branches ;
+next     1.18;
+
+1.18
+date     2005.01.27.09.35.24;  author p4;  state Exp;
+branches ;
+next     1.17;
+
+1.17
+date     2005.01.27.09.35.23;  author p4;  state Exp;
+branches ;
+next     1.16;
+
+1.16
+date     2005.01.27.09.35.23;  author p4;  state Exp;
+branches ;
+next     1.15;
+
+1.15
+date     2005.01.27.09.35.23;  author p4;  state Exp;
+branches ;
+next     1.14;
+
+1.14
+date     2005.01.27.09.35.22;  author p4;  state Exp;
+branches ;
+next     1.13;
+
+1.13
+date     2005.01.27.09.35.22;  author p4;  state Exp;
+branches ;
+next     1.12;
+
+1.12
+date     2005.01.27.09.35.22;  author p4;  state Exp;
+branches ;
+next     1.11;
+
+1.11
+date     2005.01.27.09.35.22;  author p4;  state Exp;
+branches ;
+next     1.10;
+
+1.10
+date     2005.01.27.09.35.20;  author p4;  state Exp;
+branches ;
+next     1.9;
+
+1.9
+date     2005.01.27.09.35.19;  author p4;  state Exp;
+branches ;
+next     1.8;
+
+1.8
+date     2005.01.27.09.35.16;  author p4;  state Exp;
+branches ;
+next     1.7;
+
+1.7
+date     2005.01.27.09.35.15;  author p4;  state Exp;
+branches ;
+next     1.6;
+
+1.6
+date     2005.01.27.09.35.15;  author p4;  state Exp;
+branches ;
+next     1.5;
+
+1.5
+date     2005.01.27.09.35.15;  author p4;  state Exp;
+branches ;
+next     1.4;
+
+1.4
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.3;
+
+1.3
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.2;
+
+1.2
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.1;
+
+1.1
+date     2005.01.27.09.35.12;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.49
+log
+@@
+text
+@/*
+ * Copyright 1993, 1995 Christopher Seiwald.
+ *
+ * This file is part of Jam - see jam.c for Copyright information.
+ */
+
+/*
+ * jam.h - includes and globals for jam
+ *
+ * 04/08/94 (seiwald) - Coherent/386 support added.
+ * 04/21/94 (seiwald) - DGUX is __DGUX__, not just __DGUX.
+ * 05/04/94 (seiwald) - new globs.jobs (-j jobs)
+ * 11/01/94 (wingerd) - let us define path of Jambase at compile time.
+ * 12/30/94 (wingerd) - changed command buffer size for NT (MS-DOS shell).
+ * 02/22/95 (seiwald) - Jambase now in /usr/local/lib.
+ * 04/30/95 (seiwald) - FreeBSD added.  Live Free or Die.
+ * 05/10/95 (seiwald) - SPLITPATH character set up here.
+ * 08/20/95 (seiwald) - added LINUX.
+ * 08/21/95 (seiwald) - added NCR.
+ * 10/23/95 (seiwald) - added SCO.
+ * 01/03/96 (seiwald) - SINIX (nixdorf) added.
+ * 03/13/96 (seiwald) - Jambase now compiled in; remove JAMBASE variable.
+ * 04/29/96 (seiwald) - AIX now has 31 and 42 OSVERs.
+ * 11/21/96 (peterk)  - added BeOS with MW CW mwcc
+ * 12/21/96 (seiwald) - OSPLAT now defined for NT.
+ */
+
+# ifdef VMS
+
+int unlink( char *f ); 	/* In filevms.c */
+
+# include <types.h>
+# include <file.h>
+# include <stat.h>
+# include <stdio.h>
+# include <ctype.h>
+# include <stdlib.h>
+# include <signal.h>
+# include <string.h>
+# include <time.h>
+# include <unixlib.h>
+
+# ifdef __DECC
+# define OSSYMS "VMS=true","OS=OPENVMS"
+# else
+# define OSSYMS "VMS=true","OS=VMS"
+# endif 
+
+# define MAXLINE 1024 /* longest 'together' actions */
+# define SPLITPATH ','
+# define EXITOK 1
+# define EXITBAD 0
+
+# else
+
+# ifdef NT
+
+# include <fcntl.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <ctype.h>
+# include <malloc.h>
+# include <memory.h>
+# include <signal.h>
+# include <string.h>
+# include <time.h>
+
+# define OSSYMS "NT=true","OS=NT"
+# define SPLITPATH ';'
+# define MAXLINE 996	/* longest 'together' actions */
+# define EXITOK 0
+# define EXITBAD 1
+
+# else
+
+# ifdef __OS2__
+
+# include <fcntl.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <ctype.h>
+# include <malloc.h>
+# include <signal.h>
+# include <string.h>
+# include <time.h>
+
+# define OSSYMS "OS2=true","OS=OS2"
+# define SPLITPATH ';'
+# define MAXLINE 996	/* longest 'together' actions */
+# define EXITOK 0
+# define EXITBAD 1
+
+# else
+
+# ifdef __QNX__
+
+# define unix
+
+# include <fcntl.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <ctype.h>
+# include <malloc.h>
+# include <signal.h>
+# include <string.h>
+# include <time.h>
+
+# define OSSYMS "UNIX=true","OS=QNX"
+# define SPLITPATH ':'
+# define MAXLINE 996	/* longest 'together' actions */
+# define EXITOK 0
+# define EXITBAD 1
+
+# else /* QNX */
+
+# ifdef macintosh
+# include <time.h>
+# include <stdlib.h>
+# include <string.h>
+# include <stdio.h>
+
+# define OSSYMS "MAC=true","OS=MAC"
+# define SPLITPATH ','
+# define MAXLINE 1024	/* longest 'together' actions */
+# define EXITOK 0
+# define EXITBAD 1
+
+# else /* not MAC */
+
+# include <sys/types.h>
+# include <sys/file.h>
+# include <sys/stat.h>
+# include <fcntl.h>
+# ifndef ultrix
+# include <stdlib.h>
+# endif
+# include <stdio.h>
+# include <ctype.h>
+# if !defined(__bsdi__)&&!defined(__FreeBSD__)
+# if !defined(NeXT)&&!defined(__MACHTEN__)
+# if !defined(MVS)
+# include <malloc.h>
+# endif
+# endif
+# endif
+# include <memory.h>
+# include <signal.h>
+# include <string.h>
+# include <time.h>
+
+# ifdef _AIX
+# define unix
+# ifdef _AIX41
+# define OSSYMS "UNIX=true","OS=AIX","OSVER=41"
+# else
+# define OSSYMS "UNIX=true","OS=AIX","OSVER=32"
+# endif
+# endif
+
+# ifdef __BEOS__
+# define OSSYMS "UNIX=true","OS=BEOS"
+# define unix
+# endif
+
+# ifdef __bsdi__
+# define OSSYMS "UNIX=true","OS=BSDI"
+# endif
+# if defined (COHERENT) && defined (_I386)
+# define OSSYMS "UNIX=true","OS=COHERENT"
+# endif
+# ifdef __FreeBSD__
+# define OSSYMS "UNIX=true","OS=FREEBSD"
+# endif
+# ifdef __DGUX__
+# define OSSYMS "UNIX=true","OS=DGUX"
+# endif
+# ifdef __hpux
+# define OSSYMS "UNIX=true","OS=HPUX"
+# endif
+# ifdef __sgi
+# define OSSYMS "UNIX=true","OS=IRIX"
+# endif
+# ifdef __ISC
+# define OSSYMS "UNIX=true","OS=ISC"
+# endif
+# ifdef linux
+# define OSSYMS "UNIX=true","OS=LINUX"
+# endif
+# ifdef __Lynx__
+# define OSSYMS "UNIX=true","OS=LYNX"
+# define unix
+# endif
+# ifdef __MACHTEN__
+# define OSSYMS "UNIX=true","OS=MACHTEN"
+# endif
+# ifdef MVS
+# define unix
+# define OSSYMS "UNIX=true","OS=MVS"
+# endif
+# ifdef _ATT4
+# define OSSYMS "UNIX=true","OS=NCR"
+# endif
+# ifdef NeXT
+# define OSSYMS "UNIX=true","OS=NEXT"
+# endif
+# ifdef __osf__
+# define OSSYMS "UNIX=true","OS=OSF"
+# endif
+# ifdef _SEQUENT_
+# define OSSYMS "UNIX=true","OS=PTX"
+# endif
+# ifdef M_XENIX
+# define OSSYMS "UNIX=true","OS=SCO"
+# endif
+# ifdef sinix
+# define OSSYMS "UNIX=true","OS=SINIX"
+# endif
+# ifdef sun
+# if defined(__svr4__) || defined(__SVR4)
+# define OSSYMS "UNIX=true","OS=SOLARIS"
+# else
+# define OSSYMS "UNIX=true","OS=SUNOS"
+# endif
+# endif
+# ifdef ultrix
+# define OSSYMS "UNIX=true","OS=ULTRIX"
+# endif
+# if defined(__USLC__) && !defined(M_XENIX)
+# define OSSYMS "UNIX=true","OS=UNIXWARE"
+# endif
+# ifndef OSSYMS
+# define OSSYMS "UNIX=true","OS=UNKNOWN"
+# endif
+
+# define MAXLINE 10240	/* longest 'together' actions' */
+# define SPLITPATH ':'
+# define EXITOK 0
+# define EXITBAD 1
+
+# endif /* mac */
+
+# endif /* QNX */
+
+# endif /* OS/2 */
+
+# endif /* NT */
+
+# endif /* UNIX */
+
+/* OSPLAT definitions - note the leading , */
+
+# define OSPLATSYM /**/
+
+# ifdef _M_PPC
+# undef OSPLATSYM
+# define OSPLATSYM ,"OSPLAT=PPC"
+# endif
+
+# if defined( _ALPHA_ ) || defined( __alpha__ )
+# undef OSPLATSYM
+# define OSPLATSYM ,"OSPLAT=AXP"
+# endif
+
+# if defined( _i386_ ) || defined( __i386__ ) || defined( _M_IX86 )
+# undef OSPLATSYM
+# define OSPLATSYM ,"OSPLAT=X86"
+# endif 
+
+# ifdef __sparc__
+# undef OSPLATSYM
+# define OSPLATSYM ,"OSPLAT=SPARC"
+# endif
+
+/* You probably don't need to muck with these. */
+
+# define MAXSYM	1024	/* longest symbol in the environment */
+# define MAXJPATH 1024	/* longest filename */
+
+# define MAXJOBS 64	/* silently enforce -j limit */
+# define MAXARGC 32	/* words in $(JAMSHELL) */
+
+# define CMDBUF 10240	/* size of command blocks */
+
+/* Jam private definitions below. */
+
+# define DEBUG_MAX	10
+
+struct globs {
+	int	noexec;
+	int	jobs;
+	char	debug[DEBUG_MAX];
+} ;
+
+extern struct globs globs;
+
+# define DEBUG_MAKE	( globs.debug[ 1 ] )	/* show actions when executed */
+# define DEBUG_MAKEQ	( globs.debug[ 2 ] )	/* show even quiet actions */
+# define DEBUG_EXEC	( globs.debug[ 2 ] )	/* show text of actons */
+# define DEBUG_MAKEPROG	( globs.debug[ 3 ] )	/* show progress of make0 */
+# define DEBUG_BIND	( globs.debug[ 3 ] )	/* show when files bound */
+
+# define DEBUG_EXECCMD	( globs.debug[ 4 ] )	/* show execcmds()'s work */
+
+# define DEBUG_COMPILE	( globs.debug[ 5 ] )	/* show rule invocations */
+
+# define DEBUG_HEADER	( globs.debug[ 6 ] )	/* show result of header scan */
+# define DEBUG_BINDSCAN	( globs.debug[ 6 ] )	/* show result of dir scan */
+# define DEBUG_SEARCH	( globs.debug[ 6 ] )	/* show attempts at binding */
+
+# define DEBUG_VARSET	( globs.debug[ 7 ] )	/* show variable settings */
+# define DEBUG_VARGET	( globs.debug[ 8 ] )	/* show variable fetches */
+# define DEBUG_VAREXP	( globs.debug[ 8 ] )	/* show variable expansions */
+# define DEBUG_IF	( globs.debug[ 8 ] )	/* show 'if' calculations */
+# define DEBUG_LISTS	( globs.debug[ 9 ] )	/* show list manipulation */
+# define DEBUG_SCAN	( globs.debug[ 9 ] )	/* show scanner tokens */
+# define DEBUG_MEM	( globs.debug[ 9 ] )	/* show memory use */
+
+@
+
+
+1.48
+log
+@@
+text
+@d189 4
+@
+
+
+1.47
+log
+@@
+text
+@d260 1
+a260 1
+# if defined( _i386_ ) || defined( __i386__ )
+@
+
+
+1.46
+log
+@@
+text
+@d255 1
+a255 1
+# ifdef _ALPHA_
+d260 1
+a260 1
+# ifdef _i386_ 
+@
+
+
+1.45
+log
+@@
+text
+@d44 1
+a44 1
+# define OTHERSYMS "VMS=true","OS=OPENVMS"
+d46 1
+a46 1
+# define OTHERSYMS "VMS=true","OS=VMS"
+d68 1
+a68 10
+# ifdef _M_PPC
+# define OTHERSYMS "NT=true","OS=NT","OSPLAT=PPC"
+# else
+# ifdef _ALPHA_
+# define OTHERSYMS "NT=true","OS=NT","OSPLAT=ALPHA"
+# else 
+# define OTHERSYMS "NT=true","OS=NT","OSPLAT=X86"
+# endif /* _ALPHA_ */
+# endif /* _PPC_ */
+
+d87 1
+a87 1
+# define OTHERSYMS "OS2=true","OS=OS2"
+d108 1
+a108 1
+# define OTHERSYMS "UNIX=true","OS=QNX"
+d122 1
+a122 1
+# define OTHERSYMS "MAC=true","OS=MAC"
+d154 1
+a154 1
+# define OTHERSYMS "UNIX=true","OS=AIX","OSVER=41"
+d156 1
+a156 1
+# define OTHERSYMS "UNIX=true","OS=AIX","OSVER=32"
+d161 1
+a161 1
+# define OTHERSYMS "UNIX=true","OS=BEOS"
+d166 1
+a166 1
+# define OTHERSYMS "UNIX=true","OS=BSDI"
+d169 1
+a169 1
+# define OTHERSYMS "UNIX=true","OS=COHERENT"
+d172 1
+a172 1
+# define OTHERSYMS "UNIX=true","OS=FREEBSD"
+d175 1
+a175 1
+# define OTHERSYMS "UNIX=true","OS=DGUX"
+d178 1
+a178 1
+# define OTHERSYMS "UNIX=true","OS=HPUX"
+d181 1
+a181 1
+# define OTHERSYMS "UNIX=true","OS=IRIX"
+d184 1
+a184 1
+# define OTHERSYMS "UNIX=true","OS=ISC"
+d187 1
+a187 1
+# define OTHERSYMS "UNIX=true","OS=LINUX"
+d190 1
+a190 1
+# define OTHERSYMS "UNIX=true","OS=MACHTEN"
+d194 1
+a194 1
+# define OTHERSYMS "UNIX=true","OS=MVS"
+d197 1
+a197 1
+# define OTHERSYMS "UNIX=true","OS=NCR"
+d200 1
+a200 1
+# define OTHERSYMS "UNIX=true","OS=NEXT"
+d203 1
+a203 1
+# define OTHERSYMS "UNIX=true","OS=OSF"
+d206 1
+a206 1
+# define OTHERSYMS "UNIX=true","OS=PTX"
+d209 1
+a209 1
+# define OTHERSYMS "UNIX=true","OS=SCO"
+d212 1
+a212 1
+# define OTHERSYMS "UNIX=true","OS=SINIX"
+d216 1
+a216 1
+# define OTHERSYMS "UNIX=true","OS=SOLARIS"
+d218 1
+a218 1
+# define OTHERSYMS "UNIX=true","OS=SUNOS"
+d222 1
+a222 1
+# define OTHERSYMS "UNIX=true","OS=ULTRIX"
+d225 1
+a225 1
+# define OTHERSYMS "UNIX=true","OS=UNIXWARE"
+d227 2
+a228 2
+# ifndef OTHERSYMS
+# define OTHERSYMS "UNIX=true","OS=UNKNOWN"
+d246 24
+@
+
+
+1.44
+log
+@@
+text
+@d49 1
+a49 1
+# define MAXLINE 1024 /* longest command - related to quotas */ /* dwd 14-dec-1996 */
+d79 1
+a79 1
+# define MAXLINE 996	/* longest command */
+d98 1
+a98 1
+# define MAXLINE 996	/* longest command */
+d119 1
+a119 1
+# define MAXLINE 996	/* longest command */
+d133 1
+a133 1
+# define MAXLINE 1024
+d240 1
+a240 1
+# define MAXLINE 10240	/* longest command */
+@
+
+
+1.43
+log
+@@
+text
+@d44 1
+a44 1
+# define OTHERSYMS "VMS=true","OSNAME=OPENVMS"
+d46 1
+a46 1
+# define OTHERSYMS "VMS=true","OSNAME=VMS"
+d69 1
+a69 1
+# define OTHERSYMS "NT=true","OSNAME=NT","OSPLAT=PPC"
+d72 1
+a72 1
+# define OTHERSYMS "NT=true","OSNAME=NT","OSPLAT=ALPHA"
+d74 1
+a74 1
+# define OTHERSYMS "NT=true","OSNAME=NT","OSPLAT=X86"
+d96 1
+a96 1
+# define OTHERSYMS "OS2=true","OSNAME=OS2"
+d117 1
+a117 1
+# define OTHERSYMS "UNIX=true","OSNAME=QNX"
+d131 1
+a131 1
+# define OTHERSYMS "MAC=true","OSNAME=MAC"
+d163 1
+a163 1
+# define OTHERSYMS "UNIX=true","OSNAME=AIX","OSVER=41"
+d165 1
+a165 1
+# define OTHERSYMS "UNIX=true","OSNAME=AIX","OSVER=32"
+d170 1
+a170 1
+# define OTHERSYMS "UNIX=true","OSNAME=BEOS"
+d175 1
+a175 1
+# define OTHERSYMS "UNIX=true","OSNAME=BSDI"
+d178 1
+a178 1
+# define OTHERSYMS "UNIX=true","OSNAME=COHERENT"
+d181 1
+a181 1
+# define OTHERSYMS "UNIX=true","OSNAME=FREEBSD"
+d184 1
+a184 1
+# define OTHERSYMS "UNIX=true","OSNAME=DGUX"
+d187 1
+a187 1
+# define OTHERSYMS "UNIX=true","OSNAME=HPUX"
+d190 1
+a190 1
+# define OTHERSYMS "UNIX=true","OSNAME=IRIX"
+d193 1
+a193 1
+# define OTHERSYMS "UNIX=true","OSNAME=ISC"
+d196 1
+a196 1
+# define OTHERSYMS "UNIX=true","OSNAME=LINUX"
+d199 1
+a199 1
+# define OTHERSYMS "UNIX=true","OSNAME=MACHTEN"
+d203 1
+a203 1
+# define OTHERSYMS "UNIX=true","OSNAME=MVS"
+d206 1
+a206 1
+# define OTHERSYMS "UNIX=true","OSNAME=NCR"
+d209 1
+a209 1
+# define OTHERSYMS "UNIX=true","OSNAME=NEXT"
+d212 1
+a212 1
+# define OTHERSYMS "UNIX=true","OSNAME=OSF"
+d215 1
+a215 1
+# define OTHERSYMS "UNIX=true","OSNAME=PTX"
+d218 1
+a218 1
+# define OTHERSYMS "UNIX=true","OSNAME=SCO"
+d221 1
+a221 1
+# define OTHERSYMS "UNIX=true","OSNAME=SINIX"
+d225 1
+a225 1
+# define OTHERSYMS "UNIX=true","OSNAME=SOLARIS"
+d227 1
+a227 1
+# define OTHERSYMS "UNIX=true","OSNAME=SUNOS"
+d231 1
+a231 1
+# define OTHERSYMS "UNIX=true","OSNAME=ULTRIX"
+d234 1
+a234 1
+# define OTHERSYMS "UNIX=true","OSNAME=UNIXWARE"
+d237 1
+a237 1
+# define OTHERSYMS "UNIX=true","OSNAME=UNKNOWN"
+@
+
+
+1.42
+log
+@@
+text
+@d44 1
+a44 1
+# define OTHERSYMS "VMS=true","OS=OPENVMS"
+d46 1
+a46 1
+# define OTHERSYMS "VMS=true","OS=VMS"
+d69 1
+a69 1
+# define OTHERSYMS "NT=true","OS=NT","OSPLAT=PPC"
+d72 1
+a72 1
+# define OTHERSYMS "NT=true","OS=NT","OSPLAT=ALPHA"
+d74 1
+a74 1
+# define OTHERSYMS "NT=true","OS=NT","OSPLAT=X86"
+d96 1
+a96 1
+# define OTHERSYMS "OS2=true","OS=OS2"
+d117 1
+a117 1
+# define OTHERSYMS "UNIX=true","OS=QNX"
+d131 1
+a131 1
+# define OTHERSYMS "MAC=true","OS=MAC"
+d163 1
+a163 1
+# define OTHERSYMS "UNIX=true","OS=AIX","OSVER=41"
+d165 1
+a165 1
+# define OTHERSYMS "UNIX=true","OS=AIX","OSVER=32"
+d170 1
+a170 1
+# define OTHERSYMS "UNIX=true","OS=BEOS"
+d175 1
+a175 1
+# define OTHERSYMS "UNIX=true","OS=BSDI"
+d178 1
+a178 1
+# define OTHERSYMS "UNIX=true","OS=COHERENT"
+d181 1
+a181 1
+# define OTHERSYMS "UNIX=true","OS=FREEBSD"
+d184 1
+a184 1
+# define OTHERSYMS "UNIX=true","OS=DGUX"
+d187 1
+a187 1
+# define OTHERSYMS "UNIX=true","OS=HPUX"
+d190 1
+a190 1
+# define OTHERSYMS "UNIX=true","OS=IRIX"
+d193 1
+a193 1
+# define OTHERSYMS "UNIX=true","OS=ISC"
+d196 1
+a196 1
+# define OTHERSYMS "UNIX=true","OS=LINUX"
+d199 1
+a199 1
+# define OTHERSYMS "UNIX=true","OS=MACHTEN"
+d203 1
+a203 1
+# define OTHERSYMS "UNIX=true","OS=MVS"
+d206 1
+a206 1
+# define OTHERSYMS "UNIX=true","OS=NCR"
+d209 1
+a209 1
+# define OTHERSYMS "UNIX=true","OS=NEXT"
+d212 1
+a212 1
+# define OTHERSYMS "UNIX=true","OS=OSF"
+d215 1
+a215 1
+# define OTHERSYMS "UNIX=true","OS=PTX"
+d218 1
+a218 1
+# define OTHERSYMS "UNIX=true","OS=SCO"
+d221 1
+a221 1
+# define OTHERSYMS "UNIX=true","OS=SINIX"
+d225 1
+a225 1
+# define OTHERSYMS "UNIX=true","OS=SOLARIS"
+d227 1
+a227 1
+# define OTHERSYMS "UNIX=true","OS=SUNOS"
+d231 1
+a231 1
+# define OTHERSYMS "UNIX=true","OS=ULTRIX"
+d234 1
+a234 1
+# define OTHERSYMS "UNIX=true","OS=UNIXWARE"
+d237 1
+a237 1
+# define OTHERSYMS "UNIX=true","OS=UNKNOWN"
+@
+
+
+1.41
+log
+@@
+text
+@d133 1
+a133 1
+# define MAXCMD 1024
+@
+
+
+1.40
+log
+@@
+text
+@d49 1
+a49 1
+# define MAXCMD	1024 /* longest command - related to quotas */ /* dwd 14-dec-1996 */
+d72 1
+a72 1
+# define OTHERSYMS "NT=true","OS=NT","OSPLAT=AXP"
+d79 1
+a79 1
+# define MAXCMD	996	/* longest command */
+d98 1
+a98 1
+# define MAXCMD	996	/* longest command */
+d119 1
+a119 1
+# define MAXCMD	996	/* longest command */
+d240 1
+a240 1
+# define MAXCMD	10240	/* longest command */
+d263 2
+@
+
+
+1.39
+log
+@@
+text
+@d125 14
+d245 2
+@
+
+
+1.38
+log
+@@
+text
+@@
+
+
+1.37
+log
+@@
+text
+@d210 1
+a210 1
+# ifdef __svr4__
+@
+
+
+1.36
+log
+@@
+text
+@d210 3
+a214 3
+# ifdef solaris
+# undef OTHERSYMS
+# define OTHERSYMS "UNIX=true","OS=SOLARIS"
+@
+
+
+1.35
+log
+@@
+text
+@d72 1
+a72 1
+# define OTHERSYMS "NT=true","OS=NT","OSPLAT=ALPHA"
+@
+
+
+1.34
+log
+@@
+text
+@d25 1
+d69 1
+a69 1
+# define OTHERSYMS "NT=true","OS=NT","OSVER=PPC"
+d72 1
+a72 1
+# define OTHERSYMS "NT=true","OS=NT","OSVER=ALPHA"
+d74 1
+a74 1
+# define OTHERSYMS "NT=true","OS=NT","OSVER=X86"
+@
+
+
+1.33
+log
+@@
+text
+@d48 1
+a48 1
+# define MAXCMD	255 /* longest command - related to quotas */
+@
+
+
+1.32
+log
+@@
+text
+@d24 1
+d153 6
+@
+
+
+1.31
+log
+@@
+text
+@d66 3
+d74 1
+@
+
+
+1.30
+log
+@@
+text
+@d230 1
+a230 1
+# define MAXPATH 1024	/* longest filename */
+@
+
+
+1.29
+log
+@@
+text
+@d207 1
+a207 1
+# ifdef __USLC__
+@
+
+
+1.28
+log
+@@
+text
+@a251 1
+# define DEBUG_EXECCMD	( globs.debug[ 3 ] )	/* show execcmds()'s work */
+d253 1
+a253 1
+# define DEBUG_MEM	( globs.debug[ 4 ] )	/* show memory use */
+a260 1
+# define DEBUG_IF	( globs.debug[ 7 ] )	/* show 'if' calculations */
+d264 1
+d267 1
+@
+
+
+1.27
+log
+@@
+text
+@d130 1
+d134 1
+d175 4
+@
+
+
+1.26
+log
+@@
+text
+@d164 3
+@
+
+
+1.25
+log
+@@
+text
+@d66 6
+a71 1
+# define OTHERSYMS "NT=true","OS=NT"
+d198 3
+@
+
+
+1.24
+log
+@@
+text
+@d234 1
+d237 2
+a238 1
+# define DEBUG_BIND	( globs.debug[ 4 ] )	/* show when files bound */
+d240 1
+a240 1
+# define DEBUG_MEM	( globs.debug[ 5 ] )	/* show memory use */
+@
+
+
+1.23
+log
+@@
+text
+@d93 21
+d202 2
+@
+
+
+1.22
+log
+@@
+text
+@d21 1
+d23 1
+d114 5
+a118 1
+# define OTHERSYMS "UNIX=true","OS=AIX"
+d159 3
+@
+
+
+1.21
+log
+@@
+text
+@d72 19
+d172 2
+@
+
+
+1.20
+log
+@@
+text
+@d21 1
+a45 1
+# define JAMBASE "Jambase"
+a64 1
+# define JAMBASE "Jambase"
+a147 3
+# ifndef JAMBASE
+# define JAMBASE "/usr/local/lib/Jambase"
+# endif
+@
+
+
+1.19
+log
+@@
+text
+@d82 2
+a83 1
+# if !defined(__bsdi__)&&!defined(__FreeBSD__)&&!defined(NeXT)
+d86 1
+d117 3
+@
+
+
+1.18
+log
+@@
+text
+@d97 6
+d109 12
+a123 3
+# ifdef M_XENIX
+# define OTHERSYMS "UNIX=true","OS=SCO"
+# endif
+d127 2
+a128 2
+# ifdef __sgi
+# define OTHERSYMS "UNIX=true","OS=IRIX"
+a139 12
+# if defined (COHERENT) && defined (_I386)
+# define OTHERSYMS "UNIX=true","OS=COHERENT/386"
+# endif
+# ifdef __FreeBSD__
+# define OTHERSYMS "UNIX=true","OS=FreeBSD"
+# endif
+# ifdef linux
+# define OTHERSYMS "UNIX=true","OS=LINUX"
+# endif
+# ifdef _ATT4
+# define OTHERSYMS "UNIX=true","OS=NCR"
+# endif
+d141 1
+a141 1
+# define OTHERSYMS "UNIX=true"
+@
+
+
+1.17
+log
+@@
+text
+@d163 2
+a165 1
+	int	debug;
+d168 1
+d173 5
+a177 12
+# define DEBUG_MAKE	( globs.debug >= 1 )	/* show actions when executed */
+# define DEBUG_MAKEQ	( globs.debug >= 2 )	/* show even quiet actions */
+# define DEBUG_EXEC	( globs.debug >= 2 )	/* show text of actons */
+# define DEBUG_MAKEPROG	( globs.debug >= 3 )	/* show progress of make0 */
+# define DEBUG_EXECCMD	( globs.debug >= 3 )	/* show execcmds()'s work */
+
+# define DEBUG_BIND	( globs.debug >= 4 )	/* show when files bound */
+# define DEBUG_COMPILE	( globs.debug >= 5 )	/* show rule invocations */
+# define DEBUG_MEM	( globs.debug >= 5 )	/* show memory use */
+# define DEBUG_HEADER	( globs.debug >= 6 )	/* show result of header scan */
+# define DEBUG_BINDSCAN	( globs.debug >= 6 )	/* show result of dir scan */
+# define DEBUG_SEARCH	( globs.debug >= 6 )	/* show attempts at binding */
+d179 6
+a184 6
+# define DEBUG_IF	( globs.debug >= 7 )	/* show 'if' calculations */
+# define DEBUG_VARSET	( globs.debug >= 7 )	/* show variable settings */
+# define DEBUG_VARGET	( globs.debug >= 8 )	/* show variable fetches */
+# define DEBUG_VAREXP	( globs.debug >= 8 )	/* show variable expansions */
+# define DEBUG_LISTS	( globs.debug >= 9 )	/* show list manipulation */
+# define DEBUG_SCAN	( globs.debug >= 9 )	/* show scanner tokens */
+d186 6
+@
+
+
+1.16
+log
+@@
+text
+@d19 1
+d134 3
+d191 1
+@
+
+
+1.15
+log
+@@
+text
+@d19 1
+d105 3
+@
+
+
+1.14
+log
+@@
+text
+@d18 1
+d126 3
+@
+
+
+1.13
+log
+@@
+text
+@d17 1
+d43 1
+d63 1
+d133 1
+@
+
+
+1.12
+log
+@@
+text
+@d21 1
+a21 1
+# ifdef __ALPHA
+d32 1
+d34 1
+a35 1
+
+a36 10
+
+# include <types.h>
+# include <file.h>
+# include <stat.h>
+# include <stdio.h>
+# include <ctype.h>
+# include <signal.h>
+# include <string.h>
+# include <time.h>
+
+a37 1
+
+@
+
+
+1.11
+log
+@@
+text
+@d86 1
+a86 2
+# ifndef __bsdi__
+# ifndef __FreeBSD__
+a88 1
+# endif
+@
+
+
+1.10
+log
+@@
+text
+@d16 1
+d87 1
+d90 1
+d131 3
+@
+
+
+1.9
+log
+@@
+text
+@d49 1
+a49 1
+# define MAXCMD	1023 /* longest command */
+@
+
+
+1.8
+log
+@@
+text
+@d15 1
+d133 1
+a133 1
+# define JAMBASE "/usr/local/lib/jam/Jambase"
+@
+
+
+1.7
+log
+@@
+text
+@d51 1
+d71 1
+d136 1
+d142 1
+a142 1
+/* You probably don't need to much with these. */
+@
+
+
+1.6
+log
+@@
+text
+@a141 1
+# define MAXARG 1024	/* longest single word on a line */
+d144 3
+@
+
+
+1.5
+log
+@@
+text
+@d159 1
+@
+
+
+1.4
+log
+@@
+text
+@d49 1
+a49 1
+# define JAMBASE "Jambase.VMS"
+@
+
+
+1.3
+log
+@@
+text
+@d67 1
+a67 1
+# define JAMBASE "Jambase.NT"
+@
+
+
+1.2
+log
+@@
+text
+@d13 2
+d68 1
+a68 1
+# define MAXCMD	10240	/* longest command */
+d129 1
+d131 1
+@
+
+
+1.1
+log
+@@
+text
+@d2 3
+a4 1
+ * Copyright 1993 Christopher Seiwald.
+d9 4
+d52 19
+d88 2
+a89 1
+# ifdef AIX
+d95 1
+a95 1
+# ifdef __DGUX
+d120 3
+d131 2
+d146 1
+@

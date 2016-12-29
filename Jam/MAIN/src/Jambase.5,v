@@ -1,0 +1,1906 @@
+head     1.24;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.24
+date     2005.01.27.09.35.25;  author p4;  state Exp;
+branches ;
+next     1.23;
+
+1.23
+date     2005.01.27.09.35.23;  author p4;  state Exp;
+branches ;
+next     1.22;
+
+1.22
+date     2005.01.27.09.35.21;  author p4;  state Exp;
+branches ;
+next     1.21;
+
+1.21
+date     2005.01.27.09.35.21;  author p4;  state Exp;
+branches ;
+next     1.20;
+
+1.20
+date     2005.01.27.09.35.21;  author p4;  state Exp;
+branches ;
+next     1.19;
+
+1.19
+date     2005.01.27.09.35.15;  author p4;  state Exp;
+branches ;
+next     1.18;
+
+1.18
+date     2005.01.27.09.35.15;  author p4;  state Exp;
+branches ;
+next     1.17;
+
+1.17
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.16;
+
+1.16
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.15;
+
+1.15
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.14;
+
+1.14
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.13;
+
+1.13
+date     2005.01.27.09.35.14;  author p4;  state Exp;
+branches ;
+next     1.12;
+
+1.12
+date     2005.01.27.09.35.13;  author p4;  state Exp;
+branches ;
+next     1.11;
+
+1.11
+date     2005.01.27.09.35.13;  author p4;  state Exp;
+branches ;
+next     1.10;
+
+1.10
+date     2005.01.27.09.35.13;  author p4;  state Exp;
+branches ;
+next     1.9;
+
+1.9
+date     2005.01.27.09.35.13;  author p4;  state Exp;
+branches ;
+next     1.8;
+
+1.8
+date     2005.01.27.09.35.13;  author p4;  state Exp;
+branches ;
+next     1.7;
+
+1.7
+date     2005.01.27.09.35.13;  author p4;  state Exp;
+branches ;
+next     1.6;
+
+1.6
+date     2005.01.27.09.35.13;  author p4;  state Exp;
+branches ;
+next     1.5;
+
+1.5
+date     2005.01.27.09.35.13;  author p4;  state Exp;
+branches ;
+next     1.4;
+
+1.4
+date     2005.01.27.09.35.13;  author p4;  state Exp;
+branches ;
+next     1.3;
+
+1.3
+date     2005.01.27.09.35.13;  author p4;  state Exp;
+branches ;
+next     1.2;
+
+1.2
+date     2005.01.27.09.35.12;  author p4;  state Exp;
+branches ;
+next     1.1;
+
+1.1
+date     2005.01.27.09.35.12;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.24
+log
+@@
+text
+@.TH JAMBASE 5 "10 March 1995"
+.SH NAME
+\fBJambase\fR \- \fBjam\fR(1) boilerplate
+.SH FILES
+\fB/usr/local/lib/Jambase\fR
+.br
+\fBJamfile\fR
+
+.SH DESCRIPTION
+.PP
+\fBJambase\fR contains a set of \fBjam\fR rule definitions that provide
+roughly \fBmake\fR(1)-like functionality.  \fBJam\fR reads
+\fBJambase\fR, which in turn includes the \fBJamfile\fR from the
+current directory.  
+.PP
+This manual page lists the rules and variables defined in
+\fBJambase\fR.  For a more readable guide to writing a \fBJamfile\fR,
+see \fBJamfile\fR(5).
+.SS Rules
+.de RP
+.IP "\fI\\$1\fR \\$2"
+.IP
+..
+.RP As "obj.o : source.s ;"
+Assemble the file \fIsource.s\fR.  Called by the \fIObject\fR rule.
+.RP Bulk "directory : sources ;"
+Copies \fIsources\fR into \fIdirectory\fR. Dependencies of \fIfiles\fR.
+.RP Cc "object : source ;"
+Compile the file \fIsource\fR into \fIobject\fR, using the C compiler
+$(CC), its flags $(CCFLAGS) and $(OPTIM), and the header file
+directories $(HDRS).  Called by the \fIObject\fR rule.
+.RP C++ "obj.o : source.cc ;"
+Compile the C++ source file \fIsource.cc\fR.  Called by the
+\fIObject\fR rule.
+.RP Clean "clean : targets ;"
+Removes existing \fItargets\fR when \fIclean\fR is built.  \fIclean\fR
+is not a dependency of \fIall\fR, and must be built explicitly for
+\fItargets\fR to be removed.
+.RP File "target : source ;"
+Copies \fIsource\fR into \fItarget\fR.  Dependency of \fIfiles\fR.
+.RP Fortran "obj.o : source.f ;"
+Compile the Fortran source file \fIsource.f\fR.  Called by the
+\fIObject\fR rule.
+.RP HardLink "target : source ;"
+Makes \fItarget\fR a hard link to \fIsource\fR, if it isn't one
+already.
+.RP HdrRule "source : headers ;"
+Arranges the proper dependencies when the file \fIsource\fR includes
+the files \fIheaders\fR through the "#include" C preprocessor
+directive.  The \fIObject\fR rule arranges for this rule to be called
+when \fBjam\fR does its header file scan of \fIsource\fR.
+.RP Install "target : source ;"
+Copies \fIsource\fR into \fItarget\fR, using \fIinstall\fR(1).  Used by
+the other \fIInstall\fR* rules.
+.RP InstallBin "dir : sources ; "
+Copy \fIsources\fR into \fIdir\fR with mode $(EXEMODE).  Dependencies of
+\fIinstall\fR.
+.RP InstallLib "dir : sources ;"
+Copy \fIsources\fR into \fIdir\fR with mode $(FILEMODE).  Dependencies of
+\fIinstall\fR.
+.RP InstallMan "dir : sources ;"
+Copy \fIsources\fR into the appropriate subdirectory of \fIdir\fR with
+mode $(FILEMODE).  The subdirectory is \fBman\fIs\fR, where \fIs\fR
+is the suffix of each of \fIsources\fR.  Dependencies of \fIinstall\fR.
+.RP InstallShell "dir : sources ;"
+Copy \fIsources\fR into \fIdir\fR with mode $(SHELLMODE).  Dependencies
+of \fIinstall\fR.
+.RP Lex "source.c : source.l ;"
+Process the \fBlex\fR(1) source file \fIsource.l\fR and rename the
+lex.yy.c to \fIsource.c\fR.  Called by the \fIObject\fR rule.
+.RP Library "library : sources ;"
+Compiles \fIsources\fR and archives them into \fIlibrary\fR.  The
+intermediate objects are deleted.  Calls \fIObjects\fR and
+\fILibraryFromObjects\fR.  Dependency of \fIlib\fR.
+.RP LibraryFromObjects "library : objects ;"
+Archives \fIobjects\fR into \fIlibrary\fR.  The \fIobjects\fR are then
+deleted.  Dependency of \fIlib\fR.
+.RP LinkLibraries "image : libraries ;"
+Makes \fIimage\fR depend on \fIlibraries\fR and includes them during
+the linking.
+.RP Main "image : sources ;"
+Compiles \fIsources\fR and links them into \fIimage\fR.  Calls
+\fIObjects\fR and \fIMainFromObjects\fR.  Dependency of \fIexe\fR.
+.RP MainFromObjects "image : objects ;"
+Links \fIobjects\fR into \fIimage\fR.  Dependency of \fIexe\fR.
+.RP Object "object : source ;"
+Compiles a single source file \fIsource\fR into \fIobject\fR.  Makes
+\fIobject\fR depend on all header files included by \fIsource\fR.  Such
+dependencies are "soft": missing headers are not an error.
+.IP
+Calls one of the rules listed to do the actual compiling, depending
+on the suffix of \fIsource\fR:
+.RS
+.IP
+source.c: \fICc\fR
+.br
+source.cc: \fIC++\fR
+.br
+source.cpp: \fIC++\fR
+.br
+source.C: \fIC++\fR
+.br
+source.l: \fILex\fR
+.br
+source.y: \fIYacc\fR
+.br
+source.*: \fIUserObject\fR
+.RE
+.IP
+This rule is used by \fBObjects\fR.
+.RP ObjectCcFlags "source : flags ;"
+Add \fIflags\fR to the \fIsource\fR-specific value of $(CCFLAGS) when
+compiling \fIsource\fR.  Any file suffix on \fIsource\fR is ignored.
+.RP ObjectHdrs "source : dirs ;"
+Add \fIdirs\fR to the \fIsource\fR-specific value of $(HDRS) when
+scanning and compiling \fIsource\fR.  Any file suffix on \fIsource\fR
+is ignored.
+.RP Objects "sources ;"
+For each source file in \fIsources\fR,
+calls \fIObject\fR to compile the source file into a similarly named
+object file.
+.RP RmTemps "targets : sources ;"
+Marks \fIsources\fR as temporary with the \fBTEMPORARY\fR rule, and
+deletes \fIsources\fR once \fItargets\fR are built.  Must be the last
+rule invoked on \fItargets\fR.  Used internally by \fBObject\fR.
+.RP Setuid "images ;"
+Sets the setuid bit on each of \fIimages\fR after linking.
+.RP Shell "image : source ;"
+Copies \fIsource\fR into the executable \fBsh\fR(1) script \fIimage\fR.
+Ensures that the first line of the script is $(SHELLHEADER) (default
+\fI#!/bin/sh\fR).  Dependency of \fIshell\fR.
+.RP Undefines "images : symbols ;"
+Tries to convince the linker that symbols need to be "undefined" for
+the linking of \fIimages\fR.
+.RP UserObject "object : source ;"
+Complains that the suffix on \fIsource\fR is unknown.  This rule is called
+by \fIObject\fR for source files with unknown suffixes, and should be replaced
+with a user-provided rule to handle the source file types.
+.RP Yacc "source.c : source.y ;"
+Process the \fByacc\fR(1) file \fIsource.y\fR and renamed the resulting
+y.tab.c and y.tab.h to \fIsource.c\fR.  Produces a y.tab.h and renames it
+to \fIsource\fR.h.  Called by the \fIObject\fR rule.
+.SS Variables
+.PP
+These variables are set in \fBJambase\fR only if they are not set in the
+user's environment, and so can be overridden with environment settings.
+Most variables are used by the actions of the related rules.  When the
+variable is used by a rule's procedure (and therefore must be set before
+invoking the rule), it is marked with a \(bu.
+.PP
+AR (default \fI"ar ru"\fR)
+.IP
+The archiver used for \fBLibrary\fR.
+.PP
+AS (default \fIas\fR)
+.IP
+The assembler for \fBAs\fR.
+.PP
+ASFLAGS (no default)
+.IP
+Flags handed to the assembler for \fBAs\fR.
+.PP
+AWK (\fIawk\fR)
+.IP
+The name of awk interpreter, used when copying a shell script for
+the \fIShell\fR rule.
+.PP
+BINDIR (default \fI/usr/local/bin\fR)
+.IP
+Not used.  Set for convenience.
+.PP
+CC (default \fIcc\fR)
+.IP
+C compiler used for \fBCc\fR.
+.PP
+CCFLAGS (no default) \(bu
+.IP
+Flags handed to the C compiler for \fBObject\fR.  \fBOPTIM\fR is also
+handed to the C compiler.
+.PP
+C++ (default \fIgcc\fR)
+.IP
+C++ compiler used for \fBC++\fR.
+.PP
+C++FLAGS (no default) \(bu
+.IP
+Flags handed to the C++ compiler for \fBC++\fR.  \fBOPTIM\fR is also
+handed to the C++ compiler.
+.PP
+CP (default \fIcp\fR)
+.IP
+The file copy program, used by \fIFile\fR and \fIInstall\fR.
+.PP
+EXEMODE (default \fI711\fR)
+.IP
+Permissions for executables linked with \fBMain\fR.
+.PP
+FILEMODE (default \fI644\fR) \(bu
+.IP
+Permissions for files copied by \fBFile\fR or \fBBulk\fR.
+.PP
+FORTRAN (default \fIf77\fR)
+.IP
+The Fortran compiler used by \fBFortran\fR.
+.PP
+FORTRANFLAGS (no default)
+.IP
+Flags handed to the Fortran compiler for \fBFortran\fR.
+.PP
+GROUP (no default)
+.IP
+The group owner of installed filed.  Used by \fIInstall\fR.
+.PP
+HDRPATTERN (default ^#[\\t ]*include[\\t ]*[<"](.*)[">].*$) \(bu
+.IP
+The \fBregexp\fR(3) pattern for finding header file includes in source
+files.  The \fBObject\fR rule sets the \fBjam\fR-special variable
+\fBHDRSCAN\fR to $(HDRPATTERN) for all of its sources.  The
+corresponding target of the \fBObject\fR rule invocation depends on all
+header files found.
+.PP
+HDRRULE (default HdrRule)
+.IP
+The rule to invoke with the results of header file scanning.
+This is a \fBjam\fR-special variable.
+.PP
+HDRSCAN (default $(HDRPATTERN))
+.IP
+The \fBregexp\fR(3) pattern for header file scanning.  This variable
+and $(HDRRULE) trigger the scanning.  This is a \fBjam\fR-special
+variable.
+.PP
+HDRS (no default) \(bu
+.IP
+Directories to be scanned for header files and handed to the C compiler
+with -I.  The \fBObject\fR rule sets \fBHDRS\fR to $(HDRS) for each of
+its sources.
+.PP
+INSTALL (default \fIinstall\fR)
+.IP
+The file copying program for the \fIInstall\fR rule.  If not set
+\fIInstall\fR uses $(CP).
+.PP
+JAMFILE (default \fIJamfile\fR)
+.IP
+The user-provided file listing the sources to be built.
+.PP
+JAMRULES (default \fIJamrules\fR)
+.IP
+The name of the file included by the \fISubDir\fR rule.
+.PP
+LEX (default \fIlex\fR )
+.IP
+The \fBlex\fR(1) command and flags.
+.PP
+LIBDIR (default \fI/usr/local/lib\fR)
+.IP
+Not used.  Set for convenience.
+.PP
+LINK (default \fIcc\fR)
+.IP
+The linker.
+.PP
+LINKFLAGS (default $(CCFLAGS))
+.IP
+Flags handed to the linker.
+.PP
+LINKLIBS (no default)
+.IP
+Libraries to hand to the linker.  The target image does not depend on
+these libraries.
+.PP
+LOCATE_TARGET (no default) \(bu
+.IP
+The directory for object modules and other intermediate files generated
+by \fBObject\fR.  This works by setting the \fBjam\fR-special variable
+\fBLOCATE\fR to the value of $(LOCATE_TARGET) for each of
+\fBObject\fR's targets.
+.PP
+LN (default \fIln\fR)
+.IP
+The hard link command for \fIHardLink\fR.
+.PP
+MANDIR (default \fI/usr/local/man\fR)
+.IP
+Not used.  Set for convenience.
+.PP
+MKDIR (default \fImkdir\fR)
+.IP
+The program to create directories for the \fIMkDir\fR rule.
+.PP
+MODE (default varies)
+.IP
+The file mode for files installed with \fIInstall\fR.  Is set to
+$(EXEMODE), $(FILEMODE), or $(SHELLMODE) depending which rule invoked
+\fIInstall\fR.
+.PP
+MV (default \fImv -f\fR)
+.IP
+The file rename command and options.
+.PP
+OPTIM (default \fI-O\fR)
+.IP
+More flags handed to the C compiler.
+.PP
+OWNER (no default)
+.IP
+The owner of installed filed.  Used by \fIInstall\fR.
+.PP
+RANLIB (default \fIranlib\fR) \(bu
+.IP
+If set, the command string to be invoked on each library after
+archiving.
+.PP
+RELOCATE (default unset)
+.IP
+If set, tells the \fICc\fR rule to move the output object file to
+its target directory because the cc command has a broken -o option.
+.PP
+RM (default \fIrm -f\fR)
+.IP
+The command and options to remove a file.
+.PP
+SEARCH_SOURCE (no default) \(bu
+.IP
+The directory to find sources listed with \fBMain\fR, \fBLibrary\fR,
+\fBObject\fR, \fBBulk\fR, \fBFile\fR, \fBShell\fR, \fBInstallBin\fR,
+\fBInstallLib\fR, and \fBInstallMan\fR rules.  This works by setting
+the \fBjam\fR-special variable \fBSEARCH\fR to the value of
+$(SEARCH_SOURCE) for each of the rules' sources.
+.PP
+SHELLHEADER (default \fI#!/bin/sh\fR)
+.IP
+A string inserted to the first line of every file created by the
+\fBShell\fR rule.
+.PP
+SHELLMODE (default \fI755\fR) \(bu
+.IP
+Permissions for files installed by \fBShell\fR.
+.PP
+SLASH (default \fI/\fR) \(bu
+.IP
+The directory separator.  Used by \fISubDir\fR and \fISubInclude\fR
+to build up a directory path.
+.PP
+SOURCE_GRIST (no default) \(bu
+.IP
+Set by the \fISubDir\fR to a value derived from the directory name, and
+used by \fIObjects\fR and related rules as 'grist' to perturb file names.
+.PP
+STDHDRS (default \fI/usr/include\fR) \(bu
+.IP
+Directories where headers can be found without resorting to using the
+\fIflag\fR to the C compiler.
+.PP
+SUBDIR (no default)
+.IP
+Set by \fISubDir\fR to be the named directory.
+.PP
+SUFEXE (default "") \(bu
+.IP
+The suffix for executable files, if none provided.  Used by the
+\fIMain\fR rule.
+.PP
+SUFLIB (default \fI.a\fR) \(bu
+.IP
+The suffix for libraries.  Used by the \fILibrary\fR and related rules.
+.PP
+SUFOBJ (default \fI.o\fR) \(bu
+.IP
+The suffix for object files.  Used by the \fIObjects\fR and related rules.
+.PP
+UNDEFFLAG (default \fI-u _\fR)
+.IP
+The flag prefixed to each symbol for the \fBUndefines\fR rule.
+.PP
+YACC (default \fIyacc -d\fR)
+.IP
+The \fByacc\fR(1) command and flags.
+
+.SH SEE ALSO
+\fBjam\fR(1), \fBJamfile\fR(5)
+.SH AUTHOR
+Christopher Seiwald (seiwald@@p3.com)
+@
+
+
+1.23
+log
+@@
+text
+@d384 1
+a384 1
+Christopher Seiwald (seiwald@@tea.org)
+@
+
+
+1.22
+log
+@@
+text
+@d383 2
+@
+
+
+1.21
+log
+@@
+text
+@d1 1
+a1 1
+.TH JAMBASE 5 "15 January 1995"
+@
+
+
+1.20
+log
+@@
+text
+@d14 5
+a18 3
+current directory.  This manual page lists the rules and variables
+defined in \fBJambase\fR.  For a more readable guide to writing a
+\fBJamfile\fR, see \fBJamfile\fR(5).
+@
+
+
+1.19
+log
+@@
+text
+@d5 1
+a5 1
+\fB/usr/local/lib/jam/Jambase\fR
+d12 1
+a12 1
+roughly \fBmake\fR(1)-like functionality.  \fBjam\fR reads
+a17 6
+.PP
+\fBjam\fR normally tries to build the dependents of the target
+\fIall\fR.  \fBJambase\fR defines the following dependents of
+\fIall\fR:  \fIexe\fR, \fIfiles\fR, \fIinstall\fR, \fIlib\fR, and
+\fIshell\fR.  Many of the rules defined below make their targets
+dependents of one of these.
+d19 1
+a19 1
+.IP "\\$1"
+d22 1
+a22 1
+.RP "As obj.o : source.s ;"
+d24 3
+a26 3
+.RP "Bulk directory : sources ;"
+Copies \fIsources\fR into \fIdirectory\fR. Dependents of \fIfiles\fR.
+.RP "Cc object : source ;"
+d30 1
+a30 1
+.RP "C++ obj.o : source.cc ;"
+d33 1
+a33 1
+.RP "Clean clean : targets ;"
+d37 3
+a39 3
+.RP "File target : source ;"
+Copies \fIsource\fR into \fItarget\fR.  Dependent of \fIfiles\fR.
+.RP "Fortran obj.o : source.f ;"
+d42 1
+a42 1
+.RP "HardLink target : source ;"
+d45 1
+a45 1
+.RP "HdrRule source : headers ;"
+d50 1
+a50 1
+.RP "Install target : source ;"
+d53 2
+a54 2
+.RP "InstallBin dir : sources ; "
+Copy \fIsources\fR into \fIdir\fR with mode $(EXEMODE).  Dependents of
+d56 2
+a57 2
+.RP "InstallLib dir : sources ;"
+Copy \fIsources\fR into \fIdir\fR with mode $(FILEMODE).  Dependents of
+d59 1
+a59 1
+.RP "InstallMan dir : sources ;"
+d62 3
+a64 3
+is the suffix of each of \fIsources\fR.  Dependents of \fIinstall\fR.
+.RP "InstallShell dir : sources ;"
+Copy \fIsources\fR into \fIdir\fR with mode $(SHELLMODE).  Dependents
+d66 1
+a66 1
+.RP "Lex source.c : source.l ;"
+d69 1
+a69 1
+.RP "Library library : sources ;"
+d72 2
+a73 2
+\fILibraryFromObjects\fR.  Dependent of \fIlib\fR.
+.RP "LibraryFromObjects library : objects ;"
+d75 2
+a76 2
+deleted.  Dependent of \fIlib\fR.
+.RP "LinkLibraries image : libraries ;"
+d79 1
+a79 1
+.RP "Main image : sources ;"
+d81 4
+a84 4
+\fIObjects\fR and \fIMainFromObjects\fR.  Dependent of \fIexe\fR.
+.RP "MainFromObjects image : objects ;"
+Links \fIobjects\fR into \fIimage\fR.  Dependent of \fIexe\fR.
+.RP "Object object : source ;"
+d109 1
+a109 1
+.RP "ObjectCcFlags source : flags ;"
+d112 1
+a112 1
+.RP "ObjectHdrs source : dirs ;"
+d116 1
+a116 1
+.RP "Objects sources ;"
+d118 1
+a118 1
+calls \fIObject\fR to compile the source file into a similarly named 
+d120 1
+a120 1
+.RP "RmTemps targets : sources ;"
+d124 3
+a126 3
+.RP "Setuid image ;"
+Sets the setuid bit on \fIimage\fR after linking.
+.RP "Shell image : source ;"
+d129 5
+a133 5
+\fI#!/bin/sh\fR).  Dependent of \fIshell\fR.
+.RP "Undefines image : symbols ;"
+Tries to convince the loader that symbols need to be "undefined" for
+the linking of \fIimage\fR.
+.RP "UserObject object : source ;"
+d137 1
+a137 1
+.RP "Yacc source.c : source.y ;"
+d143 6
+d161 5
+d172 1
+a172 1
+C compiler used for \fBObject\fR.
+d174 1
+a174 1
+CCFLAGS (no default)
+d183 1
+a183 1
+C++FLAGS (no default)
+d185 1
+a185 1
+Flags handed to the C++ compiler for \fBC++\fR.  \fBOPTIM\fR is also
+d188 4
+d196 1
+a196 1
+FILEMODE (default \fI644\fR)
+d208 1
+a208 1
+HDRPATTERN (default ^#[\\t ]*include[\\t ]*[<"](.*)[">].*$)
+d210 4
+d216 1
+a216 1
+\fBHDRSCAN\fR to $(\fBHDRPATTERN\fR) for all of its sources.  The
+d220 1
+a220 1
+HDRS (no default)
+d222 11
+d237 5
+d246 4
+d262 1
+a262 1
+LINKFLAGS (default \fI$(CCFLAGS)\fR)
+d271 1
+a271 1
+LOCATE_TARGET (no default)
+d275 1
+a275 1
+\fBLOCATE\fR to the value of $(\fBLOCATE_TARGET\fR) for each of
+d286 10
+d304 5
+a308 1
+RANLIB (default \fIranlib\fR)
+d313 5
+d322 1
+a322 1
+SEARCH_SOURCE (no default)
+d328 1
+a328 1
+$(\fBSEARCH_SOURCE\fR) for each of the rules' sources.
+d335 1
+a335 1
+SHELLMODE (default \fI755\fR)
+d339 6
+a344 1
+STDHDRS (default \fI/usr/include\fR)
+d346 5
+d354 17
+d379 2
+a380 8
+.SH BUGS
+.PP
+Because libraries are passed unbound to the \fBLink\fR rule as
+$(\fBNEEDLIBS\fR), they cannot be located with $(\fBLOCATE\fR), because
+$(\fBLOCATE\fR) only changes the bound file name.
+.PP
+There's no \fByacc\fR(1) on VMS, so the guts of the rules are commented
+out.
+@
+
+
+1.18
+log
+@@
+text
+@a216 5
+JAMUSER (no default)
+.IP
+The user-provided file listing additional rules.  Read just before 
+$(JAMFILE).
+.PP
+@
+
+
+1.17
+log
+@@
+text
+@d1 1
+a1 1
+.TH JAMBASE 5 "30 August 1993"
+d3 1
+a3 1
+\fBJambase\fR \- \fBJam\fR(1) boilerplate
+d11 2
+a12 2
+\fBJambase\fR contains a set of \fBJam\fR rule definitions that provide
+roughly \fBmake\fR(1)-like functionality.  \fBJam\fR reads
+d19 1
+a19 1
+\fBJam\fR normally tries to build the dependents of the target
+d55 1
+a55 1
+when \fBJam\fR does its header file scan of \fIsource\fR.
+d202 1
+a202 1
+files.  The \fBObject\fR rule sets the \fBJam\fR-special variable
+d246 1
+a246 1
+by \fBObject\fR.  This works by setting the \fBJam\fR-special variable
+d280 1
+a280 1
+the \fBJam\fR-special variable \fBSEARCH\fR to the value of
+@
+
+
+1.16
+log
+@@
+text
+@a35 7
+.RP "CcAddFlags source : flags ;"
+Add \fIflags\fR to the \fIsource\fR-specific value of $(CCFLAGS) when
+compiling \fIsource\fR.  Any file suffix on \fIsource\fR is ignored.
+.RP "CcAddHdrs source : dirs ;"
+Add \fIdirs\fR to the \fIsource\fR-specific value of $(HDRS) when
+scanning and compiling \fIsource\fR.  Any file suffix on \fIsource\fR
+is ignored.
+d115 7
+@
+
+
+1.15
+log
+@@
+text
+@d66 2
+a67 2
+.RP "InstallBin sources ; "
+Copy \fIsources\fR into $(BINDIR) with mode $(EXEMODE).  Dependents of
+d69 2
+a70 2
+.RP "InstallLib sources ;"
+Copy \fIsources\fR into $(LIBDIR) with mode $(FILEMODE).  Dependents of
+d72 6
+a77 5
+.RP "InstallMan sources ;"
+Copy \fIsources\fR into the appropriate subdirectory of $(MANDIR) with
+mode $(FILEMODE).  Dependents of \fIinstall\fR.
+.RP "InstallShell sources ;"
+Copy \fIsources\fR into $(BINDIR) with mode $(SHELLMODE).  Dependents
+d163 1
+a163 1
+The install directory for \fBInstallBin\fR.
+d228 1
+a228 1
+The target directory for \fBInstallLib\fR.
+d254 4
+@
+
+
+1.14
+log
+@@
+text
+@d29 1
+a29 2
+Assemble the file \fIsource.s\fR.  
+Called by the \fIObject\fR rule.
+d34 2
+a35 2
+$(CC), its flags $(CCFLAGS) and $(OPTIM), and the header file directories
+$(HDRS).  Called by the \fIObject\fR rule.
+d38 1
+a38 1
+compiling \fIsource\fR.
+d41 2
+a42 1
+scanning and compiling \fIsource\fR.
+d44 2
+a45 2
+Compile the C++ source file \fIsource.cc\fR.  
+Called by the \fIObject\fR rule.
+d49 1
+a49 1
+\fItargets\fR to be removed.  
+d53 2
+a54 2
+Compile the Fortran source file \fIsource.f\fR.  
+Called by the \fIObject\fR rule.
+d56 2
+a57 1
+Makes \fItarget\fR a hard link to \fIsource\fR, if it isn't one already.
+d59 2
+a60 2
+Arranges the proper dependencies when the file \fIsource\fR 
+includes the files \fIheaders\fR through the "#include" C preprocessor
+d64 2
+a65 2
+Copies \fIsource\fR into \fItarget\fR, using \fIinstall\fR(1).
+Used by the other \fIInstall\fR* rules.
+d67 2
+a68 2
+Copy \fIsources\fR into $(BINDIR) with mode $(EXEMODE).  
+Dependents of \fIinstall\fR.
+d70 2
+a71 2
+Copy \fIsources\fR into $(LIBDIR) with mode $(FILEMODE).  
+Dependents of \fIinstall\fR.
+d73 2
+a74 2
+Copy \fIsources\fR into the appropriate subdirectory of $(MANDIR)
+with mode $(FILEMODE).  Dependents of \fIinstall\fR.
+d76 2
+a77 2
+Copy \fIsources\fR into $(BINDIR) with mode $(SHELLMODE).
+Dependents of \fIinstall\fR.
+d79 1
+a79 1
+Process the \fBlex\fR(1) source file \fIsource.l\fR and rename the 
+d82 3
+a84 4
+Compiles \fIsources\fR and archives them into \fIlibrary\fR.  
+The intermediate objects are deleted.  
+Calls \fIObjects\fR and \fILibraryFromObjects\fR.
+Dependent of \fIlib\fR.
+d86 2
+a87 2
+Archives \fIobjects\fR into \fIlibrary\fR.
+The \fIobjects\fR are then deleted.  Dependent of \fIlib\fR.
+d92 2
+a93 3
+Compiles \fIsources\fR and links them into \fIimage\fR.
+Calls \fIObjects\fR and \fIMainFromObjects\fR.
+Dependent of \fIexe\fR.
+d95 1
+a95 2
+Links \fIobjects\fR into \fIimage\fR.
+Dependent of \fIexe\fR.
+d97 3
+a99 3
+Compiles a single source file \fIsource\fR into \fIobject\fR.  
+Makes \fIobject\fR depend on all header files included by \fIsource\fR.
+Such dependencies are "soft": missing headers are not an error.
+d107 1
+a107 1
+.source.cc: \fIC++\fR
+d109 1
+a109 1
+.source.cpp: \fIC++\fR
+d111 1
+a111 1
+.source.C: \fIC++\fR
+a249 2
+.PP
+The hard link command for \fIHardLink\fR.
+d251 1
+@
+
+
+1.13
+log
+@@
+text
+@d3 1
+a3 1
+\fBJambase\fR \- \fBjam\fR(1) boilerplate
+d11 1
+a11 1
+\fBJambase\fR contains a set of \fBjam\fR rule definitions that provide
+d61 1
+a61 1
+when \fBJam\fI does its header file scan of \fIsource\fR.
+d203 1
+a203 1
+files.  The \fBObject\fR rule sets the \fBjam\fR special variable
+d205 2
+a206 1
+\fBObject\fR target depends on all header files found.
+d216 1
+a216 1
+The user provided file listing the sources to be built.
+d220 1
+a220 1
+The user provided file listing additional rules.  Read just before 
+d247 1
+a247 1
+by \fBObject\fR.  This works by setting the \fBjam\fR special variable
+d278 1
+a278 1
+the \fBjam\fR special variable \fBSEARCH\fR to the value of
+@
+
+
+1.12
+log
+@@
+text
+@d217 1
+a217 1
+JAMRULES (no default)
+@
+
+
+1.11
+log
+@@
+text
+@d135 2
+a136 1
+Dependent of \fIshell\fR.
+@
+
+
+1.10
+log
+@@
+text
+@d63 1
+a63 1
+Copies \fIsource\fR into \fItarget\fR.
+d66 2
+a67 1
+Copy \fIsources\fR into $(BINDIR).  Dependents of \fIinstall\fR.
+d69 2
+a70 1
+Copy \fIsources\fR into $(LIBDIR).  Dependents of \fIinstall\fR.
+d72 2
+a73 2
+Copy \fIsources\fR into the appropriate subdirectory of
+$(MANDIR).  Dependents of \fIinstall\fR.
+d75 1
+a75 1
+Copy \fIsources\fR into $(BINDIR).
+@
+
+
+1.9
+log
+@@
+text
+@d107 6
+@
+
+
+1.8
+log
+@@
+text
+@d55 2
+d241 5
+@
+
+
+1.7
+log
+@@
+text
+@d70 3
+@
+
+
+1.6
+log
+@@
+text
+@d28 3
+d43 3
+d52 3
+d140 8
+d161 9
+d178 8
+@
+
+
+1.5
+log
+@@
+text
+@a256 37
+
+.SH EXAMPLES
+.PP
+.de XB
+Example:
+.RS
+.IP
+.ft CW
+..
+.de XE
+.RE
+.ft R
+..
+.XB
+Main myprog : main.c util.c ;
+.XE
+.XB
+LinkLibraries myprog : libstring.a libtree.a ;
+.XE
+.XB
+Setuid myprog ;
+.XE
+.XB
+Undefines myprog : treeinit ;
+.XE
+.XB
+Library libstring.a : strcmp.c strcpy.c strlen.c ;
+.XE
+.XB
+Object strcmp.o : strcmp.c ;
+.XE
+.XB
+Bulk /usr/local/man/man1 : jam.1 myprog.1 ;
+.XE
+.XB
+File /usr/local/lib/help.txt : help.txt ;
+.XE
+@
+
+
+1.4
+log
+@@
+text
+@d51 3
+d65 7
+a71 2
+Compiles \fIsources\fR and archives them into \fIlibrary\fR.  The
+intermediate objects are deleted.  Dependent of \fIlib\fR.
+d77 1
+d79 3
+d83 3
+a85 4
+Compiles a single source file \fIsource\fR into \fIobject\fR.  This
+rule is used by \fBMain\fR and \fBLibrary\fR.  Makes \fIobject\fR
+depend on all header files included by \fIsource\fR.  Such dependencies
+are "soft": missing headers are not an error.
+d87 2
+a88 1
+For \fIsource\fR, the following suffixes are recognized:
+a89 13
+.IP .c
+C source file
+.IP .C
+C++ source file
+.IP .l
+\fIlex\fR(1) source file.  The resulting lex.yy.c is 
+renamed to the same base as \fIsource\fR.
+\fIobject\fR.
+.IP .y
+\fIyacc\fR(1) source file.  The resulting y.tab.c and y.tab.h are
+renamed to the same base as \fIsource\fR.
+.PP
+All other suffixes are passed to the rule
+d91 7
+a97 3
+UserObject object : source ;
+.PP
+to be defined in the user's \fBJamfile\fR (or elsewhere).
+d99 6
+d117 4
+d165 9
+d245 1
+a245 1
+YACc (default \fIyacc -d\fR)
+a247 4
+.PP
+JAMFILE (default \fIJamfile\fR)
+.IP
+The user provided file listing the sources to be built.
+@
+
+
+1.3
+log
+@@
+text
+@d8 1
+d14 3
+a16 10
+current directory.  This manual describes the support in \fBJambase\fR for
+writing a \fBJamfile\fR.
+.PP
+There are a number of built-in \fBjam\fR targets, including \fIall\fR,
+\fIexe\fR, \fIfiles\fR, \fIinstall\fR, \fIlib\fR, and \fIshell\fR.  The
+target \fIall\fR depends on \fIexe\fR, \fIfiles\fR, \fIinstall\fR,
+\fIlib\fR, and \fIshell\fR.
+.PP
+The rules defined and variables used for the \fBJamfile\fR are as
+follows:
+d19 7
+a25 5
+.IP "Main image : sources ;"
+.IP
+Compiles \fIsources\fR and links them into \fIimage\fR, and makes
+\fIexe\fR depend on \fIimage\fR.
+.IP "LinkLibraries image : libraries ;"
+d27 38
+d67 4
+a70 14
+.IP "Setuid image ;"
+.IP
+Sets the setuid bit on \fIimage\fR after linking.
+.IP "Undefines image : symbols ;"
+.IP
+Tries to convince the loader that symbols need to be "undefined" for
+the linking to work.
+.IP "Library library : sources ;"
+.IP
+Compiles \fIsources\fR and archives them into \fIlibrary\fR.  The
+intermediate objects are deleted.  Makes \fIlib\fR depend on
+\fIlibraries\fR.
+.IP "Object object : source ;"
+.IP
+d83 3
+a85 2
+\fIlex\fR(1) source file.  The resulting lex.yy.c is renamed to be the
+same base as the \fIsource\fR.
+d96 1
+a96 26
+.IP "Bulk directory : sources ;"
+.IP
+Copies \fIsources\fR into \fIdirectory\fR and makes \fIfiles\fR depend
+on all the targets.
+.IP "File target : source ;"
+.IP
+Copies \fIsource\fR into \fItarget\fR and makes \fIfiles\fR depend on
+.IR target.
+.IP "Shell image : source ;"
+.IP
+Copies \fIsource\fR into the executable \fBsh\fR(1) script \fIimage\fR
+and makes \fIshell\fR depend on \fIimage\fR.
+.IP "InstallBin sources ; "
+.IP
+Copy \fIsources\fR into /usr/local/bin.  Makes \fIinstall\fR depend on
+all targets.
+.IP "InstallLib sources ;"
+.IP
+Copy \fIsources\fR into /usr/local/lib.  Makes \fIinstall\fR depend on
+all targets.
+.IP "InstallMan sources ;"
+.IP
+Copy \fIsources\fR into the appropriate subdirectory of
+/usr/local/man.  Makes \fIinstall\fR depend on all targets.
+.IP "RmTemps targets : sources ;"
+.IP
+d100 12
+@
+
+
+1.2
+log
+@@
+text
+@d3 1
+a3 4
+.B Jambase
+\- 
+.BR jam (1)
+boilerplate
+d5 1
+a5 1
+.B /usr/local/lib/jam/Jambase
+d7 1
+a7 1
+.B Jamfile
+d10 5
+a14 12
+.B Jambase
+contains a set of
+.B jam
+rule definitions that provide roughly
+.BR make (1)-like
+functionality.
+.B Jam
+reads
+.BR Jambase ,
+which in turn includes the
+.B Jamfile
+from the current directory.
+d16 4
+a19 19
+There are a number of built-in
+.B jam
+targets, including
+.IR all ,
+.IR exe ,
+.IR files ,
+.IR install ,
+.IR lib ,
+and
+.IR shell .
+The target
+.I all
+depends on
+.IR exe ,
+.IR files ,
+.IR install ,
+.IR lib ,
+and
+.IR shell .
+d21 2
+a22 3
+The rules defined and variables used for the 
+.B Jamfile 
+are as follows:
+d27 2
+a28 8
+Compiles
+.I sources
+and links them into
+.IR image ,
+and makes
+.I exe
+depend on
+.IR image .
+d31 2
+a32 5
+Makes 
+.I image
+depend on
+.I libraries
+and includes them during the linking.
+d35 1
+a35 3
+Sets the setuid bit on
+.I image
+after linking.
+d42 3
+a44 9
+Compiles
+.I sources
+and archives them into 
+.IR library .
+The intermediate objects are deleted.
+Makes
+.I lib 
+depend on
+.IR libraries .
+d47 4
+a50 13
+Compiles a single source file
+.I source
+into
+.IR object .
+This rule is used by
+.B Main
+and 
+.BR Library .
+Makes
+.I object
+depend on all header files included by
+.IR source .
+Such dependencies are "soft": missing headers are not an error.
+d52 1
+a52 3
+For 
+.IR source , 
+the following suffixes are recognized:
+d59 2
+a60 4
+.IR lex (1)
+source file.
+The resulting lex.yy.c is renamed to be the same base as the
+.IR source .
+d62 2
+a63 4
+.IR yacc (1)
+source file.  
+The resulting y.tab.c and y.tab.h are renamed to the same base as
+.IR source .
+d69 1
+a69 3
+to be defined in the user's
+.B Jamfile
+(or elsewhere).
+d73 2
+a74 7
+Copies
+.I sources
+into 
+.I directory
+and makes
+.I files
+depend on all the targets.
+d77 1
+a77 7
+Copies 
+.I source
+into 
+.I target
+and makes
+.I files
+depend on
+d81 2
+a82 10
+Copies 
+.I source
+into the executable 
+.BR sh (1)
+script
+.I image
+and makes
+.I shell
+depend on
+.IR image .
+d85 2
+a86 6
+Copy
+.I sources
+into /usr/local/bin.
+Makes
+.I install
+depend on all targets.
+d89 2
+a90 6
+Copy
+.I sources
+into /usr/local/lib.
+Makes
+.I install
+depend on all targets.
+d93 2
+a94 6
+Copy
+.I sources
+into the appropriate subdirectory of /usr/local/man.
+Makes
+.I install
+depend on all targets.
+d97 3
+a99 13
+Marks
+.I sources
+as temporary with the
+.B TEMPORARY 
+rule, and deletes
+.I sources
+once
+.I targets
+are built.
+Must be the last rule invoked on
+.IR targets .
+Used internally by
+.BR Object .
+d102 1
+a102 2
+AR (default
+.IR "ar ru" )
+d104 3
+a106 5
+The archiver used for
+.BR Library .
+.PP 
+BINDIR (default
+.IR "/usr/local/bin" )
+d108 3
+a110 5
+The install directory for 
+.BR InstallBin .
+.PP 
+CC (default
+.IR cc )
+d112 2
+a113 3
+C compiler used for
+.BR Object .
+.PP 
+d116 4
+a119 7
+Flags handed to the C compiler for
+.BR Object .
+.B OPTIM
+is also handed to the C compiler.
+.PP 
+EXEMODE (default 
+.IR 711 )
+d121 3
+a123 5
+Permissions for executables linked with
+.BR Main .
+.PP 
+FILEMODE (default
+.IR 644 )
+d125 1
+a125 4
+Permissions for files copied by
+.B File 
+or
+.BR Bulk .
+d129 5
+a133 15
+The
+.BR regexp (3)
+pattern for finding header file includes in source files.
+The 
+.B Object
+rule sets the 
+.B jam
+special variable
+.B HDRSCAN
+to
+.RB $( HDRPATTERN )
+for all of its sources.  The
+.B Object
+target depends on all header files found.
+.PP 
+d136 3
+a138 7
+Directories to be scanned for header files and handed to the C
+compiler with -I.  The
+.B Object
+rule sets
+.B HDRS
+to $(HDRS)
+for each of its sources.
+d140 1
+a140 2
+LEX (default 
+.IR lex  )
+d142 3
+a144 6
+The 
+.BR lex (1)
+command and flags.
+.PP 
+LIBDIR (default 
+.IR /usr/local/lib )
+d146 1
+a146 2
+The target directory for 
+.BR InstallLib .
+d148 1
+a148 2
+LINK (default 
+.IR cc )
+d152 1
+a152 2
+LINKFLAGS (default 
+.IR $(CCFLAGS) )
+d156 1
+a156 1
+LINKLinkLibraries (no default)
+d158 2
+a159 2
+Libraries to hand to the linker.
+The target image does not depend on these libraries.
+d163 4
+a166 11
+The directory for object modules and other intermediate files generated by
+.BR Object .
+This works by setting the
+.B jam
+special variable
+.B LOCATE 
+to the value of
+.RB $( LOCATE_TARGET )
+for each of 
+.BR Object 's 
+targets.
+d168 1
+a168 2
+MV (default 
+.IR "mv -f" )
+d172 1
+a172 2
+OPTIM (default 
+.IR -O )
+d176 1
+a176 2
+RANLIB (default 
+.IR ranlib )
+d178 2
+a179 1
+If set, the command string to be invoked on each library after archiving.
+d181 1
+a181 2
+RM (default 
+.IR "rm -f" )
+d187 5
+a191 19
+The directory to find sources listed with
+.BR Main ,
+.BR Library ,
+.BR Object ,
+.BR Bulk ,
+.BR File ,
+.BR Shell ,
+.BR InstallBin ,
+.BR InstallLib ,
+and
+.BR InstallMan
+rules.
+This works by setting the
+.B jam
+special variable
+.B SEARCH 
+to the value of 
+.RB $( SEARCH_SOURCE )
+for each of the rules' sources.
+d193 1
+a193 2
+SHELLHEADER (default 
+.IR "#!/bin/sh" )
+d196 1
+a196 2
+.B Shell
+rule.
+d198 1
+a198 2
+SHELLMODE (default 
+.IR 755 )
+d200 1
+a200 2
+Permissions for files installed by
+.BR Shell .
+d202 1
+a202 2
+STDHDRS (default 
+.IR /usr/include )
+d205 1
+a205 1
+-I flag to the C compiler.
+d207 1
+a207 2
+UNDEFFLAG (default 
+.IR "\-u _" )
+d209 1
+a209 3
+The flag prefixed to each symbol for the
+.B Undefines 
+rule.
+d211 1
+a211 2
+YACc (default 
+.IR "yacc -d" )
+d213 1
+a213 3
+The 
+.BR yacc (1)
+command and flags.
+d215 1
+a215 2
+JAMFile (default
+.IR Jamfile )
+d221 3
+a223 9
+Because libraries are passed unbound to the 
+.B Link 
+rule as
+.RB $( NEEDLIBS ), 
+they cannot be located with 
+.RB $( LOCATE ), 
+because 
+.RB $( LOCATE )
+only changes the bound file name.
+d225 2
+a226 3
+There's no 
+.BR yacc (1)
+on VMS, so the guts of the rules are commented out.
+@
+
+
+1.1
+log
+@@
+text
+@d1 1
+a1 1
+.TH JAM 5 "30 August 1993"
+d3 2
+a4 1
+Jambase \- 
+d7 2
+a8 2
+.SH SYNOPSIS
+.B /usr/share/lib/jam/Jambase
+d25 21
+d51 1
+a51 1
+.IP "MAIN image : sources ;"
+d56 4
+d61 1
+a61 6
+.I Image
+becomes a dependency of 
+.IR exe ,
+itself a dependency of
+.IR all .
+.IP "LIBS image : libraries ;"
+d63 1
+a63 3
+Adds 
+.I libraries
+as dependencies of
+d65 2
+d68 1
+a68 1
+.IP "SETUID image ;"
+d73 1
+a73 1
+.IP "UNDEFINES image : symbols ;"
+d75 1
+a75 1
+Tries to convice the loader that symbols need to be "undefined" for
+d77 1
+a77 1
+.IP "LIBRARY library : sources ;"
+d84 5
+a88 6
+.I Library 
+becomes a dependency of 
+.IR lib ,
+itself a dependency of
+.IR all .
+.IP "OBJECT object : source ;"
+d95 1
+a95 1
+.B MAIN
+d97 5
+a101 5
+.BR LIBRARY .
+Arranges for 
+.I source
+to be scanned for header file includes when then become dependencies of
+.IR object .
+d106 1
+a106 1
+the following suffixes are recognised:
+d110 2
+d115 1
+a115 1
+The resuling lex.yy.c is renamed to be the same base as the
+d125 1
+a125 1
+CCUSER object : source ;
+d128 1
+a128 1
+.I Jamfile
+d131 1
+a131 1
+.IP "BULK directory : sources ;"
+d136 5
+a140 6
+.IR directory .
+All targets become dependencies of
+.IR files ,
+itself a dependency of
+.IR all .
+.IP "FILE target : source ;"
+d145 6
+a150 7
+.IR target .
+.I Target
+become a dependency of
+.IR files ,
+itself a dependency of
+.IR all .
+.IP "SHELL image : source ;"
+d155 1
+a155 1
+.IR sh(1)
+d157 4
+d162 1
+a162 6
+.I Image
+become a dependency of
+.IR shell ,
+itself a dependency of
+.IR all .
+.IP "INSTALLBIN sources ; "
+d167 4
+a170 3
+All targets become dependencies of
+.IR install .
+.IP "INSTALLLIB sources ;"
+d175 4
+a178 3
+All targets become dependencies of
+.IR install .
+.IP "INSTALLMAN sources ;"
+d183 4
+a186 3
+All targets become dependencies of
+.IR install .
+.IP "RMTEMPS targets : sources ;"
+d191 1
+a191 1
+.I TEMPORARY 
+d200 1
+a200 1
+.BR OBJECT .
+d207 1
+a207 1
+.BR LIBRARY .
+d213 1
+a213 1
+.BR INSTALLBIN .
+d219 1
+a219 1
+.BR OBJECT .
+d224 2
+a225 3
+.BR OBJECT .
+N.B. 
+.I OPTIM
+d232 1
+a232 1
+.BR MAIN .
+d238 1
+a238 1
+.B FILE 
+d240 1
+a240 1
+.BR BULK .
+d245 1
+a245 1
+.IR regexp (3)
+d248 1
+a248 1
+.B OBJECT
+d250 1
+a250 1
+.I Jam
+d252 1
+a252 1
+.I HDRSCAN
+d254 4
+a257 4
+.I $(HDRPATTERN)
+for all of its sources.
+The found header files are made dependencies of the target to
+.BR OBJECT .
+d263 1
+a263 1
+.B OBJECT
+d265 2
+a266 3
+.I HDRS
+to 
+.I $(HDRS)
+d273 1
+a273 1
+.IR lex (1)
+d280 1
+a280 1
+.BR INSTALLLIB .
+d292 1
+a292 1
+LINKLIBS (no default)
+d295 1
+a295 1
+These libraries are not dependencies of the target image.
+d300 1
+a300 1
+.BR OBJECT .
+d302 1
+a302 1
+.I Jam
+d304 3
+a306 3
+.I LOCATE 
+to the value of 
+.I $(LOCATE_TARGET)
+d308 1
+a308 1
+.BR OBJECT 's 
+d334 8
+a341 8
+.BR MAIN ,
+.BR LIBRARY ,
+.BR OBJECT ,
+.BR BULK ,
+.BR FILE ,
+.BR SHELL ,
+.BR INSTALLBIN ,
+.BR INSTALLLIB ,
+d343 1
+a343 1
+.BR INSTALLMAN
+d346 1
+a346 1
+.I Jam
+d348 1
+a348 1
+.I SEARCH 
+d350 1
+a350 1
+.I $(SEARCH_SOURCE)
+d357 1
+a357 1
+.B SHELL
+d364 1
+a364 1
+.BR SHELL .
+d376 1
+a376 1
+.B UNDEFINES 
+d379 1
+a379 1
+YACC (default 
+d383 1
+a383 1
+.IR yacc (1)
+d386 1
+a386 1
+JAMFILE (default
+d394 1
+a394 1
+.B LINK 
+d396 1
+a396 1
+.IR $(NEEDLIBS) , 
+d398 1
+a398 1
+.IR $(LOCATE) , 
+d400 2
+a401 2
+.I $(LOCATE)
+affects only changes the bound file name.
+d404 1
+a404 1
+.IR yacc (1)
+d406 37
+@

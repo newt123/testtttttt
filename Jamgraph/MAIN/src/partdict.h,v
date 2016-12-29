@@ -1,0 +1,40 @@
+head     1.1;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.1
+date     2005.01.27.09.35.42;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.1
+log
+@@
+text
+@class GParticle;
+
+struct DictPage
+{
+	char* key;
+	GParticle* value;
+	DictPage* next;
+};
+
+class PartDict
+{
+public:
+	PartDict(void);
+	~PartDict(void);
+
+	GParticle* GetNode( char* string );
+
+	DictPage* pages;
+};
+@

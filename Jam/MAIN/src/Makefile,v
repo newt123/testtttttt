@@ -1,0 +1,361 @@
+head     1.19;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.19
+date     2005.01.27.09.35.41;  author p4;  state Exp;
+branches ;
+next     1.18;
+
+1.18
+date     2005.01.27.09.35.38;  author p4;  state Exp;
+branches ;
+next     1.17;
+
+1.17
+date     2005.01.27.09.35.36;  author p4;  state Exp;
+branches ;
+next     1.16;
+
+1.16
+date     2005.01.27.09.35.36;  author p4;  state Exp;
+branches ;
+next     1.15;
+
+1.15
+date     2005.01.27.09.35.36;  author p4;  state Exp;
+branches ;
+next     1.14;
+
+1.14
+date     2005.01.27.09.35.34;  author p4;  state Exp;
+branches ;
+next     1.13;
+
+1.13
+date     2005.01.27.09.35.34;  author p4;  state Exp;
+branches ;
+next     1.12;
+
+1.12
+date     2005.01.27.09.35.33;  author p4;  state Exp;
+branches ;
+next     1.11;
+
+1.11
+date     2005.01.27.09.35.32;  author p4;  state Exp;
+branches ;
+next     1.10;
+
+1.10
+date     2005.01.27.09.35.32;  author p4;  state Exp;
+branches ;
+next     1.9;
+
+1.9
+date     2005.01.27.09.35.31;  author p4;  state Exp;
+branches ;
+next     1.8;
+
+1.8
+date     2005.01.27.09.35.31;  author p4;  state Exp;
+branches ;
+next     1.7;
+
+1.7
+date     2005.01.27.09.35.28;  author p4;  state Exp;
+branches ;
+next     1.6;
+
+1.6
+date     2005.01.27.09.35.25;  author p4;  state Exp;
+branches ;
+next     1.5;
+
+1.5
+date     2005.01.27.09.35.22;  author p4;  state Exp;
+branches ;
+next     1.4;
+
+1.4
+date     2005.01.27.09.35.21;  author p4;  state Exp;
+branches ;
+next     1.3;
+
+1.3
+date     2005.01.27.09.35.16;  author p4;  state Exp;
+branches ;
+next     1.2;
+
+1.2
+date     2005.01.27.09.35.15;  author p4;  state Exp;
+branches ;
+next     1.1;
+
+1.1
+date     2005.01.27.09.35.12;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.19
+log
+@@
+text
+@# Makefile for jam
+
+CC = cc
+TARGET = -o jam0
+CFLAGS = 
+
+# Special flavors - uncomment appropriate lines
+
+# NCR seems to have a broken readdir() -- use gnu
+#CC = gcc
+
+# AIX needs -lbsd, and has no identifying cpp symbol
+# Use _AIX41 if you're not on 3.2 anymore.
+#LINKLIBS = -lbsd
+#CFLAGS = -D_AIX
+#CFLAGS = -D_AIX41
+
+# NT (with Microsoft compiler)
+# Use FATFS if building on a DOS FAT file system
+#Lib = $(MSVCNT)/lib
+#Include = $(MSVCNT)/include
+#CC = cl /nologo
+#CFLAGS = -I $(Include) -DNT 
+#TARGET = /Fejam0
+#LINKLIBS = $(Lib)/oldnames.lib $(Lib)/kernel32.lib $(Lib)/libc.lib
+
+# BeOS - Metroworks CodeWarrior
+#CC = mwcc
+#Include = /NewDisk/develop/headers/posix
+#CFLAGS = -I $(Include)
+
+SOURCES = \
+	command.c compile.c execunix.c execvms.c expand.c \
+	filent.c fileos2.c fileunix.c filevms.c glob.c hash.c \
+	headers.c jam.c jambase.c jamgram.c lists.c make.c make1.c \
+	newstr.c option.c parse.c pathunix.c pathvms.c regexp.c \
+	rules.c scan.c search.c timestamp.c variable.c
+
+all: jam0
+	jam0
+
+jam0:
+	$(CC) $(TARGET) $(CFLAGS) $(SOURCES) $(LINKLIBS)
+@
+
+
+1.18
+log
+@@
+text
+@d40 1
+a40 1
+	./jam0
+@
+
+
+1.17
+log
+@@
+text
+@d33 1
+a33 1
+	command.c compile.c execnt.c execunix.c execvms.c expand.c \
+@
+
+
+1.16
+log
+@@
+text
+@a11 3
+# Solaris 2.0 seem not to have any identifying cpp symbol
+# CFLAGS = -Dsolaris
+
+@
+
+
+1.15
+log
+@@
+text
+@d13 1
+a13 1
+CFLAGS = -Dsolaris
+@
+
+
+1.14
+log
+@@
+text
+@d13 1
+a13 1
+#CFLAGS = -Dsolaris
+@
+
+
+1.13
+log
+@@
+text
+@d31 3
+a33 3
+CC = mwcc
+Include = /NewDisk/develop/headers/posix
+CFLAGS = -I $(Include)
+@
+
+
+1.12
+log
+@@
+text
+@d30 5
+@
+
+
+1.11
+log
+@@
+text
+@d9 3
+@
+
+
+1.10
+log
+@@
+text
+@d25 1
+a25 1
+#LINKLIBS = $(Lib)/kernel32.lib $(Lib)/libc.lib
+@
+
+
+1.9
+log
+@@
+text
+@d35 1
+a35 1
+	jam0
+@
+
+
+1.8
+log
+@@
+text
+@d34 2
+a35 2
+install: jam0
+	jam0 install
+@
+
+
+1.7
+log
+@@
+text
+@d5 1
+a5 1
+OPTIM = -O
+d27 6
+a32 2
+# Use FATFS if building on a DOS FAT file system
+#CFLAGS = $(CFLAGS) -DFATFS
+d35 1
+a35 1
+	jam0 -f Jambase install
+d38 1
+a38 1
+	$(CC) $(TARGET) $(OPTIM) $(CFLAGS) *.c $(LINKLIBS)
+@
+
+
+1.6
+log
+@@
+text
+@d13 1
+d15 2
+a16 1
+#CFLAGS = -DAIX
+@
+
+
+1.5
+log
+@@
+text
+@a17 2
+#Lib = $(MSTOOLS)/lib
+#Include = $(MSTOOLS)/h
+@
+
+
+1.4
+log
+@@
+text
+@d17 7
+a23 2
+#CC = cl
+#CFLAGS = -DNT 
+d25 1
+d27 3
+d34 1
+a34 1
+	cc $(TARGET) $(OPTIM) $(CFLAGS) *.c $(LINKLIBS)
+@
+
+
+1.3
+log
+@@
+text
+@d5 1
+d25 1
+a25 1
+	cc $(TARGET) $(CFLAGS) *.c $(LINKLIBS)
+@
+
+
+1.2
+log
+@@
+text
+@d4 1
+a4 1
+CFLAGS = -o jam0
+d16 3
+a18 2
+# CC = cl
+# CFLAGS = -DNT /Fejam0
+d24 1
+a24 1
+	cc $(CFLAGS) *.c $(LINKLIBS)
+@
+
+
+1.1
+log
+@@
+text
+@d3 3
+d15 4
+d23 1
+a23 1
+	cc $(CFLAGS) *.c -o jam0 $(LINKLIBS)
+@

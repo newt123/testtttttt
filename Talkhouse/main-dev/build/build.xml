@@ -1,0 +1,145 @@
+<project name="Talkhouse" default="build" basedir=".">
+<description>Build scripts for the TalkHouse application.</description>
+<!-- set global Perforce properties -->
+	<!-- none: rely on environment settings -->
+
+<!-- set global properties for this build -->
+	<property file="${basedir}/build.properties" />
+
+	<target name="init" >
+		<description>create all temporary directories within the build folder</description>
+		<mkdir dir="${classes.dir.rel}"/>
+		<mkdir dir="${jar.dir.rel}"/>
+	</target>
+
+	<target name="clean" >
+		<description>remove all compiled and intermediate files leaving only source files</description>
+		<delete dir="${classes.dir.rel}"/>
+		<delete dir="${jar.dir.rel}"/>
+	</target>
+
+	<target name="build" depends="init">
+		<description>compile sources and perform transforms of raw data</description>
+		<record name="${basedir}/${build.log.rel}" action="start" append="yes" loglevel="info" />
+		<javac srcdir="${src.dir.rel}" destdir="${classes.dir.rel}" excludes="**/wbmicro/*" listfiles="yes" />
+		<jar destfile="${jar.dir.rel}/${ant.project.name}.jar" basedir="${classes.dir.rel}" />
+		<record name="${basedir}/${build.log.rel}" action="stop" />
+	</target>
+
+	<target name="install" >
+		<description>copy files to a testing or production system</description>
+	</target>
+
+<!-- Perforce targets -->
+	<target name="p4.init" unless="p4.prop.depotPath">
+		<description>Initialize Ant environment for Perforce.</description>
+		<!-- set project and build specific Perforce properties -->
+		<property file="${basedir}/p4.build.properties" />
+		<taskdef resource="net/sf/antcontrib/antlib.xml"/>
+		<p4where view="${basedir}/dummy" depotFile="p4.depotFile.dummy" clientFile="p4.clientFile.dummy" localFile="p4.localFile.dummy" failonerror="true" />
+		<propertyregex property="p4.prop.depotPath" input="${p4.depotFile.dummy}" regexp="(.*)[/\\]dummy$" select="\1" />
+		<propertyregex property="p4.prop.clientPath" input="${p4.clientFile.dummy}" regexp="(.*)[/\\]dummy$" select="\1" />
+		<propertyregex property="p4.prop.localPath" input="${p4.localFile.dummy}" regexp="(.*)[/\\]dummy$" select="\1" />
+		<echo level="debug" message="p4.prop.depotPath=&quot;${p4.prop.depotPath}&quot;" />
+		<echo level="debug" message="p4.prop.clientPath=&quot;${p4.prop.clientPath}&quot;" />
+		<echo level="debug" message="p4.prop.localPath=&quot;${p4.prop.localPath}&quot;" />
+		<propertyregex property="p4.prop.depot" input="${p4.depotFile.dummy}" regexp="^//([^/]*)/" select="\1" />
+		<propertyregex property="p4.prop.project" input="${p4.depotFile.dummy}" regexp="^//${p4.prop.depot}/([^/]*)" select="\1" />
+		<propertyregex property="p4.prop.branch" input="${p4.depotFile.dummy}" regexp="^//${p4.prop.depot}/${p4.prop.project}/([^/]*)" select="\1" />
+		<condition property="p4.prop.filespec" value="${p4.prop.verspecial}" else="@${p4.prop.verpatchlevel}" >
+			<length string="${p4.prop.verspecial}" trim="true" when="greater" length="0" />
+		</condition>
+		<echo level="debug" message="p4.prop.filespec=&quot;${p4.prop.filespec}&quot;" />
+
+	</target>
+
+	<target name="p4.clean" depends="p4.init">
+		<description>remove all compiled and intermediate files leaving only source files</description>
+		<p4sync force="yes" view="${p4.prop.depotPath}/${build.dir.rel}/...#0" failonerror="false" />
+		<antcall target="clean" />
+	</target>
+
+	<target name="p4.baseline" depends="p4.init">
+		<description>extracts source baseline</description>
+		<!-- sync the baseline -->
+		<p4sync view="${p4.prop.depotPath}/${src.dir.rel}/...${p4.prop.filespec}" failonerror="false" />
+	</target>
+
+	<target name="p4.baseline.targets" depends="p4.init">
+		<description>extracts build targets</description>
+		<!-- sync the targets to head -->
+		<p4sync view="${p4.prop.depotPath}/${build.dir.rel}/...#head" />
+	</target>
+
+	<target name="p4.nightly.clean" depends="clean" unless="p4.prop.nightly">
+		<description>performs a clean only when nightly is set.</description>
+	</target>
+
+	<target name="p4.build" depends="p4.baseline.targets, p4.baseline, p4.nightly.clean, build">
+		<description>extracts baseline, extracts targets, and builds project</description>
+	</target>
+
+	<target name="p4.nightly.init" depends="p4.init">
+		<description>initialization for nightly build</description>
+		<property name="p4.prop.nightly" value="true" />
+		<p4sync view="${p4.prop.depotPath}/${build.log.rel}#head" />
+		<p4edit view="${p4.prop.depotPath}/${build.log.rel}" />
+		<record name="${basedir}/${build.log.rel}" action="start" append="no" loglevel="info" />
+		<echo message="Initializing nightly build from: Project=&quot;${p4.prop.project}&quot; Branch=&quot;${p4.prop.branch}&quot;" level="info" />
+		<echo message="PatchLevel=&quot;${p4.prop.filespec}&quot;" level="info" />
+		<echo message="Filespec=&quot;${p4.prop.depotPath}/...${p4.prop.filespec}&quot;" level="info" />
+		<record name="${basedir}/${build.log.rel}" action="stop" />
+	</target>
+
+	<target name="p4.nightly" depends="p4.nightly.init, p4.build">
+		<description>extracts baseline, builds project, and archives results</description>
+		<!-- check for deleted files -->
+			<!-- note this assumes all targets have been sync'd to the head -->
+		<exec executable="p4.exe" outputproperty="p4.prop.cmd.diff001.out" failonerror="true">
+			<arg value="diff"/>
+			<arg value="-sd"/>
+			<arg value="${p4.prop.depotPath}/${build.dir.rel}/..."/>
+		</exec>
+		<exec executable="p4.exe" inputstring="${p4.prop.cmd.diff001.out}" failonerror="true">
+			<arg value="-x"/>
+			<arg value="-"/>
+			<arg value="delete"/>
+		</exec>
+		<!-- Open files for Edit/Add to default changelist. -->
+		<!-- brute force add -->
+		<p4add failonerror="false">
+			<fileset dir="${basedir}/${build.dir.rel}" />
+		</p4add>
+		<!-- brute force edit -->
+		<p4edit failonerror="false" view="${p4.prop.depotPath}/${build.dir.rel}/..." />
+		<!-- revert unchanged files -->
+		<p4revert revertonlyunchanged="true" view="${p4.prop.depotPath}/..." failonerror="false" />
+		<!-- Submit any open files -->
+		<antcall target="p4.nightly.submit" />
+	</target>
+
+	<target name="p4.nightly.submit" depends="p4.nightly.checkpending, p4.nightly.revertpending" if="p4.prop.pending">
+		<description>submits pending changes</description>
+		<p4change description="Nightly Build: ${p4.prop.project} ${p4.prop.branch} ${p4.prop.verpatchlevel}${p4.prop.verspecial} ${p4.prop.depotPath}/...${p4.prop.filespec}" />
+		<p4reopen view="${p4.prop.depotPath}/..." tochange="${p4.change}" />
+		<p4submit change="${p4.change}" />
+	</target>
+
+	<target name="p4.nightly.revertpending" unless="p4.prop.pending">
+		<description>revert all open files</description>
+		<p4revert revertonlyunchanged="false" view="${p4.prop.depotPath}/${build.dir.rel}/..." failonerror="false" />
+	</target>
+
+	<target name="p4.nightly.checkpending" unless="p4.prop.pending">
+		<description>determines if the only open file is the jar file and-or build log.  if so then revert them.</description>
+		<exec executable="p4.exe" outputproperty="p4.prop.cmd.opened001.out" errorproperty="p4.prop.cmd.opened001.err" failonerror="false">
+			<arg value="opened"/>
+			<arg value="${p4.prop.depotPath}/*"/>
+			<arg value="${p4.prop.depotPath}/${build.dir.rel}/*/..."/>
+		</exec>
+		<condition property="p4.prop.pending" value="pending">
+			<length string="${p4.prop.cmd.opened001.out}" trim="true" when="greater" length="0" />
+		</condition>
+	</target>
+
+</project>

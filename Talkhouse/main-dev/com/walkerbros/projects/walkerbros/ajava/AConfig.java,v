@@ -1,0 +1,48 @@
+head     1.1;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.1
+date     2005.10.11.11.29.06;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.1
+log
+@@
+text
+@// AConfig.java
+
+package com.walkerbros.projects.walkerbros.ajava;
+
+public class AConfig
+{
+	// -- final release (or development)?
+	//------------------------------------------------------------------------
+	public static final boolean RELEASE = false;
+	public static final boolean DEVELOPMENT = !RELEASE;
+	
+	// -- applet (or application)?
+	//------------------------------------------------------------------------
+	public static final boolean APPLET = false;
+	
+	// -- release version?
+	//------------------------------------------------------------------------
+	public static final boolean DEBUG = true;
+	
+	// -- initial section
+	//------------------------------------------------------------------------
+	public static final int A_STR_INIT_INI 		= ADefAppl.A_STR_CPRT_INI;
+	public static final int A_STR_INIT_BIT		= ADefAppl.A_STR_CPRT_BIT;
+	
+	public AConfig() 
+	{
+	}
+}@

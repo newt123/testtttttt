@@ -1,0 +1,97 @@
+head     1.3;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.3
+date     2005.01.27.09.35.42;  author p4;  state Exp;
+branches ;
+next     1.2;
+
+1.2
+date     2005.01.27.09.35.42;  author p4;  state Exp;
+branches ;
+next     1.1;
+
+1.1
+date     2005.01.27.09.35.42;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.3
+log
+@@
+text
+@class GParticle;
+class GWorld;
+
+class GSpring
+{
+public:
+	GSpring() { next = 0 ;};
+
+	GParticle* part;
+	double K;
+	GSpring* next;
+};
+
+class GParticle
+{
+public:
+	GParticle( double x, double y );
+	~GParticle(void);
+
+	void Init( GWorld* );
+	void AddSpring( GParticle* p );
+	bool HasSpring( GParticle* p );
+	void HideSprings( GWorld* w );
+	
+	double Q;	//charge
+	double m;	//mass
+	double r;   //radius
+	GVector F;	//net force
+	GVector a;	//acceleration
+	GVector v;	//velocity
+	GVector pos;	//position
+
+	bool init;
+	int initn;
+
+	bool inworld;
+	char* name;
+
+	void ComputeForce( GWorld* w );
+	void Step( GWorld* w );
+	void Render();
+
+	GVector NearBy();
+
+	GParticle* next;
+	GSpring* springs; //connected springs
+};@
+
+
+1.2
+log
+@@
+text
+@d22 2
+a43 1
+	void HideSprings();
+@
+
+
+1.1
+log
+@@
+text
+@d21 1
+d34 1
+d41 3
+@

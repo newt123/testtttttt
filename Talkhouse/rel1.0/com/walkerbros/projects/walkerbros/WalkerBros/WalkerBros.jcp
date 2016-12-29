@@ -1,0 +1,144 @@
+! ** JCreator Project File (C)2000
+! ********** DO NOT EDIT *********
+
+VERSION := "1.10"
+LABEL := "WalkerBros"
+JDKPROFILE := "JDK version 1.3.1_01"
+ACTIVE := "1"
+OUTPUTPATH := "C:\\WalkerBros"
+COMPILER := "<Default>"
+
+! Start RunTime Configuration Structure
+#[BeginRunTime]LABEL := "<Default>" RUNAPPLIC := "" RUNAPPLET := "" PARAM := "" RUN := "com.walkerbros.common.elaunch.JLaunch" CHECK := "10" #[EndRunTime]
+! Start Required Libraries Structure
+
+! Start Project Folder Structure
+#[BeginFolder]
+LABEL := "Root"
+FILTER := ""
+
+#[BeginFolder]
+LABEL := "com.walkerbros.projects.walkerbros"
+FILTER := ""
+
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\projects\\walkerbros\\WlkrBros.html" #[EndFile]
+#[EndFolder]
+#[BeginFolder]
+LABEL := "com.walkerbros.projects.walkerbros.data.misc"
+FILTER := ""
+
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\projects\\walkerbros\\Data\\Misc\\Entice.html" #[EndFile]
+#[EndFolder]
+#[BeginFolder]
+LABEL := "com.walkerbros.projects.walkerbros.ajava"
+FILTER := ""
+
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\projects\\walkerbros\\ajava\\AConfig.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\projects\\walkerbros\\ajava\\ADefAppl.java" #[EndFile]
+#[EndFolder]
+#[BeginFolder]
+LABEL := "com.walkerbros.projects.walkerbros.aclasses"
+FILTER := ""
+
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\projects\\walkerbros\\aclasses\\ABubbleHelp.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\projects\\walkerbros\\aclasses\\AMain.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\projects\\walkerbros\\aclasses\\AObjectController.java" #[EndFile]
+#[EndFolder]
+#[BeginFolder]
+LABEL := "com.walkerbros.common"
+FILTER := ""
+
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\EVersion.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\EEnvironment.java" #[EndFile]
+#[EndFolder]
+#[BeginFolder]
+LABEL := "com.walkerbros.common.esupport"
+FILTER := ""
+
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\esupport\\EFontInfo.java" #[EndFile]
+#[EndFolder]
+#[BeginFolder]
+LABEL := "com.walkerbros.common.elaunch"
+FILTER := ""
+
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\elaunch\\JLaunch.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\elaunch\\JLaunchApp.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\elaunch\\JLaunchApplet.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\elaunch\\JThread.java" #[EndFile]
+#[EndFolder]
+#[BeginFolder]
+LABEL := "com.walkerbros.common.ejava"
+FILTER := ""
+
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\ejava\\EActions.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\ejava\\EClock.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\ejava\\ECursor.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\ejava\\EDefines.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\ejava\\EErr.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\ejava\\EFile.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\ejava\\EMsg.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\ejava\\EMsgPoster.java" #[EndFile]
+#[EndFolder]
+#[BeginFolder]
+LABEL := "com.walkerbros.common.ejava.eevent"
+FILTER := ""
+
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\ejava\\eevent\\EEvtInitializeScene.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\ejava\\eevent\\EEvtMouse.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\ejava\\eevent\\EEvtMouseDown.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\ejava\\eevent\\EEvtMouseMove.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\ejava\\eevent\\EEvtMouseUp.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\ejava\\eevent\\EEvtPaint.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\ejava\\eevent\\EEvtShutDown.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\ejava\\eevent\\EEvtStartUp.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\ejava\\eevent\\EEvtTimer.java" #[EndFile]
+#[EndFolder]
+#[BeginFolder]
+LABEL := "com.walkerbros.common.ejava.eaction"
+FILTER := ""
+
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\ejava\\eaction\\EActBtn.java" #[EndFile]
+#[EndFolder]
+#[BeginFolder]
+LABEL := "com.walkerbros.common.eimage"
+FILTER := ""
+
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\eimage\\EBackground.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\eimage\\EGifImage.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\eimage\\EImage.java" #[EndFile]
+#[EndFolder]
+#[BeginFolder]
+LABEL := "com.walkerbros.common.edata"
+FILTER := ""
+
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\edata\\EInfo.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\edata\\EInfoGifFilename.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\edata\\EInfoString.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\edata\\ESceneData.java" #[EndFile]
+#[EndFolder]
+#[BeginFolder]
+LABEL := "com.walkerbros.common.econtrols"
+FILTER := ""
+
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\econtrols\\EButton.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\econtrols\\EButtonImage.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\econtrols\\EButtonImageRadio.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\econtrols\\EButtonImageTabs.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\econtrols\\EButtonImageTimer.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\econtrols\\EButtonImageToggle.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\econtrols\\ELabel.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\econtrols\\ELabelPanel.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\econtrols\\EPanelComponent.java" #[EndFile]
+#[EndFolder]
+#[BeginFolder]
+LABEL := "com.walkerbros.common.eclasses"
+FILTER := ""
+
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\eclasses\\EObjectController.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\eclasses\\EMain.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\eclasses\\ELinkItem.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\eclasses\\EObject.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\eclasses\\EOnScreen.java" #[EndFile]
+#[BeginFile]SOURCE := "C:\\WalkerBros\\com\\walkerbros\\common\\eclasses\\EString.java" #[EndFile]
+#[EndFolder]
+#[EndFolder]
